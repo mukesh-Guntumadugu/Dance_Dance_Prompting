@@ -1,0 +1,57 @@
+version: 0.2.0
+
+definitions:
+    wonkybassthing:
+        bpms:
+            0: bpm * 3/4
+            0.188: bpm * 3/2
+            .5: bpm * 3/4
+            .625: bpm
+
+gimmicks:
+    0: bpm 130
+    
+    10.25-10.75: 1/16 1.25x midstutter
+    10.75-11.25: 1/8 1.125x midstutter
+    11.25-12: 1/16 1.25x midstutter
+    
+    16.25-16.75: 1/16 1.25x midstutter
+    16.75-17.25: 1/8 1.125x midstutter
+    17.25-18: 1/16 1.25x midstutter
+    18-18.5: 1/8 1.125x midstutter
+    18.5-19: 1/16 1.25x midstutter
+    19-20: 1/8 1.125x midstutter
+    
+    20-24: 1/2 1x wonkybassthing
+    28-36: 1/2 1x wonkybassthing
+    
+    55-56: 1/12 1.25x stutter
+    
+    77-77.5: 1/8 1.125x midstutter
+    77.5-78.75: 1/16 1.25x midstutter
+    78.75-79.25: 1/8 1.125x midstutter
+    79.25-80: 1/16 1.25x midstutter
+    80-80.5: 1/8 1.125x midstutter
+    80.5-81: 1/16 1.25x midstutter
+    81-82: 1/8 1.125x midstutter
+    82-82.5: 1/16 1.25x midstutter
+    82.5-83: 1/8 1.125x midstutter
+    83-84: 1/16 1.25x midstutter
+
+    84-100: 1/2 1x wonkybassthing
+    
+    109-116: copy 77
+    
+    119-120: 1/12 1.25x stutter
+    
+    133-136: copy 77
+    
+    141-148: copy 77
+    
+    148-164: 1/2 1x wonkybassthing
+    
+    183-184: 1/12 1.25x stutter
+    
+    266.25-316: copy 10.25
+    
+    320-321: 1/24 1.5x stutter

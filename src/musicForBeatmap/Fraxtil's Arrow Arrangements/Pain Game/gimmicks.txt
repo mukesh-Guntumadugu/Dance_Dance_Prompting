@@ -1,0 +1,75 @@
+version: 0.2.0
+
+gimmicks:
+    0: bpm 140
+    
+    # YOUUU'RE FIIIRED
+    
+    92: bpm 87.5
+    93.667: bpm 140
+    
+    # ~sIcK wUbZ~
+    
+    97-99: 1/4 1.5x halfboost
+    99-100.667: 1/24 2x stutter
+    102.333-103: 1/12 1.5x stutter
+    105-107: 1/12 1.5x halfbrake
+    107.333-108: 1/12 2x halfbrake
+    108.333-109: copy 107.333
+    109.333-110: 1/12 1.5x stutter
+    110.333-111: 1/12 1.5x midstutter
+    111-113: 1/6 1.5x halfbrake
+    113.333-114: copy 107.333
+    114.333-115: copy 109.333
+    118-119: 1/12 1.5x stutter
+    126-127: copy 118
+    128-129: copy 118
+    129-131: copy 97
+    131-133: copy 105
+    133.333-135: copy 107.333
+    135-136: 1/12 1.25x midstutter
+    136-137: 1/12 1.5x midstutter
+    137-138: 1/12 2x midstutter
+    138-139: 1/12 3x midstutter
+    139-143: copy 107
+    143.667: 1/12 2x quarterbrake
+    144.667: 1/12 2x quarterbrake
+    146-147: copy 105
+    147-149: 1/4 1.5x halfbrake
+    149.333-150: copy 107.333
+    150-151: copy 105
+    
+    # its time 2 double the pace GO
+    
+    159.5-160: 1/16 3x midstutter
+    160.5-161: copy 159.5
+    161-163: copy 97
+    163: 1/8 1.5x halfbrake
+    163.5-164: 1/16 1.5x stutter
+    164.5: 1/16 1.5x stutter
+    165.25-165.75: 1/16 1.5x stutter
+    166.25-166.75: copy 165.25
+    168: 1/4 1.5x halfbrake
+    169-170: 1/16 2x quarterboost
+    170-171: 1/16 2x halfboost
+    171.5-173: copy 159.5
+    173.333-175: copy 109.333
+    177-179: 1/12 1.5x halfbrake
+    179-183: 1/16 1.5x midstutter
+    
+    # Next 8 measures are basically identical
+    191.5-215: copy 159.5
+    
+    # Vocal section
+    
+    222-223: 1/4 1.5x halfbrake
+    235-235.5: 1/8 1.5x quarterbrake
+    236-236.25: 1/16 1.5x midstutter
+    236.75-237: copy 236
+    238-238.25: copy 236
+    238.75-239: copy 236
+    257.5-258: copy 236
+    258.25-258.5: copy 236
+    266-266.25: copy 236
+    267-267.25: copy 236
+    268-268.25: copy 236

@@ -1,0 +1,42 @@
+bpm: 146
+
+gimmicks:
+    36-39: 1/24 2x stutter
+    44-48: 1/8 1.5x quarterbrake
+    48-48.5: 1/8 1.5x halfboost
+    48.5-49: 1/8 1.5x midstutter
+    52-56: 1/8 1.5x quarterbrake
+    60-62: 1/8 1.5x quarterbrake
+    62.333-63: 1/12 1.25x stutter
+    63.333-64: 1/12 1.25x stutter
+    68-70: 1/8 1.5x quarterbrake
+    70-72: 1/12 1.25x stutter
+    77-78: 1/8 1.5x quarterbrake
+    78-80: 1/16 2x quarterbrake
+    80.5-81: 1/8 1.5x halfboost
+    81-81.5: 1/8 1.5x midstutter
+    84-86: 1/8 1.5x quarterbrake
+    86-88: 1/16 2x quarterbrake
+    92-94: 1/8 1.5x quarterbrake
+    94-96: 1/24 2x stutter
+    105-108: 1/8 1.5x quarterbrake
+    113-116: 1/8 1.5x quarterbrake
+    121-124: 1/8 1.5x quarterbrake
+    129-132: 1/8 1.5x quarterbrake
+    152.5-152.75: 1/16 2x halfboost
+    153.5-153.75: 1/16 2x halfboost
+    154.5-154.75: 1/16 2x halfboost
+    155.5-155.75: 1/16 2x halfbrake
+    156.25-156.75: 1/16 1.5x stutter
+    157.25-157.75: 1/16 1.5x stutter
+    158.25-158.75: 1/16 1.5x stutter
+    192-194: 1/16 1.5x stutter
+    200-202: 1/16 1.5x stutter
+    208-210: 1/16 1.5x stutter
+    222-224: 1/12 1.25x stutter
+    278.5-279.5: 1/16 2x quarterbrake
+    286.5-287.5: 1/16 2x quarterbrake
+    290-291: 1/16 2x quarterbrake
+    294.5-295.5: 1/16 2x quarterbrake
+    302.5-303.5: 1/16 2x quarterbrake
+    306-307: 1/16 2x quarterbrake
