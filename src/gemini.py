@@ -382,6 +382,65 @@ def generate_beatmap_csv(
         return []
 
 
+def generate_beatmap_csv_chunked(
+    audio_path: str,
+    duration: float,
+    difficulty: str = "Hard",
+    model_name: str = "gemini-2.0-flash-001",
+    chunk_duration: float = 30.0,
+    cached_content_name: str | None = None
+) -> list[BeatCSV]:
+    """
+    Splits the audio into chunks and generates BeatCSV rows for each chunk
+    independently, then concatenates. Avoids hitting Gemini output token limits
+    on long songs.
+
+    chunk_duration: length of each audio slice in seconds (default 30s).
+    Each 30s chunk needs ~750 rows × ~25 tokens ≈ 18k tokens — well within limits.
+    """
+    import math as _math
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    temp_slice = os.path.join(script_dir, "_temp_chunk_slice.wav")
+
+    num_chunks = _math.ceil(duration / chunk_duration)
+    print(f"  Chunked mode: {num_chunks} chunks × {chunk_duration:.0f}s")
+
+    all_rows: list[BeatCSV] = []
+
+    try:
+        for i in range(num_chunks):
+            offset = i * chunk_duration
+            actual_duration = min(chunk_duration, duration - offset)
+            print(f"    Chunk {i+1}/{num_chunks}: {offset:.1f}s – {offset + actual_duration:.1f}s")
+
+            # Slice audio
+            if not create_audio_slice(audio_path, temp_slice, offset, actual_duration):
+                print(f"    Skipping empty chunk at {offset:.1f}s")
+                continue
+
+            # Generate for this chunk
+            chunk_rows = generate_beatmap_csv(
+                audio_path=temp_slice,
+                duration=actual_duration,
+                difficulty=difficulty,
+                model_name=model_name,
+                cached_content_name=cached_content_name,
+            )
+
+            if chunk_rows:
+                all_rows.extend(chunk_rows)
+                print(f"    ✅ Got {len(chunk_rows)} rows from chunk {i+1}")
+            else:
+                print(f"    ⚠️  No rows from chunk {i+1}")
+
+            time.sleep(2)  # brief pause between chunks
+
+    finally:
+        if os.path.exists(temp_slice):
+            os.remove(temp_slice)
+
+    return all_rows
+
 def process_full_song(audio_path: str, level: str = "Hard", mode: str = "full", model_name: str = "gemini-2.0-flash-001"):
     """
     Processes the song based on the selected mode:

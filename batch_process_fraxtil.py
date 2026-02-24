@@ -8,10 +8,11 @@ import datetime
 from dotenv import load_dotenv
 import librosa
 
-from src.gemini import setup_gemini, generate_beatmap_csv, create_beatmap_prompt_cache
+from src.gemini import setup_gemini, generate_beatmap_csv_chunked, create_beatmap_prompt_cache
 
-DIFFICULTY = "Challenging"
-MODEL_NAME = "gemini-pro-latest"  # Caching attempted; falls back gracefully if unsupported
+DIFFICULTY    = "Hard"
+MODEL_NAME    =  "gemini-3-flash-preview"
+CHUNK_DURATION = 30.0  # seconds per chunk — keeps output tokens well within limits
 
 # ── Task ID registry ──────────────────────────────────────────────────────────
 _REGISTRY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".task_registry.json")
@@ -74,11 +75,12 @@ def process_song(audio_path, task_id: int, cached_content_name=None):
 
         cache_status = "cached prompt" if cached_content_name else "full prompt"
         print(f"  Sending to Gemini ({DIFFICULTY}, {MODEL_NAME}, {cache_status})...")
-        rows = generate_beatmap_csv(
+        rows = generate_beatmap_csv_chunked(
             audio_path=audio_path,
             duration=duration,
             difficulty=DIFFICULTY,
             model_name=MODEL_NAME,
+            chunk_duration=CHUNK_DURATION,
             cached_content_name=cached_content_name
         )
 
