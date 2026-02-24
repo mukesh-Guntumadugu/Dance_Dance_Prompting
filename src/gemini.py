@@ -379,7 +379,7 @@ def generate_beatmap_csv(
         return []
 
 
-def process_full_song(audio_path: str, level: str = "Challenging", mode: str = "full"):
+def process_full_song(audio_path: str, level: str = "Challenging", mode: str = "full", model_name: str = "gemini-2.0-flash-001"):
     """
     Processes the song based on the selected mode:
     - 'full': Processes the entire song in one go/request to Gemini.
@@ -563,7 +563,7 @@ def process_full_song(audio_path: str, level: str = "Challenging", mode: str = "
         # Format: {OriginalName}_{Level}_{ModelName}_{Timestamp}_{Mode}.csv
         original_name = os.path.splitext(os.path.basename(audio_path))[0]
         timestamp = time.strftime("%Y%m%d_%H%M%S")
-        csv_filename = f"{original_name}_{level}_gemini-2.0-flash-001_{timestamp}_{mode}.csv"
+        csv_filename = f"{original_name}_{level}_{model_name}_{timestamp}_{mode}.csv"
         csv_path = os.path.join(script_dir, csv_filename)
         
         print(f"Saving to CSV: {csv_path}")
