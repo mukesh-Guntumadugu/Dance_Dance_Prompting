@@ -5,7 +5,7 @@ import datetime
 import librosa
 from src.qwen_interface import setup_qwen, generate_beatmap_with_qwen
 
-DIFFICULTY = "Easy"
+DIFFICULTY = "Medium"
 MODEL_NAME = "Qwen2-Audio-7B-Instruct"
 
 def get_target_files(base_dir):

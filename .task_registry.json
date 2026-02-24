@@ -1,9 +1,19 @@
 {
-  "last_task_id": 1,
+  "last_task_id": 3,
   "tasks": {
     "1": {
       "created": "2026-02-24T01:27:02.250738",
       "difficulty": "Beginner",
+      "model": "gemini-pro-latest"
+    },
+    "2": {
+      "created": "2026-02-24T03:24:10.420532",
+      "difficulty": "Medium",
+      "model": "gemini-pro-latest"
+    },
+    "3": {
+      "created": "2026-02-24T03:24:17.521925",
+      "difficulty": "Medium",
       "model": "gemini-pro-latest"
     }
   }

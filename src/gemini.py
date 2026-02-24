@@ -269,7 +269,7 @@ def create_beatmap_prompt_cache(difficulty: str = "Hard", model_name: str = "gem
 def generate_beatmap_csv(
     audio_path: str,
     duration: float,
-    difficulty: str = "Beginner",  #
+    difficulty: str = "medium",  #
     model_name: str = "gemini-2.0-flash-001",
     cached_content_name: str | None = None
 ) -> list[BeatCSV]:
@@ -379,7 +379,7 @@ def generate_beatmap_csv(
         return []
 
 
-def process_full_song(audio_path: str, level: str = "Beginner", mode: str = "full"):
+def process_full_song(audio_path: str, level: str = "medium", mode: str = "full"):
     """
     Processes the song based on the selected mode:
     - 'full': Processes the entire song in one go/request to Gemini.
@@ -400,7 +400,7 @@ def process_full_song(audio_path: str, level: str = "Beginner", mode: str = "ful
         prompt_text = (
             f"The audio is {total_duration:.1f} seconds long. You MUST generate chart data for the ENTIRE duration.\n"
             f"Target: approximately {expected_commas} measure separators (commas) — one for roughly every second of audio.\n\n"
-            "Listen to the audio and generate StepMania chart rows for a beginner difficulty. "
+            "Listen to the audio and generate StepMania chart rows for a medium difficulty. "
             "Output a continuous sequence of 4-character strings covering the entire audio duration. "
             "Each string represents a row in the chart (Left, Up, Down, Right). "
             "Use '0000' for empty rows to maintain correct timing and rhythm (e.g., 4 rows per beat). "
