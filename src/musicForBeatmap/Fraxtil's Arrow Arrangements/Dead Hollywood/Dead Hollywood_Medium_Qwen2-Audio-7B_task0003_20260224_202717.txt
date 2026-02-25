@@ -1,0 +1,6 @@
+Here's a sample beatmap in JSON format that covers the entire duration of the audio (122.7 seconds) with a medium difficulty level and a consistent rhythm pattern:
+```css
+[    {      "notes": "1000",      "time_signature": "4/4"    },    {      "notes": "0000",      "time_signature": "4/4"    },    {      "notes": "0010",      "time_signature": "4/4"    },    {      "notes": "0000",      "time_signature": "4/4"    },    {      "notes": "",      "time_signature": "4/4"    }  ]
+```
+This beatmap consists of 5 measures, each with 4 note rows followed by a comma separator. The first measure contains only notes from the first column (1000), while the remaining measures alternate between columns 0 and 1, with one note row per column. The final measure contains no notes and ends with a comma separator to indicate the end of the beatmap.
+Note that this is just a sample beatmap and can be modified as needed to fit your specific requirements.

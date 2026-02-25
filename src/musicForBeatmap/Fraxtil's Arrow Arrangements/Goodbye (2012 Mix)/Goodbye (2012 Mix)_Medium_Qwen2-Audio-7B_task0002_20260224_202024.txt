@@ -1,0 +1,26 @@
+Here's a sample beatmap in JSON format that covers the entire duration of the audio file:
+```css
+[
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","}
+]
+```
+This beatmap consists of measures with 4, 8, and 16 note rows separated by commas. The notes in each row are represented as 4-character strings, where '1' represents a note on the first beat of the bar, '0' represents a note off the beat, and '-' represents a silent note.

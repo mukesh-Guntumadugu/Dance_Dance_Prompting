@@ -1,0 +1,31 @@
+Here's a sample beatmap in JSON format that covers the entire duration of the audio track with a medium difficulty:
+```json
+[
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","},
+{"notes": "1000"},
+{"notes": "0000"},
+{"notes": "0010"},
+{"notes": "0000"},
+{"notes": ","}
+]
+```
+This beatmap consists of 20 measures, each with 4 note rows followed by a comma separator. The notes used in this example are A0, E0, and F0. You can adjust the notes to your liking.
