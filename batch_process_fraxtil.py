@@ -136,19 +136,18 @@ def main():
     # ── Task ID: resume existing or create new ────────────────────────────
     registry = load_registry()
 
-    if len(sys.argv) > 1:
-        # User passed a task ID to resume: python batch_process_fraxtil.py 3
-        try:
-            task_id = int(sys.argv[1])
-            if str(task_id) not in registry["tasks"]:
-                print(f"Error: Task ID {task_id} not found in registry.")
-                return
-            print(f"▶  Resuming Task ID: {task_id:04d}  (skipping already-processed songs)")
-        except ValueError:
-            print(f"Error: Invalid task ID '{sys.argv[1]}'. Must be an integer.")
+    parser = __import__('argparse').ArgumentParser()
+    parser.add_argument("task_id", nargs="?", type=int)
+    parser.add_argument("--song", default=None, help="Test with one song (partial name, e.g. 'Bad Ketchup')")
+    args = parser.parse_args()
+
+    if args.task_id:
+        task_id = args.task_id
+        if str(task_id) not in registry["tasks"]:
+            print(f"Error: Task ID {task_id} not found in registry.")
             return
+        print(f"▶  Resuming Task ID: {task_id:04d}  (skipping already-processed songs)")
     else:
-        # Create a brand-new task
         task_id = create_new_task(registry)
         print(f"▶  New Task ID: {task_id:04d}  (saved to .task_registry.json)")
 
@@ -170,7 +169,16 @@ def main():
     print(f"Scanning directory: {base_dir}")
 
     target_files = get_target_files(base_dir)
-    print(f"Found {len(target_files)} audio files.\n")
+
+    # Single-song test mode
+    if args.song:
+        target_files = [f for f in target_files if args.song.lower() in os.path.basename(os.path.dirname(f)).lower()]
+        if not target_files:
+            print(f"\u274c No audio file found matching '{args.song}'.")
+            return
+        print(f"\U0001f3b5 Single-song test: {os.path.basename(target_files[0])}\n")
+    else:
+        print(f"Found {len(target_files)} audio files.\n")
 
     for i, audio_file in enumerate(target_files):
         print(f"[{i+1}/{len(target_files)}] ", end="")
