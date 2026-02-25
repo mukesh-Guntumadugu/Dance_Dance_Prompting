@@ -21,9 +21,28 @@ import argparse
 import requests
 import librosa
 
-# Import the same detailed system instruction used by Gemini
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from src.gemini import _BEATMAP_SYSTEM_INSTRUCTION
+# Beatmap system instruction (same as Gemini's _BEATMAP_SYSTEM_INSTRUCTION in src/gemini.py)
+_BEATMAP_SYSTEM_INSTRUCTION = (
+    "You are a StepMania beatmap generator. Output a JSON array of objects.\n"
+    "Each object has these fields:\n"
+    "  - time_ms (float): exact timestamp in milliseconds\n"
+    "  - beat_position (float): beat number from song start\n"
+    "  - notes (str): 4-character row (Left, Down, Up, Right e.g. '1000') OR ',' for measure end\n"
+    "  - placement_type (int): 0=unsure, 1=onset, 2=beat, 3=grid, 4=percussive, 5=unaligned, -1=separator\n"
+    "  - note_type (int): 0=whole, 1=half, 2=quarter, 3=eighth, 4=extended, -1=separator\n"
+    "  - confidence (float): 0.0-1.0\n"
+    "  - instrument (str): kick/snare/bass/melody/guitar/synth/unknown or 'separator'\n\n"
+    "=== MEASURE STRUCTURE ===\n"
+    "Each measure MUST contain EXACTLY 4, 8, 12, or 16 note rows before the ','.\n"
+    "  - 4 rows  = quarter note grid (sparse)\n"
+    "  - 8 rows  = eighth note grid (moderate)\n"
+    "  - 16 rows = sixteenth note grid (dense/fast, MOST COMMON for Hard/Medium)\n"
+    "At 120 BPM, a 16-row measure spans ~2 seconds. Use '0000' for empty slots.\n"
+    "NEVER output two consecutive separator rows or a separator with zero note rows.\n\n"
+    "=== OTHER RULES ===\n"
+    "- Cover the ENTIRE audio from start to finish. Do NOT stop early.\n"
+    "- beat_position must be consistent with the detected BPM and time_ms.\n"
+)
 
 DIFFICULTY  = "Medium"
 MODEL_NAME  = "Qwen2-Audio-7B"
