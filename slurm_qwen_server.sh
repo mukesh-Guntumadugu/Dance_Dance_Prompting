@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --time=12:00:00             # 12 hours per array task (20 songs × ~10 min = ~3.5 hrs)
 #SBATCH --array=0-4                 # 5 tasks: one per difficulty (Beginner/Easy/Medium/Hard/Challenge)
-#SBATCH --output=/data/mg546924/logs/qwen_beatmap_%A_%a.out   # %A=job ID, %a=array index
-#SBATCH --error=/data/mg546924/logs/qwen_beatmap_%A_%a.err
+#SBATCH --output=/data/mg546924/llm_beatmap_generator/logs/qwen_beatmap_%A_%a.out
+#SBATCH --error=/data/mg546924/llm_beatmap_generator/logs/qwen_beatmap_%A_%a.err
 
 # ── Map array index → difficulty ──────────────────────────────────────────────
 DIFFICULTIES=("Beginner" "Easy" "Medium" "Hard" "Challenge")
@@ -18,7 +18,7 @@ echo "Array task: $SLURM_ARRAY_TASK_ID  →  Difficulty: $DIFFICULTY"
 echo "GPU: $(nvidia-smi --query-gpu=name --format=csv,noheader)"
 
 # Create logs dir if it doesn't exist
-mkdir -p /data/mg546924/logs
+mkdir -p /data/mg546924/llm_beatmap_generator/logs
 
 # ── Activate Python environment ────────────────────────────────────────────────
 VENV_PATH="/data/mg546924/envs/qwen_env"
