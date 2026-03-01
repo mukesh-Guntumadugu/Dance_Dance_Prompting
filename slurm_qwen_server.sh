@@ -35,6 +35,9 @@ fi
 # Go to project directory
 cd /data/mg546924/llm_beatmap_generator
 
+# Must export PYTHONPATH so python can find the `src` module imports
+export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
+
 MODEL_DIR="/data/mg546924/models/Qwen2-Audio-7B-Instruct"
 
 # Each array task uses a different port so they don't collide
