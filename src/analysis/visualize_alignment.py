@@ -136,10 +136,28 @@ def visualize_alignment(audio_path, beatmap_paths, output_html, bpm=120.0, offse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Visualize AI Beatmap Alignment")
     parser.add_argument("--audio", required=True, help="Path to original audio (.ogg/.mp3)")
-    parser.add_argument("--beatmaps", nargs='+', required=True, help="Paths to generated beatmap files")
+    parser.add_argument("--beatmaps", nargs='*', help="Paths to generated beatmap files")
+    parser.add_argument("--pattern", type=str, help="Substring to find in filename (e.g. task0003)")
     parser.add_argument("--output", default="alignment_compare.html", help="HTML output file name")
     parser.add_argument("--bpm", type=float, default=120.0, help="Fallback BPM if metadata is missing")
     parser.add_argument("--offset", type=float, default=0.0, help="Offset in seconds")
     
     args = parser.parse_args()
-    visualize_alignment(args.audio, args.beatmaps, args.output, args.bpm, args.offset)
+    
+    beatmaps = args.beatmaps or []
+    if args.pattern:
+        song_dir = os.path.dirname(os.path.abspath(args.audio))
+        for f in os.listdir(song_dir):
+            path = os.path.join(song_dir, f)
+            # Find original chart
+            if f.endswith(('.ssc', '.sm')) and path not in beatmaps:
+                beatmaps.append(path)
+            # Find matching generated txts
+            elif args.pattern in f and f.endswith('.txt') and path not in beatmaps:
+                beatmaps.append(path)
+                
+    if not beatmaps:
+        print("Error: No beatmaps provided or found matching pattern.")
+        sys.exit(1)
+        
+    visualize_alignment(args.audio, beatmaps, args.output, args.bpm, args.offset)
