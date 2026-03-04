@@ -14,6 +14,11 @@ BEATMAP_SYSTEM_INSTRUCTION = (
     "  - time_ms (float): exact timestamp in milliseconds\n"
     "  - beat_position (float): beat number from song start\n"
     "  - notes (str): 4-character row (Left, Down, Up, Right e.g. '1000') OR ',' for measure end\n"
+    "      NOTE TYPES:\n"
+    "        '0' = Empty slot\n"
+    "        '1' = Standard tap note\n"
+    "        '2' = Hold note HEAD (start of a freeze arrow)\n"
+    "        '3' = Hold note TAIL (end of a freeze arrow)\n"
     "  - placement_type (int): 0=unsure, 1=onset, 2=beat, 3=grid, 4=percussive, 5=unaligned, -1=separator\n"
     "  - note_type (int): 0=whole, 1=half, 2=quarter, 3=eighth, 4=extended, -1=separator\n"
     "  - confidence (float): 0.0-1.0\n"
@@ -30,16 +35,24 @@ BEATMAP_SYSTEM_INSTRUCTION = (
     "For every subdivision slot that has NO note, you MUST output '0000'.\n"
     "NEVER output two consecutive separator rows (notes=',') back to back.\n"
     "NEVER output a separator with zero note rows before it.\n\n"
+    "=== HOLD NOTES (FREEZE ARROWS) RULES ===\n"
+    "A hold note starts with a '2' (Head) in a specific lane, and MUST end later with a '3' (Tail) in that EXACT SAME lane.\n"
+    "Example of holding the Left arrow for 1 beat:\n"
+    "  Row 1 (Beat 1.0): '2000' (Start holding left)\n"
+    "  Row 2 (Beat 1.5): '0000' (Still holding...) this can be as long as possible\n"
+    "  Row 3 (Beat 2.0): '3000' (Release left)\n"
+    "CRITICAL: You MUST NOT place any other notes (1, 2, or 3) in a lane while it is currently being held.\n"
+    "CRITICAL: Every '2' MUST be followed eventually by a matching '3' in the same column.\n\n"
     "=== EXAMPLE (16-row measure at ~120 BPM) ===\n"
     '[{"time_ms":0.0,"beat_position":1.0,"notes":"1000","placement_type":4,"note_type":2,"confidence":0.95,"instrument":"kick"},\n'
     ' {"time_ms":125.0,"beat_position":1.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
     ' {"time_ms":250.0,"beat_position":1.5,"notes":"0010","placement_type":4,"note_type":3,"confidence":0.88,"instrument":"snare"},\n'
     ' {"time_ms":375.0,"beat_position":1.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":500.0,"beat_position":2.0,"notes":"0000","placement_type":0,"note_type":2,"confidence":1.0,"instrument":"unknown"},\n'
+    ' {"time_ms":500.0,"beat_position":2.0,"notes":"2000","placement_type":4,"note_type":2,"confidence":1.0,"instrument":"bass"}, <-- HOLD HEAD (Left)\n'
     ' {"time_ms":625.0,"beat_position":2.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
     ' {"time_ms":750.0,"beat_position":2.5,"notes":"0100","placement_type":4,"note_type":3,"confidence":0.82,"instrument":"snare"},\n'
     ' {"time_ms":875.0,"beat_position":2.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1000.0,"beat_position":3.0,"notes":"1001","placement_type":4,"note_type":2,"confidence":0.91,"instrument":"kick"},\n'
+    ' {"time_ms":1000.0,"beat_position":3.0,"notes":"3001","placement_type":4,"note_type":2,"confidence":0.91,"instrument":"kick"}, <-- HOLD TAIL (Left) + Tap (Right)\n'
     ' {"time_ms":1125.0,"beat_position":3.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
     ' {"time_ms":1250.0,"beat_position":3.5,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
     ' {"time_ms":1375.0,"beat_position":3.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
@@ -82,7 +95,12 @@ QWEN_OUTPUT_ADDENDUM = (
     "125.0,1.25,0000,0,3,1.0,unknown\n"
     "250.0,1.5,0010,4,3,0.88,snare\n"
     "375.0,1.75,0000,0,3,1.0,unknown\n"
-    '500.0,2.0,",",-1,-1,1.0,separator\n\n'
+    "500.0,2.0,2000,4,2,1.0,bass\n"
+    "625.0,2.25,0000,0,3,1.0,unknown\n"
+    "750.0,2.5,0100,4,3,0.82,snare\n"
+    "875.0,2.75,0000,0,3,1.0,unknown\n"
+    "1000.0,3.0,3001,4,2,0.91,kick\n"
+    '1125.0,3.25,",",-1,-1,1.0,separator\n\n'
     "Start immediately with the first CSV row, nothing else before it:\n"
 )
 

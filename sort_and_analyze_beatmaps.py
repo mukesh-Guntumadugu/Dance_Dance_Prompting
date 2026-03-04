@@ -189,15 +189,19 @@ def parse_ssc_file(ssc_path: Path, difficulty_filter: str | None = None
 
 
 def load_all_original_beatmaps(base_dir: Path,
-                                difficulty_filter: str | None = None
+                                difficulty_filter: str | None = None,
+                                song_filter: str | None = None
                                 ) -> dict[str, list[dict]]:
     """
     Walk all song folders, parse their .ssc files, and return
     {"SongName (Difficulty)": [rows...]}.
+    If song_filter is given, only process folders exactly matching that name.
     """
     all_charts = {}  # label → rows
     for ssc in sorted(base_dir.rglob("*.ssc")):
         song = ssc.parent.name
+        if song_filter and song.lower() != song_filter.lower():
+            continue
         charts = parse_ssc_file(ssc, difficulty_filter)
         for diff, rows in charts.items():
             label = f"{song} ({diff})"
@@ -212,14 +216,28 @@ def load_all_original_beatmaps(base_dir: Path,
 
 # ── Load rows from a sorted CSV ───────────────────────────────────────────────
 
+_VALID_NOTE_CHARS = set("0123M")   # 0=empty 1=tap 2=hold-start 3=hold-end M=mine
+
 def load_rows(csv_path: Path) -> list[dict]:
-    """Read a sorted CSV and return rows as list of dicts, skipping separators."""
+    """Read a sorted CSV and return rows as list of dicts, skipping separators.
+
+    Strict validation: the 'notes' field must be exactly 4 chars of 0/1/2/3/M.
+    Any other string (e.g. model prose or JSON text mistakenly written to the CSV)
+    is silently skipped to prevent false pattern detections.
+    """
     rows = []
+    skipped = 0
     try:
         with open(csv_path, newline="", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 notes = row.get("notes", "").strip()
+                # Skip separators and empty cells
                 if not notes or notes == ",":
+                    continue
+                # ── Strict validation ──────────────────────────────────────
+                # Must be exactly 4 chars, each a valid DDR note symbol
+                if len(notes) != 4 or not all(c in _VALID_NOTE_CHARS for c in notes):
+                    skipped += 1
                     continue
                 try:
                     row["_time_ms"] = float(row["time_ms"])
@@ -230,6 +248,9 @@ def load_rows(csv_path: Path) -> list[dict]:
                     pass
     except Exception as e:
         print(f"  ⚠️  Error reading {csv_path.name}: {e}")
+    if skipped:
+        print(f"  ⚠️  {csv_path.name}: skipped {skipped} malformed note rows "
+              f"(non-DDR content in notes field)")
     return rows
 
 
@@ -241,13 +262,6 @@ def is_jump(active_list: list[list[int]]) -> bool:
     """At least one row in the window has 2+ simultaneous arrows."""
     return any(len(a) >= 2 for a in active_list)
 
-def is_hand(active_list: list[list[int]]) -> bool:
-    """At least one row has 3 simultaneous arrows."""
-    return any(len(a) >= 3 for a in active_list)
-
-def is_quad(active_list: list[list[int]]) -> bool:
-    """At least one row has all 4 arrows."""
-    return any(len(a) == 4 for a in active_list)
 
 def is_jack(active_list: list[list[int]]) -> bool:
     """Same single arrow appears in two consecutive rows (rapid repeat)."""
@@ -295,19 +309,7 @@ def active_to_side(arrow: int) -> str:
     """L/D = left foot, U/R = right foot (simplified DDR convention)."""
     return "L" if arrow in (L, D) else "R"
 
-def is_crossover(active_list: list[list[int]]) -> bool:
-    """Foot crosses over: Left foot hits R/U while right foot is on L/D,
-    simplified: L→R→L or R→L→R alternation with crossing."""
-    singles = [a[0] for a in active_list if len(a) == 1]
-    if len(singles) < 3:
-        return False
-    sides = [active_to_side(a) for a in singles]
-    # Look for L hitting right-side arrows or vice versa
-    # Crossover = consecutive notes on the same SIDE (foot crosses)
-    return any(sides[i] == sides[i+1] for i in range(len(sides)-1)) and \
-           any(singles[i] in (R, U) and sides[i] == "L" or
-               singles[i] in (L, D) and sides[i] == "R"
-               for i in range(len(singles)))
+
 
 def is_footswitch(active_list: list[list[int]]) -> bool:
     """Alternating L-side and R-side singles in strict alternation."""
@@ -347,14 +349,11 @@ def is_spin(active_list: list[list[int]]) -> bool:
 # Ordered classifiers — a window is assigned the FIRST matching label
 # (more specific patterns checked first)
 PATTERN_CLASSIFIERS = [
-    ("Quad",        is_quad),
-    ("Hand",        is_hand),
     ("Bracket",     is_bracket),
     ("Spin",        is_spin),
     ("Candle",      is_candle),
     ("Gallop",      is_gallop),
     ("Jack",        is_jack),
-    ("Crossover",   is_crossover),
     ("Double Step", is_double_step),
     ("Jump",        is_jump),
     ("Footswitch",  is_footswitch),
@@ -371,32 +370,30 @@ def classify_window(active_list: list[list[int]]) -> list[str]:
 
 # ── Sliding window ─────────────────────────────────────────────────────────---
 
-def sliding_window_patterns(rows: list[dict], window_ms: float) -> Counter:
+def sliding_window_patterns(rows: list[dict], window_rows_n: int) -> Counter:
     """
-    Slide a window of `window_ms` milliseconds across the song.
-    For each window position classify the notes inside it.
+    Slide a window of `window_rows_n` consecutive note-rows across the song.
+    Musical meaning:
+        4  rows = 1 beat (quarter-note window)   — sparse / slow patterns
+        8  rows = 2 beats (half-note window)      — short bursts
+        12 rows = 3 beats (triplet measure span)  — triplet patterns
+        16 rows = 4 beats = 1 full measure        — full measure patterns
+    For each start position, collect the next N active rows and classify them.
     Returns Counter of {pattern_name: count}.
     """
     if not rows:
         return Counter()
 
     pattern_counts = Counter()
-    start_idx = 0
+    n = len(rows)
 
-    for i, row in enumerate(rows):
-        t_start = row["_time_ms"]
-        t_end   = t_start + window_ms
-
-        # Collect all rows in [t_start, t_end)
-        window_rows = []
-        j = i
-        while j < len(rows) and rows[j]["_time_ms"] < t_end:
-            window_rows.append(rows[j]["_active"])
-            j += 1
+    for i in range(0, n, window_rows_n):          # jump by full window size (non-overlapping)
+        # Collect window_rows_n rows starting at position i
+        window = [rows[j]["_active"] for j in range(i, min(i + window_rows_n, n))]
 
         # Only classify windows that have at least one active note
-        if any(len(a) > 0 for a in window_rows):
-            labels = classify_window(window_rows)
+        if any(len(a) > 0 for a in window):
+            labels = classify_window(window)
             pattern_counts.update(labels)
 
     return pattern_counts
@@ -404,11 +401,30 @@ def sliding_window_patterns(rows: list[dict], window_ms: float) -> Counter:
 
 # ── Main Stage 2 ──────────────────────────────────────────────────────────────
 
+# Music-notation labels for each beat-grid window size
+NOTE_LABELS = {
+    1:  "Whole Note Grid  (o)",
+    2:  "Half Note Grid   (|o)",
+    4:  "Quarter Note Grid ♩",
+    8:  "Eighth Note Grid  ♪",
+    12: "Triplet Grid      ♩♩♩",
+    16: "Sixteenth Note Grid ♬",
+}
+
+def note_label(w: int) -> str:
+    """Return the music-notation label for a window size."""
+    return NOTE_LABELS.get(w, f"{w}-row grid")
+
 def stage_analyze(source, report_dir: Path,
-                  window_sizes_ms: list[float] = (1000.0, 2000.0),
+                  window_sizes_rows: list[int] = (4, 8, 12, 16),
                   source_label: str = "AI-generated") -> None:
     """
     source: either a list[Path] (CSV files) or dict[str, list[dict]] (pre-parsed rows).
+    window_sizes_rows: list of beat-grid row counts, e.g. [4, 8, 12, 16]
+        4  rows = 1 beat (quarter-note window)
+        8  rows = 2 beats
+        12 rows = 3 beats (triplet)
+        16 rows = 1 full measure
     """
     # Normalise to dict {name: rows} and track source filenames
     if isinstance(source, dict):
@@ -420,8 +436,8 @@ def stage_analyze(source, report_dir: Path,
 
     n = len(named_rows)
     print(f"\n{'='*62}")
-    print(f"  STAGE 2 — TIME-WINDOW PATTERN DETECTION  ({source_label})")
-    print(f"  Windows: {[f'{int(w)}ms' for w in window_sizes_ms]}  |  {n} charts")
+    print(f"  STAGE 2 — BEAT-GRID PATTERN DETECTION  ({source_label})")
+    print(f"  Windows: {[note_label(w) for w in window_sizes_rows]}  |  {n} charts")
     print(f"{'='*62}\n")
 
     report_dir.mkdir(parents=True, exist_ok=True)
@@ -431,8 +447,8 @@ def stage_analyze(source, report_dir: Path,
 
     for name, rows in named_rows.items():
         r = {}
-        for w in window_sizes_ms:
-            label = f"{int(w)}ms"
+        for w in window_sizes_rows:
+            label = note_label(w)
             r[label] = dict(sliding_window_patterns(rows, w).most_common())
         results[name] = r
         src = source_files.get(name, name)
@@ -444,8 +460,8 @@ def stage_analyze(source, report_dir: Path,
 
     # ── Cross-song: which patterns appear in how many songs ───────────────────
     cross = {}
-    for w in window_sizes_ms:
-        label = f"{int(w)}ms"
+    for w in window_sizes_rows:
+        label = note_label(w)
         pat_songs = defaultdict(set)
         for song, r in results.items():
             for pat in r.get(label, {}):
@@ -457,14 +473,18 @@ def stage_analyze(source, report_dir: Path,
 
     # ── Build JSON report ─────────────────────────────────────────────────────
     ts  = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    prefix = "original" if source_label == "original" else "timewindow"
+    prefix = "original" if "original" in source_label else "beatgrid"
     json_path = report_dir / f"{prefix}_patterns_{ts}.json"
     payload = {
-        "generated":       ts,
-        "source":          source_label,
-        "window_sizes_ms": list(window_sizes_ms),
-        "charts_analyzed": n,
-        "source_files":    source_files,
+        "generated":          ts,
+        "source":             source_label,
+        "window_sizes_rows":  list(window_sizes_rows),
+        "window_meaning":     {
+            str(w): note_label(w)
+            for w in window_sizes_rows
+        },
+        "charts_analyzed":    n,
+        "source_files":       source_files,
         "per_chart": {
             name: {
                 win: sorted(counts.items(), key=lambda x: -x[1])
@@ -481,13 +501,120 @@ def stage_analyze(source, report_dir: Path,
     txt_path = report_dir / f"{prefix}_patterns_{ts}.txt"
     lines = []
     W = 68
-    lines += [
+
+    # ── Pattern legend (visual arrow examples) ────────────────────────────────
+    txt_path = report_dir / f"{prefix}_patterns_{ts}.txt"
+    LEGEND = [
         "=" * W,
-        f"  DDR-STYLE TIME-WINDOW PATTERN ANALYSIS  [{source_label.upper()}]",
+        f"  DDR-STYLE BEAT-GRID PATTERN ANALYSIS  [{source_label.upper()}]",
         f"  Generated : {ts}",
         f"  Charts    : {n}",
-        f"  Windows   : {', '.join(f'{int(w)}ms' for w in window_sizes_ms)}",
+        f"  Windows   : {', '.join(note_label(w) for w in window_sizes_rows)}",
+        f"  ♩=Quarter Note  ♪=Eighth Note  ♬=Sixteenth Note  ♩♩♩=Triplet",
         "=" * W,
+        "",
+        "── PATTERN LEGEND  (columns = L  D  U  R arrow positions) " + "─" * (W - 57),
+        "  0 = no arrow   1 = tap   2 = hold-start   3 = hold-end   M = mine",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ QUAD  — all 4 arrows at once (use both feet + both hands)   │",
+        "  │   Row:  1  1  1  1   (L D U R all active)                  │",
+        "  │              ← ↓ ↑ →                                       │",
+        "  │         1  1  1  1                                          │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ HAND  — 3 arrows simultaneously (3-limb hit)                │",
+        "  │   Examples:  1 1 1 0  /  0 1 1 1  /  1 0 1 1  /  1 1 0 1  │",
+        "  │              ← ↓ ↑ _     _ ↓ ↑ →     ← _ ↑ →     ← ↓ _ →  │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ BRACKET — one foot hits two adjacent panels simultaneously  │",
+        "  │   L+D (left foot):    1 1 0 0   (← ↓ _ _)                 │",
+        "  │   U+R (right foot):   0 0 1 1   (_ _ ↑ →)                 │",
+        "  │   (differs from a normal jump like L+R = 1 0 0 1)          │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ SPIN  — circular rotation across 3+ consecutive rows        │",
+        "  │   Clockwise:    L→D→R→U→L  (indices 0→1→3→2→0)            │",
+        "  │   Row 1:  1 0 0 0  (←)                                     │",
+        "  │   Row 2:  0 1 0 0  (↓)                                     │",
+        "  │   Row 3:  0 0 0 1  (→)                                     │",
+        "  │   Row 4:  0 0 1 0  (↑)  ← completes the spin               │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ JACK  — same single arrow in two consecutive rows (rapid    │",
+        "  │         repeat, same foot hits twice fast)                  │",
+        "  │   Row 1:  1 0 0 0  (←)                                     │",
+        "  │   Row 2:  1 0 0 0  (←)  ← same panel again = Jack          │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ DOUBLE STEP — same arrow used again (not consecutive)       │",
+        "  │   Row 1:  1 0 0 0  (←)                                     │",
+        "  │   Row 2:  0 0 0 1  (→)                                     │",
+        "  │   Row 3:  1 0 0 0  (←)  ← repeated, non-consecutive        │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ STREAM — alternating singles using all 4 columns, no jacks  │",
+        "  │   Row 1:  1 0 0 0  (←)                                     │",
+        "  │   Row 2:  0 1 0 0  (↓)                                     │",
+        "  │   Row 3:  0 0 1 0  (↑)                                     │",
+        "  │   Row 4:  0 0 0 1  (→)  ← 4 distinct arrows used           │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ GALLOP — quick burst: single–jump–single or jump–single–jump│",
+        "  │   Row 1:  1 0 0 0  (single ←)                              │",
+        "  │   Row 2:  0 1 1 0  (jump  ↓↑)                              │",
+        "  │   Row 3:  0 0 0 1  (single →)                              │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ CANDLE — single→jump→single or jump→single→jump triplet     │",
+        "  │   Row 1:  1 0 0 0  (single)                                │",
+        "  │   Row 2:  1 0 0 1  (jump ←→)                               │",
+        "  │   Row 3:  0 1 0 0  (single)                                │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ JUMP  — 2 arrows simultaneously (both feet)                 │",
+        "  │   Examples:  1 0 0 1  /  0 1 1 0  /  1 0 1 0  /0 1 0 1      |",
+        "  │              ← _ _ →     _ ↓ ↑ _     ← _ ↑ _               │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ CROSSOVER — foot crosses to opposite side                   │",
+        "  │   Left foot hits U or R, right foot hits L or D             │",
+        "  │   Row 1:  1 0 0 0  (← left foot)                           │",
+        "  │   Row 2:  0 0 0 1  (→ left foot crosses over to right side) │",
+        "  │   Row 3:  1 0 0 0  (← back to left side)                   │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ FOOTSWITCH — strict L-side / R-side alternation             │",
+        "  │   L-side panels: L (0), D (1)                               │",
+        "  │   R-side panels: U (2), R (3)                               │",
+        "  │   Row 1: 1 0 0 0 (← L-side)  Row 2: 0 0 1 0 (↑ R-side)    │",
+        "  │   Row 3: 0 1 0 0 (↓ L-side)  Row 4: 0 0 0 1 (→ R-side)    │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  ┌─────────────────────────────────────────────────────────────┐",
+        "  │ SINGLE NOTES — isolated tap with no complex pattern context  │",
+        "  │   Any row with exactly 1 active arrow, no pattern detected  │",
+        "  └─────────────────────────────────────────────────────────────┘",
+        "",
+        "  Note: Multiple patterns can fire in the same window at once.",
+        "  Counts below reflect every window where the pattern was found.",
+        "─" * W,
+    ]
+    lines += LEGEND
+
+    lines += [
         "",
         "── SOURCE FILES USED " + "─" * (W - 20),
     ]
@@ -497,8 +624,9 @@ def stage_analyze(source, report_dir: Path,
             lines.append(f"    → {filepath}")
     lines.append("─" * W)
 
-    for label in [f"{int(w)}ms" for w in window_sizes_ms]:
-        lines += ["", f"{'─'*W}", f"  WINDOW SIZE: {label}", f"{'─'*W}"]
+    for w in window_sizes_rows:
+        label = note_label(w)
+        lines += ["", f"{'─'*W}", f"  WINDOW: {label}", f"{'─'*W}"]
 
         lines += ["", "  Cross-chart pattern prevalence (all patterns):", ""]
         cdata = cross[label]
@@ -514,7 +642,7 @@ def stage_analyze(source, report_dir: Path,
         lines += ["", "  Per-chart patterns (all pattern types):", ""]
         for name, r in results.items():
             src = source_files.get(name, name)
-            counts = r.get(label, {})
+            counts = r.get(label, {})  # label is already note_label(w)
             lines.append(f"    [{name}]")
             lines.append(f"      file: {src}")
             # All patterns in fixed order, with 0 for absent ones
@@ -553,26 +681,37 @@ def main():
                         help="Analyse original .ssc beatmap files instead of AI CSVs")
     parser.add_argument("--difficulty", default=None,
                         help="(--original only) Filter to one difficulty, e.g. Hard")
+    parser.add_argument("--song",       default=None,
+                        help="(--original only) Filter to one specific song folder name, e.g. 'Bad Ketchup'")
     # ── Shared ────────────────────────────────────────────────────────────
-    parser.add_argument("--windows",    nargs="+", type=float, default=[1000.0, 2000.0],
-                        help="Window sizes in ms (default: 1000 2000)")
+    parser.add_argument("--windows",    nargs="+", type=int, default=[4, 8, 16],
+                        help="Window sizes in beat-grid rows (default: 4 8 16). "
+                             "4=1 beat, 8=2 beats, 12=triplet span, 16=1 full measure")
     args = parser.parse_args()
 
     if args.original:
         # ── Original .ssc mode ────────────────────────────────────────────
         diff_label = args.difficulty or "all difficulties"
+        song_label = f"\"{args.song}\"" if args.song else "all songs"
         print(f"\n{'='*62}")
-        print(f"  ORIGINAL BEATMAP MODE  (difficulty: {diff_label})")
+        print(f"  ORIGINAL BEATMAP MODE  (difficulty: {diff_label}, song: {song_label})")
         print(f"{'='*62}\n")
-        named_rows = load_all_original_beatmaps(BASE_DIR, args.difficulty)
+        named_rows = load_all_original_beatmaps(BASE_DIR, args.difficulty, args.song)
         if not named_rows:
             print("❌  No SSC charts found.")
             return
-        label = f"original-{args.difficulty}" if args.difficulty else "original-all"
-        stage_analyze(named_rows, REPORT_DIR, args.windows, source_label=label)
+        
+        # Build clean source label for filenames
+        label = "original"
+        if args.song:
+            # strip spaces from filename
+            label += f"-{args.song.replace(' ', '')}"
+        label += f"-{args.difficulty}" if args.difficulty else "-all"
+
+        stage_analyze(named_rows, REPORT_DIR, args.windows, source_label=label)  # type: ignore[arg-type]
 
     else:
-        # ── AI-generated CSV mode ─────────────────────────────────────────
+        # 
         sorted_paths = []
         if not args.no_sort:
             sorted_paths = stage_sort(BASE_DIR, args.task)
@@ -585,7 +724,7 @@ def main():
             return
 
         if not args.no_analyze:
-            stage_analyze(sorted_paths, REPORT_DIR, args.windows,
+            stage_analyze(sorted_paths, REPORT_DIR, args.windows,  # type: ignore[arg-type]
                           source_label=f"AI-{args.task}")
 
 

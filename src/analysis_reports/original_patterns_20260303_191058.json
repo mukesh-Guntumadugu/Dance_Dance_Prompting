@@ -1,0 +1,930 @@
+{
+  "generated": "20260303_191058",
+  "source": "original-BadKetchup-all",
+  "window_sizes_rows": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "window_meaning": {
+    "2": "Half Note Grid   (|o)",
+    "4": "Quarter Note Grid \u2669",
+    "8": "Eighth Note Grid  \u266a",
+    "16": "Sixteenth Note Grid \u266c"
+  },
+  "charts_analyzed": 5,
+  "source_files": {},
+  "per_chart": {
+    "Bad Ketchup (Challenge)": {
+      "Half Note Grid   (|o)": [
+        [
+          "Single Notes",
+          194
+        ],
+        [
+          "Jack",
+          43
+        ],
+        [
+          "Jump",
+          8
+        ],
+        [
+          "Bracket",
+          2
+        ]
+      ],
+      "Quarter Note Grid \u2669": [
+        [
+          "Double Step",
+          56
+        ],
+        [
+          "Jack",
+          44
+        ],
+        [
+          "Footswitch",
+          22
+        ],
+        [
+          "Spin",
+          22
+        ],
+        [
+          "Stream",
+          20
+        ],
+        [
+          "Jump",
+          7
+        ],
+        [
+          "Bracket",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ]
+      ],
+      "Eighth Note Grid  \u266a": [
+        [
+          "Jack",
+          39
+        ],
+        [
+          "Stream",
+          34
+        ],
+        [
+          "Spin",
+          30
+        ],
+        [
+          "Double Step",
+          23
+        ],
+        [
+          "Jump",
+          6
+        ],
+        [
+          "Candle",
+          3
+        ],
+        [
+          "Gallop",
+          3
+        ],
+        [
+          "Footswitch",
+          1
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ],
+      "Sixteenth Note Grid \u266c": [
+        [
+          "Jack",
+          29
+        ],
+        [
+          "Stream",
+          25
+        ],
+        [
+          "Spin",
+          23
+        ],
+        [
+          "Jump",
+          4
+        ],
+        [
+          "Candle",
+          3
+        ],
+        [
+          "Gallop",
+          3
+        ],
+        [
+          "Double Step",
+          2
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ]
+    },
+    "Bad Ketchup (Hard)": {
+      "Half Note Grid   (|o)": [
+        [
+          "Single Notes",
+          142
+        ],
+        [
+          "Jack",
+          43
+        ],
+        [
+          "Jump",
+          4
+        ],
+        [
+          "Bracket",
+          2
+        ]
+      ],
+      "Quarter Note Grid \u2669": [
+        [
+          "Double Step",
+          40
+        ],
+        [
+          "Jack",
+          38
+        ],
+        [
+          "Footswitch",
+          18
+        ],
+        [
+          "Spin",
+          15
+        ],
+        [
+          "Stream",
+          13
+        ],
+        [
+          "Jump",
+          4
+        ],
+        [
+          "Bracket",
+          2
+        ],
+        [
+          "Single Notes",
+          1
+        ]
+      ],
+      "Eighth Note Grid  \u266a": [
+        [
+          "Jack",
+          31
+        ],
+        [
+          "Stream",
+          23
+        ],
+        [
+          "Double Step",
+          16
+        ],
+        [
+          "Spin",
+          15
+        ],
+        [
+          "Jump",
+          3
+        ],
+        [
+          "Bracket",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ],
+        [
+          "Single Notes",
+          1
+        ]
+      ],
+      "Sixteenth Note Grid \u266c": [
+        [
+          "Jack",
+          22
+        ],
+        [
+          "Stream",
+          20
+        ],
+        [
+          "Spin",
+          14
+        ],
+        [
+          "Jump",
+          3
+        ],
+        [
+          "Double Step",
+          2
+        ],
+        [
+          "Bracket",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ]
+      ]
+    },
+    "Bad Ketchup (Beginner)": {
+      "Half Note Grid   (|o)": [
+        [
+          "Single Notes",
+          39
+        ],
+        [
+          "Jack",
+          9
+        ],
+        [
+          "Jump",
+          2
+        ]
+      ],
+      "Quarter Note Grid \u2669": [
+        [
+          "Stream",
+          9
+        ],
+        [
+          "Jack",
+          7
+        ],
+        [
+          "Double Step",
+          7
+        ],
+        [
+          "Footswitch",
+          6
+        ],
+        [
+          "Jump",
+          2
+        ]
+      ],
+      "Eighth Note Grid  \u266a": [
+        [
+          "Stream",
+          9
+        ],
+        [
+          "Jack",
+          7
+        ],
+        [
+          "Double Step",
+          5
+        ],
+        [
+          "Spin",
+          2
+        ],
+        [
+          "Jump",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ],
+        [
+          "Footswitch",
+          1
+        ]
+      ],
+      "Sixteenth Note Grid \u266c": [
+        [
+          "Stream",
+          6
+        ],
+        [
+          "Jack",
+          5
+        ],
+        [
+          "Spin",
+          2
+        ],
+        [
+          "Jump",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ],
+        [
+          "Double Step",
+          1
+        ]
+      ]
+    },
+    "Bad Ketchup (Easy)": {
+      "Half Note Grid   (|o)": [
+        [
+          "Single Notes",
+          53
+        ],
+        [
+          "Jack",
+          16
+        ],
+        [
+          "Jump",
+          4
+        ]
+      ],
+      "Quarter Note Grid \u2669": [
+        [
+          "Jack",
+          20
+        ],
+        [
+          "Double Step",
+          10
+        ],
+        [
+          "Footswitch",
+          6
+        ],
+        [
+          "Stream",
+          4
+        ],
+        [
+          "Spin",
+          3
+        ],
+        [
+          "Jump",
+          3
+        ],
+        [
+          "Candle",
+          2
+        ],
+        [
+          "Gallop",
+          2
+        ],
+        [
+          "Single Notes",
+          1
+        ]
+      ],
+      "Eighth Note Grid  \u266a": [
+        [
+          "Jack",
+          14
+        ],
+        [
+          "Stream",
+          12
+        ],
+        [
+          "Double Step",
+          4
+        ],
+        [
+          "Spin",
+          3
+        ],
+        [
+          "Jump",
+          2
+        ],
+        [
+          "Candle",
+          1
+        ],
+        [
+          "Gallop",
+          1
+        ],
+        [
+          "Single Notes",
+          1
+        ]
+      ],
+      "Sixteenth Note Grid \u266c": [
+        [
+          "Jack",
+          9
+        ],
+        [
+          "Stream",
+          7
+        ],
+        [
+          "Spin",
+          3
+        ],
+        [
+          "Candle",
+          2
+        ],
+        [
+          "Gallop",
+          2
+        ],
+        [
+          "Jump",
+          2
+        ],
+        [
+          "Single Notes",
+          1
+        ]
+      ]
+    },
+    "Bad Ketchup (Medium)": {
+      "Half Note Grid   (|o)": [
+        [
+          "Single Notes",
+          72
+        ],
+        [
+          "Jack",
+          27
+        ],
+        [
+          "Jump",
+          10
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ],
+      "Quarter Note Grid \u2669": [
+        [
+          "Jack",
+          26
+        ],
+        [
+          "Double Step",
+          19
+        ],
+        [
+          "Jump",
+          9
+        ],
+        [
+          "Footswitch",
+          6
+        ],
+        [
+          "Stream",
+          5
+        ],
+        [
+          "Spin",
+          5
+        ],
+        [
+          "Candle",
+          3
+        ],
+        [
+          "Gallop",
+          3
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ],
+      "Eighth Note Grid  \u266a": [
+        [
+          "Jack",
+          21
+        ],
+        [
+          "Stream",
+          15
+        ],
+        [
+          "Jump",
+          8
+        ],
+        [
+          "Double Step",
+          7
+        ],
+        [
+          "Spin",
+          5
+        ],
+        [
+          "Candle",
+          5
+        ],
+        [
+          "Gallop",
+          5
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ],
+      "Sixteenth Note Grid \u266c": [
+        [
+          "Jack",
+          14
+        ],
+        [
+          "Stream",
+          11
+        ],
+        [
+          "Spin",
+          6
+        ],
+        [
+          "Jump",
+          6
+        ],
+        [
+          "Candle",
+          5
+        ],
+        [
+          "Gallop",
+          5
+        ],
+        [
+          "Bracket",
+          1
+        ]
+      ]
+    }
+  },
+  "cross_chart_prevalence": {
+    "Half Note Grid   (|o)": {
+      "Single Notes": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jack": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jump": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Bracket": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      }
+    },
+    "Quarter Note Grid \u2669": {
+      "Double Step": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jack": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Footswitch": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Stream": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jump": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Spin": {
+        "songs": 4,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Bracket": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Candle": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Gallop": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Single Notes": {
+        "songs": 2,
+        "song_list": [
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)"
+        ]
+      }
+    },
+    "Eighth Note Grid  \u266a": {
+      "Jack": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Stream": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Spin": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Double Step": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jump": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Candle": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Gallop": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Bracket": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Footswitch": {
+        "songs": 2,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)"
+        ]
+      },
+      "Single Notes": {
+        "songs": 2,
+        "song_list": [
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)"
+        ]
+      }
+    },
+    "Sixteenth Note Grid \u266c": {
+      "Jack": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Stream": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Spin": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Jump": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Candle": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Gallop": {
+        "songs": 5,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Easy)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Double Step": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Beginner)",
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Hard)"
+        ]
+      },
+      "Bracket": {
+        "songs": 3,
+        "song_list": [
+          "Bad Ketchup (Challenge)",
+          "Bad Ketchup (Hard)",
+          "Bad Ketchup (Medium)"
+        ]
+      },
+      "Single Notes": {
+        "songs": 1,
+        "song_list": [
+          "Bad Ketchup (Easy)"
+        ]
+      }
+    }
+  }
+}

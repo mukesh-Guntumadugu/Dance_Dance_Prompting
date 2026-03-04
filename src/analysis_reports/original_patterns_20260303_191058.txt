@@ -1,0 +1,484 @@
+====================================================================
+  DDR-STYLE BEAT-GRID PATTERN ANALYSIS  [ORIGINAL-BADKETCHUP-ALL]
+  Generated : 20260303_191058
+  Charts    : 5
+  Windows   : Half Note Grid   (|o), Quarter Note Grid ♩, Eighth Note Grid  ♪, Sixteenth Note Grid ♬
+  ♩=Quarter Note  ♪=Eighth Note  ♬=Sixteenth Note  ♩♩♩=Triplet
+====================================================================
+
+── PATTERN LEGEND  (columns = L  D  U  R arrow positions) ───────────
+  0 = no arrow   1 = tap   2 = hold-start   3 = hold-end   M = mine
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ QUAD  — all 4 arrows at once (use both feet + both hands)   │
+  │   Row:  1  1  1  1   (L D U R all active)                  │
+  │              ← ↓ ↑ →                                       │
+  │         1  1  1  1                                          │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ HAND  — 3 arrows simultaneously (3-limb hit)                │
+  │   Examples:  1 1 1 0  /  0 1 1 1  /  1 0 1 1  /  1 1 0 1  │
+  │              ← ↓ ↑ _     _ ↓ ↑ →     ← _ ↑ →     ← ↓ _ →  │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ BRACKET — one foot hits two adjacent panels simultaneously  │
+  │   L+D (left foot):    1 1 0 0   (← ↓ _ _)                 │
+  │   U+R (right foot):   0 0 1 1   (_ _ ↑ →)                 │
+  │   (differs from a normal jump like L+R = 1 0 0 1)          │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ SPIN  — circular rotation across 3+ consecutive rows        │
+  │   Clockwise:    L→D→R→U→L  (indices 0→1→3→2→0)            │
+  │   Row 1:  1 0 0 0  (←)                                     │
+  │   Row 2:  0 1 0 0  (↓)                                     │
+  │   Row 3:  0 0 0 1  (→)                                     │
+  │   Row 4:  0 0 1 0  (↑)  ← completes the spin               │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ JACK  — same single arrow in two consecutive rows (rapid    │
+  │         repeat, same foot hits twice fast)                  │
+  │   Row 1:  1 0 0 0  (←)                                     │
+  │   Row 2:  1 0 0 0  (←)  ← same panel again = Jack          │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ DOUBLE STEP — same arrow used again (not consecutive)       │
+  │   Row 1:  1 0 0 0  (←)                                     │
+  │   Row 2:  0 0 0 1  (→)                                     │
+  │   Row 3:  1 0 0 0  (←)  ← repeated, non-consecutive        │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ STREAM — alternating singles using all 4 columns, no jacks  │
+  │   Row 1:  1 0 0 0  (←)                                     │
+  │   Row 2:  0 1 0 0  (↓)                                     │
+  │   Row 3:  0 0 1 0  (↑)                                     │
+  │   Row 4:  0 0 0 1  (→)  ← 4 distinct arrows used           │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ GALLOP — quick burst: single–jump–single or jump–single–jump│
+  │   Row 1:  1 0 0 0  (single ←)                              │
+  │   Row 2:  0 1 1 0  (jump  ↓↑)                              │
+  │   Row 3:  0 0 0 1  (single →)                              │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ CANDLE — single→jump→single or jump→single→jump triplet     │
+  │   Row 1:  1 0 0 0  (single)                                │
+  │   Row 2:  1 0 0 1  (jump ←→)                               │
+  │   Row 3:  0 1 0 0  (single)                                │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ JUMP  — 2 arrows simultaneously (both feet)                 │
+  │   Examples:  1 0 0 1  /  0 1 1 0  /  1 0 1 0  /0 1 0 1      |
+  │              ← _ _ →     _ ↓ ↑ _     ← _ ↑ _               │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ CROSSOVER — foot crosses to opposite side                   │
+  │   Left foot hits U or R, right foot hits L or D             │
+  │   Row 1:  1 0 0 0  (← left foot)                           │
+  │   Row 2:  0 0 0 1  (→ left foot crosses over to right side) │
+  │   Row 3:  1 0 0 0  (← back to left side)                   │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ FOOTSWITCH — strict L-side / R-side alternation             │
+  │   L-side panels: L (0), D (1)                               │
+  │   R-side panels: U (2), R (3)                               │
+  │   Row 1: 1 0 0 0 (← L-side)  Row 2: 0 0 1 0 (↑ R-side)    │
+  │   Row 3: 0 1 0 0 (↓ L-side)  Row 4: 0 0 0 1 (→ R-side)    │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │ SINGLE NOTES — isolated tap with no complex pattern context  │
+  │   Any row with exactly 1 active arrow, no pattern detected  │
+  └─────────────────────────────────────────────────────────────┘
+
+  Note: Multiple patterns can fire in the same window at once.
+  Counts below reflect every window where the pattern was found.
+────────────────────────────────────────────────────────────────────
+
+── SOURCE FILES USED ────────────────────────────────────────────────
+  Bad Ketchup (Challenge)
+  Bad Ketchup (Hard)
+  Bad Ketchup (Beginner)
+  Bad Ketchup (Easy)
+  Bad Ketchup (Medium)
+────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────
+  WINDOW: Half Note Grid   (|o)
+────────────────────────────────────────────────────────────────────
+
+  Cross-chart pattern prevalence (all patterns):
+
+    Bracket          ███  (3/5 charts)
+    Spin             ∅  (0/5 charts)  (never detected)
+    Candle           ∅  (0/5 charts)  (never detected)
+    Gallop           ∅  (0/5 charts)  (never detected)
+    Jack             █████  (5/5 charts)
+    Crossover        ∅  (0/5 charts)  (never detected)
+    Double Step      ∅  (0/5 charts)  (never detected)
+    Jump             █████  (5/5 charts)
+    Footswitch       ∅  (0/5 charts)  (never detected)
+    Stream           ∅  (0/5 charts)  (never detected)
+    Single Notes     █████  (5/5 charts)
+    Empty            ∅  (0/5 charts)  (never detected)
+
+  Per-chart patterns (all pattern types):
+
+    [Bad Ketchup (Challenge)]
+      file: Bad Ketchup (Challenge)
+      Bracket          ×2
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×43
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×8
+      Footswitch       ×0 (absent)
+      Stream           ×0 (absent)
+      Single Notes     ×194
+      Empty            ×0 (absent)
+    [Bad Ketchup (Hard)]
+      file: Bad Ketchup (Hard)
+      Bracket          ×2
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×43
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×4
+      Footswitch       ×0 (absent)
+      Stream           ×0 (absent)
+      Single Notes     ×142
+      Empty            ×0 (absent)
+    [Bad Ketchup (Beginner)]
+      file: Bad Ketchup (Beginner)
+      Bracket          ×0 (absent)
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×9
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×2
+      Footswitch       ×0 (absent)
+      Stream           ×0 (absent)
+      Single Notes     ×39
+      Empty            ×0 (absent)
+    [Bad Ketchup (Easy)]
+      file: Bad Ketchup (Easy)
+      Bracket          ×0 (absent)
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×16
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×4
+      Footswitch       ×0 (absent)
+      Stream           ×0 (absent)
+      Single Notes     ×53
+      Empty            ×0 (absent)
+    [Bad Ketchup (Medium)]
+      file: Bad Ketchup (Medium)
+      Bracket          ×1
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×27
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×10
+      Footswitch       ×0 (absent)
+      Stream           ×0 (absent)
+      Single Notes     ×72
+      Empty            ×0 (absent)
+
+────────────────────────────────────────────────────────────────────
+  WINDOW: Quarter Note Grid ♩
+────────────────────────────────────────────────────────────────────
+
+  Cross-chart pattern prevalence (all patterns):
+
+    Bracket          ███  (3/5 charts)
+    Spin             ████  (4/5 charts)
+    Candle           ███  (3/5 charts)
+    Gallop           ███  (3/5 charts)
+    Jack             █████  (5/5 charts)
+    Crossover        ∅  (0/5 charts)  (never detected)
+    Double Step      █████  (5/5 charts)
+    Jump             █████  (5/5 charts)
+    Footswitch       █████  (5/5 charts)
+    Stream           █████  (5/5 charts)
+    Single Notes     ██  (2/5 charts)
+    Empty            ∅  (0/5 charts)  (never detected)
+
+  Per-chart patterns (all pattern types):
+
+    [Bad Ketchup (Challenge)]
+      file: Bad Ketchup (Challenge)
+      Bracket          ×2
+      Spin             ×22
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×44
+      Crossover        ×0 (absent)
+      Double Step      ×56
+      Jump             ×7
+      Footswitch       ×22
+      Stream           ×20
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Hard)]
+      file: Bad Ketchup (Hard)
+      Bracket          ×2
+      Spin             ×15
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×38
+      Crossover        ×0 (absent)
+      Double Step      ×40
+      Jump             ×4
+      Footswitch       ×18
+      Stream           ×13
+      Single Notes     ×1
+      Empty            ×0 (absent)
+    [Bad Ketchup (Beginner)]
+      file: Bad Ketchup (Beginner)
+      Bracket          ×0 (absent)
+      Spin             ×0 (absent)
+      Candle           ×0 (absent)
+      Gallop           ×0 (absent)
+      Jack             ×7
+      Crossover        ×0 (absent)
+      Double Step      ×7
+      Jump             ×2
+      Footswitch       ×6
+      Stream           ×9
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Easy)]
+      file: Bad Ketchup (Easy)
+      Bracket          ×0 (absent)
+      Spin             ×3
+      Candle           ×2
+      Gallop           ×2
+      Jack             ×20
+      Crossover        ×0 (absent)
+      Double Step      ×10
+      Jump             ×3
+      Footswitch       ×6
+      Stream           ×4
+      Single Notes     ×1
+      Empty            ×0 (absent)
+    [Bad Ketchup (Medium)]
+      file: Bad Ketchup (Medium)
+      Bracket          ×1
+      Spin             ×5
+      Candle           ×3
+      Gallop           ×3
+      Jack             ×26
+      Crossover        ×0 (absent)
+      Double Step      ×19
+      Jump             ×9
+      Footswitch       ×6
+      Stream           ×5
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+
+────────────────────────────────────────────────────────────────────
+  WINDOW: Eighth Note Grid  ♪
+────────────────────────────────────────────────────────────────────
+
+  Cross-chart pattern prevalence (all patterns):
+
+    Bracket          ███  (3/5 charts)
+    Spin             █████  (5/5 charts)
+    Candle           █████  (5/5 charts)
+    Gallop           █████  (5/5 charts)
+    Jack             █████  (5/5 charts)
+    Crossover        ∅  (0/5 charts)  (never detected)
+    Double Step      █████  (5/5 charts)
+    Jump             █████  (5/5 charts)
+    Footswitch       ██  (2/5 charts)
+    Stream           █████  (5/5 charts)
+    Single Notes     ██  (2/5 charts)
+    Empty            ∅  (0/5 charts)  (never detected)
+
+  Per-chart patterns (all pattern types):
+
+    [Bad Ketchup (Challenge)]
+      file: Bad Ketchup (Challenge)
+      Bracket          ×1
+      Spin             ×30
+      Candle           ×3
+      Gallop           ×3
+      Jack             ×39
+      Crossover        ×0 (absent)
+      Double Step      ×23
+      Jump             ×6
+      Footswitch       ×1
+      Stream           ×34
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Hard)]
+      file: Bad Ketchup (Hard)
+      Bracket          ×2
+      Spin             ×15
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×31
+      Crossover        ×0 (absent)
+      Double Step      ×16
+      Jump             ×3
+      Footswitch       ×0 (absent)
+      Stream           ×23
+      Single Notes     ×1
+      Empty            ×0 (absent)
+    [Bad Ketchup (Beginner)]
+      file: Bad Ketchup (Beginner)
+      Bracket          ×0 (absent)
+      Spin             ×2
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×7
+      Crossover        ×0 (absent)
+      Double Step      ×5
+      Jump             ×2
+      Footswitch       ×1
+      Stream           ×9
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Easy)]
+      file: Bad Ketchup (Easy)
+      Bracket          ×0 (absent)
+      Spin             ×3
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×14
+      Crossover        ×0 (absent)
+      Double Step      ×4
+      Jump             ×2
+      Footswitch       ×0 (absent)
+      Stream           ×12
+      Single Notes     ×1
+      Empty            ×0 (absent)
+    [Bad Ketchup (Medium)]
+      file: Bad Ketchup (Medium)
+      Bracket          ×1
+      Spin             ×5
+      Candle           ×5
+      Gallop           ×5
+      Jack             ×21
+      Crossover        ×0 (absent)
+      Double Step      ×7
+      Jump             ×8
+      Footswitch       ×0 (absent)
+      Stream           ×15
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+
+────────────────────────────────────────────────────────────────────
+  WINDOW: Sixteenth Note Grid ♬
+────────────────────────────────────────────────────────────────────
+
+  Cross-chart pattern prevalence (all patterns):
+
+    Bracket          ███  (3/5 charts)
+    Spin             █████  (5/5 charts)
+    Candle           █████  (5/5 charts)
+    Gallop           █████  (5/5 charts)
+    Jack             █████  (5/5 charts)
+    Crossover        ∅  (0/5 charts)  (never detected)
+    Double Step      ███  (3/5 charts)
+    Jump             █████  (5/5 charts)
+    Footswitch       ∅  (0/5 charts)  (never detected)
+    Stream           █████  (5/5 charts)
+    Single Notes     █  (1/5 charts)
+    Empty            ∅  (0/5 charts)  (never detected)
+
+  Per-chart patterns (all pattern types):
+
+    [Bad Ketchup (Challenge)]
+      file: Bad Ketchup (Challenge)
+      Bracket          ×1
+      Spin             ×23
+      Candle           ×3
+      Gallop           ×3
+      Jack             ×29
+      Crossover        ×0 (absent)
+      Double Step      ×2
+      Jump             ×4
+      Footswitch       ×0 (absent)
+      Stream           ×25
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Hard)]
+      file: Bad Ketchup (Hard)
+      Bracket          ×2
+      Spin             ×14
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×22
+      Crossover        ×0 (absent)
+      Double Step      ×2
+      Jump             ×3
+      Footswitch       ×0 (absent)
+      Stream           ×20
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Beginner)]
+      file: Bad Ketchup (Beginner)
+      Bracket          ×0 (absent)
+      Spin             ×2
+      Candle           ×1
+      Gallop           ×1
+      Jack             ×5
+      Crossover        ×0 (absent)
+      Double Step      ×1
+      Jump             ×2
+      Footswitch       ×0 (absent)
+      Stream           ×6
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+    [Bad Ketchup (Easy)]
+      file: Bad Ketchup (Easy)
+      Bracket          ×0 (absent)
+      Spin             ×3
+      Candle           ×2
+      Gallop           ×2
+      Jack             ×9
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×2
+      Footswitch       ×0 (absent)
+      Stream           ×7
+      Single Notes     ×1
+      Empty            ×0 (absent)
+    [Bad Ketchup (Medium)]
+      file: Bad Ketchup (Medium)
+      Bracket          ×1
+      Spin             ×6
+      Candle           ×5
+      Gallop           ×5
+      Jack             ×14
+      Crossover        ×0 (absent)
+      Double Step      ×0 (absent)
+      Jump             ×6
+      Footswitch       ×0 (absent)
+      Stream           ×11
+      Single Notes     ×0 (absent)
+      Empty            ×0 (absent)
+
+====================================================================
