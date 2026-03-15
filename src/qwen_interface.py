@@ -12,24 +12,30 @@ DEFAULT_MODEL_ID = "Qwen/Qwen2-Audio-7B-Instruct"
 _model = None
 _processor = None
 
-def setup_qwen(model_id=DEFAULT_MODEL_ID, device="cuda"):
+def setup_qwen(model_id=DEFAULT_MODEL_ID, device=None):
     """
     Loads the Qwen2-Audio model and processor.
-    For a cluster, assume 'cuda' is available.
+    Auto-detects CUDA availability -- uses float16 on GPU, float32 on CPU.
     """
     global _model, _processor
-    
+
+    # Auto-detect device if not specified
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    dtype = torch.float16 if device == "cuda" else torch.float32
     print(f"Loading Qwen2-Audio model: {model_id}...")
+    print(f"  Device: {device} | dtype: {dtype}")
     try:
         _processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
         _model = Qwen2AudioForConditionalGeneration.from_pretrained(
-            model_id, 
-            device_map="auto", 
+            model_id,
+            device_map="auto" if device == "cuda" else "cpu",
             trust_remote_code=True,
-            torch_dtype=torch.float16 if device == "cuda" else torch.float32
+            torch_dtype=dtype
         )
         _model.eval()
-        print("✅ Qwen2-Audio loaded successfully.")
+        print(f"✅ Qwen2-Audio loaded successfully on {device}.")
     except Exception as e:
         print(f"❌ Failed to load Qwen2-Audio: {e}")
         raise
