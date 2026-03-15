@@ -1,0 +1,21 @@
+model,song,n_ref,n_pred,tp,fp,fn,precision_pct,recall_pct,f1_pct,tolerance_ms,ref_file,pred_file
+Qwen,Bad Ketchup,559,7,0,7,559,0.0,0.0,0.0,50.0,original_onsets_Bad_Ketchup_14032026121730.csv,Qwen_onsets_Bad_Ketchup_15032026112459.csv
+Qwen,Bitch Clap,803,5,1,4,802,20.0,0.12,0.25,50.0,original_onsets_Bitch_Clap_14032026121730.csv,Qwen_onsets_Bitch_Clap_15032026112550.csv
+Qwen,Call Me Maybe (Remix),585,3,1,2,584,33.33,0.17,0.34,50.0,original_onsets_Call_Me_Maybe_(Remix)_14032026121731.csv,Qwen_onsets_Call_Me_Maybe_(Remix)_15032026112642.csv
+Qwen,Dead Hollywood,259,8,1,7,258,12.5,0.39,0.75,50.0,original_onsets_Dead_Hollywood_14032026121731.csv,Qwen_onsets_Dead_Hollywood_15032026112736.csv
+Qwen,Deal With It,450,5,1,4,449,20.0,0.22,0.44,50.0,original_onsets_Deal_With_It_14032026121732.csv,Qwen_onsets_Deal_With_It_15032026112826.csv
+Qwen,Gangnam Style,565,5,1,4,564,20.0,0.18,0.35,50.0,original_onsets_Gangnam_Style_14032026121732.csv,Qwen_onsets_Gangnam_Style_15032026112915.csv
+Qwen,Girls,591,6,2,4,589,33.33,0.34,0.67,50.0,original_onsets_Girls_14032026121733.csv,Qwen_onsets_Girls_15032026113003.csv
+Qwen,Goin' Under,693,399,67,332,626,16.79,9.67,12.27,50.0,original_onsets_Goin'_Under_14032026121733.csv,Qwen_onsets_Goin'_Under_15032026113603.csv
+Qwen,Goodbye (2012 Mix),634,10,1,9,633,10.0,0.16,0.31,50.0,original_onsets_Goodbye_(2012_Mix)_14032026121733.csv,Qwen_onsets_Goodbye_(2012_Mix)_15032026113716.csv
+Qwen,Human Error,973,5,0,5,973,0.0,0.0,0.0,50.0,original_onsets_Human_Error_14032026121734.csv,Qwen_onsets_Human_Error_15032026113804.csv
+Qwen,Inner Universe (Extended Mix),858,5,1,4,857,20.0,0.12,0.23,50.0,original_onsets_Inner_Universe_(Extended_Mix)_14032026121734.csv,Qwen_onsets_Inner_Universe_(Extended_Mix)_15032026113904.csv
+Qwen,Love to Rise in the Summer Morning,684,8,1,7,683,12.5,0.15,0.29,50.0,original_onsets_Love_to_Rise_in_the_Summer_Morning_14032026121735.csv,Qwen_onsets_Love_to_Rise_in_the_Summer_Morning_15032026114003.csv
+Qwen,Named 'The Moon',840,61,7,54,833,11.48,0.83,1.55,50.0,original_onsets_Named_'The_Moon'_14032026121735.csv,Qwen_onsets_Named_'The_Moon'_15032026114110.csv
+Qwen,Need Your Love -SF_Dubstep Mix-,810,5,0,5,810,0.0,0.0,0.0,50.0,original_onsets_Need_Your_Love_-SF_Dubstep_Mix-_14032026121736.csv,Qwen_onsets_Need_Your_Love_-SF_Dubstep_Mix-_15032026114158.csv
+Qwen,No Beginning,794,5,0,5,794,0.0,0.0,0.0,50.0,original_onsets_No_Beginning_14032026121736.csv,Qwen_onsets_No_Beginning_15032026114253.csv
+Qwen,Pain Game,437,6,1,5,436,16.67,0.23,0.45,50.0,original_onsets_Pain_Game_14032026121737.csv,Qwen_onsets_Pain_Game_15032026114351.csv
+Qwen,Stamina,737,8,0,8,737,0.0,0.0,0.0,50.0,original_onsets_Stamina_14032026121737.csv,Qwen_onsets_Stamina_15032026114445.csv
+Qwen,Star Gear,498,5,1,4,497,20.0,0.2,0.4,50.0,original_onsets_Star_Gear_14032026121737.csv,Qwen_onsets_Star_Gear_15032026114534.csv
+Qwen,The Seconds,415,5,0,5,415,0.0,0.0,0.0,50.0,original_onsets_The_Seconds_14032026121738.csv,Qwen_onsets_The_Seconds_15032026114621.csv
+Qwen,Turn Up (The Music),1212,6,0,6,1212,0.0,0.0,0.0,50.0,original_onsets_Turn_Up_(The_Music)_14032026121738.csv,Qwen_onsets_Turn_Up_(The_Music)_15032026114715.csv

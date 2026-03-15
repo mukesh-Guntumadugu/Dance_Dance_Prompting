@@ -1,0 +1,169 @@
+Job started: Sat Mar 14 11:48:10 AM PDT 2026
+Node: node005
+Array task: 4  →  Difficulty: Challenge
+GPU: NVIDIA RTX A6000
+⚠️  Venv not found — installing required packages on compute node...
+✅ Packages installed.
+
+=== Starting Qwen2-Audio Server (port 8004) ===
+Server PID: 762171
+Waiting for server to become healthy...
+  Still loading... (attempt 1/120)
+  Still loading... (attempt 2/120)
+  Still loading... (attempt 3/120)
+  Still loading... (attempt 4/120)
+Loading model from: /data/mg546924/models/Qwen2-Audio-7B-Instruct
+  Still loading... (attempt 5/120)
+  Still loading... (attempt 6/120)
+  Still loading... (attempt 7/120)
+  Still loading... (attempt 8/120)
+  Still loading... (attempt 9/120)
+  Still loading... (attempt 10/120)
+  Still loading... (attempt 11/120)
+  Still loading... (attempt 12/120)
+  Still loading... (attempt 13/120)
+  Still loading... (attempt 14/120)
+  Still loading... (attempt 15/120)
+✅ Model loaded and ready.
+INFO:     127.0.0.1:34672 - "GET /health HTTP/1.1" 200 OK
+✅ Server is ready! (waited 16x5s)
+
+=== Starting Batch Runner (Difficulty: Challenge) ===
+INFO:     127.0.0.1:34684 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34700 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59588 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33960 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55804 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40350 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47856 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55742 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35486 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58906 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52426 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38452 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40092 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41076 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35048 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37356 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37072 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43408 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49152 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36086 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46066 - "POST /generate HTTP/1.1" 200 OK
+▶  New HPC Task ID: 0005
+   Difficulties : Challenge
+
+Found 20 audio files.
+
+
+============================================================
+  Difficulty: Challenge
+============================================================
+
+[1/20] Processing: Bad Ketchup  [Challenge]
+  Duration: 142.4s  |  BPM: 180.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ✅ Parsed 17 rows from JSON array.
+  Beatmap → Bad Ketchup_Challenge_Qwen2-Audio-7B_task0005_20260314_115018.txt
+  Full CSV → Bad Ketchup_Challenge_Qwen2-Audio-7B_task0005_20260314_115018.csv
+  Done.
+[2/20] Processing: Bitch Clap  [Challenge]
+  Duration: 129.6s  |  BPM: 150.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[3/20] Processing: Call Me Maybe (Remix)  [Challenge]
+  Duration: 150.0s  |  BPM: 124.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[4/20] Processing: Dead Hollywood  [Challenge]
+  Duration: 122.7s  |  BPM: 172.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[5/20] Processing: Deal With It  [Challenge]
+  Duration: 133.7s  |  BPM: 130.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[6/20] Processing: Gangnam Style  [Challenge]
+  Duration: 147.3s  |  BPM: 132.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[7/20] Processing: Girls  [Challenge]
+  Duration: 128.0s  |  BPM: 124.7  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[8/20] Processing: Goin' Under  [Challenge]
+  Duration: 123.4s  |  BPM: 210.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[9/20] Processing: Goodbye (2012 Mix)  [Challenge]
+  Duration: 134.8s  |  BPM: 170.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[10/20] Processing: Human Error  [Challenge]
+  Duration: 143.8s  |  BPM: 177.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[11/20] Processing: Inner Universe (Extended Mix)  [Challenge]
+  Duration: 235.1s  |  BPM: 196.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[12/20] Processing: Love to Rise in the Summer Morning  [Challenge]
+  Duration: 147.7s  |  BPM: 143.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ✅ Parsed 17 rows from JSON array.
+  Beatmap → Love to Rise in the Summer Morning_Challenge_Qwen2-Audio-7B_task0005_20260314_120441.txt
+  Full CSV → Love to Rise in the Summer Morning_Challenge_Qwen2-Audio-7B_task0005_20260314_120441.csv
+  Done.
+[13/20] Processing: Named 'The Moon'  [Challenge]
+  Duration: 150.0s  |  BPM: 120.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[14/20] Processing: Need Your Love -SF_Dubstep Mix-  [Challenge]
+  Duration: 130.3s  |  BPM: 146.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[15/20] Processing: No Beginning  [Challenge]
+  Duration: 139.7s  |  BPM: 177.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[16/20] Processing: Pain Game  [Challenge]
+  Duration: 128.6s  |  BPM: 140.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[17/20] Processing: Stamina  [Challenge]
+  Duration: 129.6s  |  BPM: 100.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[18/20] Processing: Star Gear  [Challenge]
+  Duration: 149.5s  |  BPM: 130.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[19/20] Processing: The Seconds  [Challenge]
+  Duration: 142.3s  |  BPM: 128.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+[20/20] Processing: Turn Up (The Music)  [Challenge]
+  Duration: 178.3s  |  BPM: 175.0  |  Encoding audio...
+  Sending to local Qwen server (http://localhost:8004)...
+  ⚠️  Could not parse any valid rows from Qwen output.
+  ⚠️  No valid rows parsed. Saving raw response as .txt for inspection.
+
+=== Batch finished (exit code: 0). Shutting down server. ===
+Job ended: Sat Mar 14 12:16:03 PM PDT 2026
