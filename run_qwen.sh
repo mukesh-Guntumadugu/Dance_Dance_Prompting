@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=qwen_onsets
 #SBATCH --gres=gpu:1
-#SBATCH --mem=40G
-#SBATCH --time=04:00:00
+#SBATCH --mem=20G
+#SBATCH --time=06:00:00
 #SBATCH --output=qwen_log_%j.txt
 
 echo "=== Starting Qwen2-Audio Onset Detection ==="
