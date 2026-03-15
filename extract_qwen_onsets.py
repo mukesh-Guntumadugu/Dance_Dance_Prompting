@@ -32,21 +32,75 @@ BASE_DIR = os.path.join(
 
 def build_onset_prompt(duration_sec: float) -> str:
     """
-    Returns a prompt that asks Qwen to list onset times in milliseconds.
-    Designed to be resilient: accepts both bare numbers and JSON.
-    Qwen tends to wrap output in JSON / markdown — the parser handles both.
+    Returns the onset detection prompt for Qwen2-Audio.
+    Uses the same detailed instruction as Gemini for fair model comparison.
     """
-    return (
-        f"The audio is {duration_sec:.1f} seconds long.\n\n"
-        "Listen to the audio carefully. Identify every significant musical onset: "
-        "drum hits, note attacks, rhythmic events, transients.\n\n"
-        "Output format: a JSON array of onset times in milliseconds (integers or floats). "
-        "Each entry is just a number. Cover the full duration from start to finish.\n\n"
-        "Example output (use this exact format):\n"
-        "[0, 125, 250, 500, 750, 1000, 1250, ...]\n\n"
-        "Output ONLY the JSON array. No explanation, no text, no headers. "
-        "DO NOT STOP EARLY — include onsets for the entire song."
+    system_instruction = (
+        "You are an expert music analyst and audio engineer specializing in precise "
+        "onset detection for rhythm game chart generation.\n\n"
+
+        "## What is an Onset?\n"
+        "An onset is the exact moment a new musical event begins — the attack phase "
+        "of a sound. Onsets occur on:\n"
+        "- Percussion: kick drum, snare, hi-hat, cymbal, clap, tom hits\n"
+        "- Melodic instruments: guitar pick attack, piano key strike, bass pluck, "
+        "synth note start, violin bow attack\n"
+        "- Vocals: consonant or vowel attacks at the start of sung words or syllables\n"
+        "- Any transient: any sudden increase in energy that marks the start of a "
+        "rhythmic or melodic event\n\n"
+
+        "## Your Task\n"
+        "When given an audio file, you must:\n"
+        "1. Listen to the complete audio from the very beginning to the very end. "
+        "Do not stop early.\n"
+        "2. Identify every significant musical onset throughout the entire duration.\n"
+        "3. Record the exact time of each onset in milliseconds (ms), measured from "
+        "the start of the audio (time 0).\n"
+        "4. Return all onset times as a single JSON array of numbers.\n\n"
+
+        "## Detection Guidelines\n"
+        "- Be thorough: a typical 3-minute song should have hundreds of onsets.\n"
+        "- Be precise: onset times should be accurate to within ±5 milliseconds.\n"
+        "- Include ALL instrument layers: if a kick drum and a hi-hat hit at the same "
+        "time, record that time once (it is one onset event).\n"
+        "- Include weak onsets: even soft notes or ghost notes on a snare should be "
+        "captured if they are rhythmically significant.\n"
+        "- Do not hallucinate: only report onsets you can actually hear in the audio. "
+        "Do not invent onsets where there is silence.\n"
+        "- Cover the full song: make sure the last few seconds of the song are "
+        "included — many submissions fail by stopping too early.\n\n"
+
+        "## Output Format\n"
+        "You MUST output ONLY a valid JSON array of numbers, nothing else.\n"
+        "- Each number is an onset time in milliseconds (integer or float).\n"
+        "- The array must be sorted in ascending order (earliest onset first).\n"
+        "- Do NOT include any explanation, markdown formatting, headers, units, "
+        "or any text outside the JSON array.\n"
+        "- Do NOT wrap the array in backticks or code fences.\n"
+        "- Correct format: [0, 125.5, 250, 375, 500, 750.25, 1000, ...]\n"
+        "- Incorrect formats:\n"
+        "    'Here are the onsets: [0, 125, 250]'  ← has explanation text\n"
+        "    '```json\\n[0, 125, 250]\\n```'         ← has markdown fencing\n"
+        "    '{\"onsets\": [0, 125, 250]}'           ← wrong structure\n\n"
+
+        "## Quality Criteria\n"
+        "Your output will be evaluated against a ground-truth onset list generated "
+        "by a professional audio analysis tool (librosa). A good onset detection "
+        "result achieves:\n"
+        "- Precision ≥ 60%: most of your predicted onsets should match real onsets\n"
+        "- Recall ≥ 60%: you should find at least 60% of the real onsets\n"
+        "- F1 Score ≥ 0.60: the harmonic mean of precision and recall\n"
+        "A predicted onset counts as correct if it is within ±50 ms of a "
+        "ground-truth onset.\n\n"
+
+        "Remember: output ONLY the JSON array. No other text."
     )
+    per_song = (
+        f"The audio is {duration_sec:.1f} seconds long. "
+        "Identify all musical onsets and return them as a JSON array of "
+        "millisecond timestamps covering the full duration."
+    )
+    return system_instruction + "\n\n" + per_song
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 

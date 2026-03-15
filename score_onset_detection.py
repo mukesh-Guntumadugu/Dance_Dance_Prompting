@@ -1,23 +1,27 @@
 """
 score_onset_detection.py
 ========================
-Compares Qwen-predicted onsets against librosa ground-truth onsets and
-reports per-song Precision, Recall, and F1 scores.
+Compares LLM-predicted onsets (Qwen or Gemini) against librosa ground-truth
+onsets and reports per-song Precision, Recall, and F1 scores.
 
 A predicted onset is considered CORRECT if it lands within ±TOLERANCE_MS
 of any ground-truth onset (default tolerance = 50 ms).
 
 Usage
 -----
-  # Score a single pair:
-  python score_onset_detection.py \\
-      --ref  path/to/original_onsets_SongName_*.csv \\
-      --pred path/to/Qwen_onsets_SongName_*.csv
-
-  # Batch mode — auto-match all pairs inside the Fraxtil directory:
+  # Batch mode — score all 20 songs (default: both models if CSVs exist):
   python score_onset_detection.py --batch
 
-  # Batch mode with custom tolerance (e.g. 100 ms):
+  # Score only Qwen or only Gemini:
+  python score_onset_detection.py --batch --model qwen
+  python score_onset_detection.py --batch --model gemini
+
+  # Score a single pair:
+  python score_onset_detection.py \\
+      --ref  path/to/original_onsets_*.csv \\
+      --pred path/to/Qwen_onsets_*.csv
+
+  # Custom tolerance (e.g. 100 ms):
   python score_onset_detection.py --batch --tolerance 100
 """
 
@@ -120,9 +124,9 @@ def score_onsets(
     )
 
 
-def print_score(song_name: str, metrics: dict, n_ref: int, n_pred: int):
+def print_score(song_name: str, metrics: dict, n_ref: int, n_pred: int, model_label: str = "Model"):
     print(f"\n  Song    : {song_name}")
-    print(f"  Ref     : {n_ref:,} librosa onsets  |  Predicted: {n_pred:,} Qwen onsets")
+    print(f"  Ref     : {n_ref:,} librosa onsets  |  {model_label}: {n_pred:,} predicted onsets")
     print(f"  TP={metrics['tp']:,}  FP={metrics['fp']:,}  FN={metrics['fn']:,}")
     print(f"  Precision : {metrics['precision']:.2f}%")
     print(f"  Recall    : {metrics['recall']:.2f}%")
@@ -133,26 +137,44 @@ def print_score(song_name: str, metrics: dict, n_ref: int, n_pred: int):
 
 def score_pair(ref_path: str, pred_path: str, tolerance_ms: float):
     song_name = os.path.basename(os.path.dirname(ref_path))
+    pred_basename = os.path.basename(pred_path)
+    model_label = "Gemini" if pred_basename.startswith("Gemini") else "Qwen"
     print(f"\n{'='*70}")
     print(f"  Reference : {os.path.basename(ref_path)}")
-    print(f"  Predicted : {os.path.basename(pred_path)}")
+    print(f"  Predicted : {pred_basename}  [{model_label}]")
     print(f"  Tolerance : ±{tolerance_ms:.0f} ms")
     print(f"{'='*70}")
 
     ref_onsets  = load_onsets_csv(ref_path)
     pred_onsets = load_onsets_csv(pred_path)
     metrics     = score_onsets(ref_onsets, pred_onsets, tolerance_ms)
-    print_score(song_name, metrics, len(ref_onsets), len(pred_onsets))
+    print_score(song_name, metrics, len(ref_onsets), len(pred_onsets), model_label)
 
 
 # ── Batch mode ────────────────────────────────────────────────────────────────
 
-def batch_score(tolerance_ms: float):
+def batch_score(tolerance_ms: float, model: str = "both"):
     """
     For each song in the Fraxtil dataset, find the latest original_onsets_*.csv
-    and the latest Qwen_onsets_*.csv in the same song directory, then score them.
+    and the latest predicted onset CSVs (Qwen and/or Gemini), then score them.
     Saves a summary CSV to the project root.
+
+    model: 'qwen', 'gemini', or 'both'
     """
+    # Map model names to CSV glob patterns
+    MODEL_PATTERNS = {
+        "qwen":   ("Qwen_onsets_*.csv",   "Qwen",   "extract_qwen_onsets.py"),
+        "gemini": ("Gemini_onsets_*.csv", "Gemini", "extract_gemini_onsets.py"),
+    }
+
+    models_to_score = (
+        list(MODEL_PATTERNS.keys()) if model == "both"
+        else [model.lower()]
+    )
+    for m in models_to_score:
+        if m not in MODEL_PATTERNS:
+            print(f"❌ Unknown model '{m}'. Choose from: qwen, gemini, both")
+            return
     if not os.path.isdir(BASE_DIR):
         print(f"❌ Dataset directory not found:\n   {BASE_DIR}")
         return
@@ -163,101 +185,109 @@ def batch_score(tolerance_ms: float):
         and not d.startswith("_") and not d.startswith(".")
     ])
 
-    results = []
-    skipped = []
+    all_results = []   # across all models
 
-    print(f"\n{'='*110}")
-    print(f"  Batch Onset Scoring  |  Tolerance: ±{tolerance_ms:.0f} ms  |  Songs: {len(song_dirs)}")
-    print(f"{'='*110}")
+    for model_key in models_to_score:
+        glob_pattern, model_label, run_script = MODEL_PATTERNS[model_key]
+        results = []
+        skipped = []
 
-    header = f"{'Song':<45} {'#Ref':>6} {'#Pred':>6} {'TP':>6} {'FP':>6} {'FN':>6} {'Prec%':>7} {'Rec%':>7} {'F1%':>7}"
-    print(header)
-    print("─" * 110)
+        print(f"\n{'='*110}")
+        print(f"  [{model_label}] Batch Onset Scoring  |  Tolerance: ±{tolerance_ms:.0f} ms  |  Songs: {len(song_dirs)}")
+        print(f"{'='*110}")
 
-    for song_name in song_dirs:
-        song_dir = os.path.join(BASE_DIR, song_name)
+        header = f"{'Song':<45} {'#Ref':>6} {'#Pred':>6} {'TP':>6} {'FP':>6} {'FN':>6} {'Prec%':>7} {'Rec%':>7} {'F1%':>7}"
+        print(header)
+        print("─" * 110)
 
-        ref_path  = find_latest_file(song_dir, "original_onsets_*.csv")
-        pred_path = find_latest_file(song_dir, "Qwen_onsets_*.csv")
+        for song_name in song_dirs:
+            song_dir = os.path.join(BASE_DIR, song_name)
 
-        if ref_path is None:
-            skipped.append((song_name, "No librosa onset CSV found (run extract_librosa_onsets.py first)"))
-            continue
-        if pred_path is None:
-            skipped.append((song_name, "No Qwen onset CSV found (run extract_qwen_onsets.py first)"))
-            continue
+            ref_path  = find_latest_file(song_dir, "original_onsets_*.csv")
+            pred_path = find_latest_file(song_dir, glob_pattern)
 
-        try:
-            ref_onsets  = load_onsets_csv(ref_path)
-            pred_onsets = load_onsets_csv(pred_path)
-            metrics     = score_onsets(ref_onsets, pred_onsets, tolerance_ms)
+            if ref_path is None:
+                skipped.append((song_name, "No librosa onset CSV (run extract_librosa_onsets.py)"))
+                continue
+            if pred_path is None:
+                skipped.append((song_name, f"No {model_label} onset CSV (run {run_script})"))
+                continue
 
-            row_str = (
-                f"  {song_name:<43} {len(ref_onsets):>6,} {len(pred_onsets):>6,} "
-                f"{metrics['tp']:>6} {metrics['fp']:>6} {metrics['fn']:>6} "
-                f"{metrics['precision']:>7.2f} {metrics['recall']:>7.2f} {metrics['f1']:>7.2f}"
-            )
-            print(row_str)
+            try:
+                ref_onsets  = load_onsets_csv(ref_path)
+                pred_onsets = load_onsets_csv(pred_path)
+                metrics     = score_onsets(ref_onsets, pred_onsets, tolerance_ms)
 
-            results.append({
-                "song":           song_name,
-                "n_ref":          len(ref_onsets),
-                "n_pred":         len(pred_onsets),
-                "tp":             metrics["tp"],
-                "fp":             metrics["fp"],
-                "fn":             metrics["fn"],
-                "precision_pct":  metrics["precision"],
-                "recall_pct":     metrics["recall"],
-                "f1_pct":         metrics["f1"],
-                "tolerance_ms":   tolerance_ms,
-                "ref_file":       os.path.basename(ref_path),
-                "pred_file":      os.path.basename(pred_path),
-            })
+                row_str = (
+                    f"  {song_name:<43} {len(ref_onsets):>6,} {len(pred_onsets):>6,} "
+                    f"{metrics['tp']:>6} {metrics['fp']:>6} {metrics['fn']:>6} "
+                    f"{metrics['precision']:>7.2f} {metrics['recall']:>7.2f} {metrics['f1']:>7.2f}"
+                )
+                print(row_str)
 
-        except Exception as e:
-            skipped.append((song_name, str(e)))
+                row = {
+                    "model":          model_label,
+                    "song":           song_name,
+                    "n_ref":          len(ref_onsets),
+                    "n_pred":         len(pred_onsets),
+                    "tp":             metrics["tp"],
+                    "fp":             metrics["fp"],
+                    "fn":             metrics["fn"],
+                    "precision_pct":  metrics["precision"],
+                    "recall_pct":     metrics["recall"],
+                    "f1_pct":         metrics["f1"],
+                    "tolerance_ms":   tolerance_ms,
+                    "ref_file":       os.path.basename(ref_path),
+                    "pred_file":      os.path.basename(pred_path),
+                }
+                results.append(row)
+                all_results.append(row)
 
-    print("─" * 110)
+            except Exception as e:
+                skipped.append((song_name, str(e)))
 
-    # ── Aggregate summary ────────────────────────────────────────────────────
-    if results:
-        avg_prec = np.mean([r["precision_pct"] for r in results])
-        avg_rec  = np.mean([r["recall_pct"]    for r in results])
-        avg_f1   = np.mean([r["f1_pct"]        for r in results])
-        best     = max(results, key=lambda r: r["f1_pct"])
-        worst    = min(results, key=lambda r: r["f1_pct"])
+        print("─" * 110)
 
-        print(f"\n  Scored {len(results)}/{len(song_dirs)} songs")
-        print(f"  Average Precision : {avg_prec:.2f}%")
-        print(f"  Average Recall    : {avg_rec:.2f}%")
-        print(f"  Average F1        : {avg_f1:.2f}%")
-        print(f"  Best  F1 → {best['song']} ({best['f1_pct']:.2f}%)")
-        print(f"  Worst F1 → {worst['song']} ({worst['f1_pct']:.2f}%)")
+        # ── Per-model summary ────────────────────────────────────────────────
+        if results:
+            avg_prec = np.mean([r["precision_pct"] for r in results])
+            avg_rec  = np.mean([r["recall_pct"]    for r in results])
+            avg_f1   = np.mean([r["f1_pct"]        for r in results])
+            best     = max(results, key=lambda r: r["f1_pct"])
+            worst    = min(results, key=lambda r: r["f1_pct"])
 
-        # Save summary CSV
+            print(f"\n  [{model_label}] Scored {len(results)}/{len(song_dirs)} songs")
+            print(f"  Average Precision : {avg_prec:.2f}%")
+            print(f"  Average Recall    : {avg_rec:.2f}%")
+            print(f"  Average F1        : {avg_f1:.2f}%")
+            print(f"  Best  F1 → {best['song']} ({best['f1_pct']:.2f}%)")
+            print(f"  Worst F1 → {worst['song']} ({worst['f1_pct']:.2f}%)")
+
+        if skipped:
+            print(f"\n  ⚠️  Skipped {len(skipped)} song(s):")
+            for song, reason in skipped:
+                print(f"     • {song}: {reason}")
+
+    # ── Save combined summary CSV ────────────────────────────────────────────
+    if all_results:
         ts = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
         summary_path = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             f"onset_score_summary_{ts}.csv"
         )
-        fieldnames = list(results[0].keys())
+        fieldnames = list(all_results[0].keys())
         with open(summary_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(results)
+            writer.writerows(all_results)
         print(f"\n  📄 Summary saved → {summary_path}")
-
-    if skipped:
-        print(f"\n  ⚠️  Skipped {len(skipped)} song(s):")
-        for song, reason in skipped:
-            print(f"     • {song}: {reason}")
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Score Qwen onset detection against librosa ground truth."
+        description="Score Qwen/Gemini onset detection against librosa ground truth."
     )
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument(
@@ -270,7 +300,12 @@ def main():
     )
     parser.add_argument(
         "--pred", type=str,
-        help="Path to predicted (Qwen) onset CSV (required with --ref)."
+        help="Path to predicted onset CSV (required with --ref)."
+    )
+    parser.add_argument(
+        "--model", type=str, default="both",
+        choices=["qwen", "gemini", "both"],
+        help="Which model's CSVs to score in batch mode (default: both)."
     )
     parser.add_argument(
         "--tolerance", type=float, default=DEFAULT_TOLERANCE_MS,
@@ -279,7 +314,7 @@ def main():
     args = parser.parse_args()
 
     if args.batch:
-        batch_score(args.tolerance)
+        batch_score(args.tolerance, model=args.model)
     elif args.ref:
         if not args.pred:
             parser.error("--pred is required when using --ref")
@@ -291,9 +326,8 @@ def main():
             return
         score_pair(args.ref, args.pred, args.tolerance)
     else:
-        # Default: run batch mode
-        print("No arguments given — running in batch mode (--batch).")
-        batch_score(args.tolerance)
+        print("No arguments given — running in batch mode (--batch --model both).")
+        batch_score(args.tolerance, model="both")
 
 
 if __name__ == "__main__":

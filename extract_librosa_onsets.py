@@ -91,21 +91,21 @@ def main():
         audio_path = find_audio_file(song_dir)
 
         if audio_path is None:
-            print(f"  ⚠️  No audio file found in: {song_name}")
+            print(f"   No audio file found in: {song_name}")
             continue
 
         try:
             onset_ms = detect_onsets_ms(audio_path)
             out_path = save_onsets_csv(onset_ms, song_name, song_dir)
             rel_out = os.path.relpath(out_path, BASE_DIR)
-            print(f"  ✅ {song_name:<43} {len(onset_ms):>10,}  {rel_out}")
+            print(f"  {song_name:<43} {len(onset_ms):>10,}  {rel_out}")
             total_songs += 1
             total_onsets += len(onset_ms)
         except Exception as e:
-            print(f"  ❌ Error processing '{song_name}': {e}")
+            print(f"  Error processing '{song_name}': {e}")
 
     print("─" * 110)
-    print(f"\n✅  Processed {total_songs}/{len(song_dirs)} songs  |  Total onsets detected: {total_onsets:,}\n")
+    print(f"\n  Processed {total_songs}/{len(song_dirs)} songs  |  Total onsets detected: {total_onsets:,}\n")
 
 
 if __name__ == "__main__":
