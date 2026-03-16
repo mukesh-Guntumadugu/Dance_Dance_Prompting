@@ -29,8 +29,9 @@ import argparse
 import requests
 import librosa
 
-from src.beatmap_prompt import build_qwen_prompt
+from src.beatmap_prompt import build_qwen_prompt, BEATMAP_SYSTEM_INSTRUCTION, QWEN_OUTPUT_ADDENDUM
 import re
+import glob
 import soundfile as sf
 import tempfile
 import math
@@ -65,10 +66,38 @@ def parse_sm_metadata(sm_file: str) -> float:
         pass
     return None
 
+# ── Onset loader ─────────────────────────────────────────────────────────────
+def load_song_onsets(song_dir: str) -> list[float]:
+    """Load pre-computed onset timestamps (ms) from the latest original_onsets_*.csv."""
+    pattern = os.path.join(song_dir, "original_onsets_*.csv")
+    matches = sorted(glob.glob(pattern))
+    if not matches:
+        return []
+    onsets = []
+    with open(matches[-1], newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                onsets.append(float(row["onset_ms"]))
+            except (KeyError, ValueError):
+                pass
+    return sorted(onsets)
+
 # ── Prompt ────────────────────────────────────────────────────────────────────
-def build_prompt(duration: float, difficulty: str = "Medium", bpm: float = None) -> str:
-    """Uses the shared prompt (same as Gemini) from src/beatmap_prompt.py."""
-    return build_qwen_prompt(difficulty, duration, bpm)
+def build_prompt(duration: float, difficulty: str = "Medium", bpm: float = None,
+                  chunk_onsets: list[float] = None) -> str:
+    """Builds the full Qwen prompt, optionally injecting pre-computed chunk onsets."""
+    from src.beatmap_prompt import build_per_song_prompt
+    base = BEATMAP_SYSTEM_INSTRUCTION + build_per_song_prompt(difficulty, duration, bpm)
+    if chunk_onsets:
+        onset_str = ", ".join(f"{ms:.2f}" for ms in chunk_onsets)
+        base += (
+            f"\n\n## Available Onset Timestamps\n"
+            f"The following {len(chunk_onsets)} timestamps (ms) are musically significant moments "
+            f"detected in this audio slice. Prefer placing notes on these exact times:\n"
+            f"[{onset_str}]\n"
+        )
+    return base + QWEN_OUTPUT_ADDENDUM
 
 # ── Robust Qwen output parser ─────────────────────────────────────────────────
 def _parse_qwen_output(text: str) -> list[dict]:
@@ -228,6 +257,13 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
 
         print(f"  Duration: {duration:.1f}s  |  BPM: {bpm if bpm else 'Unknown'}  |  Chunking into 20s slices...")
 
+        # Load pre-computed onsets for this song (milliseconds)
+        all_onsets_ms = load_song_onsets(dirname)
+        if all_onsets_ms:
+            print(f"  Onsets loaded: {len(all_onsets_ms)} timestamps from original_onsets_*.csv")
+        else:
+            print(f"  ⚠️  No original_onsets_*.csv found — Qwen will detect notes from audio only")
+
         chunk_size_sec = 20.0
         num_chunks = math.ceil(duration / chunk_size_sec)
         
@@ -248,8 +284,13 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
             try:
                 sf.write(tmp_path, chunk_audio, sr)
                 audio_b64 = audio_to_b64(tmp_path)
-                
-                prompt = build_prompt(chunk_duration, difficulty, bpm)
+
+                # Filter onsets to this chunk's window (relative to chunk start)
+                start_ms = start_sec * 1000.0
+                end_ms   = end_sec   * 1000.0
+                chunk_onsets = [ms - start_ms for ms in all_onsets_ms if start_ms <= ms < end_ms]
+
+                prompt = build_prompt(chunk_duration, difficulty, bpm, chunk_onsets)
 
                 print(f"  [{i+1}/{num_chunks}] Sending {chunk_duration:.1f}s chunk to server...")
                 resp = requests.post(
@@ -300,18 +341,17 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
         # Sort the combined rows by timestamp just in case
         all_parsed_rows.sort(key=lambda x: x["time_ms"])
 
-        # ── Save files ────────────────────────────────────────────────────
+        # ── Save 3 files ──────────────────────────────────────────────────
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         base      = f"{name_no_ext}_{difficulty}_{MODEL_NAME}_{task_tag}{job_tag}_{timestamp}"
 
-        # Plain beatmap .txt (just the notes column)
-        txt_path = os.path.join(dirname, f"{base}.txt")
-        with open(txt_path, "w", encoding="utf-8") as f:
-            for row in all_parsed_rows:
-                f.write(f"{row['notes']}\n")
-        print(f"  Beatmap → {os.path.basename(txt_path)}")
+        # 1. Raw JSON — all parsed rows as a JSON array
+        json_path = os.path.join(dirname, f"{base}.json")
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(all_parsed_rows, f, indent=2)
+        print(f"  Raw JSON  → {os.path.basename(json_path)}")
 
-        # Structured CSV matching Gemini output format
+        # 2. Structured CSV with all 7 columns
         csv_path = os.path.join(dirname, f"{base}.csv")
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
@@ -323,7 +363,14 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
                     row["notes"], row["placement_type"], row["note_type"],
                     f"{row['confidence']:.3f}", row["instrument"]
                 ])
-        print(f"  Full CSV → {os.path.basename(csv_path)}")
+        print(f"  Full CSV  → {os.path.basename(csv_path)}")
+
+        # 3. StepMania .txt — just the notes column (4-char rows + ',' separators)
+        txt_path = os.path.join(dirname, f"{base}.txt")
+        with open(txt_path, "w", encoding="utf-8") as f:
+            for row in all_parsed_rows:
+                f.write(f"{row['notes']}\n")
+        print(f"  Beatmap   → {os.path.basename(txt_path)}")
 
         print("  Done.")
 
