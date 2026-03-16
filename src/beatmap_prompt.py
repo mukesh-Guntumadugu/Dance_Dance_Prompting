@@ -101,7 +101,10 @@ QWEN_OUTPUT_ADDENDUM = (
     "875.0,2.75,0000,0,3,1.0,unknown\n"
     "1000.0,3.0,3001,4,2,0.91,kick\n"
     '1125.0,3.25,",",-1,-1,1.0,separator\n\n'
-    "Start immediately with the first CSV row, nothing else before it:\n"
+    "CRITICAL WARNING:\n"
+    "DO NOT STOP AFTER ONE MEASURE! The example above is ONLY the first 1 second.\n"
+    "You MUST continue generating hundreds or thousands of lines until the `time_ms` reaches the full duration of the song.\n"
+    "DO NOT output any text other than the CSV. Start immediately:\n"
 )
 
 def build_qwen_prompt(difficulty: str, duration: float, bpm: float = None) -> str:
