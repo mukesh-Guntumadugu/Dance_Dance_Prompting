@@ -86,25 +86,25 @@ def build_per_song_prompt(difficulty: str, duration: float, bpm: float = None) -
     prompt += f"Generate a {difficulty} difficulty StepMania beatmap for this specific {duration:.1f} second audio slice."
     return prompt
 
-# ── Qwen addendum: reinforce the strictly JSON/CSV format ─────────────────────
+# ── Qwen addendum: reinforce CSV output, ban MIDI fields ──────────────────────
 QWEN_OUTPUT_ADDENDUM = (
     "\n\n=== STRICT OUTPUT RULES ===\n"
-    "You are generating a StepMania BEATMAP, NOT a music transcription or MIDI file.\n"
+    "You are generating a StepMania BEATMAP, NOT a music analysis, song config, or MIDI file.\n"
+    "DO NOT output JSON objects, song specs, rules, music_key, time_signature, or velocity fields.\n"
     "DO NOT output any of these MIDI-style fields: 'time', 'note_name', 'velocity', 'pitch', 'duration', 'frequency'.\n"
     "DO NOT include markdown, explanations, apologies, or conversational text.\n"
     "DO NOT write 'Here is your CSV:' or similar phrases.\n"
-    "Do NOT stop early. Keep generating rows until time_ms reaches the end of the audio chunk.\n\n"
-    "You MUST output a JSON object with a 'rows' array. Each element in 'rows' MUST have EXACTLY these 7 fields:\n"
-    '  {"time_ms": <float>, "beat_position": <float>, "notes": "<4-char string>", '
-    '"placement_type": <int>, "note_type": <int>, "confidence": <float>, "instrument": "<string>"}\n\n'
-    "EXAMPLE of correct output format:\n"
-    '{"rows": [\n'
-    '  {"time_ms": 0.0, "beat_position": 1.0, "notes": "1000", "placement_type": 4, "note_type": 2, "confidence": 0.95, "instrument": "kick"},\n'
-    '  {"time_ms": 125.0, "beat_position": 1.25, "notes": "0000", "placement_type": 0, "note_type": 3, "confidence": 1.0, "instrument": "unknown"},\n'
-    '  {"time_ms": 250.0, "beat_position": 1.5, "notes": "0010", "placement_type": 4, "note_type": 3, "confidence": 0.88, "instrument": "snare"},\n'
-    '  {"time_ms": 500.0, "beat_position": 2.0, "notes": ",", "placement_type": -1, "note_type": -1, "confidence": 1.0, "instrument": "separator"}\n'
-    "]}\n\n"
-    "Output the JSON object immediately, starting with '{\"rows\": [':\n"
+    "Do NOT stop early. Keep generating CSV rows until time_ms reaches the end of the audio chunk.\n\n"
+    "You MUST output ONLY plain CSV rows with EXACTLY these 7 comma-separated columns:\n"
+    "time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n\n"
+    "EXAMPLE of correct output (start outputting rows like this immediately):\n"
+    "0.0,1.000,1000,4,2,0.95,kick\n"
+    "125.0,1.250,0000,0,3,1.0,unknown\n"
+    "250.0,1.500,0010,4,3,0.88,snare\n"
+    "375.0,1.750,0000,0,3,1.0,unknown\n"
+    '500.0,2.000,",",-1,-1,1.0,separator\n'
+    "500.0,2.000,1000,4,2,0.96,kick\n\n"
+    "Output the first CSV row immediately, with no header line:\n"
 )
 
 def build_qwen_prompt(difficulty: str, duration: float, bpm: float = None) -> str:

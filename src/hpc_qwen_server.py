@@ -174,22 +174,6 @@ def generate(req: GenerateRequest):
             clean_up_tokenization_spaces=False,
         )[0]
 
-        # If constrained decoding was active the output IS valid JSON
-        # Parse it and re-emit as flat CSV rows for the existing parser
-        if _prefix_fn is not None:
-            try:
-                data = json.loads(response_text)
-                rows = data.get("rows", [])
-                csv_lines = []
-                for r in rows:
-                    csv_lines.append(
-                        f"{r['time_ms']},{r['beat_position']},{r['notes']},"
-                        f"{r['placement_type']},{r['note_type']},{r['confidence']},{r['instrument']}"
-                    )
-                response_text = "\n".join(csv_lines)
-            except Exception:
-                pass  # Fall through with raw text if JSON parse fails
-
         return GenerateResponse(text=response_text)
 
     finally:
