@@ -12,10 +12,6 @@ echo "============================================="
 
 # Force Python to ignore ~/.local site-packages (prevents shadowing conda env)
 export PYTHONNOUSERSITE=1
-# Force pip to install to datapool instead of ~/.local
-export PIP_USER_BASE=/datapool001/data/mg546924/.local
-export PATH=$PIP_USER_BASE/bin:$PATH
-export PYTHONPATH=$PIP_USER_BASE/lib/python3.9/site-packages:$PYTHONPATH
 
 # Use the conda env's Python directly (most reliable in SLURM batch scripts)
 /home/mg546924/.conda/envs/qwenenv/bin/python extract_qwen_onsets.py
