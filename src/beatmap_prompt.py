@@ -9,8 +9,8 @@ The only difference is how output is enforced:
 
 # ── Static system instruction (word-for-word same for Gemini and Qwen) ────────
 BEATMAP_SYSTEM_INSTRUCTION = (
-    "You are a StepMania beatmap generator. Output a JSON array of objects.\n"
-    "Each object has these fields:\n"
+    "You are a StepMania beatmap generator. Output a plain CSV format.\n"
+    "Each row MUST have exactly these 7 comma-separated fields:\n"
     "  - time_ms (float): exact timestamp in milliseconds\n"
     "  - beat_position (float): beat number from song start\n"
     "  - notes (str): 4-character row (Left, Down, Up, Right e.g. '1000') OR ',' for measure end\n"
@@ -44,23 +44,24 @@ BEATMAP_SYSTEM_INSTRUCTION = (
     "CRITICAL: You MUST NOT place any other notes (1, 2, or 3) in a lane while it is currently being held.\n"
     "CRITICAL: Every '2' MUST be followed eventually by a matching '3' in the same column.\n\n"
     "=== EXAMPLE (16-row measure at ~120 BPM) ===\n"
-    '[{"time_ms":0.0,"beat_position":1.0,"notes":"1000","placement_type":4,"note_type":2,"confidence":0.95,"instrument":"kick"},\n'
-    ' {"time_ms":125.0,"beat_position":1.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":250.0,"beat_position":1.5,"notes":"0010","placement_type":4,"note_type":3,"confidence":0.88,"instrument":"snare"},\n'
-    ' {"time_ms":375.0,"beat_position":1.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":500.0,"beat_position":2.0,"notes":"2000","placement_type":4,"note_type":2,"confidence":1.0,"instrument":"bass"}, <-- HOLD HEAD (Left)\n'
-    ' {"time_ms":625.0,"beat_position":2.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":750.0,"beat_position":2.5,"notes":"0100","placement_type":4,"note_type":3,"confidence":0.82,"instrument":"snare"},\n'
-    ' {"time_ms":875.0,"beat_position":2.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1000.0,"beat_position":3.0,"notes":"3001","placement_type":4,"note_type":2,"confidence":0.91,"instrument":"kick"}, <-- HOLD TAIL (Left) + Tap (Right)\n'
-    ' {"time_ms":1125.0,"beat_position":3.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1250.0,"beat_position":3.5,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1375.0,"beat_position":3.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1500.0,"beat_position":4.0,"notes":"0000","placement_type":0,"note_type":2,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1625.0,"beat_position":4.25,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":1750.0,"beat_position":4.5,"notes":"0010","placement_type":4,"note_type":3,"confidence":0.79,"instrument":"snare"},\n'
-    ' {"time_ms":1875.0,"beat_position":4.75,"notes":"0000","placement_type":0,"note_type":3,"confidence":1.0,"instrument":"unknown"},\n'
-    ' {"time_ms":2000.0,"beat_position":5.0,"notes":",","placement_type":-1,"note_type":-1,"confidence":1.0,"instrument":"separator"}]\n\n'
+    "time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n"
+    "0.0,1.0,1000,4,2,0.95,kick\n"
+    "125.0,1.25,0000,0,3,1.0,unknown\n"
+    "250.0,1.5,0010,4,3,0.88,snare\n"
+    "375.0,1.75,0000,0,3,1.0,unknown\n"
+    "500.0,2.0,2000,4,2,1.0,bass\n"
+    "625.0,2.25,0000,0,3,1.0,unknown\n"
+    "750.0,2.5,0100,4,3,0.82,snare\n"
+    "875.0,2.75,0000,0,3,1.0,unknown\n"
+    "1000.0,3.0,3001,4,2,0.91,kick\n"
+    "1125.0,3.25,0000,0,3,1.0,unknown\n"
+    "1250.0,3.5,0000,0,3,1.0,unknown\n"
+    "1375.0,3.75,0000,0,3,1.0,unknown\n"
+    "1500.0,4.0,0000,0,2,1.0,unknown\n"
+    "1625.0,4.25,0000,0,3,1.0,unknown\n"
+    "1750.0,4.5,0010,4,3,0.79,snare\n"
+    "1875.0,4.75,0000,0,3,1.0,unknown\n"
+    '2000.0,5.0,",",-1,-1,1.0,separator\n\n'
     "=== OTHER RULES ===\n"
     "- Choose 4, 8, 12, or 16 rows per measure based on the rhythmic density of the music.\n"
     "- Cover the audio slice from start to finish. Do NOT stop early.\n"
@@ -85,22 +86,17 @@ def build_per_song_prompt(difficulty: str, duration: float, bpm: float = None) -
     prompt += f"Generate a {difficulty} difficulty StepMania beatmap for this specific {duration:.1f} second audio slice."
     return prompt
 
-# ── Qwen addendum: reinforce the JSON format (the system instruction already shows it) ─
+# ── Qwen addendum: reinforce the strictly CSV format ─────────────────────────
 QWEN_OUTPUT_ADDENDUM = (
     "\n\n=== STRICT OUTPUT RULES ===\n"
-    "You MUST output ONLY a valid JSON array [ ... ] with NO surrounding text.\n"
-    "No markdown, no explanations, no apologies, no conversational text.\n"
-    "Do NOT write anything before the '[' or after the ']'.\n"
-    "Do NOT stop early. Keep generating JSON objects until time_ms reaches the end of the audio chunk.\n"
-    "If you cannot generate a full array, output as many objects as you can and close the array with ']'.\n\n"
-    "Reminder — each object must have these exact keys:\n"
-    '  {"time_ms": float, "beat_position": float, "notes": "4chars", '
-    '"placement_type": int, "note_type": int, "confidence": float, "instrument": "str"}\n\n'
-    "For measure separators, use:\n"
-    '  {"time_ms": float, "beat_position": float, "notes": ",",'
-    '"placement_type": -1, "note_type": -1, "confidence": 1.0, "instrument": "separator"}\n\n'
-    "Output the JSON array now:\n"
-    "[\n"
+    "You MUST output ONLY valid CSV rows with exactly 7 columns.\n"
+    "DO NOT output JSON.\n"
+    "DO NOT include markdown, explanations, apologies, or conversational text.\n"
+    "DO NOT write 'Here is your CSV:' or similar phrases.\n"
+    "Do NOT stop early. Keep generating CSV rows until time_ms reaches the end of the audio chunk.\n"
+    "Each row must look like this: time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n"
+    'For measure separators, use: time_ms,beat_position,",",-1,-1,1.0,separator\n\n'
+    "Output the CSV data immediately, starting directly with the first row:\n"
 )
 
 def build_qwen_prompt(difficulty: str, duration: float, bpm: float = None) -> str:

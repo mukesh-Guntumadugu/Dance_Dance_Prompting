@@ -162,7 +162,7 @@ def parse_beatmap_response(
     tolerance_ms: float = 50.0
 ) -> List[Tuple]:
     """
-    Parse the JSON array output from Qwen.
+    Parse the CSV output from Qwen.
     Returns list of 7-tuples: (time_ms, beat, notes, placement, note_type, conf, inst)
     """
     import re
@@ -171,49 +171,32 @@ def parse_beatmap_response(
     clean = re.sub(r"```[a-zA-Z]*", "", response_text).replace("```", "")
     clean = re.sub(r"(<--|//).*?$", "", clean, flags=re.MULTILINE)
 
-    # The prompt primes output with '[', so model may have omitted the leading '['.
-    # Add it back if it starts with '{'
-    stripped = clean.strip()
-    if stripped.startswith("{"):
-        clean = "[" + clean
-
-    # Try full JSON array first
-    data = None
-    array_match = re.search(r"\[.*\]", clean, re.DOTALL)
-    if array_match:
-        try:
-            data = json.loads(array_match.group(0))
-        except json.JSONDecodeError:
-            # Model may have cut off mid-array — try closing it
-            try:
-                partial = array_match.group(0).rstrip(",").rstrip()
-                data = json.loads(partial + "]")
-            except Exception:
-                pass
-
-    # Fallback: parse individual JSON objects line by line
-    if not data:
-        data = []
-        for line in clean.splitlines():
-            line = line.strip().rstrip(",")
-            if line.startswith("{") and line.endswith("}"):
-                try:
-                    data.append(json.loads(line))
-                except json.JSONDecodeError:
-                    pass
-
     results = []
-    for i, item in enumerate(data):
-        if not isinstance(item, dict) or "notes" not in item:
+    
+    for line in clean.splitlines():
+        line = line.strip()
+        if not line or line.startswith("time_ms") or line.startswith("Time"):
             continue
+            
+        parts = line.split(",")
+        # Handle the separator note which is "," inside quotes or unquoted
+        if len(parts) >= 7 and parts[2] in ('"', '","', '', ' '):
+            parts[2] = ","
+            # Shift parts back if they got split by the note comma
+            if len(parts) > 7:
+                parts = [parts[0], parts[1], ",", parts[4], parts[5], parts[6], parts[7]]
+                
+        if len(parts) < 7:
+            continue
+            
         try:
-            t_ms  = float(item.get("time_ms", i * 125.0))
-            beat  = float(item.get("beat_position", round(i / 4.0, 3)))
-            notes = str(item["notes"])
-            place = int(item.get("placement_type", 1))
-            ntype = int(item.get("note_type", 2))
-            conf  = float(item.get("confidence", 0.9))
-            inst  = str(item.get("instrument", "unknown"))
+            t_ms  = float(parts[0])
+            beat  = float(parts[1])
+            notes = parts[2].strip(' "')
+            place = int(parts[3])
+            ntype = int(parts[4])
+            conf  = float(parts[5])
+            inst  = parts[6].strip(' "')
 
             # Snap active notes to nearest valid onset
             if notes not in (",", "0000") and valid_onsets:
