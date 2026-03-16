@@ -20,7 +20,7 @@ import torch
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MUMU_REPO_DIR = os.path.join(PROJECT_ROOT, "MuMu-LLaMA")
 LLAMA_DIR     = os.path.join(MUMU_REPO_DIR, "ckpts", "LLaMA")
-CHECKPOINT    = os.path.join(MUMU_REPO_DIR, "ckpts", "MuMu-LLaMA", "checkpoint.pth")
+CHECKPOINT    = os.path.join(MUMU_REPO_DIR, "ckpts", "MuMu-LLaMA-MusicGen", "checkpoint.pth")
 
 _model = None
 _loaded = False
