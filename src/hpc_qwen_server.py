@@ -29,7 +29,8 @@ class GenerateRequest(BaseModel):
     audio_b64: str          # Base64-encoded raw audio bytes (wav/ogg/mp3)
     audio_filename: str     # Original filename (e.g. "Bad Ketchup.ogg") — used for extension
     prompt: str             # Full instruction prompt
-    max_new_tokens: int = 8192
+    max_new_tokens: int = 16384
+    chunk_duration_sec: float = 20.0  # Audio chunk duration in seconds (used to derive min_new_tokens)
 
 class GenerateResponse(BaseModel):
     text: str               # Raw model output (beatmap rows as text)
@@ -94,9 +95,13 @@ def generate(req: GenerateRequest):
         ).to(_model.device)
 
         with torch.no_grad():
+            # Derive min_new_tokens: assume 8 rows/sec × ~12 tokens/row as a floor
+            # This forces the model to generate enough content to cover the whole chunk
+            min_tokens = max(64, int(req.chunk_duration_sec * 8 * 12))
             generated_ids = _model.generate(
                 **inputs, 
                 max_new_tokens=req.max_new_tokens,
+                min_new_tokens=min_tokens,
                 do_sample=True,
                 temperature=0.7,
                 top_p=0.9,

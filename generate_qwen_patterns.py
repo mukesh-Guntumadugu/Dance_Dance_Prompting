@@ -162,47 +162,70 @@ def parse_beatmap_response(
     tolerance_ms: float = 50.0
 ) -> List[Tuple]:
     """
-    Parse the 7-column CSV output from Qwen:
-    time_ms,beat_pos,notes,placement,note_type,conf,inst
+    Parse the JSON array output from Qwen.
+    Returns list of 7-tuples: (time_ms, beat, notes, placement, note_type, conf, inst)
     """
-    results = []
+    import re
 
-    for line in response_text.splitlines():
-        line = line.strip()
-        if not line or line.startswith('time_ms') or "```" in line:
-            continue
-            
-        parts = line.split(',')
-        # Handle the separator note which is "," inside quotes, or unquoted
-        if len(parts) >= 7 and parts[2] in ('"', '","', '', ' '):
-            parts[2] = ','
-            # Shift parts back if they got split by the note comma
-            if len(parts) > 7:
-                parts = [parts[0], parts[1], ',', parts[4], parts[5], parts[6], parts[7]]
-        
-        if len(parts) < 7:
-            continue
-            
+    # Strip markdown fences (```json, ```css, etc.)
+    clean = re.sub(r"```[a-zA-Z]*", "", response_text).replace("```", "")
+
+    # The prompt primes output with '[', so model may have omitted the leading '['.
+    # Add it back if it starts with '{'
+    stripped = clean.strip()
+    if stripped.startswith("{"):
+        clean = "[" + clean
+
+    # Try full JSON array first
+    data = None
+    array_match = re.search(r"\[.*\]", clean, re.DOTALL)
+    if array_match:
         try:
-            t_ms = float(parts[0])
-            beat = float(parts[1])
-            notes = parts[2].strip(' "')
-            place = int(parts[3])
-            ntype = int(parts[4])
-            conf = float(parts[5])
-            inst = parts[6].strip(' "')
-            
-            # If it's an actual note hitting, try to snap it to a valid onset
-            if notes != ',' and notes != '0000':
+            data = json.loads(array_match.group(0))
+        except json.JSONDecodeError:
+            # Model may have cut off mid-array — try closing it
+            try:
+                partial = array_match.group(0).rstrip(",").rstrip()
+                data = json.loads(partial + "]")
+            except Exception:
+                pass
+
+    # Fallback: parse individual JSON objects line by line
+    if not data:
+        data = []
+        for line in clean.splitlines():
+            line = line.strip().rstrip(",")
+            if line.startswith("{") and line.endswith("}"):
+                try:
+                    data.append(json.loads(line))
+                except json.JSONDecodeError:
+                    pass
+
+    results = []
+    for i, item in enumerate(data):
+        if not isinstance(item, dict) or "notes" not in item:
+            continue
+        try:
+            t_ms  = float(item.get("time_ms", i * 125.0))
+            beat  = float(item.get("beat_position", round(i / 4.0, 3)))
+            notes = str(item["notes"])
+            place = int(item.get("placement_type", 1))
+            ntype = int(item.get("note_type", 2))
+            conf  = float(item.get("confidence", 0.9))
+            inst  = str(item.get("instrument", "unknown"))
+
+            # Snap active notes to nearest valid onset
+            if notes not in (",", "0000") and valid_onsets:
                 nearest = min(valid_onsets, key=lambda v: abs(v - t_ms))
                 if abs(nearest - t_ms) <= tolerance_ms:
                     t_ms = nearest
-                    
+
             results.append((t_ms, beat, notes, place, ntype, conf, inst))
-        except ValueError:
+        except (ValueError, TypeError):
             continue
 
     return results
+
 
 # ── CSV saver ─────────────────────────────────────────────────────────────────
 

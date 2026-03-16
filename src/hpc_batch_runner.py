@@ -255,10 +255,11 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
                 resp = requests.post(
                     f"{server_url}/generate",
                     json={
-                        "audio_b64":      audio_b64,
-                        "audio_filename": os.path.basename(audio_path),
-                        "prompt":         prompt,
-                        "max_new_tokens": 8192,
+                        "audio_b64":           audio_b64,
+                        "audio_filename":      os.path.basename(audio_path),
+                        "prompt":              prompt,
+                        "max_new_tokens":      16384,
+                        "chunk_duration_sec":  chunk_duration,
                     },
                     timeout=600,
                 )

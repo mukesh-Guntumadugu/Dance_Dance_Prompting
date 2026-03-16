@@ -85,28 +85,22 @@ def build_per_song_prompt(difficulty: str, duration: float, bpm: float = None) -
     prompt += f"Generate a {difficulty} difficulty StepMania beatmap for this specific {duration:.1f} second audio slice."
     return prompt
 
-# ── Qwen addendum: since Qwen has no response_schema, guide its output format ─
+# ── Qwen addendum: reinforce the JSON format (the system instruction already shows it) ─
 QWEN_OUTPUT_ADDENDUM = (
-    "\n\n=== OUTPUT FORMAT (for this model) ===\n"
-    "Output ONLY plain CSV rows (no header, no extra JSON wrapping, no markdown, no explanations).\n"
-    "Each line: time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n"
-    'For separator rows use: time_ms,beat_position,",",-1,-1,1.0,separator\n\n'
-    "Example output (copy this format exactly):\n"
-    "0.0,1.0,1000,4,2,0.95,kick\n"
-    "125.0,1.25,0000,0,3,1.0,unknown\n"
-    "250.0,1.5,0010,4,3,0.88,snare\n"
-    "375.0,1.75,0000,0,3,1.0,unknown\n"
-    "500.0,2.0,2000,4,2,1.0,bass\n"
-    "625.0,2.25,0000,0,3,1.0,unknown\n"
-    "750.0,2.5,0100,4,3,0.82,snare\n"
-    "875.0,2.75,0000,0,3,1.0,unknown\n"
-    "1000.0,3.0,3001,4,2,0.91,kick\n"
-    '1125.0,3.25,",",-1,-1,1.0,separator\n\n'
-    "CRITICAL WARNING:\n"
-    "DO NOT output ANY conversational text, apologies, or explanations.\n"
-    "DO NOT complain about constraints. Just output the best CSV you can.\n"
-    "You MUST continue generating lines until `time_ms` reaches the end of this audio chunk.\n"
-    "Start immediately with the CSV data:\n"
+    "\n\n=== STRICT OUTPUT RULES ===\n"
+    "You MUST output ONLY a valid JSON array [ ... ] with NO surrounding text.\n"
+    "No markdown, no explanations, no apologies, no conversational text.\n"
+    "Do NOT write anything before the '[' or after the ']'.\n"
+    "Do NOT stop early. Keep generating JSON objects until time_ms reaches the end of the audio chunk.\n"
+    "If you cannot generate a full array, output as many objects as you can and close the array with ']'.\n\n"
+    "Reminder — each object must have these exact keys:\n"
+    '  {"time_ms": float, "beat_position": float, "notes": "4chars", '
+    '"placement_type": int, "note_type": int, "confidence": float, "instrument": "str"}\n\n'
+    "For measure separators, use:\n"
+    '  {"time_ms": float, "beat_position": float, "notes": ",",'
+    '"placement_type": -1, "note_type": -1, "confidence": 1.0, "instrument": "separator"}\n\n'
+    "Output the JSON array now:\n"
+    "[\n"
 )
 
 def build_qwen_prompt(difficulty: str, duration: float, bpm: float = None) -> str:
