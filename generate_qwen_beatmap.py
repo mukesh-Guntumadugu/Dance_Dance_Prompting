@@ -26,11 +26,13 @@ import glob
 import time
 import datetime
 import argparse
+import librosa
 from typing import List, Optional, Tuple
 
 # ── Path setup ────────────────────────────────────────────────────────────────
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from src.qwen_interface import setup_qwen, generate_beatmap_with_qwen
+from src.beatmap_prompt import BEATMAP_SYSTEM_INSTRUCTION, build_per_song_prompt, QWEN_OUTPUT_ADDENDUM
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 BASE_DIR = os.path.join(
@@ -91,58 +93,62 @@ def find_audio_file(song_dir: str) -> Optional[str]:
             return os.path.join(song_dir, f)
     return None
 
+def get_audio_info(song_dir: str, audio_path: str) -> Tuple[float, float]:
+    """Return the duration and primary BPM of a song."""
+    duration = 0.0
+    try:
+        duration = librosa.get_duration(path=audio_path)
+    except Exception:
+        pass
+        
+    bpm = 120.0 # fallback
+    for f in os.listdir(song_dir):
+        if f.lower().endswith((".ssc", ".sm")):
+            try:
+                with open(os.path.join(song_dir, f), "r", encoding="utf-8", errors="ignore") as file:
+                    content = file.read()
+                    m = re.search(r'#BPMS:.*?=([\d.]+)', content)
+                    if m:
+                        bpm = float(m.group(1))
+                        break
+            except Exception:
+                pass
+    return duration, bpm
+
 # ── Prompt builder ────────────────────────────────────────────────────────────
 
-def build_beatmap_prompt(onsets_ms: List[float], difficulty: str) -> str:
+def build_beatmap_prompt(onsets_ms: List[float], difficulty: str, duration: float, bpm: float) -> str:
     target_pct = int(DENSITY[difficulty] * 100)
     desc = DIFFICULTY_DESC[difficulty]
     onset_str = ", ".join(f"{ms:.2f}" for ms in onsets_ms)
     total = len(onsets_ms)
+    
+    total_beats = (duration / 60.0) * bpm
+    max_lines_16 = int(total_beats * 4) # 4 rows per beat in a 16-row measure
+    max_lines_8 = int(total_beats * 2)  # 2 rows per beat in an 8-row measure
 
-    return (
-        f"You are a professional rhythm game chart designer creating a **{difficulty.upper()}** "
-        f"difficulty beatmap for a 4-panel arrow game (like DDR/Stepmania).\n\n"
-
-        f"## Available Onset Timestamps\n"
+    # The dynamic injection part to string together with the shared Gemini prompt
+    injection = (
+        f"\n\n## Available Onset Timestamps\n"
         f"The following {total} timestamps (in milliseconds) are musically significant moments "
-        f"detected in the song. You must choose which ones deserve a note placement:\n\n"
+        f"detected in the song. You MUST select your note placements strictly from these exact numbers:\n"
         f"[{onset_str}]\n\n"
-
-        f"## Your Task\n"
-        f"Create a **{difficulty.upper()}** chart with approximately **{target_pct}%** of these "
+        
+        f"## Density & Length Constraints\n"
+        f"Your task is to create a **{difficulty.upper()}** chart with approximately **{target_pct}%** of these "
         f"onsets activated ({desc}).\n\n"
-        
-        "=== MEASURE STRUCTURE — READ CAREFULLY ===\n"
-        "A measure is a group of rows ended by a separator row (notes=',').\n"
-        "EACH measure MUST contain EXACTLY 4, 8, 12, or 16 note rows before the ','.\n"
-        "  - 4 rows  = quarter note grid   → 1 row per beat (sparse / slow music)\n"
-        "  - 8 rows  = eighth note grid    → 2 rows per beat (moderate density)\n"
-        "  - 12 rows = triplet grid        → 3 rows per beat (triplet feel)\n"
-        "  - 16 rows = sixteenth note grid → 4 rows per beat (dense / fast music)\n"
-        "For every subdivision slot that has NO note, you MUST output '0000'.\n\n"
-        
-        "=== OUTPUT FORMAT ===\n"
-        "Output ONLY plain CSV rows (no header, no extra JSON wrapping, no explanations).\n"
-        "Each line MUST exactly match this 7-column format:\n"
-        "time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n\n"
-        
-        "For note rows:   time_ms,beat_position,1000,4,2,0.95,kick\n"
-        "For empty rows:  time_ms,beat_position,0000,0,3,1.0,unknown\n"
-        'For separators:  time_ms,beat_position,",",-1,-1,1.0,separator\n\n'
-        
-        "Example output (copy this format exactly):\n"
-        "0.0,1.0,1000,4,2,0.95,kick\n"
-        "125.0,1.25,0000,0,3,1.0,unknown\n"
-        "250.0,1.5,0010,4,3,0.88,snare\n"
-        "375.0,1.75,0000,0,3,1.0,unknown\n"
-        "500.0,2.0,2000,4,2,1.0,bass\n"
-        "625.0,2.25,0000,0,3,1.0,unknown\n"
-        "750.0,2.5,0100,4,3,0.82,snare\n"
-        "875.0,2.75,0000,0,3,1.0,unknown\n"
-        "1000.0,3.0,3001,4,2,0.91,kick\n"
-        '1125.0,3.25,",",-1,-1,1.0,separator\n\n'
-        
-        f"Now generate the {difficulty.upper()} CSV chart:"
+        f"The audio is {duration:.1f} seconds long with a BPM of {bpm:.1f}. This means the entire song is roughly {total_beats:.1f} total beats.\n"
+        f"- If relying heavily on 16-row measures, you can output around {max_lines_16} total lines maximum.\n"
+        f"- If relying on 8-row measures, expect around {max_lines_8} total lines.\n"
+        f"Do NOT generate endless rows past the end of the song. Stop your notes roughly at {duration * 1000.0:.0f} ms!\n"
+    )
+
+    # Use the exact shared prompt base, then the song metadata, then our onset list, then the Qwen CSV out instruction
+    return (
+        BEATMAP_SYSTEM_INSTRUCTION
+        + build_per_song_prompt(difficulty, duration, bpm)
+        + injection
+        + QWEN_OUTPUT_ADDENDUM
     )
 
 # ── Response parser ───────────────────────────────────────────────────────────
@@ -270,9 +276,11 @@ def main():
         if audio_path is None:
             print(f"  ⚠️  No audio file found in: {song_name}")
             continue
+            
+        duration, bpm = get_audio_info(song_dir, audio_path)
 
         for difficulty in difficulties:
-            prompt = build_beatmap_prompt(onsets, difficulty)
+            prompt = build_beatmap_prompt(onsets, difficulty, duration, bpm)
 
             for run in range(1, args.runs + 1):
                 label = f"[{song_name[:35]:<35}] {difficulty:<10} run {run}/{args.runs}"
