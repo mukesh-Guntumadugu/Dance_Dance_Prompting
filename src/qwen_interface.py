@@ -84,12 +84,18 @@ def generate_beatmap_with_qwen(audio_path: str, prompt: str) -> str:
 
     # Generate
     print("Generating with Qwen2-Audio...")
+    
+    # Qwen2 usually uses <|im_end|> as its EOS token. We suppress it so it can't quit early.
+    eos_token_id = getattr(_processor.tokenizer, "eos_token_id", None)
+    suppress = [eos_token_id] if eos_token_id is not None else None
+
     with torch.no_grad():
         generated_ids = _model.generate(
             **inputs, 
-            max_new_tokens=32768,
+            max_new_tokens=16384,
             do_sample=False,             # Greedy decoding for strict formatting
-            repetition_penalty=1.05      # Slight penalty to prevent infinite repeating loops
+            repetition_penalty=1.05,     # Slight penalty to prevent infinite repeating loops
+            suppress_tokens=suppress     # Force the model to NOT output the stop token
         )
         
     # Decode
