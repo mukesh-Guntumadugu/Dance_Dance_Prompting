@@ -179,11 +179,15 @@ def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
     audio_tensor = _load_audio_tensor(audio_path)
 
     with torch.no_grad():
-        # generate() expects:
-        #   prompts  : list[str]
-        #   audios   : Tensor of shape (num_samples,) — the raw waveform
+        # MuMu_LLaMA.generate() has a bug: when prompts[0] is a str it does
+        #   self.tokenizer(x).input_ids[:, 1:]
+        # which requires a 2D tensor but LlamaTokenizer returns a plain list.
+        # Fix: pre-tokenize here and pass token ID lists so the str branch is skipped.
+        token_ids = _model.tokenizer.encode(prompt)  # list[int], includes BOS
+        token_ids = token_ids[1:]                    # drop BOS (matches [:, 1:])
+
         result = _model.generate(
-            prompts=[prompt],
+            prompts=[token_ids],   # list of token-id lists, not strings
             audios=audio_tensor,
             max_gen_len=4096,
             temperature=0.1,
