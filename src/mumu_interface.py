@@ -100,7 +100,7 @@ def setup_mumu():
         from llama.mumu_llama import MuMu_LLaMA  # type: ignore
 
         llama_ckpt_dir      = os.path.join(LLAMA_DIR, "7B")
-        llama_tokenizer_dir = LLAMA_DIR           # tokenizer is at the parent level
+        llama_tokenizer_dir = llama_ckpt_dir      # tokenizer.model is inside 7B/ on this cluster
         model_args          = _make_model_args()
 
         _model = MuMu_LLaMA(
