@@ -100,7 +100,7 @@ def build_prompt(duration: float, difficulty: str = "Medium", bpm: float = None,
     return base + QWEN_OUTPUT_ADDENDUM
 
 # ── Robust Qwen output parser ─────────────────────────────────────────────────
-def _parse_qwen_output(text: str) -> list[dict]:
+def _parse_qwen_output(text: str, valid_onsets: list[float] = None, tolerance_ms: float = 50.0) -> list[dict]:
     """
     Handles all the ways Qwen might format its response:
       1. Clean JSON array: [{...}, ...]
@@ -111,9 +111,17 @@ def _parse_qwen_output(text: str) -> list[dict]:
     Always returns a list of dicts with keys:
       time_ms, beat_position, notes, placement_type, note_type, confidence, instrument
     """
+    # ── Step 0: Helper to snap notes to onsets ────────────────────────────────
+    def snap(t_ms: float, notes: str) -> float:
+        if valid_onsets and notes not in (",", "0000"):
+            nearest = min(valid_onsets, key=lambda v: abs(v - t_ms))
+            if abs(nearest - t_ms) <= tolerance_ms:
+                return nearest
+        return t_ms
+
     # ── Step 1: Strip markdown code fences (```json, ```css, ``` etc.) ────────
     clean = re.sub(r"```[a-zA-Z]*", "", text).replace("```", "")
-
+    
     # ── Step 2: Try to extract a JSON array [...] from anywhere in the text ───
     array_match = re.search(r"\[.*\]", clean, re.DOTALL)
     if array_match:
@@ -123,10 +131,13 @@ def _parse_qwen_output(text: str) -> list[dict]:
                 rows = []
                 for i, item in enumerate(data):
                     if isinstance(item, dict) and "notes" in item:
+                        t_ms = float(item.get("time_ms", i * 125.0))
+                        notes_str = str(item["notes"])
+                        t_ms = snap(t_ms, notes_str)
                         rows.append({
-                            "time_ms":        float(item.get("time_ms", i * 125.0)),
+                            "time_ms":         t_ms,
                             "beat_position":   float(item.get("beat_position", round(i / 4.0, 3))),
-                            "notes":           str(item["notes"]),
+                            "notes":           notes_str,
                             "placement_type":  int(item.get("placement_type", 1)),
                             "note_type":       int(item.get("note_type", 2)),
                             "confidence":      float(item.get("confidence", 0.9)),
@@ -146,10 +157,13 @@ def _parse_qwen_output(text: str) -> list[dict]:
             try:
                 item = json.loads(line)
                 if "notes" in item:
+                    t_ms = float(item.get("time_ms", i * 125.0))
+                    notes_str = str(item["notes"])
+                    t_ms = snap(t_ms, notes_str)
                     rows.append({
-                        "time_ms":        float(item.get("time_ms", i * 125.0)),
+                        "time_ms":         t_ms,
                         "beat_position":   float(item.get("beat_position", round(i / 4.0, 3))),
-                        "notes":           str(item["notes"]),
+                        "notes":           notes_str,
                         "placement_type":  int(item.get("placement_type", 1)),
                         "note_type":       int(item.get("note_type", 2)),
                         "confidence":      float(item.get("confidence", 0.9)),
@@ -171,8 +185,10 @@ def _parse_qwen_output(text: str) -> list[dict]:
         if note == ",":
             beat_idx += 1.0
         elif len(note) == 4 and all(c in "01234M" for c in note):
+            t_ms = round(row_count / rows_per_sec * 1000, 2)
+            t_ms = snap(t_ms, note)
             fallback.append({
-                "time_ms":        round(row_count / rows_per_sec * 1000, 2),
+                "time_ms":         t_ms,
                 "beat_position":   round(beat_idx + (row_count % int(rows_per_sec)) / rows_per_sec, 3),
                 "notes":           note,
                 "placement_type":  1,
@@ -311,7 +327,7 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
                     print(f"  [{i+1}/{num_chunks}] No output from model.")
                     continue
 
-                parsed_rows = _parse_qwen_output(text)
+                parsed_rows = _parse_qwen_output(text, chunk_onsets)
                 
                 if not parsed_rows:
                     print(f"  [{i+1}/{num_chunks}] ⚠️ No valid rows parsed. Saving RAW...")
