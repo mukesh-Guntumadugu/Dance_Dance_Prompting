@@ -21,15 +21,17 @@ echo "GPU: $(nvidia-smi --query-gpu=name --format=csv,noheader)"
 mkdir -p logs
 
 # ── Activate Python environment ────────────────────────────────────────────────
-VENV_PATH="/data/mg546924/envs/qwen_env"
-if [ -f "$VENV_PATH/bin/activate" ]; then
-    echo "Using venv: $VENV_PATH"
-    source "$VENV_PATH/bin/activate"
+# Use the conda env that already has all packages installed (same as run_qwen.sh)
+CONDA_PYTHON="/data/mg546924/conda_envs/qwenenv/bin/python"
+CONDA_BIN="/data/mg546924/conda_envs/qwenenv/bin"
+
+if [ -f "$CONDA_PYTHON" ]; then
+    echo "Using conda env: $CONDA_BIN"
+    export PATH="$CONDA_BIN:$PATH"
+    export PYTHONNOUSERSITE=1
 else
-    echo "⚠️  Venv not found — installing required packages on compute node..."
-    export PATH="$HOME/.local/bin:$PATH"
-    python3 -m pip install --user --quiet packaging psutil transformers torch torchaudio librosa fastapi uvicorn requests soundfile
-    echo "✅ Packages installed."
+    echo "❌ Conda env not found at $CONDA_BIN — aborting."
+    exit 1
 fi
 
 # Go to project directory
