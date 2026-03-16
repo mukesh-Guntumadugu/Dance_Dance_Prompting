@@ -221,11 +221,15 @@ def save_beatmap_csv(
     out_dir: str,
     job_id: str = ""
 ) -> str:
+    # Create output directory
+    qwen_dir = os.path.join(out_dir, "qwen_outputs")
+    os.makedirs(qwen_dir, exist_ok=True)
+    
     ts = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
     safe = song_name.replace(" ", "_").replace("/", "-")
     job_tag = f"_job{job_id}" if job_id else ""
     fname = f"Qwen_beatmap_{safe}_{difficulty}{job_tag}_run{run_num:02d}_{ts}.csv"
-    fpath = os.path.join(out_dir, fname)
+    fpath = os.path.join(qwen_dir, fname)
     with open(fpath, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["time_ms", "beat_position", "notes", "placement_type", "note_type", "confidence", "instrument"])

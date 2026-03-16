@@ -362,15 +362,19 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
         # ── Save 3 files ──────────────────────────────────────────────────
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         base      = f"{name_no_ext}_{difficulty}_{MODEL_NAME}_{task_tag}{job_tag}_{timestamp}"
+        
+        # Create output directory
+        out_dir = os.path.join(dirname, "qwen_outputs")
+        os.makedirs(out_dir, exist_ok=True)
 
         # 1. Raw JSON — all parsed rows as a JSON array
-        json_path = os.path.join(dirname, f"{base}.json")
+        json_path = os.path.join(out_dir, f"{base}.json")
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(all_parsed_rows, f, indent=2)
-        print(f"  Raw JSON  → {os.path.basename(json_path)}")
+        print(f"  Raw JSON  → qwen_outputs/{os.path.basename(json_path)}")
 
         # 2. Structured CSV with all 7 columns
-        csv_path = os.path.join(dirname, f"{base}.csv")
+        csv_path = os.path.join(out_dir, f"{base}.csv")
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["time_ms", "beat_position", "notes",
@@ -381,15 +385,14 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
                     row["notes"], row["placement_type"], row["note_type"],
                     f"{row['confidence']:.3f}", row["instrument"]
                 ])
-        print(f"  Full CSV  → {os.path.basename(csv_path)}")
+        print(f"  Full CSV  → qwen_outputs/{os.path.basename(csv_path)}")
 
         # 3. StepMania .txt — just the notes column (4-char rows + ',' separators)
-        txt_path = os.path.join(dirname, f"{base}.txt")
+        txt_path = os.path.join(out_dir, f"{base}.txt")
         with open(txt_path, "w", encoding="utf-8") as f:
             for row in all_parsed_rows:
                 f.write(f"{row['notes']}\n")
-        print(f"  Beatmap   → {os.path.basename(txt_path)}")
-
+        print(f"  Beatmap   → qwen_outputs/{os.path.basename(txt_path)}")
         print("  Done.")
 
     except requests.exceptions.ConnectionError:
