@@ -29,7 +29,7 @@ import librosa
 app = FastAPI(title="Qwen2-Audio Beatmap Server")
 _model = None
 _processor = None
-_logits_processor = None   # Outlines constrained decoding processor
+_prefix_fn = None   # lm-format-enforcer constrained decoding prefix function
 
 # ── Beatmap output schema (mirrors Gemini's BeatCSV exactly) ─────────────────
 class BeatCSV(BaseModel):
@@ -58,7 +58,7 @@ class GenerateResponse(BaseModel):
 
 # ── Model loading ─────────────────────────────────────────────────────────────
 def load_model(model_dir: str):
-    global _model, _processor, _logits_processor
+    global _model, _processor, _prefix_fn
     print(f"Loading model from: {model_dir}")
     _processor = AutoProcessor.from_pretrained(model_dir, trust_remote_code=True, fix_mistral_regex=True)
     _model = Qwen2AudioForConditionalGeneration.from_pretrained(
@@ -69,22 +69,26 @@ def load_model(model_dir: str):
     )
     _model.eval()
 
-    # ── Set up Outlines constrained decoding ─────────────────────────────────
-    # This is the equivalent of Gemini's response_schema=list[BeatCSV].
-    # The model is physically prevented from emitting tokens that would violate
-    # the BeatmapOutput JSON schema.
+    # ── Set up lm-format-enforcer constrained decoding ───────────────────────
+    # Same guarantee as Gemini's response_schema: model cannot emit invalid tokens.
+    # lm-format-enforcer supports Python 3.9 (unlike outlines which needs 3.10+).
     try:
-        from outlines.integrations.transformers import JSONLogitsProcessor
-        _logits_processor = JSONLogitsProcessor(
-            schema=BeatmapOutput,
-            tokenizer=_processor.tokenizer,
-            whitespace_pattern=r" ?"   # allow optional whitespace for readability
+        from lmformatenforcer import JsonSchemaParser
+        from lmformatenforcer.integrations.transformers import (
+            build_transformers_prefix_allowed_tokens_fn
         )
-        print("✅ Outlines constrained decoding enabled (schema: BeatmapOutput).")
+        schema_parser = JsonSchemaParser(BeatmapOutput.model_json_schema())
+        _prefix_fn = build_transformers_prefix_allowed_tokens_fn(
+            _processor.tokenizer, schema_parser
+        )
+        print("✅ lm-format-enforcer constrained decoding enabled (schema: BeatmapOutput).")
     except ImportError:
-        _logits_processor = None
-        print("⚠️  outlines not installed — falling back to unconstrained generation.")
-        print("   To enable: pip install outlines")
+        _prefix_fn = None
+        print("⚠️  lm-format-enforcer not installed — falling back to unconstrained generation.")
+        print("   To enable: pip install lm-format-enforcer")
+    except Exception as e:
+        _prefix_fn = None
+        print(f"⚠️  Constrained decoding setup failed: {e} — using unconstrained generation.")
 
     print("✅ Model loaded and ready.")
 
@@ -94,7 +98,7 @@ def health():
     return {
         "status": "ok",
         "model_loaded": _model is not None,
-        "constrained_decoding": _logits_processor is not None,
+        "constrained_decoding": _prefix_fn is not None,
     }
 
 @app.post("/generate", response_model=GenerateResponse)
@@ -155,10 +159,10 @@ def generate(req: GenerateRequest):
                 repetition_penalty=1.1,
             )
             
-            # Plug in Outlines logits processor if available
-            # This constrains token choices so the model CANNOT output invalid JSON
-            if _logits_processor is not None:
-                generate_kwargs["logits_processor"] = [_logits_processor]
+            # Plug in lm-format-enforcer prefix function if available
+            # This restricts token choices so the model CANNOT output invalid JSON
+            if _prefix_fn is not None:
+                generate_kwargs["prefix_allowed_tokens_fn"] = _prefix_fn
             
             generated_ids = _model.generate(**generate_kwargs)
 
@@ -172,7 +176,7 @@ def generate(req: GenerateRequest):
 
         # If constrained decoding was active the output IS valid JSON
         # Parse it and re-emit as flat CSV rows for the existing parser
-        if _logits_processor is not None:
+        if _prefix_fn is not None:
             try:
                 data = json.loads(response_text)
                 rows = data.get("rows", [])

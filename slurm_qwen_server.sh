@@ -37,7 +37,7 @@ fi
 
 # ── Install any missing packages directly into the conda env ─────────────────
 echo "Ensuring required packages are installed in conda env..."
-$CONDA_PIP install --quiet uvicorn fastapi pydantic soundfile librosa requests outlines
+$CONDA_PIP install --quiet uvicorn fastapi pydantic soundfile librosa requests lm-format-enforcer
 echo "✅ Package check done."
 
 # Go to project directory
