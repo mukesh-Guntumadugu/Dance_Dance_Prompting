@@ -48,6 +48,8 @@ def _make_model_args() -> argparse.Namespace:
         music_decoder="musicgen",
         music_decoder_path="facebook/musicgen-medium",
         knn_dir=os.path.join(MUMU_REPO_DIR, "ckpts"),
+        max_seq_len=4096,
+        max_batch_size=1,
         max_words=2048,
         num_gen_audio_tokens=8,
     )
@@ -189,7 +191,7 @@ def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
         result = _model.generate(
             prompts=[token_ids],   # list of token-id lists, not strings
             audios=audio_tensor,
-            max_gen_len=4096,
+            max_gen_len=2048,
             temperature=0.1,
             top_p=0.75,
         )
