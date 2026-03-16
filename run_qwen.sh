@@ -12,9 +12,7 @@ echo "============================================="
 
 cd /data/mg546924/llm_beatmap_generator
 
-# Initialize conda using the cluster's exact installation path
-source /opt/shared/apps/anaconda3/2024.06/etc/profile.d/conda.sh
-# Use conda run (more reliable than conda activate in batch scripts)
-conda run -n qwenenv python3 extract_qwen_onsets.py
+# Use the conda env's Python directly (most reliable in SLURM batch scripts)
+/home/mg546924/.conda/envs/qwenenv/bin/python extract_qwen_onsets.py
 
 echo "=== Qwen Onset Detection Finished ==="
