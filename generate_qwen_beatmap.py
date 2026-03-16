@@ -157,17 +157,15 @@ def parse_beatmap_response(
     valid_set = set(valid_onsets)
     results: List[Tuple[float, int]] = []
 
-    # Match: optional leading whitespace, number, optional whitespace, comma,
-    # optional whitespace, integer
-    line_re = re.compile(r'^\s*([\d.]+)\s*,\s*(\d+)\s*$')
-
-    for line in response_text.splitlines():
-        m = line_re.match(line.strip())
-        if not m:
-            continue
+    # Match: number, comma, integer
+    # e.g., "500.00 , 8"
+    pattern = re.compile(r'([\d.]+)\s*,\s*(\d+)')
+    matches = pattern.findall(response_text)
+    
+    for t_str, w_str in matches:
         try:
-            t_ms = float(m.group(1))
-            width = int(m.group(2))
+            t_ms = float(t_str)
+            width = int(w_str)
         except ValueError:
             continue
 
