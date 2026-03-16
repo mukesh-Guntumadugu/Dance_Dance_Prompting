@@ -12,11 +12,8 @@ echo "==========================================="
 
 cd /data/mg546924/llm_beatmap_generator
 
-# Initialize conda so it works in a non-interactive SLURM job
-source ~/miniconda3/etc/profile.d/conda.sh 2>/dev/null || \
-source ~/anaconda3/etc/profile.d/conda.sh 2>/dev/null || \
-source /opt/conda/etc/profile.d/conda.sh 2>/dev/null || \
-eval "$(conda shell.bash hook)"
+# Load conda via the cluster module system
+module load anaconda3/2024.06
 
 # Activate MuMu-LLaMA conda environment
 conda activate mumullama

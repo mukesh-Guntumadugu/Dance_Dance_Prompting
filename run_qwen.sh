@@ -12,6 +12,10 @@ echo "============================================="
 
 cd /data/mg546924/llm_beatmap_generator
 
+# Load conda and activate qwen environment
+module load anaconda3/2024.06
+conda activate qwen_env 2>/dev/null || true  # use base if qwen_env doesn't exist
+
 python3 extract_qwen_onsets.py
 
 echo "=== Qwen Onset Detection Finished ==="
