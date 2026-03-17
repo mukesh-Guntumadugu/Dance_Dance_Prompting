@@ -98,8 +98,8 @@ def batch_convert(audio_dir: str, out_dir: str, min_freq=None, max_freq=None,
 
     print(f"Found {len(audio_files)} audio file(s) to convert.\n")
     for i, audio_path in enumerate(audio_files):
-        rel = os.path.relpath(os.path.dirname(audio_path), audio_dir)
-        song_out = os.path.join(out_dir, rel)
+        # Save into midi/ subfolder inside each song's own directory
+        song_out = os.path.join(os.path.dirname(audio_path), "midi")
         print(f"[{i+1}/{len(audio_files)}] ", end="")
         try:
             convert_single(audio_path, song_out, min_freq, max_freq,
