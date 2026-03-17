@@ -589,7 +589,11 @@ def process_full_song(audio_path: str, level: str = "Hard", mode: str = "full", 
         original_name = os.path.splitext(os.path.basename(audio_path))[0]
         timestamp = time.strftime("%Y%m%d_%H%M%S")
         csv_filename = f"{original_name}_{level}_{model_name}_{timestamp}_{mode}.csv"
-        csv_path = os.path.join(script_dir, csv_filename)
+        # Save inside gemini_outputs/ subfolder next to the audio file
+        audio_dir = os.path.dirname(os.path.abspath(audio_path))
+        out_dir = os.path.join(audio_dir, "gemini_outputs")
+        os.makedirs(out_dir, exist_ok=True)
+        csv_path = os.path.join(out_dir, csv_filename)
         
         print(f"Saving to CSV: {csv_path}")
         
