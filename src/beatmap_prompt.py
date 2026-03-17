@@ -83,7 +83,10 @@ def build_per_song_prompt(difficulty: str, duration: float, bpm: float = None) -
             f"Therefore, a single measure (4 beats) lasts exactly {measure_duration:.3f} seconds.\n"
             f"Please ensure your comma ',' separators appear roughly every {measure_duration:.3f} seconds.\n"
         )
-    prompt += f"Generate a {difficulty} difficulty StepMania beatmap for this specific {duration:.1f} second audio slice."
+    prompt += (
+        f"Generate a {difficulty} difficulty StepMania beatmap for the attached {duration:.1f} second audio file.\n"
+        f"The audio is provided in this message. Do not claim you cannot access it, process the provided <|audio|>.\n"
+    )
     return prompt
 
 # ── Qwen addendum: enforce raw CSV, ban all markdown and chat preamble ─────────
