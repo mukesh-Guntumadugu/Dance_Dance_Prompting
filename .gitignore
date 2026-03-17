@@ -28,8 +28,12 @@ src/.gemini_usage.json
 audio_representation.npy
 wandb/
 
+# HPC cluster — never commit model weights or job logs
+logs/
+MuMu-LLaMA/
+=4.45.0
+
 # Environment / secrets — NEVER commit API keys
 .env
 .env.*
 !.env.example
-

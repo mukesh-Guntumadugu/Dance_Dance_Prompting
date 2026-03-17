@@ -61,12 +61,15 @@ def generate_beatmap_with_qwen(audio_path: str, prompt: str) -> str:
     y, sr = librosa.load(audio_path, sr=target_sr)
 
     # Prepare Conversation using standard Chat Template
-    # Qwen2-Audio-Instruct expects a specific format
+    # Qwen2-Audio-Instruct expects a file:// URI for local audio files.
+    # A bare file path causes the processor to silently skip audio embedding,
+    # making the model respond: "I cannot access audio files."
+    audio_uri = f"file://{os.path.abspath(audio_path)}"
     conversation = [
         {
             "role": "user",
             "content": [
-                {"type": "audio", "audio_url": audio_path},
+                {"type": "audio", "audio_url": audio_uri},
                 {"type": "text", "text": prompt}
             ]
         }
@@ -76,13 +79,21 @@ def generate_beatmap_with_qwen(audio_path: str, prompt: str) -> str:
     text = _processor.apply_chat_template(conversation, add_generation_prompt=True, tokenize=False)
 
     # Pass audio with explicit sampling_rate to suppress the warning
-    inputs = _processor(text=text, audios=[y], sampling_rate=target_sr, return_tensors="pt", padding=True)
+    inputs = _processor(text=text, audio=[y], sampling_rate=target_sr, return_tensors="pt", padding=True)
     inputs = inputs.to(_model.device)
 
     # Generate
     print("Generating with Qwen2-Audio...")
+    
     with torch.no_grad():
-        generated_ids = _model.generate(**inputs, max_new_tokens=4096)
+        generated_ids = _model.generate(
+            **inputs, 
+            max_new_tokens=4096,         # Dropped to 4096 so it finishes reasonably fast even on large outputs
+            do_sample=True,              # Changed to True with low temperature so it doesn't loop infinitely
+            temperature=0.7,
+            top_p=0.9,
+            repetition_penalty=1.05
+        )
         
     # Decode
     generated_ids = generated_ids[:, inputs.input_ids.size(1):]
