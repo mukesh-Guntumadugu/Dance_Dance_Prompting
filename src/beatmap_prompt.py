@@ -86,25 +86,29 @@ def build_per_song_prompt(difficulty: str, duration: float, bpm: float = None) -
     prompt += f"Generate a {difficulty} difficulty StepMania beatmap for this specific {duration:.1f} second audio slice."
     return prompt
 
-# ── Qwen addendum: reinforce CSV output, ban MIDI fields ──────────────────────
+# ── Qwen addendum: enforce raw CSV, ban all markdown and chat preamble ─────────
 QWEN_OUTPUT_ADDENDUM = (
-    "\n\n=== STRICT OUTPUT RULES ===\n"
+    "\n\n=== ABSOLUTE OUTPUT RULES — VIOLATION WILL BREAK THE PIPELINE ===\n"
     "You are generating a StepMania BEATMAP, NOT a music analysis, song config, or MIDI file.\n"
-    "DO NOT output JSON objects, song specs, rules, music_key, time_signature, or velocity fields.\n"
-    "DO NOT output any of these MIDI-style fields: 'time', 'note_name', 'velocity', 'pitch', 'duration', 'frequency'.\n"
-    "DO NOT include markdown, explanations, apologies, or conversational text.\n"
-    "DO NOT write 'Here is your CSV:' or similar phrases.\n"
-    "Do NOT stop early. Keep generating CSV rows until time_ms reaches the end of the audio chunk.\n\n"
-    "You MUST output ONLY plain CSV rows with EXACTLY these 7 comma-separated columns:\n"
+    "YOUR ENTIRE RESPONSE MUST BE PLAIN CSV ROWS. NOTHING ELSE.\n\n"
+    "❌ STRICTLY FORBIDDEN — do NOT output any of these:\n"
+    "  - Backtick characters (`) or code fences (```)\n"
+    "  - The words 'Assistant:', 'Human:', 'Here is', 'Sure', 'I will', 'Based on'\n"
+    "  - JSON objects, song specs, rules, music_key, time_signature\n"
+    "  - MIDI fields: 'time', 'note_name', 'velocity', 'pitch', 'duration', 'frequency'\n"
+    "  - Markdown, explanations, apologies, or any conversational text\n"
+    "  - A header line (do NOT repeat 'time_ms,beat_position,...')\n\n"
+    "✅ YOUR OUTPUT FORMAT — these 7 comma-separated values per line:\n"
     "time_ms,beat_position,notes,placement_type,note_type,confidence,instrument\n\n"
-    "EXAMPLE of correct output (start outputting rows like this immediately):\n"
+    "EXAMPLE (copy this pattern exactly):\n"
     "0.0,1.000,1000,4,2,0.95,kick\n"
     "125.0,1.250,0000,0,3,1.0,unknown\n"
     "250.0,1.500,0010,4,3,0.88,snare\n"
     "375.0,1.750,0000,0,3,1.0,unknown\n"
     '500.0,2.000,",",-1,-1,1.0,separator\n'
     "500.0,2.000,1000,4,2,0.96,kick\n\n"
-    "Output the first CSV row immediately, with no header line:\n"
+    "The VERY FIRST CHARACTER you output must be a digit (e.g. '0'). Start immediately:\n"
+    "0.0,"
 )
 
 def build_qwen_prompt(difficulty: str, duration: float, bpm: float = None) -> str:

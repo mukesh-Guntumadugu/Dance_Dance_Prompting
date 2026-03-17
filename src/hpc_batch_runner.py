@@ -338,7 +338,9 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
                 if not parsed_rows:
                     print(f"  [{i+1}/{num_chunks}] ⚠️ No valid rows parsed. Saving RAW...")
                     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                    raw_path = os.path.join(dirname, f"{name_no_ext}_{difficulty}_{MODEL_NAME}_{task_tag}{job_tag}_chunk{i+1}_{timestamp}_RAW.txt")
+                    raw_dir = os.path.join(dirname, "qwen_outputs")
+                    os.makedirs(raw_dir, exist_ok=True)
+                    raw_path = os.path.join(raw_dir, f"{name_no_ext}_{difficulty}_{MODEL_NAME}_{task_tag}{job_tag}_chunk{i+1}_{timestamp}_RAW.txt")
                     with open(raw_path, "w", encoding="utf-8") as f:
                         f.write(text)
                     continue
