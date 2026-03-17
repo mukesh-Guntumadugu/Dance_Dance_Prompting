@@ -32,6 +32,7 @@ wandb/
 logs/
 MuMu-LLaMA/
 =4.45.0
+src/.venv_qwen/
 
 # Environment / secrets — NEVER commit API keys
 .env
