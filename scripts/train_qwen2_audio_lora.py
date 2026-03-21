@@ -14,9 +14,9 @@ from dataclasses import dataclass
 from typing import Dict, List, Any
 
 # CONFIGURATION
-MODEL_ID = "Qwen/Qwen2-Audio-7B-Instruct"
-DATASET_PATH = "/Users/mukeshguntumadugu/llm_beatmap_generator/sft_dataset/dataset.jsonl"
-OUTPUT_DIR = "/Users/mukeshguntumadugu/llm_beatmap_generator/models/qwen2-audio-lora-onsets"
+MODEL_ID = "/data/mg546924/models/Qwen2-Audio-7B-Instruct"  # Changed from HuggingFace to your local cluster path
+DATASET_PATH = "/data/mg546924/llm_beatmap_generator/sft_dataset/dataset.jsonl"
+OUTPUT_DIR = "/data/mg546924/models/qwen2-audio-lora-onsets"
 BLOCK_SIZE = 512 # max text tokens
 
 def main():
