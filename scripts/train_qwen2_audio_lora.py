@@ -40,6 +40,13 @@ def main():
             user_msg = messages[0]
             audio_url = user_msg['content'][0]['audio_url'] # Assuming audio in first element
             
+            # --- FIX MAC PATHS FOR CLUSTER ---
+            # The dataset.jsonl was generated locally so it contains /Users/mukesh paths.
+            # We dynamically replace it here so it works on the cluster.
+            if "/Users/mukeshguntumadugu/" in audio_url:
+                audio_url = audio_url.replace("/Users/mukeshguntumadugu/", "/data/mg546924/")
+            # ---------------------------------
+            
             # Load audio using librosa
             y, sr = librosa.load(audio_url, sr=processor.feature_extractor.sampling_rate)
             
