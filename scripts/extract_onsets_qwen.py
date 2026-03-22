@@ -97,7 +97,7 @@ def extract_onsets_for_song(song_dir: str, server_url: str) -> list[float]:
             "audio_b64":      audio_b64,
             "audio_filename": audio_fn,
             "system_prompt":  SYSTEM_PROMPT,
-            "user_prompt":    USER_PROMPT,
+            "prompt":         USER_PROMPT,   # server field is 'prompt', not 'user_prompt'
             "max_new_tokens": 512,
         }
 
