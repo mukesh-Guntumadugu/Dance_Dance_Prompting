@@ -26,6 +26,7 @@ fi
 
 cd /data/mg546924/llm_beatmap_generator
 export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
+export HF_HOME="/data/mg546924/.cache/huggingface"
 
 # Run SFT Trainer Script
 echo "Starting Qwen2-Audio SFT with QLoRA..."
