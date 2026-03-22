@@ -192,7 +192,7 @@ def main():
         fp16=False,
         bf16=True, # Use bfloat16 for stability
         max_grad_norm=0.3,
-        max_steps=2000, # ~2 epochs over 1000-song dataset (1000 songs × ~7 chunks = ~7000 samples)
+        num_train_epochs=15, # Train for 15 epochs over the full dataset (~13,000 steps)
         warmup_ratio=0.03,
         group_by_length=True,
         lr_scheduler_type="cosine",
