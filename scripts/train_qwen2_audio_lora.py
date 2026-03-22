@@ -15,7 +15,10 @@ from typing import Dict, List, Any
 
 # CONFIGURATION
 MODEL_ID = "/data/mg546924/models/Qwen2-Audio-7B-Instruct"  # Changed from HuggingFace to your local cluster path
-DATASET_PATH = "/data/mg546924/llm_beatmap_generator/sft_dataset/dataset.jsonl"
+DATASET_PATH = os.environ.get(
+    "DATASET_OVERRIDE",
+    "/data/mg546924/llm_beatmap_generator/sft_dataset/dataset.jsonl"
+)
 OUTPUT_DIR = "/data/mg546924/models/qwen2-audio-lora-onsets"
 BLOCK_SIZE = 512 # max text tokens
 
