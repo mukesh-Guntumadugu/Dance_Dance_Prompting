@@ -4,10 +4,9 @@
 #SBATCH --error=logs/pixabay_pipeline_%j.log
 #SBATCH --time=12:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=8
 #SBATCH --partition=defq
-#SBATCH --gres=gpu:1          # needed for Qwen training step
+#SBATCH --gres=gpu:A6000:1
 
 # ============================================================
 # Full pipeline: Download 100 Pixabay songs → Librosa onsets
@@ -22,21 +21,25 @@
 # ============================================================
 
 set -e
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+cd /data/mg546924/llm_beatmap_generator
 
 echo "=============================================="
 echo "Job ID      : $SLURM_JOB_ID"
 echo "Node        : $(hostname)"
+echo "GPU         : $(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null || echo 'N/A')"
 echo "Start       : $(date)"
 echo "Working dir : $(pwd)"
 echo "=============================================="
 
-# Activate virtualenv
-if [ -f ".venv/bin/activate" ]; then
-    source .venv/bin/activate
-elif [ -f "bpenv/bin/activate" ]; then
-    source bpenv/bin/activate
+# Activate conda env (same as all other scripts on this cluster)
+CONDA_BIN="/data/mg546924/conda_envs/qwenenv/bin"
+if [ -f "$CONDA_BIN/python" ]; then
+    export PATH="$CONDA_BIN:$PATH"
+    export PYTHONNOUSERSITE=1
+    echo "Using conda env: $CONDA_BIN"
+else
+    echo "❌ Conda env not found at $CONDA_BIN — aborting."
+    exit 1
 fi
 
 mkdir -p logs pixabay_music sft_dataset_pixabay
