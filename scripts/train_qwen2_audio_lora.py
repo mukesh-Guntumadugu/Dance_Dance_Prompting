@@ -35,6 +35,17 @@ def main():
     dataset = full_dataset.train_test_split(test_size=0.05, seed=42)
     print(f"Train dataset size: {len(dataset['train'])} | Validation dataset size: {len(dataset['test'])}")
     
+    # Save the list of validation songs so we know what they are
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(os.path.join(OUTPUT_DIR, "validation_songs.txt"), "w") as f:
+        f.write("Songs used for validation (eval_loss):\n")
+        f.write("-" * 40 + "\n")
+        for item in dataset['test']:
+            audio_url = item['messages'][0]['content'][0]['audio_url']
+            song_name = audio_url.split("/")[-2] if "/" in audio_url else audio_url
+            f.write(f"{song_name}\n")
+    print(f"Saved list of validation songs to {os.path.join(OUTPUT_DIR, 'validation_songs.txt')}")
+
     # 2. Preprocess function
     def preprocess_function(examples):
         # We need to process each conversation
@@ -215,7 +226,7 @@ def main():
         eval_dataset=tokenized_dataset["test"],
         args=training_args,
         data_collator=MultimodalDataCollator(processor),
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=3)] # Stops early if eval_loss doesn't improve for 3 epochs
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)] # Stops early if eval_loss doesn't improve for 5 epochs
     )
     
     print("Starting Training...")
