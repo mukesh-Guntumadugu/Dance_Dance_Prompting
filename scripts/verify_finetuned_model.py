@@ -50,20 +50,20 @@ def load_ground_truth(csv_path: Path) -> list[float]:
     return sorted(onsets)
 
 
-def predict_onsets(model, processor, audio_path: str) -> list[float]:
-    """Run the fine-tuned model on an audio file, return onset times in seconds."""
-    y, sr = librosa.load(audio_path, sr=processor.feature_extractor.sampling_rate)
+CHUNK_DURATION = 20.0  # must match training
 
+
+def predict_chunk(model, processor, y_chunk, start_offset: float) -> list[float]:
+    """Run model on a single audio chunk, return absolute onset times."""
     prompt = (
         "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n"
         "<|im_start|>user\nAudio 1: <|audio_bos|><|AUDIO|><|audio_eos|>\n"
         "List the onsets in this audio segment as a comma-separated list of timestamps in seconds.<|im_end|>\n"
         "<|im_start|>assistant\n"
     )
-
     inputs = processor(
         text=prompt,
-        audio=[y],
+        audio=[y_chunk],
         sampling_rate=processor.feature_extractor.sampling_rate,
         return_tensors="pt",
     ).to(model.device)
@@ -72,17 +72,42 @@ def predict_onsets(model, processor, audio_path: str) -> list[float]:
         outputs = model.generate(**inputs, max_new_tokens=512)
 
     text = processor.tokenizer.decode(outputs[0], skip_special_tokens=True)
-    # Extract the assistant's response (after last "assistant\n")
     response = text.split("assistant\n")[-1].strip()
 
-    # Parse comma-separated floats
     onsets = []
     for token in re.split(r"[,\s]+", response):
         try:
-            onsets.append(float(token))
+            t = float(token)
+            # Only keep onsets within the chunk window
+            if 0 <= t <= CHUNK_DURATION:
+                onsets.append(round(t + start_offset, 3))
         except ValueError:
             pass
-    return sorted(onsets)
+    return onsets
+
+
+def predict_onsets(model, processor, audio_path: str) -> list[float]:
+    """
+    Chunk audio into CHUNK_DURATION-second segments (matching training),
+    run model on each chunk, aggregate onset timestamps.
+    """
+    import numpy as np
+    sr = processor.feature_extractor.sampling_rate
+    y, _ = librosa.load(audio_path, sr=sr)
+    duration = len(y) / sr
+
+    all_onsets = []
+    for start in np.arange(0, duration, CHUNK_DURATION):
+        end = min(start + CHUNK_DURATION, duration)
+        if end - start < 2.0:
+            continue
+        start_frame = int(start * sr)
+        end_frame = int(end * sr)
+        y_chunk = y[start_frame:end_frame]
+        chunk_onsets = predict_chunk(model, processor, y_chunk, start_offset=start)
+        all_onsets.extend(chunk_onsets)
+
+    return sorted(all_onsets)
 
 
 def compute_f1(predicted: list[float], ground_truth: list[float], tolerance: float = 0.05) -> dict:
