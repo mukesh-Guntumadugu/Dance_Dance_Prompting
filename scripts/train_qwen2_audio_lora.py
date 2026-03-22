@@ -202,7 +202,7 @@ def main():
         optim="paged_adamw_32bit",
         logging_steps=10,
         logging_strategy="steps",
-        evaluation_strategy="epoch",    # Evaluate at the end of each epoch
+        eval_strategy="epoch",    # Evaluate at the end of each epoch
         save_strategy="epoch",          # Save checkpoints aligned with evaluation
         load_best_model_at_end=True,    # Always load the best performing model (lowest validation loss) at the end
         metric_for_best_model="eval_loss",
