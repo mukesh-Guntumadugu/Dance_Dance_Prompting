@@ -204,15 +204,13 @@ def main():
         logging_strategy="steps",
         eval_strategy="epoch",    # Evaluate at the end of each epoch
         save_strategy="epoch",          # Save checkpoints aligned with evaluation
-        load_best_model_at_end=True,    # Always load the best performing model (lowest validation loss) at the end
-        metric_for_best_model="eval_loss",
         logging_dir=os.path.join(OUTPUT_DIR, "logs"),  # Save loss to TensorBoard logs
         learning_rate=2e-4,
         weight_decay=0.001,
         fp16=False,
         bf16=True, # Use bfloat16 for stability
         max_grad_norm=0.3,
-        num_train_epochs=15, # Train for 15 epochs over the full dataset (~13,000 steps)
+        num_train_epochs=40, # Force training for exactly 40 epochs
         warmup_ratio=0.03,
         group_by_length=True,
         lr_scheduler_type="cosine",
@@ -226,13 +224,12 @@ def main():
         eval_dataset=tokenized_dataset["test"],
         args=training_args,
         data_collator=MultimodalDataCollator(processor),
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)] # Stops early if eval_loss doesn't improve for 5 epochs
     )
     
     print("Starting Training...")
     trainer.train()
     
-    print("Saving final (best) model adapter...")
+    print("Saving final model adapter (Epoch 40)...")
     trainer.save_model(OUTPUT_DIR)
     print(f"Done. Model adapter saved to {OUTPUT_DIR}")
 
