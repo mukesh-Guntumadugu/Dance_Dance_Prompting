@@ -434,7 +434,7 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
         # Sort the combined rows by timestamp just in case
         all_parsed_rows.sort(key=lambda x: x["time_ms"])
 
-        # ── Save single CSV file with just timestamps ──────────────────────
+        # ── Save single TXT file with just timestamps ──────────────────────
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         base      = f"{name_no_ext}_{difficulty}_{MODEL_NAME}_{task_tag}{job_tag}_{timestamp}"
         
@@ -442,14 +442,13 @@ def process_song(audio_path: str, task_id: int, server_url: str, difficulty: str
         out_dir = os.path.join(dirname, "qwen_outputs")
         os.makedirs(out_dir, exist_ok=True)
 
-        csv_path = os.path.join(out_dir, f"{base}.csv")
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            writer.writerow(["onset_time_ms"])
+        txt_path = os.path.join(out_dir, f"{base}.txt")
+        with open(txt_path, "w", encoding="utf-8") as f:
             for row in all_parsed_rows:
-                writer.writerow([f"{row['time_ms']:.1f}"])
+                # Just write raw float, one per line
+                f.write(f"{row['time_ms']:.1f}\n")
                 
-        print(f"  Saved Onsets CSV → qwen_outputs/{os.path.basename(csv_path)}")
+        print(f"  Saved Onsets TXT → qwen_outputs/{os.path.basename(txt_path)}")
         print("  Done.")
 
     except requests.exceptions.ConnectionError:
