@@ -61,11 +61,12 @@ if [ "$STATUS" != "True" ]; then
     exit 1
 fi
 
-# ── Step 2: Run onset extraction for ALL songs ───────────────────────────────
+# ── Step 2: Run onset extraction for target songs ───────────────────────────────
 echo ""
-echo "=== Starting Onset Extraction for ALL songs ==="
+echo "=== Starting Onset Extraction for select songs ==="
 python3 scripts/extract_onsets_qwen.py \
-    --server http://localhost:$SERVER_PORT
+    --server http://localhost:$SERVER_PORT \
+    --songs "Bad Ketchup" "Girls" "Stamina"
 
 echo "=== Extraction complete at $(date) ==="
 
