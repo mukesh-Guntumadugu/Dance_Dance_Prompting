@@ -28,6 +28,9 @@ cd /data/mg546924/llm_beatmap_generator
 export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
 export HF_HOME="/data/mg546924/.cache/huggingface"
 
+# Override the dataset path to use the 1000 Pixabay songs instead of the old test dataset
+export DATASET_OVERRIDE="/data/mg546924/llm_beatmap_generator/sft_dataset_pixabay/dataset.jsonl"
+
 # Run SFT Trainer Script
 echo "Starting Qwen2-Audio SFT with QLoRA..."
 python3 scripts/train_qwen2_audio_lora.py
