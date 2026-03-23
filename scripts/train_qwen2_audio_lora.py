@@ -210,7 +210,7 @@ def main():
         fp16=False,
         bf16=True, # Use bfloat16 for stability
         max_grad_norm=0.3,
-        num_train_epochs=40, # Force training for exactly 40 epochs
+        num_train_epochs=3, # Fast run for exactly 3 epochs
         warmup_ratio=0.03,
         group_by_length=True,
         lr_scheduler_type="cosine",
@@ -229,7 +229,7 @@ def main():
     print("Starting Training...")
     trainer.train()
     
-    print("Saving final model adapter (Epoch 40)...")
+    print("Saving final model adapter (Epoch 3)...")
     trainer.save_model(OUTPUT_DIR)
     print(f"Done. Model adapter saved to {OUTPUT_DIR}")
 
