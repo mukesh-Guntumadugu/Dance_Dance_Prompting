@@ -1,0 +1,7 @@
+time_ms,beat_position,notes,placement_type,note_type,confidence,instrument
+120000.0,345.000,1000,4,2,0.950,kick
+120125.0,345.250,0000,0,3,1.000,unknown
+120250.0,345.500,0010,4,3,0.880,snare
+120375.0,345.750,0000,0,3,1.000,unknown
+120500.0,346.000,",",-1,-1,1.000,separator
+120500.0,346.000,1000,4,2,0.960,kick

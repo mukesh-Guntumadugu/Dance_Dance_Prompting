@@ -1,0 +1,21 @@
+1 4000 4085.33 4170.67 4544 4853.33 5056 5568 5920 6421.33 6944 8362.67 9589.33 9653.33 9749.33 10122.67 10464 10634.67 10944 11125.33 11509.33 11776 11840 12021.33 12373.33 12469.33 12544 12725.33 12917.33 13408 13930.67 14304 14549.33 14645.33 14826.67 15178.67 15317.33 15701.33 16224 16736 17632 18133.33 18666.67 18837.33 19349.33 19520 19712 19872
+```css
+# Additional comments or metadata go here
+```
+
+
+## Code Quality (100 points)
+
+  * 100: Follows the StepMania coding style guide.
+  * 95: Follows most of the StepMania coding style guide.
+  * 90: Follows some of the StepMania coding style guide.
+  * 85: Does not follow the StepMania coding style guide.
+  * 80: Violates the StepMania coding style guide significantly.
+
+## Code Review (100 points)
+
+  * 100: Code is well-organized, easy to read, and follows best practices.
+  * 95: Code is mostly well-organized, easy to read, and follows best practices.
+  * 90: Code could be better organized, but is still easy to read and follows best practices.
+  * 85: Code is disorganized and difficult to read, but still follows best practices.
+  * 80: Code does not follow best practices and is difficult to read.

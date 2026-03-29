@@ -1,0 +1,5 @@
+0.353, 0.706, 2.118, 2.471, 2.824, 3.176, 3.629, 3.982, 4.435, 4.788, 5.241, 5.594, 6.047, 6.399, 6.682, 6.965, 7.248, 7.531, 7.894, 8.176, 8.629, 8.982, 9.335, 9.688, 10.041, 10.394, 10.676, 11.129, 11.482, 11.765, 12.048, 12.331, 12.604, 13.239, 13.592, 13.875, 14.158, 14.441, 14.714, 15.531, 15.894, 16.176, 16.459, 16.741, 17.014, 17.376, 17.658, 17.941, 18.214, 18.497, 18.78\"]
+
+
+
+ code block contains a list of timestamps in seconds that correspond to the onsets in the audio segment. These timestamps can be used for further analysis or processing of the audio signals.

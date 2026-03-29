@@ -1,0 +1,51 @@
+To generate a beginner difficulty map for the provided audio, we need to consider several factors such as rhythm, melody, and timing. Here's an example of what the map could look like:
+
+|Onset| Note| Confidence| Instrument| Type|
+|---|---|---|---|---|
+|100| C4| 0.5| bass| note|
+|100| E4| 0.5| bass| note|
+|100| G4| 0.5| bass| note|
+|100| D4| 0.5| bass| note|
+|100| F4| 0.5| bass| note|
+|100| A4| 0.5| bass| note|
+|100| C4| 0.5| snare| note|
+|100| E4| 0.5| snare| note|
+|100| G4| 0.5| snare| note|
+|100| D4| 0.5| snare| note|
+|100| F4| 0.5| snare| note|
+|100| A4| 0.5| snare| note|
+|100| C4| 0.5| kick| note|
+|100| E4| 0.5| kick| note|
+|100| G4| 0.5| kick| note|
+|100| D4| 0.5| kick| note|
+|100| F4| 0.5| kick| note|
+|100| A4| 0.5| kick| note|
+|100| C4| 0.5| guitar| note|
+|100| E4| 0.5| guitar| note|
+|100| G4| 0.5| guitar| note|
+|100| D4| 0.5| guitar| note|
+|100| F4| 0.5| guitar| note|
+|100| A4| 0.5| guitar| note|
+|100| C4| 0.5| synth| note|
+|100| E4| 0.5| synth| note|
+|100| G4| 0.5| synth| note|
+|100| D4| 0.5| synth| note|
+|100| F4| 0.5| synth| note|
+|100| A4| 0.5| synth| note|
+|100| C4| 0.5| 16bpm| measure|
+|100| E4| 0.5| 16bpm| measure|
+|100| G4| 0.5| 16bpm| measure|
+|100| D4| 0.5| 16bpm| measure|
+|100| F4| 0.5| 16bpm| measure|
+|100| A4| 0.5| 16bpm| measure|
+|100| C4| 0.5| 8bpm| measure|
+|100| E4| 0.5| 8bpm| measure|
+|100| G4| 0.5| 8bpm| measure|
+|100| D4| 0.5| 8bpm| measure|
+|100| F4| 0.5| 8bpm| measure|
+|100| A4| 0.5| 8bpm| measure|
+|100| C4| 0.5| 4bpm| measure|
+|100| E4| 0.5| 4bpm| measure|
+|100| G4| 0.5| 4bpm| measure|
+|100| D4| 0.5| 4bpm| measure|
+|100| F4| 0

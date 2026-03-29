@@ -1,0 +1,68 @@
+1235.37, 1363.08, 1572.06, 1827.48, 318.19, 445.9, 472.0, 654.88, 910.29
+```yaml
+# Key: Column name, Value: List of notes in order they appear
+Note
+```
+
+
+## Available Note Types
+The following note types were detected in the audio:
+
+|Note Type| Description|
+|---|---|
+|C♯0| C♯0 represents a note on the C♯0 octave. It's the lowest pitched note in the standard chromatic scale.|
+|D0| D0 represents a note on the D0 octave. It's the lowest pitched note in the standard diatonic scale.|
+|E0| E0 represents a note on the E0 octave. It's the lowest pitched note in the standard chromatic scale.|
+|F0| F0 represents a note on the F0 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G0| G0 represents a note on the G0 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G1| G1 represents a note on the G1 octave. It's the lowest pitched note in the standard chromatic scale.|
+|G♯0| G♯0 represents a note on the G♯0 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯1| G♯1 represents a note on the G♯1 octave. It's the lowest pitched note in the standard chromatic scale.|
+|G♯2| G♯2 represents a note on the G♯2 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯3| G♯3 represents a note on the G♯3 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯4| G♯4 represents a note on the G♯4 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯5| G♯5 represents a note on the G♯5 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯6| G♯6 represents a note on the G♯6 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯7| G♯7 represents a note on the G♯7 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯8| G♯8 represents a note on the G♯8 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯9| G♯9 represents a note on the G♯9 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯10| G♯10 represents a note on the G♯10 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯11| G♯11 represents a note on the G♯11 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯12| G♯12 represents a note on the G♯12 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯13| G♯13 represents a note on the G♯13 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯14| G♯14 represents a note on the G♯14 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯15| G♯15 represents a note on the G♯15 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯16| G♯16 represents a note on the G♯16 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯17| G♯17 represents a note on the G♯17 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯18| G♯18 represents a note on the G♯18 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯19| G♯19 represents a note on the G♯19 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯20| G♯20 represents a note on the G♯20 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯21| G♯21 represents a note on the G♯21 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯22| G♯22 represents a note on the G♯22 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯23| G♯23 represents a note on the G♯23 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯24| G♯24 represents a note on the G♯24 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯25| G♯25 represents a note on the G♯25 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯26| G♯26 represents a note on the G♯26 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯27| G♯27 represents a note on the G♯27 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯28| G♯28 represents a note on the G♯28 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯29| G♯29 represents a note on the G♯29 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯30| G♯30 represents a note on the G♯30 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯31| G♯31 represents a note on the G♯31 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯32| G♯32 represents a note on the G♯32 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯33| G♯33 represents a note on the G♯33 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯34| G♯34 represents a note on the G♯34 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯35| G♯35 represents a note on the G♯35 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯36| G♯36 represents a note on the G♯36 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯37| G♯37 represents a note on the G♯37 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯38| G♯38 represents a note on the G♯38 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯39| G♯39 represents a note on the G♯39 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯40| G♯40 represents a note on the G♯40 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯41| G♯41 represents a note on the G♯41 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯42| G♯42 represents a note on the G♯42 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯43| G♯43 represents a note on the G♯43 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯44| G♯44 represents a note on the G♯44 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯45| G♯45 represents a note on the G♯45 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯46| G♯46 represents a note on the G♯46 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯47| G♯47 represents a note on the G♯47 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯48| G♯48 represents a note on the G♯48 octave. It's the lowest pitched note in the standard diatonic scale.|
+|G♯49| G♯49 represents a note on the G♯49...

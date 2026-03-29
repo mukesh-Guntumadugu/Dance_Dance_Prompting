@@ -1,0 +1,1037 @@
+[
+  {
+    "time_ms": 100.0,
+    "beat_position": 100.0,
+    "notes": "100",
+    "placement_type": 100,
+    "note_type": 100,
+    "confidence": 100.0,
+    "instrument": "100"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 51.806,
+    "notes": "108.48",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 52.126,
+    "notes": "111.224",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 52.567,
+    "notes": "113.458",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 52.688,
+    "notes": "114.073",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 52.815,
+    "notes": "114.209",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 52.951,
+    "notes": "114.345",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.087,
+    "notes": "114.481",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.213,
+    "notes": "114.617",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.339,
+    "notes": "114.753",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.466,
+    "notes": "114.889",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.602,
+    "notes": "115.025",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 53.738,
+    "notes": "115.161",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.166,
+    "notes": "115.345",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.302,
+    "notes": "115.481",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.438,
+    "notes": "115.617",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.564,
+    "notes": "115.753",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.7,
+    "notes": "115.889",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.836,
+    "notes": "116.025",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 54.962,
+    "notes": "116.161",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 55.576,
+    "notes": "116.335",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 55.802,
+    "notes": "116.471",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 56.038,
+    "notes": "116.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 56.164,
+    "notes": "116.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 56.3,
+    "notes": "116.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 56.436,
+    "notes": "117.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 56.562,
+    "notes": "117.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.176,
+    "notes": "117.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.302,
+    "notes": "117.509",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.438,
+    "notes": "117.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.564,
+    "notes": "117.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.79,
+    "notes": "117.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 57.926,
+    "notes": "118.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 58.062,
+    "notes": "118.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 58.676,
+    "notes": "118.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 58.802,
+    "notes": "118.509",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 59.038,
+    "notes": "118.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 59.164,
+    "notes": "118.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 59.3,
+    "notes": "118.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 59.436,
+    "notes": "119.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 59.562,
+    "notes": "119.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.176,
+    "notes": "119.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.302,
+    "notes": "119.509",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.438,
+    "notes": "119.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.564,
+    "notes": "119.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.79,
+    "notes": "119.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 60.926,
+    "notes": "120.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 61.062,
+    "notes": "120.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 61.676,
+    "notes": "120.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 61.802,
+    "notes": "120.509",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.038,
+    "notes": "120.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.164,
+    "notes": "120.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.3,
+    "notes": "120.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.436,
+    "notes": "121.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.562,
+    "notes": "121.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 62.986000000000004,
+    "notes": "121.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.112,
+    "notes": "121.509",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.238,
+    "notes": "121.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.364000000000004,
+    "notes": "121.781",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.492000000000004,
+    "notes": "121.917",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.606,
+    "notes": "122.053",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 63.717,
+    "notes": "122.189",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 64.345,
+    "notes": "122.373",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 64.889,
+    "notes": "142.025",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 65.07300000000001,
+    "notes": "142.161",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 65.29599999999999,
+    "notes": "142.335",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 65.422,
+    "notes": "142.471",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 65.606,
+    "notes": "142.645",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 65.932,
+    "notes": "142.819",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 66.444,
+    "notes": "143.003",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 66.657,
+    "notes": "143.139",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20108.48,
+    "beat_position": 67.161,
+    "notes": "143.265",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 67.485,
+    "notes": "143.449",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 67.717,
+    "notes": "143.623",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 68.223,
+    "notes": "143.759",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 68.729,
+    "notes": "143.933",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 69.235,
+    "notes": "144.069",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 69.462,
+    "notes": "144.243",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 69.97800000000001,
+    "notes": "144.417",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 70.594,
+    "notes": "144.543",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 71.1,
+    "notes": "144.669",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 71.584,
+    "notes": "144.843",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 72.011,
+    "notes": "144.979",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 72.495,
+    "notes": "145.153",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 72.98,
+    "notes": "145.279",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 73.797,
+    "notes": "145.453",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 74.303,
+    "notes": "145.627",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 74.819,
+    "notes": "145.759",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 75.208,
+    "notes": "145.933",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 75.714,
+    "notes": "146.069",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 76.22,
+    "notes": "146.243",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 76.726,
+    "notes": "146.417",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 77.211,
+    "notes": "146.543",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 77.695,
+    "notes": "146.669",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 78.18,
+    "notes": "146.843",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 78.407,
+    "notes": "146.979",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 78.913,
+    "notes": "147.153",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 79.408,
+    "notes": "147.327",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 79.73400000000001,
+    "notes": "147.459",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 80.22,
+    "notes": "147.633",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 80.54599999999999,
+    "notes": "147.759",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 81.031,
+    "notes": "147.933",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 81.515,
+    "notes": "148.069",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 82.0,
+    "notes": "148.243",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 82.485,
+    "notes": "148.417",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 82.711,
+    "notes": "148.543",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 83.195,
+    "notes": "148.669",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 83.68,
+    "notes": "148.843",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 84.166,
+    "notes": "148.979",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 84.65100000000001,
+    "notes": "149.153",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 85.137,
+    "notes": "149.327",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 85.463,
+    "notes": "149.459",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 85.949,
+    "notes": "149.633",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 86.275,
+    "notes": "149.759",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  },
+  {
+    "time_ms": 20178.14,
+    "beat_position": 86.75999999999999,
+    "notes": "149.933",
+    "placement_type": 1,
+    "note_type": 1,
+    "confidence": 1.0,
+    "instrument": "1"
+  }
+]

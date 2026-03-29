@@ -1,0 +1,75 @@
+Here's the Python code to generate the above output:
+```python
+# Define the audio file path
+audio_file_path = "<your-audio-file-path>.mp3"
+
+# Load the audio data into a Pandas DataFrame
+df = pd.DataFrame(np.frombuffer(requests.get(audio_file_path).content, np.float32))
+
+# Calculate the tempo and time signature from the audio data
+tempo = df.mean().mean()
+time_signature = len(df.columns) // len(df.index)
+
+# Convert the timestamps to seconds
+timestamps = [(t * 1000) // 60 for t in df.columns]
+
+# Calculate the duration of each beat in seconds
+beats_duration = []
+for i, col in enumerate(df.columns):
+    beats_duration.extend([col + j for j in range(1, int(col.split(' ')[-1]) + 1)) if col.split(' ')[-1] != ''])
+
+# Initialize the beatmap metadata
+metadata = {
+    "key": "bass",
+    "time_signature": f"{time_signature} {tempo}",
+    "tempo_map": {
+        "100": "",
+        "200": "罚",
+        "300": "法",
+        "400": "发",
+    },
+    "instruments": "bass guitar synth",
+}
+
+# Initialize the mapdata structure
+mapdata = {
+    "version": "1.0.0",
+    "name": "20.0s Beginner Map",
+    "author": "Your Name",
+    "source_url": "Your Map Source URL",
+    "fullscreen_start_time_seconds": 20.0,
+    "fullscreen_end_time_seconds": 20.0,
+    "music_start_time_seconds": 20.0,
+    "music_end_time_seconds": 20.0,
+    "background_color": "0x000000",
+    "background_image": "",
+    "background_image_start_time_seconds": 0.0,
+    "background_image_end_time_seconds": 0.0,
+    "background_image_xpos": 0.0,
+    "background_image_ypos": 0.0,
+    "background_image_width": 1.0,
+    "background_image_height": 1.0,
+    "background_image_alpha": 1.0,
+    "background_image_filter": "",
+    "background_image_source": "",
+    "background_image_source_start_time_seconds": 0.0,
+    "background_image_source_end_time_seconds": 0.0,
+    "background_image_source_xpos": 0.0,
+    "background_image_source_ypos": 0.0,
+    "background_image_source_width": 1.0,
+    "background_image_source_height": 1.0,
+    "background_image_source_alpha": 1.0,
+    "background_image_source_filter": "",
+    "background_image_source_scale_factor": 1.0,
+    "background_image_source_cascade": "",
+    "background_image_source_important": 0,
+    "background_image_source_grow_ratio": 1.0,
+    "background_image_source_shrink_ratio": 1.0,
+    "background_image_source_grow_start_time_seconds": 0.0,
+    "background_image_source_grow_end_time_seconds": 0.0,
+    "background_image_source_shrink_start_time_seconds": 0.0,
+    "background_image_source_shrink_end_time_seconds": 0.0,
+    "background_image_source_grow_duration_seconds": 1.0,
+    "background_image_source_shrink_duration_seconds": 1.0,
+    "background_image_source_growEaseType": "",
+    "background_image_source_shrinkEaseType": "

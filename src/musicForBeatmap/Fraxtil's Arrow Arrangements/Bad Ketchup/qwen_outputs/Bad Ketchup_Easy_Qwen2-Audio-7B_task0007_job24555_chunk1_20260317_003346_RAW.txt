@@ -1,0 +1,318 @@
+```json
+{
+  "name": "Easy",
+  "music_key": "F# minor",
+  "time_signature": "4/4",
+  "tempo_bpm": "180.029 bpm",
+  "notes": [
+    {
+      "timestamp": "208.98",
+      "note_name": "C♯1"
+    },
+    {
+      "timestamp": "2972.15",
+      "note_name": "F♯7"
+    },
+    {
+      "timestamp": "3215.96",
+      "note_name": "G1"
+    },
+    {
+      "timestamp": "3982.22",
+      "note_name": "D1"
+    },
+    {
+      "timestamp": "4226.03",
+      "note_name": "E1"
+    },
+    {
+      "timestamp": "4527.89",
+      "note_name": "F1"
+    },
+    {
+      "timestamp": "5154.83",
+      "note_name": "C♯2"
+    },
+    {
+      "timestamp": "5665.67",
+      "note_name": "G2"
+    },
+    {
+      "timestamp": "5828.21",
+      "note_name": "G3"
+    },
+    {
+      "timestamp": "6234.56",
+      "note_name": "D3"
+    },
+    {
+      "timestamp": "7488.44",
+      "note_name": "E4"
+    },
+    {
+      "timestamp": "8045.71",
+      "note_name": "F4"
+    },
+    {
+      "timestamp": "8219.86",
+      "note_name": "G4"
+    },
+    {
+      "timestamp": "8370.79",
+      "note_name": "D5"
+    },
+    {
+      "timestamp": "8649.43",
+      "note_name": "E5"
+    },
+    {
+      "timestamp": "9009.34",
+      "note_name": "F5"
+    },
+    {
+      "timestamp": "9322.81",
+      "note_name": "G5"
+    },
+    {
+      "timestamp": "9578.23",
+      "note_name": "D6"
+    },
+    {
+      "timestamp": "9822.04",
+      "note_name": "E6"
+    },
+    {
+      "timestamp": "9961.36",
+      "note_name": "F6"
+    },
+    {
+      "timestamp": "10251.61",
+      "note_name": "C♯7"
+    },
+    {
+      "timestamp": "10507.03",
+      "note_name": "G7"
+    },
+    {
+      "timestamp": "10832.11",
+      "note_name": "D8"
+    },
+    {
+      "timestamp": "11006.26",
+      "note_name": "E8"
+    },
+    {
+      "timestamp": "11122.36",
+      "note_name": "F8"
+    },
+    {
+      "timestamp": "11331.34",
+      "note_name": "G8"
+    },
+    {
+      "timestamp": "11493.88",
+      "note_name": "D9"
+    },
+    {
+      "timestamp": "11586.76",
+      "note_name": "E9"
+    },
+    {
+      "timestamp": "11737.69",
+      "note_name": "F9"
+    },
+    {
+      "timestamp": "11900.23",
+      "note_name": "G9"
+    },
+    {
+      "timestamp": "11993.11",
+      "note_name": "D10"
+    },
+    {
+      "timestamp": "12167.26",
+      "note_name": "E10"
+    },
+    {
+      "timestamp": "12329.80",
+      "note_name": "F10"
+    },
+    {
+      "timestamp": "12492.34",
+      "note_name": "G10"
+    },
+    {
+      "timestamp": "12573.61",
+      "note_name": "D11"
+    },
+    {
+      "timestamp": "12666.49",
+      "note_name": "E11"
+    },
+    {
+      "timestamp": "12829.02",
+      "note_name": "F11"
+    },
+    {
+      "timestamp": "12921.90",
+      "note_name": "G11"
+    },
+    {
+      "timestamp": "12991.56",
+      "note_name": "D12"
+    },
+    {
+      "timestamp": "13130.88",
+      "note_name": "E12"
+    },
+    {
+      "timestamp": "13165.71",
+      "note_name": "F12"
+    },
+    {
+      "timestamp": "13641.72",
+      "note_name": "G12"
+    },
+    {
+      "timestamp": "13746.21",
+      "note_name": "D13"
+    },
+    {
+      "timestamp": "13827.48",
+      "note_name": "E13"
+    },
+    {
+      "timestamp": "14071.29",
+      "note_name": "F13"
+    },
+    {
+      "timestamp": "14245.44",
+      "note_name": "G13"
+    },
+    {
+      "timestamp": "14582.13",
+      "note_name": "D14"
+    },
+    {
+      "timestamp": "14709.84",
+      "note_name": "E14"
+    },
+    {
+      "timestamp": "14756.28",
+      "note_name": "F14"
+    },
+    {
+      "timestamp": "14791.11",
+      "note_name": "G14"
+    },
+    {
+      "timestamp": "15162.63",
+      "note_name": "D15"
+    },
+    {
+      "timestamp": "15209.07",
+      "note_name": "E15"
+    },
+    {
+      "timestamp": "15336.78",
+      "note_name": "F15"
+    },
+    {
+      "timestamp": "15499.32",
+      "note_name": "G15"
+    },
+    {
+      "timestamp": "15580.59",
+      "note_name": "D16"
+    },
+    {
+      "timestamp": "15743.13",
+      "note_name": "E16"
+    },
+    {
+      "timestamp": "15917.28",
+      "note_name": "F16"
+    },
+    {
+      "timestamp": "15998.55",
+      "note_name": "G16"
+    },
+    {
+      "timestamp": "16172.70",
+      "note_name": "D17"
+    },
+    {
+      "timestamp": "16288.80",
+      "note_name": "E17"
+    },
+    {
+      "timestamp": "16335.24",
+      "note_name": "F17"
+    },
+    {
+      "timestamp": "16497.78",
+      "note_name": "G17"
+    },
+    {
+      "timestamp": "16579.05",
+      "note_name": "D18"
+    },
+    {
+      "timestamp": "16660.32",
+      "note_name": "E18"
+    },
+    {
+      "timestamp": "16834.47",
+      "note_name": "F18"
+    },
+    {
+      "timestamp": "16997.01",
+      "note_name": "G18"
+    },
+    {
+      "timestamp": "17333.70",
+      "note_name": "D19"
+    },
+    {
+      "timestamp": "17577.51",
+      "note_name": "E19"
+    },
+    {
+      "timestamp": "17705.22",
+      "note_name": "F19"
+    },
+    {
+      "timestamp": "17832.93",
+      "note_name": "G19"
+    },
+    {
+      "timestamp": "17949.02",
+      "note_name": "D20"
+    },
+    {
+      "timestamp": "18320.54",
+      "note_name": "E20"
+    },
+    {
+      "timestamp": "18413.42",
+      "note_name": "F20"
+    },
+    {
+      "timestamp": "18483.08",
+      "note_name": "G20"
+    },
+    {
+      "timestamp": "18657.23",
+      "note_name": "D21"
+    },
+    {
+      "timestamp": "18796.55",
+      "note_name": "E21"
+    },
+    {
+      "timestamp": "18970.70",
+      "note_name": "F21"
+    }
+  ]
+}
+```

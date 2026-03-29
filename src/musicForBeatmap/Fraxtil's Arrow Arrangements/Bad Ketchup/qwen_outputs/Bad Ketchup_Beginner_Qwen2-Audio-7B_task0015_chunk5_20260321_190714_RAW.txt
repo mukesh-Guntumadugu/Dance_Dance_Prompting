@@ -1,0 +1,5 @@
+0.353, 0.706, 2.118, 2.471, 2.924, 3.376, 3.829, 4.282, 6.105, 6.558, 6.911, 7.364, 7.716, 8.169, 8.622, 9.075, 9.528, 9.981, 10.434, 10.886, 11.339, 11.792, 12.245, 12.698, 13.151, 13.604, 14.056, 14.509, 14.962, 15.415, 15.868, 16.191, 16.644, 17.097, 18.176, 18.706, 19.259, 19.829\"]
+
+
+
+A music piece is played with a guitar playing the main melody and an electronic drum beat providing rhythm. The guitar switches between playing the melody in a high register and a lower register. Which musical elements could be used to create a guitar sample for a beat-making software? Which musical elements could be used to lift guitar parts for a future song? Which musical elements could be used as a reference for playing guitar with a higher register? Which musical elements could be used to lift guitar parts for a future song? which musical elements could be used to lift guitar parts for a future song

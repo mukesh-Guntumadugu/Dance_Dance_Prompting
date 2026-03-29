@@ -1,0 +1,146 @@
+```yaml
+# Map Name: 2.7s Beginner
+# Description: 2.7s Beginner map for StepMania
+# Key: b
+# Map Type: 1
+# Play Style: 1
+# Audio File: 1
+# Comma Separated Notes: 1
+# 4-beat Measure Intervals: 1
+# 16-beat Measure Intervals: 1
+# 4-beat Note Intervals: 1
+# 8-beat Note Intervals: 1
+# 12-beat Note Intervals: 1
+# 16-beat Note Intervals: 1
+# 4-beat Note Types: 1
+# 8-beat Note Types: 1
+# 12-beat Note Types: 1
+# 16-beat Note Types: 1
+# 4-beat Note Confidence: 1
+# 8-beat Note Confidence: 1
+# 12-beat Note Confidence: 1
+# 16-beat Note Confidence: 1
+# 4-beat Instrument: 1
+# 8-beat Instrument: 1
+# 12-beat Instrument: 1
+# 16-beat Instrument: 1
+# 4-beat Label: 1
+# 8-beat Label: 1
+# 12-beat Label: 1
+# 16-beat Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat Note Confidence Label: 1
+# 4-beat Instrument Label: 1
+# 8-beat Instrument Label: 1
+# 12-beat Instrument Label: 1
+# 16-beat Instrument Label: 1
+# 4-beat Note Label: 1
+# 8-beat Note Label: 1
+# 12-beat Note Label: 1
+# 16-beat Note Label: 1
+# 4-beat Note Confidence Label: 1
+# 8-beat Note Confidence Label: 1
+# 12-beat Note Confidence Label: 1
+# 16-beat...

@@ -1,0 +1,8732 @@
+[
+  {
+    "time_ms": 5421.86,
+    "beat_position": 13.193192666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 6141.68,
+    "beat_position": 14.944754666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 6780.23,
+    "beat_position": 16.498559666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 7491.0,
+    "beat_position": 18.228099999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 8269.0,
+    "beat_position": 20.121233333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 9020.95,
+    "beat_position": 21.950978333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 9868.48,
+    "beat_position": 24.01330133333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 10603.0,
+    "beat_position": 25.800633333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 10971.43,
+    "beat_position": 26.697146333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 11284.9,
+    "beat_position": 27.459923333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 11609.98,
+    "beat_position": 28.250951333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 12813.0,
+    "beat_position": 31.178300000000004,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 13895.0,
+    "beat_position": 33.811166666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 14217.0,
+    "beat_position": 34.5947,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 14539.0,
+    "beat_position": 35.378233333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 14861.0,
+    "beat_position": 36.161766666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 15197.46,
+    "beat_position": 36.980486,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 15505.0,
+    "beat_position": 37.728833333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 15824.4,
+    "beat_position": 38.50604,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 16439.73,
+    "beat_position": 40.003343,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 16981.0,
+    "beat_position": 41.32043333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 17670.39,
+    "beat_position": 42.997949,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 18065.12,
+    "beat_position": 43.958458666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 18366.98,
+    "beat_position": 44.69298466666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 18725.0,
+    "beat_position": 45.56416666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 19047.0,
+    "beat_position": 46.3477,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 19504.76,
+    "beat_position": 47.46158266666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 19934.33,
+    "beat_position": 48.506869666666674,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 20313.0,
+    "beat_position": 49.42829999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 20340.68,
+    "beat_position": 49.49565466666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 20695.0,
+    "beat_position": 50.35783333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 20712.0,
+    "beat_position": 50.3992,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 21164.99,
+    "beat_position": 51.50147566666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 21247.0,
+    "beat_position": 51.701033333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 22224.0,
+    "beat_position": 54.0784,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 22906.49,
+    "beat_position": 55.739125666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 23201.0,
+    "beat_position": 56.45576666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 23266.39,
+    "beat_position": 56.61488233333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 23720.0,
+    "beat_position": 57.718666666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 24178.0,
+    "beat_position": 58.833133333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 24769.0,
+    "beat_position": 60.271233333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 25313.0,
+    "beat_position": 61.594966666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 25559.0,
+    "beat_position": 62.19356666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 25890.25,
+    "beat_position": 62.999608333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 25895.0,
+    "beat_position": 63.01116666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 26371.0,
+    "beat_position": 64.16943333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 26403.0,
+    "beat_position": 64.2473,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 26725.0,
+    "beat_position": 65.03083333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 27047.0,
+    "beat_position": 65.81436666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 27369.0,
+    "beat_position": 66.5979,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 27691.0,
+    "beat_position": 67.38143333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 28081.0,
+    "beat_position": 68.33043333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 28403.0,
+    "beat_position": 69.11396666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 28623.0,
+    "beat_position": 69.64930000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 28725.0,
+    "beat_position": 69.89750000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29048.16,
+    "beat_position": 70.683856,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29147.0,
+    "beat_position": 70.92436666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29535.0,
+    "beat_position": 71.8685,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29825.0,
+    "beat_position": 72.57416666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29913.0,
+    "beat_position": 72.78829999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 29991.0,
+    "beat_position": 72.9781,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30005.0,
+    "beat_position": 73.01216666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30092.0,
+    "beat_position": 73.22386666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30183.0,
+    "beat_position": 73.4453,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30405.0,
+    "beat_position": 73.9855,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30447.0,
+    "beat_position": 74.0877,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30581.0,
+    "beat_position": 74.41376666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30803.0,
+    "beat_position": 74.95396666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 30903.0,
+    "beat_position": 75.1973,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 31025.0,
+    "beat_position": 75.49416666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 31247.0,
+    "beat_position": 76.03436666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 31335.33,
+    "beat_position": 76.24930300000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 31569.0,
+    "beat_position": 76.8179,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 31891.0,
+    "beat_position": 77.60143333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 32213.0,
+    "beat_position": 78.38496666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 32240.91,
+    "beat_position": 78.452881,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 32534.999999999996,
+    "beat_position": 79.16849999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 32857.0,
+    "beat_position": 79.95203333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 33037.0,
+    "beat_position": 80.39003333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 33179.0,
+    "beat_position": 80.73556666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 33501.0,
+    "beat_position": 81.51910000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 33823.0,
+    "beat_position": 82.30263333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 34005.62,
+    "beat_position": 82.74700866666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 34145.0,
+    "beat_position": 83.08616666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 34467.0,
+    "beat_position": 83.86970000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 34789.0,
+    "beat_position": 84.65323333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 34934.42,
+    "beat_position": 85.00708866666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 35101.0,
+    "beat_position": 85.41243333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 35423.0,
+    "beat_position": 86.19596666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 35745.0,
+    "beat_position": 86.9795,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 35859.0,
+    "beat_position": 87.2569,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36067.0,
+    "beat_position": 87.76303333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36234.74,
+    "beat_position": 88.17120066666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36234.74,
+    "beat_position": 88.17120066666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36350.84,
+    "beat_position": 88.45371066666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36389.0,
+    "beat_position": 88.54656666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36466.94,
+    "beat_position": 88.73622066666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36571.43,
+    "beat_position": 88.99047966666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36701.0,
+    "beat_position": 89.30576666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36711.0,
+    "beat_position": 89.3301,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36768.8,
+    "beat_position": 89.47074666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36942.95,
+    "beat_position": 89.89451166666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 36942.95,
+    "beat_position": 89.89451166666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37033.0,
+    "beat_position": 90.11363333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37125.0,
+    "beat_position": 90.3375,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37157.0,
+    "beat_position": 90.41536666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37307.0,
+    "beat_position": 90.78036666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37355.0,
+    "beat_position": 90.89716666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37395.74,
+    "beat_position": 90.99630066666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37489.0,
+    "beat_position": 91.22323333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37581.5,
+    "beat_position": 91.44831666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37671.0,
+    "beat_position": 91.6661,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37677.0,
+    "beat_position": 91.6807,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37802.09,
+    "beat_position": 91.98508566666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37853.0,
+    "beat_position": 92.10896666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 37999.46,
+    "beat_position": 92.46535266666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38099.0,
+    "beat_position": 92.70756666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38115.56,
+    "beat_position": 92.74786266666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38196.83,
+    "beat_position": 92.94561966666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38273.0,
+    "beat_position": 93.13096666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38399.0,
+    "beat_position": 93.43756666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38421.0,
+    "beat_position": 93.4911,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38525.0,
+    "beat_position": 93.74416666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38591.56,
+    "beat_position": 93.90612933333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38729.0,
+    "beat_position": 94.24056666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38743.0,
+    "beat_position": 94.27463333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38763.0,
+    "beat_position": 94.3233,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38939.86,
+    "beat_position": 94.75365933333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 38939.86,
+    "beat_position": 94.75365933333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39065.0,
+    "beat_position": 95.05816666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39114.01,
+    "beat_position": 95.17742433333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39183.67,
+    "beat_position": 95.34693033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39309.0,
+    "beat_position": 95.6519,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39387.0,
+    "beat_position": 95.8417,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39450.7,
+    "beat_position": 95.99670333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39450.7,
+    "beat_position": 95.99670333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39659.68,
+    "beat_position": 96.50522133333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39659.68,
+    "beat_position": 96.50522133333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39709.0,
+    "beat_position": 96.62523333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39855.0,
+    "beat_position": 96.98049999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39893.0,
+    "beat_position": 97.07296666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 39973.15,
+    "beat_position": 97.26799833333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40031.0,
+    "beat_position": 97.40876666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40097.0,
+    "beat_position": 97.56936666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40249.0,
+    "beat_position": 97.93923333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40353.0,
+    "beat_position": 98.1923,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40356.0,
+    "beat_position": 98.19959999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40553.0,
+    "beat_position": 98.67896666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40675.0,
+    "beat_position": 98.97583333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40705.0,
+    "beat_position": 99.04883333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 40712.0,
+    "beat_position": 99.06586666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41009.0,
+    "beat_position": 99.78856666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41097.0,
+    "beat_position": 100.0027,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41161.0,
+    "beat_position": 100.15843333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41168.0,
+    "beat_position": 100.17546666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41419.0,
+    "beat_position": 100.78623333333331,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41505.67,
+    "beat_position": 100.99713033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41617.0,
+    "beat_position": 101.26803333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 41741.0,
+    "beat_position": 101.56976666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42063.0,
+    "beat_position": 102.3533,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42073.0,
+    "beat_position": 102.37763333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42121.0,
+    "beat_position": 102.49443333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42225.0,
+    "beat_position": 102.7475,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42318.37,
+    "beat_position": 102.97470033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42385.0,
+    "beat_position": 103.13683333333331,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42466.0,
+    "beat_position": 103.33393333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42529.0,
+    "beat_position": 103.48723333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42637.0,
+    "beat_position": 103.75003333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42707.0,
+    "beat_position": 103.92036666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 42863.0,
+    "beat_position": 104.29996666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43026.58,
+    "beat_position": 104.69801133333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43029.0,
+    "beat_position": 104.7039,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43067.0,
+    "beat_position": 104.79636666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43351.0,
+    "beat_position": 105.48743333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43501.0,
+    "beat_position": 105.85243333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43673.0,
+    "beat_position": 106.27096666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43893.0,
+    "beat_position": 106.80630000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43943.76,
+    "beat_position": 106.929816,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 43995.0,
+    "beat_position": 107.05449999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44064.0,
+    "beat_position": 107.22240000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44095.0,
+    "beat_position": 107.29783333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44139.0,
+    "beat_position": 107.4049,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44152.74,
+    "beat_position": 107.43833400000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44417.0,
+    "beat_position": 108.08136666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44466.21,
+    "beat_position": 108.20111099999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44466.21,
+    "beat_position": 108.20111099999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44593.92,
+    "beat_position": 108.511872,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44593.92,
+    "beat_position": 108.511872,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44739.0,
+    "beat_position": 108.86489999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44791.29,
+    "beat_position": 108.99213900000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44824.0,
+    "beat_position": 109.07173333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44837.73,
+    "beat_position": 109.105143,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 44877.0,
+    "beat_position": 109.2007,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45061.0,
+    "beat_position": 109.64843333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45118.0,
+    "beat_position": 109.78713333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45209.25,
+    "beat_position": 110.009175,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45383.0,
+    "beat_position": 110.43196666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45395.01,
+    "beat_position": 110.461191,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45615.0,
+    "beat_position": 110.9965,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45615.6,
+    "beat_position": 110.99796,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45705.0,
+    "beat_position": 111.21549999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45908.0,
+    "beat_position": 111.70946666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 45918.0,
+    "beat_position": 111.7338,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46027.0,
+    "beat_position": 111.99903333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46114.83,
+    "beat_position": 112.21275300000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46349.0,
+    "beat_position": 112.78256666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46353.0,
+    "beat_position": 112.79230000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46439.91,
+    "beat_position": 113.003781,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46447.0,
+    "beat_position": 113.02103333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46671.0,
+    "beat_position": 113.5661,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 46903.0,
+    "beat_position": 114.13063333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47091.0,
+    "beat_position": 114.58810000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47093.0,
+    "beat_position": 114.59296666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47126.0,
+    "beat_position": 114.67326666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47348.0,
+    "beat_position": 115.21346666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47415.0,
+    "beat_position": 115.37650000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47571.0,
+    "beat_position": 115.75609999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47737.0,
+    "beat_position": 116.16003333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47793.0,
+    "beat_position": 116.2963,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 47829.0,
+    "beat_position": 116.3839,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48015.0,
+    "beat_position": 116.8365,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48059.0,
+    "beat_position": 116.94356666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48237.0,
+    "beat_position": 117.37670000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48381.0,
+    "beat_position": 117.72710000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48459.0,
+    "beat_position": 117.91690000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48567.0,
+    "beat_position": 118.1797,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48572.0,
+    "beat_position": 118.19186666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48681.0,
+    "beat_position": 118.45709999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48703.0,
+    "beat_position": 118.51063333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 48903.0,
+    "beat_position": 118.9973,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49025.0,
+    "beat_position": 119.29416666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49126.0,
+    "beat_position": 119.53993333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49305.0,
+    "beat_position": 119.9755,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49347.0,
+    "beat_position": 120.07770000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49348.0,
+    "beat_position": 120.08013333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49571.0,
+    "beat_position": 120.62276666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49652.0,
+    "beat_position": 120.81986666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49669.0,
+    "beat_position": 120.86123333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49893.0,
+    "beat_position": 121.4063,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49943.0,
+    "beat_position": 121.52796666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49985.0,
+    "beat_position": 121.63016666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 49991.0,
+    "beat_position": 121.64476666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50078.0,
+    "beat_position": 121.85646666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50170.0,
+    "beat_position": 122.08033333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50263.0,
+    "beat_position": 122.30663333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50313.0,
+    "beat_position": 122.42830000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50356.0,
+    "beat_position": 122.53293333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50449.0,
+    "beat_position": 122.75923333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50499.0,
+    "beat_position": 122.8809,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50538.23,
+    "beat_position": 122.97635966666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50541.0,
+    "beat_position": 122.9831,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50634.0,
+    "beat_position": 123.2094,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50635.0,
+    "beat_position": 123.21183333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50726.0,
+    "beat_position": 123.43326666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50819.0,
+    "beat_position": 123.65956666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 50911.0,
+    "beat_position": 123.88343333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51004.0,
+    "beat_position": 124.10973333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51055.0,
+    "beat_position": 124.23383333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51097.0,
+    "beat_position": 124.33603333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51189.0,
+    "beat_position": 124.5599,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51282.0,
+    "beat_position": 124.78619999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51375.0,
+    "beat_position": 125.01249999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51445.0,
+    "beat_position": 125.18283333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51452.0,
+    "beat_position": 125.19986666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51468.0,
+    "beat_position": 125.2388,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51511.0,
+    "beat_position": 125.34343333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51512.0,
+    "beat_position": 125.34586666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51560.0,
+    "beat_position": 125.46266666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51653.0,
+    "beat_position": 125.68896666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51746.0,
+    "beat_position": 125.91526666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51839.0,
+    "beat_position": 126.14156666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51919.82,
+    "beat_position": 126.33822866666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51931.0,
+    "beat_position": 126.36543333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 51935.0,
+    "beat_position": 126.37516666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52024.0,
+    "beat_position": 126.59173333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52117.0,
+    "beat_position": 126.81803333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52149.0,
+    "beat_position": 126.8959,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52210.0,
+    "beat_position": 127.04433333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52257.0,
+    "beat_position": 127.1587,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52303.0,
+    "beat_position": 127.27063333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52395.83,
+    "beat_position": 127.49651966666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52396.0,
+    "beat_position": 127.49693333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52488.0,
+    "beat_position": 127.7208,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52579.0,
+    "beat_position": 127.94223333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52581.0,
+    "beat_position": 127.9471,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52651.25,
+    "beat_position": 128.11804166666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52674.0,
+    "beat_position": 128.17340000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52767.0,
+    "beat_position": 128.3997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52860.0,
+    "beat_position": 128.626,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52901.0,
+    "beat_position": 128.7257666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52953.0,
+    "beat_position": 128.8523,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 52988.0,
+    "beat_position": 128.93746666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53011.16,
+    "beat_position": 128.9938226666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53046.0,
+    "beat_position": 129.0786,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53139.0,
+    "beat_position": 129.3049,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53223.0,
+    "beat_position": 129.5093,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53232.0,
+    "beat_position": 129.5312,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53252.0,
+    "beat_position": 129.57986666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53325.0,
+    "beat_position": 129.7575,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53394.29,
+    "beat_position": 129.92610566666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53418.0,
+    "beat_position": 129.9838,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53510.0,
+    "beat_position": 130.20766666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53603.0,
+    "beat_position": 130.43396666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53696.0,
+    "beat_position": 130.66026666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53789.0,
+    "beat_position": 130.88656666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53789.02,
+    "beat_position": 130.8866153333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53805.0,
+    "beat_position": 130.9255,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53827.0,
+    "beat_position": 130.97903333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53882.0,
+    "beat_position": 131.11286666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 53975.0,
+    "beat_position": 131.33916666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54027.0,
+    "beat_position": 131.4657,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54068.0,
+    "beat_position": 131.56546666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54161.0,
+    "beat_position": 131.7917666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54195.37,
+    "beat_position": 131.87540033333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54254.0,
+    "beat_position": 132.01806666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54295.0,
+    "beat_position": 132.11783333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54347.0,
+    "beat_position": 132.24436666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54449.0,
+    "beat_position": 132.49256666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54466.0,
+    "beat_position": 132.53393333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54570.0,
+    "beat_position": 132.787,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54624.94,
+    "beat_position": 132.92068733333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54624.94,
+    "beat_position": 132.92068733333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54666.0,
+    "beat_position": 133.02059999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54771.0,
+    "beat_position": 133.2761,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54926.0,
+    "beat_position": 133.65326666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 54993.0,
+    "beat_position": 133.8163,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55052.0,
+    "beat_position": 133.95986666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55093.0,
+    "beat_position": 134.05963333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55193.0,
+    "beat_position": 134.30296666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55275.1,
+    "beat_position": 134.50274333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55282.0,
+    "beat_position": 134.51953333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55356.0,
+    "beat_position": 134.6996,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55449.0,
+    "beat_position": 134.92589999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55505.0,
+    "beat_position": 135.06216666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55515.0,
+    "beat_position": 135.0865,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55664.0,
+    "beat_position": 135.44906666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55805.0,
+    "beat_position": 135.79216666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55813.0,
+    "beat_position": 135.81163333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 55837.0,
+    "beat_position": 135.87003333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56020.0,
+    "beat_position": 136.31533333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56157.46,
+    "beat_position": 136.64981933333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56157.46,
+    "beat_position": 136.64981933333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56157.46,
+    "beat_position": 136.64981933333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56259.0,
+    "beat_position": 136.8969,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56333.0,
+    "beat_position": 137.07696666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56344.0,
+    "beat_position": 137.10373333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56401.27,
+    "beat_position": 137.24309033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56505.76,
+    "beat_position": 137.49734933333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56505.76,
+    "beat_position": 137.49734933333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56505.76,
+    "beat_position": 137.49734933333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56581.0,
+    "beat_position": 137.68043333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56714.74,
+    "beat_position": 138.00586733333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56714.74,
+    "beat_position": 138.00586733333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56714.74,
+    "beat_position": 138.00586733333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56847.0,
+    "beat_position": 138.3277,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56866.0,
+    "beat_position": 138.37393333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56899.0,
+    "beat_position": 138.45423333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 56903.0,
+    "beat_position": 138.46396666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57019.0,
+    "beat_position": 138.74623333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57075.0,
+    "beat_position": 138.8825,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57124.0,
+    "beat_position": 139.00173333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57183.0,
+    "beat_position": 139.1453,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57225.0,
+    "beat_position": 139.2475,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57225.58,
+    "beat_position": 139.24891133333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57313.0,
+    "beat_position": 139.46163333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57330.07,
+    "beat_position": 139.50317033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57330.07,
+    "beat_position": 139.50317033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57330.07,
+    "beat_position": 139.50317033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57403.0,
+    "beat_position": 139.68063333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57405.0,
+    "beat_position": 139.6855,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57466.0,
+    "beat_position": 139.83393333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57485.0,
+    "beat_position": 139.88016666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57534.0,
+    "beat_position": 139.9994,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57567.0,
+    "beat_position": 140.0797,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57620.32,
+    "beat_position": 140.20944533333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57620.32,
+    "beat_position": 140.20944533333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57627.0,
+    "beat_position": 140.22570000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57713.2,
+    "beat_position": 140.43545333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57713.2,
+    "beat_position": 140.43545333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57840.91,
+    "beat_position": 140.74621433333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57840.91,
+    "beat_position": 140.74621433333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57849.0,
+    "beat_position": 140.7659,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57895.0,
+    "beat_position": 140.87783333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57945.4,
+    "beat_position": 141.00047333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 57945.4,
+    "beat_position": 141.00047333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58022.0,
+    "beat_position": 141.18686666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58142.77,
+    "beat_position": 141.48074033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58142.77,
+    "beat_position": 141.48074033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58171.0,
+    "beat_position": 141.54943333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58205.0,
+    "beat_position": 141.63216666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58215.0,
+    "beat_position": 141.6565,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58351.75,
+    "beat_position": 141.98925833333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58351.75,
+    "beat_position": 141.98925833333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58351.75,
+    "beat_position": 141.98925833333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58463.0,
+    "beat_position": 142.25996666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58493.0,
+    "beat_position": 142.33296666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58545.0,
+    "beat_position": 142.4595,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58549.0,
+    "beat_position": 142.46923333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58627.0,
+    "beat_position": 142.65903333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58758.1,
+    "beat_position": 142.97804333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58758.1,
+    "beat_position": 142.97804333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58815.0,
+    "beat_position": 143.1165,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58850.98,
+    "beat_position": 143.20405133333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58850.98,
+    "beat_position": 143.20405133333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58861.0,
+    "beat_position": 143.22843333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 58932.24,
+    "beat_position": 143.401784,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59083.17,
+    "beat_position": 143.769047,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59083.17,
+    "beat_position": 143.769047,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59137.0,
+    "beat_position": 143.90003333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59257.32,
+    "beat_position": 144.192812,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59257.32,
+    "beat_position": 144.192812,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59257.32,
+    "beat_position": 144.192812,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59383.0,
+    "beat_position": 144.49863333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59408.0,
+    "beat_position": 144.55946666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59459.0,
+    "beat_position": 144.68356666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59466.3,
+    "beat_position": 144.70133,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59466.3,
+    "beat_position": 144.70133,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59559.18,
+    "beat_position": 144.927338,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59559.18,
+    "beat_position": 144.927338,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59618.0,
+    "beat_position": 145.07046666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59629.0,
+    "beat_position": 145.09723333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59700.0,
+    "beat_position": 145.27,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59756.55,
+    "beat_position": 145.40760500000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59756.55,
+    "beat_position": 145.40760500000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59756.55,
+    "beat_position": 145.40760500000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59781.0,
+    "beat_position": 145.4671,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59884.0,
+    "beat_position": 145.71773333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59887.0,
+    "beat_position": 145.72503333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59924.0,
+    "beat_position": 145.81506666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59966.0,
+    "beat_position": 145.91726666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59967.0,
+    "beat_position": 145.9197,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59969.0,
+    "beat_position": 145.92456666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 59977.0,
+    "beat_position": 145.94403333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60070.0,
+    "beat_position": 146.17033333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60096.0,
+    "beat_position": 146.2336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60137.0,
+    "beat_position": 146.33336666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60163.0,
+    "beat_position": 146.39663333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60256.0,
+    "beat_position": 146.62293333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60268.0,
+    "beat_position": 146.65213333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60289.0,
+    "beat_position": 146.70323333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60313.0,
+    "beat_position": 146.76163333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60329.0,
+    "beat_position": 146.80056666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60349.0,
+    "beat_position": 146.84923333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60440.0,
+    "beat_position": 147.07066666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60442.0,
+    "beat_position": 147.07553333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60478.0,
+    "beat_position": 147.16313333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60493.0,
+    "beat_position": 147.19963333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60535.0,
+    "beat_position": 147.30183333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60611.0,
+    "beat_position": 147.48676666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60612.0,
+    "beat_position": 147.4892,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60615.69,
+    "beat_position": 147.498179,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60628.0,
+    "beat_position": 147.52813333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60666.0,
+    "beat_position": 147.6206,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60721.0,
+    "beat_position": 147.7544333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60784.0,
+    "beat_position": 147.9077333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60814.0,
+    "beat_position": 147.98073333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60824.67,
+    "beat_position": 148.006697,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60836.0,
+    "beat_position": 148.03426666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60907.0,
+    "beat_position": 148.20703333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60917.55,
+    "beat_position": 148.232705,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 60956.0,
+    "beat_position": 148.32626666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61000.0,
+    "beat_position": 148.43333333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61033.0,
+    "beat_position": 148.51363333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61076.0,
+    "beat_position": 148.61826666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61093.0,
+    "beat_position": 148.65963333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61128.0,
+    "beat_position": 148.7448,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61186.0,
+    "beat_position": 148.88593333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61192.0,
+    "beat_position": 148.90053333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61231.02,
+    "beat_position": 148.99548199999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61279.0,
+    "beat_position": 149.11223333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61300.0,
+    "beat_position": 149.16333333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61363.0,
+    "beat_position": 149.31663333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61372.0,
+    "beat_position": 149.33853333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61375.0,
+    "beat_position": 149.34583333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61465.0,
+    "beat_position": 149.56483333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61472.0,
+    "beat_position": 149.58186666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61532.88,
+    "beat_position": 149.730008,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61539.0,
+    "beat_position": 149.7449,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61558.0,
+    "beat_position": 149.79113333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61637.37,
+    "beat_position": 149.984267,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61644.0,
+    "beat_position": 150.00039999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61651.0,
+    "beat_position": 150.01743333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61744.0,
+    "beat_position": 150.24373333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61816.0,
+    "beat_position": 150.41893333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61823.0,
+    "beat_position": 150.43596666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61837.0,
+    "beat_position": 150.47003333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61895.0,
+    "beat_position": 150.61116666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61930.0,
+    "beat_position": 150.69633333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61973.0,
+    "beat_position": 150.80096666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 61988.0,
+    "beat_position": 150.83746666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62023.0,
+    "beat_position": 150.92263333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62116.0,
+    "beat_position": 151.1489333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62148.21,
+    "beat_position": 151.227311,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62160.0,
+    "beat_position": 151.256,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62209.0,
+    "beat_position": 151.37523333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62251.0,
+    "beat_position": 151.47743333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62302.0,
+    "beat_position": 151.60153333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62310.75,
+    "beat_position": 151.622825,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62332.0,
+    "beat_position": 151.67453333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62395.0,
+    "beat_position": 151.82783333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62461.68,
+    "beat_position": 151.99008800000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62488.0,
+    "beat_position": 152.05413333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62504.0,
+    "beat_position": 152.0930666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62571.0,
+    "beat_position": 152.2561,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62581.0,
+    "beat_position": 152.28043333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62674.0,
+    "beat_position": 152.50673333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62676.0,
+    "beat_position": 152.5116,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62707.0,
+    "beat_position": 152.58703333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62721.0,
+    "beat_position": 152.6211,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62767.0,
+    "beat_position": 152.73303333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62848.0,
+    "beat_position": 152.93013333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62860.0,
+    "beat_position": 152.95933333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62870.0,
+    "beat_position": 152.98366666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62953.0,
+    "beat_position": 153.18563333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 62985.0,
+    "beat_position": 153.2635,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63020.0,
+    "beat_position": 153.34866666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63046.0,
+    "beat_position": 153.41193333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63060.0,
+    "beat_position": 153.446,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63135.0,
+    "beat_position": 153.62849999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63139.0,
+    "beat_position": 153.63823333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63163.0,
+    "beat_position": 153.69663333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63192.0,
+    "beat_position": 153.76719999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63200.0,
+    "beat_position": 153.7866666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63232.0,
+    "beat_position": 153.86453333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63275.0,
+    "beat_position": 153.96916666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63325.0,
+    "beat_position": 154.09083333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63364.0,
+    "beat_position": 154.18573333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63413.7,
+    "beat_position": 154.30667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63418.0,
+    "beat_position": 154.31713333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63511.0,
+    "beat_position": 154.54343333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63536.0,
+    "beat_position": 154.60426666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63576.24,
+    "beat_position": 154.702184,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63604.0,
+    "beat_position": 154.76973333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63697.0,
+    "beat_position": 154.99603333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63708.0,
+    "beat_position": 155.02280000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63725.0,
+    "beat_position": 155.06416666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63790.0,
+    "beat_position": 155.22233333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63878.1,
+    "beat_position": 155.43671,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63880.0,
+    "beat_position": 155.44133333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63883.0,
+    "beat_position": 155.44863333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63962.0,
+    "beat_position": 155.64086666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 63976.0,
+    "beat_position": 155.67493333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64024.0,
+    "beat_position": 155.79173333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64044.0,
+    "beat_position": 155.8404,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64069.0,
+    "beat_position": 155.90123333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64126.0,
+    "beat_position": 156.03993333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64162.0,
+    "beat_position": 156.12753333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64174.0,
+    "beat_position": 156.15673333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64208.0,
+    "beat_position": 156.2394666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64255.0,
+    "beat_position": 156.3538333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64290.0,
+    "beat_position": 156.43900000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64307.66,
+    "beat_position": 156.48197266666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64348.0,
+    "beat_position": 156.58013333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64372.0,
+    "beat_position": 156.63853333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64454.0,
+    "beat_position": 156.83806666666663,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64467.0,
+    "beat_position": 156.8697,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64516.64,
+    "beat_position": 156.99049066666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64536.0,
+    "beat_position": 157.03760000000003,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64571.0,
+    "beat_position": 157.12276666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64609.52,
+    "beat_position": 157.21649866666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64618.0,
+    "beat_position": 157.23713333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64700.0,
+    "beat_position": 157.43666666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64725.62,
+    "beat_position": 157.4990086666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64782.0,
+    "beat_position": 157.63619999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64864.0,
+    "beat_position": 157.83573333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64922.99,
+    "beat_position": 157.97927566666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64927.0,
+    "beat_position": 157.98903333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 64946.0,
+    "beat_position": 158.03526666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65028.0,
+    "beat_position": 158.2348,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65109.0,
+    "beat_position": 158.43189999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65120.36,
+    "beat_position": 158.4595426666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65144.99999999999,
+    "beat_position": 158.5195,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65191.0,
+    "beat_position": 158.63143333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65273.0,
+    "beat_position": 158.83096666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65283.0,
+    "beat_position": 158.8553,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65355.0,
+    "beat_position": 159.03050000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65437.0,
+    "beat_position": 159.23003333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65519.0,
+    "beat_position": 159.4295666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65601.0,
+    "beat_position": 159.6291,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65660.0,
+    "beat_position": 159.77266666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65683.0,
+    "beat_position": 159.82863333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65765.0,
+    "beat_position": 160.02816666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65847.0,
+    "beat_position": 160.22769999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65851.79,
+    "beat_position": 160.23935566666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65923.0,
+    "beat_position": 160.41263333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65929.0,
+    "beat_position": 160.42723333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 65956.28,
+    "beat_position": 160.49361466666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66011.0,
+    "beat_position": 160.62676666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66093.0,
+    "beat_position": 160.8263,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66109.0,
+    "beat_position": 160.86523333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66175.0,
+    "beat_position": 161.0258333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66257.0,
+    "beat_position": 161.2253666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66258.0,
+    "beat_position": 161.22779999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66339.0,
+    "beat_position": 161.4249,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66374.24,
+    "beat_position": 161.51065066666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66421.0,
+    "beat_position": 161.62443333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66503.0,
+    "beat_position": 161.82396666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66536.78,
+    "beat_position": 161.90616466666663,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66585.0,
+    "beat_position": 162.02349999999996,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66667.0,
+    "beat_position": 162.22303333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66707.0,
+    "beat_position": 162.32036666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66749.0,
+    "beat_position": 162.42256666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66805.0,
+    "beat_position": 162.55883333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66831.0,
+    "beat_position": 162.6221,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66873.47,
+    "beat_position": 162.72544366666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66913.0,
+    "beat_position": 162.82163333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66977.96,
+    "beat_position": 162.9797026666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 66995.0,
+    "beat_position": 163.0211666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67027.0,
+    "beat_position": 163.09903333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67077.0,
+    "beat_position": 163.2207,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67159.0,
+    "beat_position": 163.42023333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67241.0,
+    "beat_position": 163.61976666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67249.0,
+    "beat_position": 163.63923333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67323.0,
+    "beat_position": 163.8193,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67405.0,
+    "beat_position": 164.01883333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67471.0,
+    "beat_position": 164.17943333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67487.0,
+    "beat_position": 164.21836666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67693.0,
+    "beat_position": 164.71963333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 67915.0,
+    "beat_position": 165.25983333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68137.0,
+    "beat_position": 165.80003333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68359.0,
+    "beat_position": 166.34023333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68581.0,
+    "beat_position": 166.88043333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68803.0,
+    "beat_position": 167.4206333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68845.0,
+    "beat_position": 167.52283333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 68986.0,
+    "beat_position": 167.86593333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69025.0,
+    "beat_position": 167.96083333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69247.0,
+    "beat_position": 168.50103333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69469.0,
+    "beat_position": 169.0412333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69522.0,
+    "beat_position": 169.17020000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69555.37,
+    "beat_position": 169.25140033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69805.0,
+    "beat_position": 169.85883333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 69878.0,
+    "beat_position": 170.03646666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 70356.46,
+    "beat_position": 171.20071933333338,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 70995.01,
+    "beat_position": 172.75452433333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 71691.61,
+    "beat_position": 174.44958433333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 72434.65,
+    "beat_position": 176.2576483333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 72666.0,
+    "beat_position": 176.82059999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 72923.0,
+    "beat_position": 177.44596666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 73024.0,
+    "beat_position": 177.69173333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 73182.0,
+    "beat_position": 178.0762,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 73380.0,
+    "beat_position": 178.558,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 73601.0,
+    "beat_position": 179.09576666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 73922.0,
+    "beat_position": 179.87686666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 74378.0,
+    "beat_position": 180.98646666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 74662.0,
+    "beat_position": 181.67753333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 75418.41,
+    "beat_position": 183.51813100000004,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 76142.0,
+    "beat_position": 185.27886666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 76249.0,
+    "beat_position": 185.5392333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 76834.83,
+    "beat_position": 186.96475299999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 77027.0,
+    "beat_position": 187.43236666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 77623.0,
+    "beat_position": 188.88263333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 77905.0,
+    "beat_position": 189.56883333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78081.0,
+    "beat_position": 189.9971,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78257.0,
+    "beat_position": 190.4253666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78363.0,
+    "beat_position": 190.6833,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78433.0,
+    "beat_position": 190.85363333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78609.0,
+    "beat_position": 191.28189999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 78785.0,
+    "beat_position": 191.71016666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 79057.0,
+    "beat_position": 192.37203333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 79110.39,
+    "beat_position": 192.501949,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 79330.0,
+    "beat_position": 193.03633333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 79601.0,
+    "beat_position": 193.69576666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 79844.0,
+    "beat_position": 194.28706666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80027.0,
+    "beat_position": 194.73236666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80317.82,
+    "beat_position": 195.4400286666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80475.0,
+    "beat_position": 195.82249999999996,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80619.68,
+    "beat_position": 196.17455466666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80805.0,
+    "beat_position": 196.62550000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 80805.44,
+    "beat_position": 196.62657066666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 81060.86,
+    "beat_position": 197.24809266666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 81351.11,
+    "beat_position": 197.95436766666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 81983.0,
+    "beat_position": 199.49196666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 82152.2,
+    "beat_position": 199.90368666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 82918.46,
+    "beat_position": 201.76825266666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 83207.0,
+    "beat_position": 202.47036666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 83449.0,
+    "beat_position": 203.0592333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 83615.06,
+    "beat_position": 203.46331266666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 83961.0,
+    "beat_position": 204.30509999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 84207.0,
+    "beat_position": 204.9037,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 84857.32,
+    "beat_position": 206.48614533333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 85531.0,
+    "beat_position": 208.12543333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 87643.72,
+    "beat_position": 213.26638533333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 88433.2,
+    "beat_position": 215.1874533333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 89071.75,
+    "beat_position": 216.74125833333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 89640.0,
+    "beat_position": 218.124,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 89802.0,
+    "beat_position": 218.5182,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 90081.81,
+    "beat_position": 219.199071,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 90186.3,
+    "beat_position": 219.45333000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 90369.0,
+    "beat_position": 219.89790000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 90615.87,
+    "beat_position": 220.49861700000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 90906.12,
+    "beat_position": 221.204892,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 91123.0,
+    "beat_position": 221.73263333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 91370.52,
+    "beat_position": 222.334932,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 91637.55,
+    "beat_position": 222.98470500000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 91916.19,
+    "beat_position": 223.662729,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 92148.39,
+    "beat_position": 224.22774900000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 92368.98,
+    "beat_position": 224.76451799999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 92659.23,
+    "beat_position": 225.470793,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 93170.07,
+    "beat_position": 226.713837,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 93982.77,
+    "beat_position": 228.691407,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 94629.0,
+    "beat_position": 230.2639,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 95294.69,
+    "beat_position": 231.88374566666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 95550.11,
+    "beat_position": 232.50526766666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 95840.36,
+    "beat_position": 233.21154266666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 96062.0,
+    "beat_position": 233.75086666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 96351.2,
+    "beat_position": 234.45458666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 96560.18,
+    "beat_position": 234.96310466666662,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 96816.0,
+    "beat_position": 235.58560000000003,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 97071.02,
+    "beat_position": 236.20614866666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 97280.0,
+    "beat_position": 236.71466666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 97593.47,
+    "beat_position": 237.47744366666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 97802.45,
+    "beat_position": 237.98596166666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 98074.0,
+    "beat_position": 238.64673333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 98326.0,
+    "beat_position": 239.2599333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 98603.54,
+    "beat_position": 239.93528066666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 98835.74,
+    "beat_position": 240.50030066666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99080.0,
+    "beat_position": 241.09466666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99427.85,
+    "beat_position": 241.94110166666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99602.0,
+    "beat_position": 242.3648666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99741.32,
+    "beat_position": 242.70387866666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99747.0,
+    "beat_position": 242.7177,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99857.41,
+    "beat_position": 242.98636433333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 99998.0,
+    "beat_position": 243.32846666666669,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 100327.0,
+    "beat_position": 244.12903333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 100449.52,
+    "beat_position": 244.42716533333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 100670.11,
+    "beat_position": 244.96393433333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 100988.0,
+    "beat_position": 245.73746666666668,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 101209.0,
+    "beat_position": 246.27523333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 101401.54,
+    "beat_position": 246.74374733333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 101650.0,
+    "beat_position": 247.34833333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 102016.87,
+    "beat_position": 248.24105033333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 102330.34,
+    "beat_position": 249.00382733333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 102611.0,
+    "beat_position": 249.68676666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 102945.67,
+    "beat_position": 250.50113033333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 103235.92,
+    "beat_position": 251.20740533333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 103572.0,
+    "beat_position": 252.02519999999998,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 103893.0,
+    "beat_position": 252.8063,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 104164.72,
+    "beat_position": 253.46748533333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 104845.0,
+    "beat_position": 255.12283333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 105165.0,
+    "beat_position": 255.9015,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 105486.0,
+    "beat_position": 256.6826,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 106231.29,
+    "beat_position": 258.49613899999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 106440.27,
+    "beat_position": 259.004657,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 107125.26,
+    "beat_position": 260.671466,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 107311.0,
+    "beat_position": 261.12343333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 107532.0,
+    "beat_position": 261.6612,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 107752.0,
+    "beat_position": 262.1965333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 108576.51,
+    "beat_position": 264.202841,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 108797.1,
+    "beat_position": 264.73961,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 109830.39,
+    "beat_position": 267.253949,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 109923.27,
+    "beat_position": 267.479957,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 110248.34,
+    "beat_position": 268.27096066666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 110869.0,
+    "beat_position": 269.7812333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 111190.0,
+    "beat_position": 270.5623333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 111537.05,
+    "beat_position": 271.4068216666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 111850.52,
+    "beat_position": 272.1695986666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 112187.21,
+    "beat_position": 272.98887766666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 112470.0,
+    "beat_position": 273.677,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 112814.15,
+    "beat_position": 274.51443166666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 113417.87,
+    "beat_position": 275.98348366666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 113626.85,
+    "beat_position": 276.4920016666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 114008.0,
+    "beat_position": 277.41946666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 114544.04,
+    "beat_position": 278.72383066666663,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 115275.46,
+    "beat_position": 280.50361933333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 115936.0,
+    "beat_position": 282.1109333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 116568.0,
+    "beat_position": 283.6488,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 117225.94,
+    "beat_position": 285.24978733333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 117540.0,
+    "beat_position": 286.014,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 117554.0,
+    "beat_position": 286.04806666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 117818.05,
+    "beat_position": 286.6905883333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 117922.54,
+    "beat_position": 286.9448473333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 118143.13,
+    "beat_position": 287.48161633333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 118328.89,
+    "beat_position": 287.9336323333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 118561.09,
+    "beat_position": 288.4986523333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 118616.0,
+    "beat_position": 288.6322666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 118851.34,
+    "beat_position": 289.20492733333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119040.0,
+    "beat_position": 289.66400000000004,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119052.0,
+    "beat_position": 289.69320000000005,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119269.3,
+    "beat_position": 290.22196333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119466.67,
+    "beat_position": 290.7022303333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119466.67,
+    "beat_position": 290.7022303333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119466.67,
+    "beat_position": 290.7022303333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119571.16,
+    "beat_position": 290.95648933333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119571.16,
+    "beat_position": 290.95648933333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119651.0,
+    "beat_position": 291.15076666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119696.0,
+    "beat_position": 291.26026666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119700.0,
+    "beat_position": 291.27000000000004,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119780.14,
+    "beat_position": 291.46500733333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119780.14,
+    "beat_position": 291.46500733333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119780.14,
+    "beat_position": 291.46500733333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119884.63,
+    "beat_position": 291.71926633333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119884.63,
+    "beat_position": 291.71926633333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119884.63,
+    "beat_position": 291.71926633333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119989.12,
+    "beat_position": 291.9735253333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119989.12,
+    "beat_position": 291.9735253333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119989.12,
+    "beat_position": 291.9735253333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 119989.12,
+    "beat_position": 291.9735253333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120058.0,
+    "beat_position": 292.14113333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120074.0,
+    "beat_position": 292.1800666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120104.0,
+    "beat_position": 292.25306666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120120.0,
+    "beat_position": 292.29200000000003,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120149.0,
+    "beat_position": 292.3625666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120165.0,
+    "beat_position": 292.40150000000006,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120211.0,
+    "beat_position": 292.51343333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120256.0,
+    "beat_position": 292.6229333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120302.0,
+    "beat_position": 292.7348666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120314.2,
+    "beat_position": 292.76455333333337,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120348.0,
+    "beat_position": 292.8468,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120394.0,
+    "beat_position": 292.9587333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120418.68,
+    "beat_position": 293.018788,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120440.0,
+    "beat_position": 293.0706666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120485.0,
+    "beat_position": 293.1801666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120505.0,
+    "beat_position": 293.22883333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120531.0,
+    "beat_position": 293.29210000000006,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120577.0,
+    "beat_position": 293.4040333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120623.0,
+    "beat_position": 293.51596666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120668.0,
+    "beat_position": 293.6254666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120669.0,
+    "beat_position": 293.62789999999995,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120715.0,
+    "beat_position": 293.7398333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120761.0,
+    "beat_position": 293.85176666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120807.0,
+    "beat_position": 293.9637,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120853.0,
+    "beat_position": 294.0756333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120888.0,
+    "beat_position": 294.1608,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120912.0,
+    "beat_position": 294.2192,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120958.0,
+    "beat_position": 294.3311333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120980.0,
+    "beat_position": 294.38466666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 121137.0,
+    "beat_position": 294.76669999999996,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 121359.09,
+    "beat_position": 295.307119,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 121679.0,
+    "beat_position": 296.08556666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 121801.0,
+    "beat_position": 296.3824333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 122264.67,
+    "beat_position": 297.510697,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 122433.0,
+    "beat_position": 297.9203,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 122731.0,
+    "beat_position": 298.6454333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 123065.0,
+    "beat_position": 299.4581666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 123202.0,
+    "beat_position": 299.79153333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 123729.0,
+    "beat_position": 301.0739,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 123797.19,
+    "beat_position": 301.239829,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 124296.42,
+    "beat_position": 302.454622,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 124361.0,
+    "beat_position": 302.61176666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 124681.0,
+    "beat_position": 303.3904333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 124714.38,
+    "beat_position": 303.471658,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 125047.0,
+    "beat_position": 304.2810333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 125225.0,
+    "beat_position": 304.71416666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 125403.0,
+    "beat_position": 305.14730000000003,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 125747.66,
+    "beat_position": 305.98597266666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 125859.0,
+    "beat_position": 306.2569,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 126142.4,
+    "beat_position": 306.94650666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 126711.29,
+    "beat_position": 308.33080566666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 126721.0,
+    "beat_position": 308.35443333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 126841.0,
+    "beat_position": 308.64643333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127061.0,
+    "beat_position": 309.18176666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127129.25,
+    "beat_position": 309.3478416666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127281.0,
+    "beat_position": 309.7171,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127501.0,
+    "beat_position": 310.25243333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127605.26,
+    "beat_position": 310.5061326666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127621.0,
+    "beat_position": 310.5444333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127741.0,
+    "beat_position": 310.83643333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 127861.0,
+    "beat_position": 311.1284333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 128104.49,
+    "beat_position": 311.7209256666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 128217.0,
+    "beat_position": 311.9947,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 128615.33,
+    "beat_position": 312.9639696666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 128759.0,
+    "beat_position": 313.31356666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129419.0,
+    "beat_position": 314.9195666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129620.0,
+    "beat_position": 315.4086666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129840.0,
+    "beat_position": 315.944,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129899.0,
+    "beat_position": 316.08756666666665,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129960.0,
+    "beat_position": 316.236,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 129996.0,
+    "beat_position": 316.32360000000006,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130042.0,
+    "beat_position": 316.43553333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130088.0,
+    "beat_position": 316.5474666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130124.0,
+    "beat_position": 316.63506666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130169.0,
+    "beat_position": 316.7445666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130380.0,
+    "beat_position": 317.258,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130525.0,
+    "beat_position": 317.6108333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 130860.0,
+    "beat_position": 318.426,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 131289.0,
+    "beat_position": 319.4699,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 131341.0,
+    "beat_position": 319.5964333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 131821.0,
+    "beat_position": 320.7644333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 132151.0,
+    "beat_position": 321.5674333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 132302.0,
+    "beat_position": 321.93486666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 132783.0,
+    "beat_position": 323.1053,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 132915.0,
+    "beat_position": 323.4265,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 133264.0,
+    "beat_position": 324.27573333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 133679.0,
+    "beat_position": 325.2855666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 133744.0,
+    "beat_position": 325.44373333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 134225.0,
+    "beat_position": 326.6141666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 134705.0,
+    "beat_position": 327.7821666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 135186.0,
+    "beat_position": 328.9526000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 135666.0,
+    "beat_position": 330.12059999999997,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 136147.0,
+    "beat_position": 331.29103333333336,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 136628.0,
+    "beat_position": 332.46146666666664,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 137109.0,
+    "beat_position": 333.63190000000003,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 137589.0,
+    "beat_position": 334.7999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 138070.0,
+    "beat_position": 335.9703333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 138550.0,
+    "beat_position": 337.1383333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 139031.0,
+    "beat_position": 338.30876666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 139511.0,
+    "beat_position": 339.47676666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 258054.0,
+    "beat_position": 627.9313999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 258274.0,
+    "beat_position": 628.4667333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 258495.0,
+    "beat_position": 629.0045,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 258715.0,
+    "beat_position": 629.5398333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 258936.0,
+    "beat_position": 630.0776,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 259156.0,
+    "beat_position": 630.6129333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 259376.0,
+    "beat_position": 631.1482666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 259597.0,
+    "beat_position": 631.6860333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 259817.0,
+    "beat_position": 632.2213666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 260038.0,
+    "beat_position": 632.7591333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 260258.0,
+    "beat_position": 633.2944666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 260479.0,
+    "beat_position": 633.8322333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 260699.0,
+    "beat_position": 634.3675666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 261056.0,
+    "beat_position": 635.2362666666666,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 261502.0,
+    "beat_position": 636.3215333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 261948.0,
+    "beat_position": 637.4067999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 262800.0,
+    "beat_position": 639.48,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 262920.0,
+    "beat_position": 639.772,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263040.0,
+    "beat_position": 640.0640000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263160.0,
+    "beat_position": 640.356,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263280.0,
+    "beat_position": 640.648,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263400.0,
+    "beat_position": 640.9399999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263520.0,
+    "beat_position": 641.232,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263640.0,
+    "beat_position": 641.524,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263760.0,
+    "beat_position": 641.816,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 263880.0,
+    "beat_position": 642.108,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264000.0,
+    "beat_position": 642.4000000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264120.0,
+    "beat_position": 642.692,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264240.0,
+    "beat_position": 642.984,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264360.0,
+    "beat_position": 643.2760000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264480.0,
+    "beat_position": 643.5680000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264600.0,
+    "beat_position": 643.86,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264720.0,
+    "beat_position": 644.1520000000002,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264840.0,
+    "beat_position": 644.444,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 264960.0,
+    "beat_position": 644.7359999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265180.0,
+    "beat_position": 645.2713333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265300.0,
+    "beat_position": 645.5633333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265420.0,
+    "beat_position": 645.8553333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265540.0,
+    "beat_position": 646.1473333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265660.0,
+    "beat_position": 646.4393333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265780.0,
+    "beat_position": 646.7313333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 265900.0,
+    "beat_position": 647.0233333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266020.0,
+    "beat_position": 647.3153333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266140.0,
+    "beat_position": 647.6073333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266260.0,
+    "beat_position": 647.8993333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266380.0,
+    "beat_position": 648.1913333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266500.0,
+    "beat_position": 648.4833333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266620.0,
+    "beat_position": 648.7753333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266740.0,
+    "beat_position": 649.0673333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266860.0,
+    "beat_position": 649.3593333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 266980.0,
+    "beat_position": 649.6513333333335,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267100.0,
+    "beat_position": 649.9433333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267220.0,
+    "beat_position": 650.2353333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267340.0,
+    "beat_position": 650.5273333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267460.0,
+    "beat_position": 650.8193333333332,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267580.0,
+    "beat_position": 651.1113333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267700.0,
+    "beat_position": 651.4033333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267820.0,
+    "beat_position": 651.6953333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 267940.0,
+    "beat_position": 651.9873333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268060.0,
+    "beat_position": 652.2793333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268280.0,
+    "beat_position": 652.8146666666667,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268500.0,
+    "beat_position": 653.3499999999999,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268620.0,
+    "beat_position": 653.642,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268740.0,
+    "beat_position": 653.934,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268860.0,
+    "beat_position": 654.226,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 268980.0,
+    "beat_position": 654.518,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269100.0,
+    "beat_position": 654.8100000000001,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269220.0,
+    "beat_position": 655.102,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269340.0,
+    "beat_position": 655.394,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269560.0,
+    "beat_position": 655.9293333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269680.0,
+    "beat_position": 656.2213333333333,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269800.0,
+    "beat_position": 656.5133333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 269920.0,
+    "beat_position": 656.8053333333334,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.99,
+    "instrument": "mixed"
+  }
+]

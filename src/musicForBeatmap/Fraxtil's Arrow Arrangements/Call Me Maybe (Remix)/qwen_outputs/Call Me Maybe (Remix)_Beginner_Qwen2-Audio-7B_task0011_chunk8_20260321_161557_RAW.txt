@@ -1,0 +1,37 @@
+To generate a beginner difficulty map for the given audio, we need to consider several factors such as rhythm, note timing, and overall musical structure. Here's an example of how we could approach this task:
+
+  1. Rhythm: We'll aim for a steady tempo with a 4/4 time signature, which gives us four beats per measure. This should provide a good balance between complexity and ease of play for beginners.
+  2. Note timing: We'll try to keep our notes on the quarter note, which provides a solid foundation for new players. We'll also aim for notes that fall on regular beats, like every fourth count, to help with rhythm.
+  3. Musical structure: We'll look for sections of the audio that have a clear musical structure, such as repeated choruses or verses. These sections will make it easier for beginners to learn and play along.
+
+Based on these guidelines, here's an example of what our map might look like:
+```yaml
+Map Name: Beginner Map
+
+# General Information
+Title: My First Map
+Description: A beginner-friendly map with a steady rhythm and simple note structure.
+Author: [Your Name]
+
+# Key and Time Signature
+Key: Bb major
+Time Signature: 4/4
+
+# Measures
+1. intro (0.00 - 1.00)
+2. verse 1 (1.00 - 2.00)
+3. chorus 1 (2.00 - 4.00)
+4. verse 2 (4.00 - 6.00)
+5. chorus 2 (6.00 - 8.00)
+6. outro (8.00 - 10.00)
+
+# Onsets
+[318.19, 1049.61, 1293.42, 2024.85, 2164.17, 2233.83, 3232.29, 3719.91, 3940.50, 4184.31, 4671.93, 4927.35, 5147.94, 5867.76, 6134.78, 6622.4, 6866.21, 7122.63, 7510.25, 8097.47, 8343.89, 8564.48, 9284.3, 9540.72, 9897.14]
+
+# Instruments
+Instruments: snare, kick, hihat, ehat, cymbal, guitar, bass, synth
+
+# Additional Information
+Choreo: Yes
+Video URL: [Optional video link]
+```

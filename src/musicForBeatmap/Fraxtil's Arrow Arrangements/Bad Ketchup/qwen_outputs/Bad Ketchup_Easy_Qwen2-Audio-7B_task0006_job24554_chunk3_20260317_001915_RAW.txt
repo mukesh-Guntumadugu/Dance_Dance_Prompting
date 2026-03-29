@@ -1,0 +1,342 @@
+```json
+{
+  "name": "Easy",
+  "type": "stepmania",
+  "music_key": "F# minor",
+  "time_signature": "4/4",
+  "tempo_bpm": "180.0",
+  "notes": [
+    {
+      "timestamp": "333.06",
+      "note_id": "F#1",
+      "velocity": "",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "402.72",
+      "note_id": "G1",
+      "velocity": "",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "576.87",
+      "note_id": "C2",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "658.14",
+      "note_id": "D3",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "751.02",
+      "note_id": "E4",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "820.68",
+      "note_id": "F4",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "901.95",
+      "note_id": "G4",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "994.83",
+      "note_id": "A4",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1168.98",
+      "note_id": "B4",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1296.69",
+      "note_id": "C5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1331.52",
+      "note_id": "D5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1494.06",
+      "note_id": "E5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1575.33",
+      "note_id": "F5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1656.60",
+      "note_id": "G5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1726.26",
+      "note_id": "A5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1819.14",
+      "note_id": "B5",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1900.41",
+      "note_id": "C6",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "1993.29",
+      "note_id": "D6",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "2132.61",
+      "note_id": "E6",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "2167.44",
+      "note_id": "F6",
+      "velocity": "80",
+      "instrument": "bass"
+    },
+    {
+      "timestamp": "4988.66",
+      "note_id": "F#1",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5069.93",
+      "note_id": "G1",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5162.81",
+      "note_id": "C2",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5232.47",
+      "note_id": "D3",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5313.74",
+      "note_id": "E4",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5406.62",
+      "note_id": "F4",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5487.89",
+      "note_id": "G4",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5580.77",
+      "note_id": "A4",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5673.65",
+      "note_id": "B4",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5836.19",
+      "note_id": "C5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "5998.73",
+      "note_id": "D5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6161.27",
+      "note_id": "E5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6230.93",
+      "note_id": "F5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6312.20",
+      "note_id": "G5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6405.08",
+      "note_id": "A5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6497.96",
+      "note_id": "B5",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6567.62",
+      "note_id": "C6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6648.89",
+      "note_id": "D6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6799.82",
+      "note_id": "E6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6834.65",
+      "note_id": "F6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "6997.19",
+      "note_id": "G6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "7113.29",
+      "note_id": "A6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "7357.10",
+      "note_id": "B6",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "7658.96",
+      "note_id": "C7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "7833.11",
+      "note_id": "D7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "7914.38",
+      "note_id": "E7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "8076.92",
+      "note_id": "F7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "8297.51",
+      "note_id": "G7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "8506.49",
+      "note_id": "A7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "8669.02",
+      "note_id": "B7",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "8831.56",
+      "note_id": "C8",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "9005.71",
+      "note_id": "D8",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "9295.96",
+      "note_id": "E8",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "9504.94",
+      "note_id": "F8",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "9667.48",
+      "note_id": "G8",
+      "velocity": "80",
+      "instrument": "guitar"
+    },
+    {
+      "timestamp": "9783.58",
+      "note_id": "A8",
+```

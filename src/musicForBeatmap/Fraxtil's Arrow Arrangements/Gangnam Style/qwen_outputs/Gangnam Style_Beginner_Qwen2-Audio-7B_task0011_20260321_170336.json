@@ -1,0 +1,20 @@
+[
+  {
+    "time_ms": 120000.0,
+    "beat_position": 265.0,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.9,
+    "instrument": "mixed"
+  },
+  {
+    "time_ms": 120125.0,
+    "beat_position": 265.125,
+    "notes": "1000",
+    "placement_type": 1,
+    "note_type": 2,
+    "confidence": 0.9,
+    "instrument": "mixed"
+  }
+]

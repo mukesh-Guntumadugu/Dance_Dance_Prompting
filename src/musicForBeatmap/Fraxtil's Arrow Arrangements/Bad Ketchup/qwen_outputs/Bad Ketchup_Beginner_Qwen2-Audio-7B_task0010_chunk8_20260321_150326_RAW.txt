@@ -1,0 +1,214 @@
+```yaml
+# Maps musical notes to their on-screen representation in StepMania
+step_map:
+  A: "a"
+  A#: "b"
+  C: "c"
+  C#: "d"
+  D: "e"
+  D#: "f"
+  E: "g"
+  F: "h"
+  G: "i"
+
+# Map which instruments are played in this song to their corresponding on-screen representation in StepMania
+instrument_map:
+  kick: "k"
+  snare: "s"
+  bass: "b"
+  guitar: "g"
+  synth: "y"
+
+# Define the timing and layout of each measure in this song
+measures:
+  - name: "1"
+    steps:
+      - onset: 39.55
+        length: 1.333
+        instrument: kick
+      - onset: 62.922999999999995
+        length: 1.333
+        instrument: snare
+      - onset: 85.893
+        length: 1.333
+        instrument: bass
+      - onset: 108.763
+        length: 1.333
+        instrument: guitar
+      - onset: 131.63299999999998
+        length: 1.333
+        instrument: synth
+      - onset: 154.502
+        length: 1.333
+        instrument: kick
+      - onset: 177.37199999999996
+        length: 1.333
+        instrument: snare
+      - onset: 200.24199999999995
+        length: 1.333
+        instrument: bass
+      - onset: 223.111
+        length: 1.333
+        instrument: guitar
+      - onset: 245.98
+        length: 1.333
+        instrument: synth
+      - onset: 268.84999999999997
+        length: 1.333
+        instrument: kick
+      - onset: 291.718
+        length: 1.333
+        instrument: snare
+      - onset: 314.587
+        length: 1.333
+        instrument: bass
+      - onset: 337.456
+        length: 1.333
+        instrument: guitar
+      - onset: 360.325
+        length: 1.333
+        instrument: synth
+      - onset: 383.194
+        length: 1.333
+        instrument: kick
+      - onset: 405.063
+        length: 1.333
+        instrument: snare
+      - onset: 427.932
+        length: 1.333
+        instrument: bass
+      - onset: 450.801
+        length: 1.333
+        instrument: guitar
+      - onset: 473.67
+        length: 1.333
+        instrument: synth
+      - onset: 496.539
+        length: 1.333
+        instrument: kick
+      - onset: 519.408
+        length: 1.333
+        instrument: snare
+      - onset: 542.277
+        length: 1.333
+        instrument: bass
+      - onset: 565.146
+        length: 1.333
+        instrument: guitar
+      - onset: 588.015
+        length: 1.333
+        instrument: synth
+      - onset: 610.884
+        length: 1.333
+        instrument: kick
+      - onset: 633.753
+        length: 1.333
+        instrument: snare
+      - onset: 656.622
+        length: 1.333
+        instrument: bass
+      - onset: 679.491
+        length: 1.333
+        instrument: guitar
+      - onset: 702.36
+        length: 1.333
+        instrument: synth
+      - onset: 725.229
+        length: 1.333
+        instrument: kick
+      - onset: 748.098
+        length: 1.333
+        instrument: snare
+      - onset: 770.967
+        length: 1.333
+        instrument: bass
+      - onset: 793.836
+        length: 1.333
+        instrument: guitar
+      - onset: 816.705
+        length: 1.333
+        instrument: synth
+      - onset: 839.574
+        length: 1.333
+        instrument: kick
+      - onset: 862.443
+        length: 1.333
+        instrument: snare
+      - onset: 885.312
+        length: 1.333
+        instrument: bass
+      - onset: 908.181
+        length: 1.333
+        instrument: guitar
+      - onset: 931.05
+        length: 1.333
+        instrument: synth
+      - onset: 953.919
+        length: 1.333
+        instrument: kick
+      - onset: 976.788
+        length: 1.333
+        instrument: snare
+      - onset: 999.657
+        length: 1.333
+        instrument: bass
+      - onset: 131.63299999999998
+        length: 1.333
+        instrument: guitar
+      - onset: 154.502
+        length: 1.333
+        instrument: synth
+      - onset: 177.37199999999996
+        length: 1.333
+        instrument: bass
+      - onset: 199.241
+        length: 1.333
+        instrument: guitar
+      - onset: 221.11
+        length: 1.333
+        instrument: synth
+      - onset: 243.079
+        length: 1.333
+        instrument: bass
+      - onset: 265.048
+        length: 1.333
+        instrument: guitar
+      - onset: 287.017
+        length: 1.333
+        instrument: synth
+      - onset: 308.986
+        length: 1.333
+        instrument: kick
+      - onset: 330.955
+        length: 1.333
+        instrument: snare
+      - onset: 353.024
+        length: 1.333
+        instrument: bass
+      - onset: 375.093
+        length: 1.333
+        instrument: guitar
+      - onset: 397.162
+        length: 1.333
+        instrument: synth
+      - onset: 419.231
+        length: 1.333
+        instrument: kick
+      - onset: 441.20
+        length: 1.333
+        instrument: snare
+      - onset: 463.169
+        length: 1.333
+        instrument: bass
+      - onset: 485.038
+        length: 1.333
+        instrument: guitar
+      - onset: 506.907
+        length: 1.333
+        instrument: synth
+      - onset: 528.776
+        length: 1.333
+        instrument: kick
+      - onset: 550.745
+        length: 1
+```

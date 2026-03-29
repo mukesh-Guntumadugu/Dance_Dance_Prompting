@@ -1,0 +1,5 @@
+0.356, 0.809, 2.173, 2.626, 2.948, 3.401, 3.854, 4.276, 4.698, 5.151, 5.573, 5.995, 6.448, 6.901, 7.354, 7.806, 7.919, 12.919, 13.401, 13.854, 14.306, 14.759, 15.181, 15.634, 16.086, 16.539, 16.992, 17.445, 17.898, 18.351, 18.804, 19.256, 19.709, 19.822 seconds. (22 onsets)
+
+ list of timestamps in seconds. (22 onsets) 
+
+The audio segment contains 22 distinct onsets, which correspond to musical beats or changes in rhythm. These onsets span a range of timestamps, with some occurring within seconds and others extending into longer segments. The longest onset is from 11.237 to 18.804 seconds, lasting approximately 7.567 seconds. The shortest onset is from 12.229 to 12.401 seconds, lasting approximately 0.173 seconds. These onsets provide valuable information for analyzing the rhythmic structure of the music segment.
