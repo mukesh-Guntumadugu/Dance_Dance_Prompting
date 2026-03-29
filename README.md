@@ -1,46 +1,146 @@
-# LLM Beatmap Generator
+# 🎵 LLM Beatmap Generator
 
-A tool to generate StepMania (`.sm`) beatmaps from audio files using Large Language Models (LLM).
+A research project that uses Large Language Models (LLMs) and multimodal AI to automatically generate **StepMania beatmap onset timestamps** from audio files. The project evaluates how well different AI models can detect musical events (onsets/transients) from raw audio and produce rhythm game charts.
 
-## Overview
+---
 
-This project uses audio analysis (via `librosa`) and LLMs (via Google Gemini) to create rhythm game charts.
+## 🎯 Project Goal
 
-## Setup
+Given a collection of songs from Fraxtil's Arrow Arrangements (20 tracks), automatically detect musical onset events in milliseconds using AI models and generate StepMania-compatible beatmap data — replacing manual human charting with automated LLM inference.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/mukesh-Guntumadugu/llm_beatmap_generator.git
-    cd llm_beatmap_generator
-    ```
+---
 
-2.  **Create and activate a virtual environment:**
-    ```bash
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
+## 🤖 Models Currently In Use
 
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+### ✅ DeepResonance *(primary model — running on Ohio HPC)*
+- **What it is:** A multimodal music LLM built on LLaMA (Vicuna 7B) + ImageBind audio encoder
+- **Weights:** Available — stored at `/data/mg546924/llm_beatmap_generator/DeepResonance/ckpt/`
+- **How it runs:** Ohio HPC cluster via Slurm on NVIDIA A6000 GPUs
+- **Scripts:**
+  - `extract_deepresonance_onsets.py` — batch onset extraction (1/5/10/15/20 second audio chunks)
+  - `slurm_run_deepresonance.sh` — Slurm batch submission script
+  - `chat_deepresonance.py` — interactive chat interface
+  - `CHAT_DEEPRESONANCE_README.md` — full usage guide for the chat interface
+- **Output:** `DeepResonance_onsets_[SongName]_[timestamp]_[chunk]sec.csv`
 
-4.  **Set up Environment Variables:**
-    Create a `.env` file and add your API key:
-    ```
-    GOOGLE_API_KEY=your_api_key_here
-    ```
+### ✅ Qwen LoRA *(secondary model — also running on Ohio HPC)*
+- **What it is:** Qwen audio model fine-tuned with LoRA adapters for music understanding
+- **Weights:** Available on cluster
+- **Scripts:** `extract_qwen_onsets.py`, `run_qwen.sh`, `slurm_qwen_sequential.sh`
+- **Output:** `Qwen_LoRA_onsets_[SongName]_[timestamp].txt` files in each song's `qwen_onsets/` folder
 
-## Usage
+### ✅ Google Gemini Pro *(cloud API)*
+- **What it is:** Google's multimodal API used for audio description and onset analysis
+- **Requirement:** `GOOGLE_API_KEY` environment variable
+- **Script:** `extract_gemini_onsets.py`
+- **Output:** `gemini_pro_alignment_results.csv`
 
-```bash
-python src/main.py --audio path/to/song.mp3 --difficulty Hard
+### ✅ Librosa *(traditional signal processing baseline)*
+- **What it is:** Python audio analysis library — rule-based onset detection, no AI
+- **Script:** `extract_librosa_onsets.py`
+- **Purpose:** Provides a ground-truth baseline to compare LLM models against
+
+### ✅ MuMu-LLaMA *(tested on cluster)*
+- **What it is:** Music understanding multimodal LLaMA model from the MuMu dataset
+- **Weights:** Available at `MuMu-LLaMA/`
+- **Scripts:** `extract_mumu_onsets.py`, `run_mumu.sh`
+- **Logs:** `mumu_log_*.txt`
+
+---
+
+## ❌ Models Tried But Could Not Use
+
+### ✗ Spotify Basic Pitch / Spotify Audio Research Models
+- **Why not:** Spotify does not publicly release model weights for their core audio intelligence models
+- **Status:** Weights not available — cannot run locally or on cluster
+- **Alternative used:** Librosa for traditional onset detection
+
+### ✗ DeepSeek (LLM versions)
+- **Why not:** DeepSeek is a text/code LLM — it has no audio understanding capability whatsoever
+- **Status:** Not applicable for music/audio tasks
+- **Note:** Cannot process raw audio waveforms, spectrograms, or musical content in any form
+
+### ✗ SALMONN
+- **Why not:** Model directory exists (`SALMONN/`) but weights were too large to fully download and configure on the Ohio cluster storage quota
+- **Status:** Attempted — setup incomplete
+
+### ✗ Music-Flamingo
+- **Why not:** Model directory exists (`Music-Flamingo/`) but inference pipeline had incompatible dependency conflicts with the cluster's CUDA 11.8 environment
+- **Status:** Attempted — environment conflicts blocked execution
+
+### ✗ LLark
+- **Why not:** LLark requires proprietary audio features from the original paper's training pipeline that are not publicly available
+- **Status:** Directory exists but inference is not reproducible without original training artifacts
+
+---
+
+## 🏗️ Project Structure
+
+```
+llm_beatmap_generator/
+├── extract_deepresonance_onsets.py   # DeepResonance batch onset detector (chunks)
+├── extract_qwen_onsets.py            # Qwen LoRA onset detector
+├── extract_gemini_onsets.py          # Gemini API onset detector
+├── extract_librosa_onsets.py         # Librosa baseline onset detector
+├── extract_mumu_onsets.py            # MuMu-LLaMA onset detector
+├── chat_deepresonance.py             # Interactive DeepResonance chat terminal
+├── CHAT_DEEPRESONANCE_README.md      # How to chat with DeepResonance
+├── score_onset_detection.py          # Evaluate onset quality vs ground truth
+├── slurm_run_deepresonance.sh        # Slurm script for DeepResonance batch jobs
+├── slurm_qwen_sequential.sh          # Slurm script for Qwen batch jobs
+├── DeepResonance/                    # DeepResonance model code + weights
+├── MuMu-LLaMA/                       # MuMu-LLaMA model (weights available)
+├── SALMONN/                          # SALMONN (weights incomplete)
+├── Music-Flamingo/                   # Music-Flamingo (env conflicts)
+├── src/
+│   └── musicForBeatmap/
+│       └── Fraxtil's Arrow Arrangements/
+│           ├── Bad Ketchup/
+│           │   ├── Bad Ketchup.ogg                    # Original audio
+│           │   ├── DeepResonance_onsets_*_5sec.csv    # AI onset predictions
+│           │   └── qwen_onsets/                       # Qwen predictions
+│           └── [19 more songs...]
+└── logs/                             # Slurm job logs (DR_onset_*.out)
 ```
 
-## Structure
+---
 
-*   `src/`: Source code
-    *   `src/main.py`: CLI entry point
-    *   `src/audio_processor.py`: Audio analysis
-    *   `src/generator.py`: LLM interaction
-    *   `src/sm_writer.py`: File writer
+## 🚀 Running on the Ohio HPC Cluster
+
+### DeepResonance Batch Job
+```bash
+ssh mg546924@hpc.ent.ohio.edu
+cd /data/mg546924/llm_beatmap_generator
+sbatch --nodelist=node009 slurm_run_deepresonance.sh
+squeue -u $USER   # monitor job
+```
+
+### DeepResonance Interactive Chat
+```bash
+srun -p defq --gres=gpu:1 --pty bash
+/data/mg546924/conda_envs/deepresonance_env/bin/python chat_deepresonance.py
+```
+> See `CHAT_DEEPRESONANCE_README.md` for full instructions.
+
+---
+
+## 📊 Evaluation
+
+Use `score_onset_detection.py` to compare AI-predicted onset timestamps against ground truth:
+```bash
+python score_onset_detection.py
+```
+
+Results are saved to `onset_score_summary_*.csv` with F1 score, precision, and recall metrics for each model.
+
+---
+
+## ⚙️ Environment
+
+| Component | Version |
+|-----------|---------|
+| Python | 3.10 |
+| PyTorch | 2.0.1+cu118 |
+| CUDA | 11.8 |
+| GPU | NVIDIA A6000 (Ohio HPC) |
+| Conda env | `deepresonance_env` |
