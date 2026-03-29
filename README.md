@@ -40,6 +40,12 @@ Given a collection of songs from Fraxtil's Arrow Arrangements (20 tracks), autom
 - **Script:** `extract_librosa_onsets.py`
 - **Purpose:** Provides a ground-truth baseline to compare LLM models against
 
+### ✅ Music-Flamingo *(tested on cluster)*
+- **What it is:** A multimodal music-language model fine-tuned for music understanding and description
+- **Weights:** Available at `Music-Flamingo/`
+- **Script:** `src/music_flamingo_interface.py`
+- **Status:** Working on the cluster
+
 ### ✅ MuMu-LLaMA *(tested on cluster)*
 - **What it is:** Music understanding multimodal LLaMA model from the MuMu dataset
 - **Weights:** Available at `MuMu-LLaMA/`
@@ -63,10 +69,6 @@ Given a collection of songs from Fraxtil's Arrow Arrangements (20 tracks), autom
 ### ✗ SALMONN
 - **Why not:** Model directory exists (`SALMONN/`) but weights were too large to fully download and configure on the Ohio cluster storage quota
 - **Status:** Attempted — setup incomplete
-
-### ✗ Music-Flamingo
-- **Why not:** Model directory exists (`Music-Flamingo/`) but inference pipeline had incompatible dependency conflicts with the cluster's CUDA 11.8 environment
-- **Status:** Attempted — environment conflicts blocked execution
 
 ### ✗ LLark
 - **Why not:** LLark requires proprietary audio features from the original paper's training pipeline that are not publicly available
@@ -105,7 +107,48 @@ llm_beatmap_generator/
 
 ---
 
-## 🚀 Running on the Ohio HPC Cluster
+## 🧪 Benchmark: Test All Models on One Song
+
+To quickly compare how all open-source models perform on **Bad Ketchup** (one song), use the unified benchmark:
+
+```bash
+# Submit the all-models benchmark job to the cluster
+sbatch --nodelist=node009 slurm_test_all_models.sh
+
+# Watch live output
+tail -f logs/all_models_test_<JOBID>.out
+```
+
+This runs all 5 open-source models in sequence on `Bad Ketchup.ogg` and prints a summary table:
+
+```
+BENCHMARK SUMMARY — Bad Ketchup onset detection
+================================================
+  ✅  Librosa              →  312 onsets
+  ✅  DeepResonance        →  113 onsets
+  ✅  Qwen                 →  85 onsets
+  ✅  MuMu-LLaMA          →  47 onsets
+  ✅  Music-Flamingo       →  92 onsets
+```
+
+---
+
+## 📋 Batch Scripts Reference
+
+| Script | Purpose | Command |
+|--------|---------|---------|
+| `slurm_test_all_models.sh` | Run ALL open-source models on Bad Ketchup (benchmark) | `sbatch slurm_test_all_models.sh` |
+| `slurm_run_deepresonance.sh` | Run DeepResonance on all 20 songs (full batch) | `sbatch slurm_run_deepresonance.sh` |
+| `run_flamingo.sh` | Run Music-Flamingo on all 23 audio files | `sbatch run_flamingo.sh` |
+| `run_mumu.sh` | Run MuMu-LLaMA on all songs | `sbatch run_mumu.sh` |
+| `slurm_qwen_sequential.sh` | Run Qwen on all songs | `sbatch slurm_qwen_sequential.sh` |
+| `run_onset_extraction.sh` | Run Librosa baseline on all songs | `bash run_onset_extraction.sh` |
+
+> All Slurm jobs can be monitored with `squeue -u $USER` and `tail -f logs/<logfile>.out`
+
+---
+
+
 
 ### DeepResonance Batch Job
 ```bash
