@@ -187,6 +187,16 @@ def main():
 
     with open(csv_path, "w", newline="") as f:
         w = csv.writer(f)
+        
+        # Write ML Parameters at exactly the TOP of the CSV
+        w.writerow(["# ML Generation Strategy", "Weighted Multinomial Probability Sampling"])
+        w.writerow(["# Graph Search Strategy", "Exhaustive Sequence Evaluation (Math computes all 16 states natively, no Beam Search needed)"])
+        w.writerow(["# Temperature", "1.0"])
+        w.writerow(["# Top-P", "0.9"])
+        w.writerow(["# Min-P", "0.05"])
+        w.writerow(["# Top-K", "None"])
+        w.writerow(["# Repetition Penalty", "1.2"])
+        
         # Flat Metadata Columns Header
         w.writerow([
             "global_bpm", 
