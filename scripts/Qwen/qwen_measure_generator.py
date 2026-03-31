@@ -136,6 +136,7 @@ def main():
                 temperature=1.0, 
                 top_p=0.9, 
                 min_p=0.05, 
+                top_k=4,
                 repetition_penalty=1.2, 
                 recent_history=recent_history
             )
@@ -194,8 +195,8 @@ def main():
         w.writerow(["# Temperature", "1.0"])
         w.writerow(["# Top-P", "0.9"])
         w.writerow(["# Min-P", "0.05"])
-        w.writerow(["# Top-K", "None"])
-        w.writerow(["# Repetition Penalty", "1.2"])
+        w.writerow(["# Top-K", "4"])
+        w.writerow(["# Repetition Penalty", "Dynamic Scale Matrix (1.0 + N*0.2, Last-Beat Multiplier 1.1x)"])
         
         # Flat Metadata Columns Header
         w.writerow([

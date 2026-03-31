@@ -141,7 +141,7 @@ def generate_beatmap_with_qwen(audio_path: str, prompt: str) -> str:
 
 def get_qwen_16_step_probabilities(
     audio_path: str, prompt: str, candidates: list,
-    temperature=1.0, top_p=0.9, min_p=0.05, 
+    temperature=1.0, top_p=0.9, min_p=0.05, top_k=None,
     repetition_penalty=1.2, recent_history=None
 ) -> dict:
     """ Computes exact sequence generation probabilities for specific text candidates by performing forward-pass loss extraction. """
@@ -179,12 +179,20 @@ def get_qwen_16_step_probabilities(
             
     scores_tensor = torch.tensor(cand_scores, dtype=torch.float32)
 
-    # 1. Repetition Penalty 
+    # 1. Dynamic Repetition Penalty 
     # (If a step was recently picked, multiply its negative NLL by >1 to push probability toward 0)
-    if recent_history and repetition_penalty != 1.0:
+    if recent_history and repetition_penalty > 1.0:
         for i, cand in enumerate(candidates):
-            if cand in recent_history:
-                scores_tensor[i] = scores_tensor[i] * repetition_penalty
+            count = recent_history.count(cand)
+            if count > 0:
+                # Scaled Punishment: e.g. Penalty 1.15 -> 1 repeat = 1.15x, 3 repeats = 1.45x
+                dyn_penalty = 1.0 + (count * (repetition_penalty - 1.0))
+                
+                # Soft slap on wrist for immediate duplicate double-tapping (the exact b-1 beat)
+                if cand == recent_history[-1]:
+                    dyn_penalty *= 1.1
+                    
+                scores_tensor[i] = scores_tensor[i] * dyn_penalty
 
     # 2. Temperature Scaling
     if temperature != 1.0 and temperature > 0.0:
@@ -199,7 +207,14 @@ def get_qwen_16_step_probabilities(
         min_allowed = max_prob * min_p
         probs[probs < min_allowed] = 0.0
 
-    # 4. Top-P (Nucleus) Filter
+    # 4. Top-K Filter (Explicit Array Shaving)
+    if top_k is not None and top_k < len(probs):
+        top_k_values, _ = torch.topk(probs, k=top_k)
+        if len(top_k_values) > 0:
+            kth_best_prob = top_k_values[-1]
+            probs[probs < kth_best_prob] = 0.0
+
+    # 5. Top-P (Nucleus) Filter
     if top_p < 1.0:
         sorted_probs, sorted_indices = torch.sort(probs, descending=True)
         cumulative_probs = torch.cumsum(sorted_probs, dim=-1)
