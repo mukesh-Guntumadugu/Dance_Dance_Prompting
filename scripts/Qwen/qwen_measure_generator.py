@@ -124,9 +124,9 @@ def main():
             else:
                 prompt += f"CONDITION: NO ONSET here. You MUST output 0000.\n"
                 
-            prompt += f"\nHISTORY (All Previous Measures):\n"
+            prompt += f"\nHISTORY (Last 15 Measures max):\n"
             if len(history_log) > 0:
-                prompt += "\n".join(history_log)
+                prompt += "\n".join(history_log[-15:])
             else:
                 prompt += "None."
                 
