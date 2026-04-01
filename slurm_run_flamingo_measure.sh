@@ -21,6 +21,6 @@ export LD_LIBRARY_PATH=/data/mg546924/conda_envs/deepresonance_env/lib/python3.1
 
 echo "Running target script..."
 # Music-Flamingo requires its own conda environment
-/data/mg546924/conda_envs/music_flamingo_env/bin/python -u scripts/Flamingo/flamingo_measure_generator.py
+/data/mg546924/conda_envs/qwenenv/bin/python -u scripts/Flamingo/flamingo_measure_generator.py
 
 echo "=== DONE $(date) ==="
