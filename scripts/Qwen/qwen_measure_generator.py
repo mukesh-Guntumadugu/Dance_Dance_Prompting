@@ -131,28 +131,31 @@ def main():
             
             beat_start_time_calc = time.time()
             
-            # Slice last 8 beats explicitly to punish extreme repetitions
-            recent_history = global_linear_history[-8:]
-            
-            # Removed space-bashing Top-K to allow SINGLE ARROWS to be evaluated properly 
-            probs_dict = get_qwen_16_step_probabilities(
-                tmp_path, prompt, ALL_16_COMBOS,
-                temperature=5.0, 
-                top_p=0.9, 
-                min_p=0.05, 
-                top_k=None,
-                repetition_penalty=1.2, 
-                recent_history=recent_history
-            )
-            
-            import random
-            
-            calc_time = time.time() - beat_start_time_calc
-            
-            choices = list(probs_dict.keys())
-            weights = list(probs_dict.values())
-            
-            selected_step = random.choices(choices, weights=weights)[0]
+            # HARD BYPASS: If there is no onset, ALWAYS output 0000 — skip all 16-candidate scoring
+            if not has_onset:
+                selected_step = "0000"
+                probs_dict = {c: (100.0 if c == "0000" else 0.0) for c in ALL_16_COMBOS}
+                calc_time = time.time() - beat_start_time_calc
+            else:
+                # Slice last 8 beats explicitly to punish extreme repetitions
+                recent_history = global_linear_history[-8:]
+                
+                # Score true mathematical probabilities for the 16 paths using our custom ML Filter Pipeline
+                probs_dict = get_qwen_16_step_probabilities(
+                    tmp_path, prompt, ALL_16_COMBOS,
+                    temperature=5.0, 
+                    top_p=0.9, 
+                    min_p=0.05, 
+                    top_k=None,
+                    repetition_penalty=1.2, 
+                    recent_history=recent_history
+                )
+                
+                calc_time = time.time() - beat_start_time_calc
+                
+                choices = list(probs_dict.keys())
+                weights = list(probs_dict.values())
+                selected_step = random.choices(choices, weights=weights)[0]
             
             prob_format = "|".join([f"{k}-{v:.1f}%" for k, v in probs_dict.items()])
             
