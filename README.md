@@ -173,7 +173,7 @@ This job executes the Qwen model to generate beatmaps **line-by-line (beat-by-be
 
 To run this process, you **must be in the root directory** of the repository on the cluster:
 ```bash
-ssh mg546924@hpc.ent.ohio.edu
+ssh [EMAIL_ADDRESS]@hpc.ent.ohio.edu
 cd /data/mg546924/llm_beatmap_generator
 sbatch slurm_run_qwen_measure.sh
 sbatch slurm_run_qwen_measure_all.sh # for all 20 songs

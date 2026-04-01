@@ -114,8 +114,11 @@ def main():
             else:
                 prompt += f"CONDITION: NO ONSET here. You MUST output 0000.\n"
 
-            prompt += f"\nHISTORY (All Previous Measures):\n"
-            prompt += "\n".join(history_log) if history_log else "None."
+            prompt += f"\nHISTORY (Last 20 Measures):\n"
+            if len(history_log) > 0:
+                prompt += "\n".join(history_log[-20:])
+            else:
+                prompt += "None."
             prompt += f"\n\n---> Please output ONLY the 4-character string for THIS beat."
 
             beat_start_time_calc = time.time()

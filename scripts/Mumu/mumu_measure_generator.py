@@ -125,10 +125,10 @@ def main():
             else:
                 prompt += f"CONDITION: NO ONSET here. You MUST output 0000.\n"
                 
-            # MuMu-LLaMA has a hard 1024-token KV cache — full history crashes it at measure ~29
-            prompt += f"\nHISTORY (Last 10 Measures):\n"
+            # 20 measures ensures the prompt stays around ~800 tokens, safely below the 1024 token limit
+            prompt += f"\nHISTORY (Last 20 Measures):\n"
             if len(history_log) > 0:
-                prompt += "\n".join(history_log[-10:])
+                prompt += "\n".join(history_log[-20:])
             else:
                 prompt += "None."
                 
