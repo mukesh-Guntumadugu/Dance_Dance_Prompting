@@ -124,7 +124,7 @@ This runs all 5 open-source models in sequence on `Bad Ketchup.ogg` and prints a
 ```
 BENCHMARK SUMMARY — Bad Ketchup onset detection
 ================================================
-  ✅  Librosa              →  312 onsets
+  ✅  Librosa (it's a Python package)              →  312 onsets
   ✅  DeepResonance        →  113 onsets
   ✅  Qwen                 →  85 onsets
   ✅  MuMu-LLaMA          →  47 onsets
