@@ -103,7 +103,8 @@ def main():
         # Iterating Beat by Beat
         for b in range(4):
             beat_time = start_time + b * beat_duration_sec
-            has_onset = any(abs(t - beat_time) <= 0.05 for t in m_onsets)
+            # onset_detected = True if ANY onset fires within the full beat time window
+            has_onset = any(beat_time <= t < beat_time + beat_duration_sec for t in m_onsets)
             
             # Tally total number of raw Librosa onsets firing inside this specific beat's duration
             onsets_in_this_beat_slot = sum(1 for t in m_onsets if beat_time <= t < beat_time + beat_duration_sec)
