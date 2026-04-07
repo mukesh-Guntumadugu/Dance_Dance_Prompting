@@ -20,6 +20,7 @@ import datetime
 import argparse
 import requests
 import tempfile
+import time
 import numpy as np
 import librosa
 import soundfile as sf
@@ -30,7 +31,6 @@ if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
 SERVER_URL  = "http://localhost:8000"
-CHUNK_SEC   = 20.0   # Same chunk size as training!
 BASE_DIR    = os.path.join(
     _PROJECT_ROOT, "src", "musicForBeatmap", "Fraxtil's Arrow Arrangements"
 )
@@ -50,7 +50,7 @@ def encode_audio_chunk(y_chunk, sr) -> tuple[str, str]:
     return b64, "chunk.wav"
 
 
-def parse_onset_response(text: str) -> list[float]:
+def parse_onset_response(text: str, chunk_sec: float) -> list[float]:
     """Parse comma-separated seconds from the model's output."""
     # Strip everything except digits, dots, commas
     stripped = re.sub(r'[^0-9.,]+', '', text).strip().strip(',')
@@ -59,31 +59,32 @@ def parse_onset_response(text: str) -> list[float]:
     for p in parts:
         try:
             t = float(p)
-            if 0.0 <= t <= CHUNK_SEC + 1.0:  # Sanity: within chunk window
+            if 0.0 <= t <= chunk_sec + 1.0:  # Sanity: within chunk window
                 times.append(t)
         except ValueError:
             pass
     return sorted(times)
 
 
-def extract_onsets_for_song(song_dir: str, server_url: str) -> list[float]:
-    """Slice audio into CHUNK_SEC chunks, query model, return absolute ms timestamps."""
+def extract_onsets_for_song(song_dir: str, server_url: str, chunk_sec: float) -> tuple[list[float], float]:
+    """Slice audio into chunk_sec chunks, query model, return absolute ms timestamps."""
     audio_files = (glob.glob(os.path.join(song_dir, "*.ogg")) +
                    glob.glob(os.path.join(song_dir, "*.mp3")) +
                    glob.glob(os.path.join(song_dir, "*.wav")))
     if not audio_files:
-        print(f"  ⚠️  No audio file found — skipping.")
-        return []
+        print(f"   No audio file found — skipping.")
+        return [], 0.0
 
     audio_path = audio_files[0]
     y, sr = librosa.load(audio_path, sr=None, mono=True)
     duration = librosa.get_duration(y=y, sr=sr)
 
     all_onsets_ms = []
-    chunk_starts = np.arange(0, duration, CHUNK_SEC)
+    total_request_time = 0.0
+    chunk_starts = np.arange(0, duration, chunk_sec)
 
     for chunk_idx, start_sec in enumerate(chunk_starts):
-        end_sec = min(start_sec + CHUNK_SEC, duration)
+        end_sec = min(start_sec + chunk_sec, duration)
         if end_sec - start_sec < 2.0:
             continue  # Skip tiny final chunk
 
@@ -99,30 +100,35 @@ def extract_onsets_for_song(song_dir: str, server_url: str) -> list[float]:
             "system_prompt":  SYSTEM_PROMPT,
             "prompt":         USER_PROMPT,   # server field is 'prompt', not 'user_prompt'
             "max_new_tokens": 512,
+            "temperature":    0.0,
         }
 
         try:
+            req_start = time.time()
             resp = requests.post(f"{server_url}/generate", json=payload, timeout=120)
             resp.raise_for_status()
+            req_time = time.time() - req_start
+            total_request_time += req_time
             raw_text = resp.json().get("text", "")
         except Exception as e:
             print(f"  ⚠️  Chunk {chunk_idx} failed: {e}")
             continue
 
-        chunk_onsets_sec = parse_onset_response(raw_text)
+        chunk_onsets_sec = parse_onset_response(raw_text, chunk_sec)
         # Convert to absolute ms
         for t_sec in chunk_onsets_sec:
             abs_ms = (start_sec + t_sec) * 1000.0
             all_onsets_ms.append(round(abs_ms, 1))
 
-        print(f"  Chunk {chunk_idx+1}/{len(chunk_starts)}: {len(chunk_onsets_sec)} onsets detected")
+        print(f"  Chunk {chunk_idx+1}/{len(chunk_starts)}: {len(chunk_onsets_sec)} onsets detected (query time: {req_time:.2f}s)")
 
-    return sorted(all_onsets_ms)
+    return sorted(all_onsets_ms), total_request_time
 
 
 def main():
     parser = argparse.ArgumentParser(description="Extract onsets using fine-tuned Qwen model")
     parser.add_argument("--server", default=SERVER_URL, help="Qwen server URL")
+    parser.add_argument("--chunk_sec", type=float, default=20.0, help="Chunk size in seconds")
     parser.add_argument("--songs", nargs="+", default=None,
                         help="Specific song names to process (default: all songs)")
     args = parser.parse_args()
@@ -154,7 +160,7 @@ def main():
         song_name = os.path.basename(song_dir)
         print(f"[{idx+1}/{total}] {song_name}")
 
-        onsets_ms = extract_onsets_for_song(song_dir, args.server)
+        onsets_ms, total_request_time = extract_onsets_for_song(song_dir, args.server, args.chunk_sec)
         if not onsets_ms:
             print(f"  ⚠️  No onsets extracted for {song_name}")
             continue
@@ -165,13 +171,15 @@ def main():
 
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         safe_name = song_name.replace(" ", "_").replace("'", "")
-        out_path = os.path.join(out_dir, f"Qwen_LoRA_onsets_{safe_name}_{timestamp}.txt")
+        out_path = os.path.join(out_dir, f"{safe_name}_Qwen_{int(args.chunk_sec)}s_{timestamp}.csv")
 
         with open(out_path, "w") as f:
+            f.write("onset_ms\n")
             for ms in onsets_ms:
                 f.write(f"{ms}\n")
 
-        print(f"  ✅ Saved {len(onsets_ms)} onsets → qwen_onsets/{os.path.basename(out_path)}\n")
+        print(f"  ✅ Saved {len(onsets_ms)} onsets → qwen_onsets/{os.path.basename(out_path)}")
+        print(f"  ⏱️  Total inference time for song: {total_request_time:.2f}s\n")
 
     print("All songs processed!")
 

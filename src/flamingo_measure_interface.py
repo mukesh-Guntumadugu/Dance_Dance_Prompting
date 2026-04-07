@@ -20,7 +20,7 @@ def initialize_flamingo_model():
     try:
         from transformers import AudioFlamingo3Processor, AudioFlamingo3ForConditionalGeneration
     except ImportError as e:
-        print(f"❌ Failed to import Music Flamingo classes. Ensure you are in the correct conda env: {e}")
+        print(f" Failed to import Music Flamingo classes. Ensure you are in the correct conda env: {e}")
         raise
 
     print("Loading Music-Flamingo Processor...", flush=True)
@@ -36,7 +36,7 @@ def initialize_flamingo_model():
         device_map="auto"
     )
     _model.eval()
-    print("✅ Music-Flamingo loaded successfully.", flush=True)
+    print("Music-Flamingo loaded successfully.", flush=True)
     return _model, _processor
 
 

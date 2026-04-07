@@ -82,17 +82,31 @@ def _score_candidate(audio_path, prompt, candidate):
     }
 
     try:
-        # Use very low temperature to get near-deterministic logit scoring
+        # Prevent FP16 inf/nan overflow by avoiding extreme temperatures like 0.001
         resp = _model.predict(
-            inputs, max_tgt_len=8, top_p=1.0, temperature=0.001,
+            inputs, max_tgt_len=8, top_p=1.0, temperature=0.1,
             stops_id=[[835]]
         )
         if isinstance(resp, list):
             resp = resp[0] if resp else ""
         resp = (resp or "").strip()
     except Exception as e:
-        print(f"  ⚠️  DeepResonance predict error: {e}")
-        resp = ""
+        if "inf" in str(e) or "nan" in str(e):
+            # Fallback to pure greedy search / neutral temperature if DeepSpeed/FP16 crashes
+            try:
+                resp = _model.predict(
+                    inputs, max_tgt_len=8, top_p=1.0, temperature=1.0,
+                    stops_id=[[835]]
+                )
+                if isinstance(resp, list):
+                    resp = resp[0] if resp else ""
+                resp = (resp or "").strip()
+            except Exception as e2:
+                print(f"  ⚠️  DeepResonance predict FATAL fallback error: {e2}")
+                resp = ""
+        else:
+            print(f"  ⚠️  DeepResonance predict error: {e}")
+            resp = ""
 
     # Score: exact match = highest confidence, partial match = partial, no match = low
     if resp.startswith(candidate):

@@ -145,6 +145,13 @@ BENCHMARK SUMMARY — Bad Ketchup onset detection
 | `slurm_run_qwen_measure.sh` | Run Qwen line-by-line (beat-by-beat) with Onsets, BPM, and Tempo features included | `sbatch slurm_run_qwen_measure.sh` |
 | `run_onset_extraction.sh` | Run Librosa baseline on all songs | `bash run_onset_extraction.sh` |
 
+### 🎛️ Onset Size Sweeping
+We have implementations to sweep songs parsing discrete subsets (`20s, 15s, 10s, 5s, 2s, 1s`) sequentially handling latency analytics correctly.
+| Script | Purpose | Command |
+|--------|---------|---------|
+| `slurm_sweep_onsets.sh` | Generate subset sweeps natively for Qwen server logic | `sbatch slurm_sweep_onsets.sh` |
+| `slurm_sweep_flamingo.sh` | Generate subset sweeps iterating Flamingo GPU | `sbatch slurm_sweep_flamingo.sh` |
+
 > All Slurm jobs can be monitored with `squeue -u $USER` and `tail -f logs/<logfile>.out`
 
 ---
