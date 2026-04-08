@@ -1,0 +1,409 @@
+{
+    "file": "Bad Ketchup.ssc",
+    "difficulties": {
+        "Challenge": {
+            "total_streams": 26,
+            "stream_notes": 184,
+            "top_patterns": [
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 12,
+                    "percentage": 11.32
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 9,
+                    "percentage": 8.49
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 8,
+                    "percentage": 7.55
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        2,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Crossover \u2192 Counter-Clockwise",
+                    "occurrences": 7,
+                    "percentage": 6.6
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        3,
+                        2
+                    ],
+                    "label": "Crossover \u2192 Counter-Clockwise \u2192 Crossover",
+                    "occurrences": 7,
+                    "percentage": 6.6
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        1,
+                        1
+                    ],
+                    "label": "Crossover \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 6,
+                    "percentage": 5.66
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Crossover \u2192 Counter-Clockwise",
+                    "occurrences": 6,
+                    "percentage": 5.66
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        2
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Crossover",
+                    "occurrences": 5,
+                    "percentage": 4.72
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Clockwise",
+                    "occurrences": 5,
+                    "percentage": 4.72
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 4,
+                    "percentage": 3.77
+                }
+            ]
+        },
+        "Hard": {
+            "total_streams": 11,
+            "stream_notes": 59,
+            "top_patterns": [
+                {
+                    "delta_sequence": [
+                        3,
+                        1,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 5,
+                    "percentage": 19.23
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "label": "Crossover \u2192 Crossover \u2192 Crossover",
+                    "occurrences": 5,
+                    "percentage": 19.23
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 4,
+                    "percentage": 15.38
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        1
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Clockwise",
+                    "occurrences": 3,
+                    "percentage": 11.54
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 7.69
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        1,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 7.69
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 2,
+                    "percentage": 7.69
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        2,
+                        3
+                    ],
+                    "label": "Crossover \u2192 Crossover \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 3.85
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Crossover \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 3.85
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        3,
+                        3
+                    ],
+                    "label": "Crossover \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 3.85
+                }
+            ]
+        },
+        "Easy": {
+            "total_streams": 8,
+            "stream_notes": 56,
+            "top_patterns": [
+                {
+                    "delta_sequence": [
+                        2,
+                        3,
+                        3
+                    ],
+                    "label": "Crossover \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 3,
+                    "percentage": 9.38
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 3,
+                    "percentage": 9.38
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 3,
+                    "percentage": 9.38
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        2,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Crossover \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 6.25
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        1,
+                        1
+                    ],
+                    "label": "Crossover \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 6.25
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 6.25
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        0,
+                        1
+                    ],
+                    "label": "Crossover \u2192 Jack \u2192 Clockwise",
+                    "occurrences": 2,
+                    "percentage": 6.25
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        3
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 3.12
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        2
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Crossover",
+                    "occurrences": 1,
+                    "percentage": 3.12
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        2,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Crossover \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 3.12
+                }
+            ]
+        },
+        "Medium": {
+            "total_streams": 5,
+            "stream_notes": 25,
+            "top_patterns": [
+                {
+                    "delta_sequence": [
+                        3,
+                        1,
+                        3
+                    ],
+                    "label": "Counter-Clockwise \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 2,
+                    "percentage": 20.0
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        3,
+                        2
+                    ],
+                    "label": "Clockwise \u2192 Counter-Clockwise \u2192 Crossover",
+                    "occurrences": 2,
+                    "percentage": 20.0
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        2,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Crossover \u2192 Clockwise",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                },
+                {
+                    "delta_sequence": [
+                        2,
+                        1,
+                        3
+                    ],
+                    "label": "Crossover \u2192 Clockwise \u2192 Counter-Clockwise",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        3,
+                        1
+                    ],
+                    "label": "Counter-Clockwise \u2192 Counter-Clockwise \u2192 Clockwise",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                },
+                {
+                    "delta_sequence": [
+                        3,
+                        1,
+                        2
+                    ],
+                    "label": "Counter-Clockwise \u2192 Clockwise \u2192 Crossover",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                },
+                {
+                    "delta_sequence": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "label": "Clockwise \u2192 Clockwise \u2192 Clockwise",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                },
+                {
+                    "delta_sequence": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "label": "Jack \u2192 Clockwise \u2192 Crossover",
+                    "occurrences": 1,
+                    "percentage": 10.0
+                }
+            ]
+        }
+    }
+}
