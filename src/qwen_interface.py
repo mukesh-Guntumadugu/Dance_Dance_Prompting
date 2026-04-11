@@ -51,8 +51,8 @@ def setup_qwen(model_id=DEFAULT_MODEL_ID, device=None):
 
         # ── Set up lm-format-enforcer constrained decoding ───────────────────────
         try:
-            from lmformatenforcer import RegexParser
-            from lmformatenforcer.integrations.transformers import (
+            from lmformatenforcer import RegexParser  # type: ignore[import-not-found]
+            from lmformatenforcer.integrations.transformers import (  # type: ignore[import-not-found]
                 build_transformers_prefix_allowed_tokens_fn
             )
             

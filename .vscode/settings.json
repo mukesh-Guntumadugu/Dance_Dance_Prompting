@@ -1,8 +1,7 @@
 {
     "python.defaultInterpreterPath": "/Users/mukeshguntumadugu/.pyenv/versions/3.12.2/bin/python3",
     "python.analysis.extraPaths": [
-        "${workspaceFolder}",
-        "${workspaceFolder}/src"
+        "${workspaceFolder}"
     ],
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.diagnosticMode": "off",

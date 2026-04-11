@@ -38,3 +38,10 @@ src/.venv_qwen/
 .env
 .env.*
 !.env.example
+
+# Pattern Finding Data
+pattern_finding_results/
+pattern_finding_approach/*.db*
+typings/
+pattern_finding_approach/.venv
+

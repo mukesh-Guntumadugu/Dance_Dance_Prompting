@@ -6,7 +6,23 @@
   "typeCheckingMode": "off",
   "extraPaths": [
     ".",
-    "src"
+    "scripts",
+    "MuMu-LLaMA",
+    "DeepResonance/code"
+  ],
+  "typingsPath": "typings",
+  "executionEnvironments": [
+    {
+      "root": "scripts",
+      "extraPaths": ["."]
+    },
+    {
+      "root": "scripts/Mumu",
+      "extraPaths": ["."]
+    },
+    {
+      "root": "."
+    }
   ],
   "useLibraryCodeForTypes": true,
   "reportMissingImports": "none",
