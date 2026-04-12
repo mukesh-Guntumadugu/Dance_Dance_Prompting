@@ -20,7 +20,7 @@ cd /data/mg546924/llm_beatmap_generator
 export PYTHONPATH="${PYTHONPATH}:/data/mg546924/llm_beatmap_generator/src"
 
 # Using deepresonance_env (assuming it has librosa, torch, etc.)
-PYTHONUNBUFFERED=1 /data/mg546924/conda_envs/deepresonance_env/bin/python -u pattern_finding_approach/audio_feature_extraction.py
+PYTHONUNBUFFERED=1 /data/mg546924/conda_envs/deepresonance_env/bin/python -u pattern_finding_approach/pattern_finding.py --target_dir src/musicForBeatmap
 
 echo ""
 echo "Finished: $(date)"

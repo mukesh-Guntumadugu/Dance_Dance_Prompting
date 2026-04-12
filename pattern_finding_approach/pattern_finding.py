@@ -46,10 +46,20 @@ def parse_ssc_sm(file_path):
     bpms_match = re.search(r'#BPMS:\s*([^;]+);', content)
     offset_match = re.search(r'#OFFSET:\s*([^;]+);', content)
     music_match = re.search(r'#MUSIC:\s*([^;]+);', content)
+    artist_match = re.search(r'#ARTIST:\s*([^;]+);', content)
+    credit_match = re.search(r'#CREDIT:\s*([^;]+);', content)
     
     if bpms_match: metadata['bpms'] = bpms_match.group(1).strip()
     if offset_match: metadata['offset'] = offset_match.group(1).strip()
     if music_match: metadata['music'] = music_match.group(1).strip()
+    
+    metadata['author'] = "Unknown"
+    credit_str = credit_match.group(1).strip() if credit_match else ""
+    artist_str = artist_match.group(1).strip() if artist_match else ""
+    if credit_str:
+        metadata['author'] = credit_str
+    elif artist_str:
+        metadata['author'] = artist_str
 
     if file_path.endswith('.ssc'):
         sections = content.split('#NOTEDATA:')
@@ -358,9 +368,20 @@ def init_database(db_path: str) -> sqlite3.Connection:
             file_path           TEXT    UNIQUE NOT NULL,
             song_name           TEXT    NOT NULL,
             format              TEXT    NOT NULL,
+            author              TEXT,
             skipped_duplicate   INTEGER NOT NULL DEFAULT 0,
             difficulties_found  TEXT,
             measures_4col       INTEGER DEFAULT 0,
+            processed_at        TEXT    NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS duplicate_file_name (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            file_path           TEXT    NOT NULL,
+            song_name           TEXT    NOT NULL,
+            format              TEXT    NOT NULL,
+            author              TEXT,
+            is_same_name        INTEGER,
             processed_at        TEXT    NOT NULL
         );
 
@@ -460,6 +481,10 @@ def init_database(db_path: str) -> sqlite3.Connection:
             has_mine        INTEGER
         );
     """)
+    try:
+        conn.execute("ALTER TABLE processed_files ADD COLUMN author TEXT;")
+    except sqlite3.OperationalError:
+        pass
     conn.commit()
     return conn
 
@@ -467,6 +492,7 @@ def init_database(db_path: str) -> sqlite3.Connection:
 def log_file_to_db(conn: sqlite3.Connection, file_path: str, song_name: str,
                    fmt: str, skipped: bool,
                    difficulties: list = None, measures_4col: int = 0,
+                   author: str = "Unknown",
                    max_retries: int = 5):
     """
     Inserts or replaces a file record in the DB.
@@ -480,12 +506,12 @@ def log_file_to_db(conn: sqlite3.Connection, file_path: str, song_name: str,
     diff_str = ",".join(sorted(difficulties)) if difficulties else ""
     sql = """
         INSERT OR REPLACE INTO processed_files
-            (file_path, song_name, format, skipped_duplicate,
+            (file_path, song_name, format, author, skipped_duplicate,
              difficulties_found, measures_4col, processed_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     """
     params = (
-        file_path, song_name, fmt,
+        file_path, song_name, fmt, author,
         1 if skipped else 0,
         diff_str, measures_4col,
         datetime.now().isoformat()
@@ -503,6 +529,28 @@ def log_file_to_db(conn: sqlite3.Connection, file_path: str, song_name: str,
                 time.sleep(wait)
             else:
                 raise   # give up after max_retries or non-lock error
+
+def log_duplicate_to_db(conn: sqlite3.Connection, file_path: str, song_name: str,
+                        fmt: str, author: str, is_same_name: int,
+                        max_retries: int = 5):
+    import time, random
+    sql = """
+        INSERT INTO duplicate_file_name
+            (file_path, song_name, format, author, is_same_name, processed_at)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """
+    params = (file_path, song_name, fmt, author, is_same_name, datetime.now().isoformat())
+    for attempt in range(max_retries):
+        try:
+            conn.execute(sql, params)
+            conn.commit()
+            return
+        except sqlite3.OperationalError as e:
+            if "locked" in str(e).lower() and attempt < max_retries - 1:
+                wait = (2 ** attempt) + random.random()
+                time.sleep(wait)
+            else:
+                raise
 
 
 # ---------------------------------------------------------------------------
@@ -552,10 +600,22 @@ def process_dataset(directory, db_path, run_id):
 
     # Log every skipped duplicate to the DB immediately
     for fp in files_skipped:
+        _, metadata = parse_ssc_sm(fp)
+        song_name = os.path.splitext(os.path.basename(fp))[0]
+        fmt = os.path.splitext(fp)[1]
+        author = metadata.get('author', 'Unknown')
+        
         log_file_to_db(conn, fp,
-                       song_name=os.path.splitext(os.path.basename(fp))[0],
-                       fmt=os.path.splitext(fp)[1],
+                       song_name=song_name,
+                       fmt=fmt,
+                       author=author,
                        skipped=True)
+                       
+        log_duplicate_to_db(conn, fp,
+                            song_name=song_name,
+                            fmt=fmt,
+                            author=author,
+                            is_same_name=1)
 
     print(f"Found {total_raw} raw files → {len(files_skipped)} duplicates skipped → {total} to process.\n")
 
@@ -692,7 +752,8 @@ def process_dataset(directory, db_path, run_id):
                        fmt=os.path.splitext(fp)[1],
                        skipped=False,
                        difficulties=file_diffs,
-                       measures_4col=file_measures)
+                       measures_4col=file_measures,
+                       author=metadata.get('author', 'Unknown'))
 
     conn.close()
     print(f"\\nDatabase updated: {db_path}")
