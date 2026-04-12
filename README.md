@@ -211,3 +211,11 @@ Results are saved to `onset_score_summary_*.csv` with F1 score, precision, and r
 | CUDA | 11.8 |
 | GPU | NVIDIA A6000 (Ohio HPC) |
 | Conda env | `deepresonance_env` |
+
+
+
+
+## pushing files in the cluster
+
+rsync -av /Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/pattern_finding_approach/fine name 
+mg546924@hpc.ent.ohio.edu:/data/mg546924/llm_beatmap_generator/pattern_finding_approach/
