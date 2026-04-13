@@ -1,0 +1,36 @@
+mkdir -p failed for path /Users/mukeshguntumadugu/.matplotlib: [Errno 17] File exists: '/Users/mukeshguntumadugu/.matplotlib'
+Matplotlib created a temporary cache directory at /var/folders/0s/zcp_y2_n4dnf8ywyz9cc61q40000gn/T/matplotlib-egpt358f because there was an issue with the default path (/Users/mukeshguntumadugu/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+Connecting to database at /Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../pattern_finding_approach/processed_files.db...
+Found 81792 valid measure assignments in the database.
+Building local file index...
+Processed 5000 measures...
+Processed 10000 measures...
+Processed 15000 measures...
+Processed 20000 measures...
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 105 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 106 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 107 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 108 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 109 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 111 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 112 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 113 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 114 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 115 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 116 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 118 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 119 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 120 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 121 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 122 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 123 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 124 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 126 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 128 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Goin' Under/Goin' Under.ssc Easy: 129 >= 105
+Index out of bounds for src/musicForBeatmap/StepMania 5/Springtime/Springtime.ssc Easy: 97 >= 97
+Finished extracting patterns. Converting unique sets to lists...
+Saving dictionary to /Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/cluster_to_patterns.json...
+Success! Processed 21447 total measures into 2189 discrete clusters.
+Saved token list separately to /Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt

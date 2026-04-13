@@ -7,6 +7,7 @@
   "extraPaths": [
     ".",
     "scripts",
+    "pattern_finding_approach",
     "MuMu-LLaMA",
     "DeepResonance/code"
   ],

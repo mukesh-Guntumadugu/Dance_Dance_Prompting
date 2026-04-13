@@ -7,6 +7,9 @@ from collections import Counter
 from datetime import datetime
 import pandas as pd
 import numpy as np
+import warnings
+
+warnings.filterwarnings('ignore')
 
 import audio_feature_extraction as afe
 
@@ -19,7 +22,7 @@ except ImportError:
         print("Warning: Neither scikit-learn>=1.3 nor hdbscan is installed. HDBSCAN clustering will fail.")
 
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import umap
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -211,28 +214,33 @@ def _active_cols(row) -> list:
 # per measure.  Two measures that 'look' the same to a human will have nearly
 # identical trait vectors even if their raw matrices differ.
 
-def extract_measure_features(measure_lines: list) -> list:
+def extract_measure_features(measure_lines: list, incoming_holds: int, outgoing_holds: int) -> list:
     """
-    Return a 9-element feature vector for one measure.
+    Return a 14-element feature vector for one measure.
 
     Features
     --------
-    0  total_active_steps   : number of non-zero rows
+    0  total_active_steps   : number of non-zero rows (including holds)
     1  total_jumps          : rows where 2+ columns are simultaneously active
     2  max_col_distance     : largest column jump between consecutive single notes
     3  avg_col_distance     : average column movement (float, scaled 0-1)
     4  returns_to_start     : 1 if last active column == first active column
     5  step_density         : active_steps / total_rows  (0.0 – 1.0)
     6  unique_columns_used  : how many distinct columns appear (0-4)
-    7  has_holds            : 1 if any '2' or '4' character present
+    7  has_holds            : 1 if any hold character present
     8  has_mines            : 1 if any 'M' character present
+    9  hold_duration        : ratio of rows with active holds
+    10 symmetry_bias        : left/down bias vs up/right bias
+    11 crossover_count      : count of physical crossovers
+    12 incoming_holds       : active holds carried over from previous measure
+    13 outgoing_holds       : active holds bridging into next measure
     """
     total_rows   = len(measure_lines)
     active_rows  = [r for r in measure_lines if r != '0000']
     total_active = len(active_rows)
 
     if total_active == 0:
-        return [0] * 9
+        return [0] * 12 + [incoming_holds, outgoing_holds]
 
     col_lists      = [_active_cols(r) for r in active_rows]
     jumps          = sum(1 for cols in col_lists if len(cols) >= 2)
@@ -248,11 +256,26 @@ def extract_measure_features(measure_lines: list) -> list:
 
     density  = total_active / max(total_rows, 1)
     uniq_col = len({c for cols in col_lists for c in cols})
-    has_hold = int(any(ch in ('2', '4') for r in active_rows for ch in r))
+    has_hold = int(any(ch in ('2', '4', 'H') for r in active_rows for ch in r))
     has_mine = int(any('M' in r for r in active_rows))
 
+    hold_duration = sum(1 for r in measure_lines for ch in r if ch in ('2', '3', '4', 'H')) / max(total_rows, 1)
+
+    col_counts = [sum(1 for r in measure_lines if r[i] != '0') for i in range(4)]
+    total_taps = sum(col_counts)
+    symmetry_bias = (col_counts[0] + col_counts[1]) / max(total_taps, 1)
+
+    crossover_count = 0
+    if len(single_cols) >= 3:
+        for i in range(len(single_cols)-2):
+            seq = (single_cols[i], single_cols[i+1], single_cols[i+2])
+            if seq in [(0,1,3), (3,1,0), (0,2,3), (3,2,0)]:
+                crossover_count += 1
+
     return [total_active, jumps, max_dist, round(avg_dist, 4),
-            returns, round(density, 4), uniq_col, has_hold, has_mine]
+            returns, round(density, 4), uniq_col, has_hold, has_mine,
+            round(hold_duration, 4), round(symmetry_bias, 4), crossover_count,
+            incoming_holds, outgoing_holds]
 
 
 # ── 2. Relative Encoding ────────────────────────────────────────────────────
@@ -400,6 +423,7 @@ def init_database(db_path: str) -> sqlite3.Connection:
             id              INTEGER PRIMARY KEY AUTOINCREMENT,
             run_id          TEXT    NOT NULL,
             character       TEXT    NOT NULL,
+            difficulty      TEXT    NOT NULL,
             count           INTEGER,
             is_new_pattern  TEXT,
             saved_at        TEXT    NOT NULL
@@ -478,7 +502,22 @@ def init_database(db_path: str) -> sqlite3.Connection:
             density         REAL,
             uniq_col        INTEGER,
             has_hold        INTEGER,
-            has_mine        INTEGER
+            has_mine        INTEGER,
+            hold_duration   REAL,
+            symmetry_bias   REAL,
+            crossover_count INTEGER,
+            incoming_holds  INTEGER,
+            outgoing_holds  INTEGER
+        );
+
+        CREATE TABLE IF NOT EXISTS measure_cluster_assignments (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            run_id          TEXT    NOT NULL,
+            file_path       TEXT    NOT NULL,
+            difficulty      TEXT    NOT NULL,
+            measure_idx     INTEGER NOT NULL,
+            cluster_id      INTEGER NOT NULL,
+            saved_at        TEXT    NOT NULL
         );
     """)
     try:
@@ -644,6 +683,7 @@ def process_dataset(directory, db_path, run_id):
     all_upscaled_measures = []
     all_raw_measures      = []   # kept for relative/RLE/feature encoding
     all_sequence_measures = []  # For PrefixSpan/Markov
+    all_measure_info      = []  # Links logic: (file_path, difficulty, measure_idx)
 
     for count, fp in enumerate(files_to_process):
         print(f"  Processing [{count+1:>3}/{total}]: {os.path.basename(fp)}")
@@ -687,19 +727,46 @@ def process_dataset(directory, db_path, run_id):
                 diff_stats[diff]['total_4col_measures'] += len(cleaned_measures)
 
             measure_idx = 0
-            for measure_lines in cleaned_measures:
-                # Count characters
-                for line in measure_lines:
-                    for char in line:
-                        char_counts[char] += 1
+            active_holds = [False] * 4
 
-                # Upscale measure then canonicalize to merge mirror-equivalent patterns
-                upscaled  = upscale_measure(measure_lines, target_rows=192)
-                canonical = canonicalize_measure(upscaled)  # ← symmetry normalisation
+            for measure_lines in cleaned_measures:
+                
+                # Capture holds carrying into this measure
+                incoming_holds = sum(active_holds)
+
+                # Interpolate 'H' for active holds during the measure
+                interpolated_lines = []
+                for line in measure_lines:
+                    new_line = ""
+                    for c, char in enumerate(line):
+                        if char in ('2', '4'):
+                            active_holds[c] = True
+                            new_line += char
+                        elif char == '3':
+                            active_holds[c] = False
+                            new_line += char
+                        elif char == '0' and active_holds[c]:
+                            new_line += 'H'
+                        else:
+                            new_line += char
+                    interpolated_lines.append(new_line)
+
+                # Capture holds leaving this measure
+                outgoing_holds = sum(active_holds)
+
+                # Count characters by difficulty using the interpolated lines
+                for line in interpolated_lines:
+                    for char in line:
+                        char_counts[(char, diff)] += 1
+
+                # Upscale measure then canonicalize
+                upscaled  = upscale_measure(interpolated_lines, target_rows=192)
+                canonical = canonicalize_measure(upscaled)
                 # Flatten the canonical 192x4 matrix into a 1D list of single chars
                 flattened = [ch for row in canonical for ch in row]
                 all_upscaled_measures.append(flattened)
                 all_raw_measures.append(measure_lines)  # keep raw for alt encodings
+                all_measure_info.append((fp, diff, measure_idx))
 
                 # Sequential Pattern Mining
                 active_steps = [
@@ -722,8 +789,8 @@ def process_dataset(directory, db_path, run_id):
                     row_time = datetime.now().isoformat()
                     audio_rows.append((run_id, fp, diff, measure_idx, start_time, end_time) + tuple(feats) + tuple(vocal_feats) + (row_time,))
 
-                # Record the 9 Physical Stepmania Features for this measure
-                sm_feats = extract_measure_features(measure_lines)
+                # Record the 11 Physical Stepmania Features for this measure
+                sm_feats = extract_measure_features(interpolated_lines, incoming_holds, outgoing_holds)
                 stepmania_rows.append((run_id, fp, diff, measure_idx) + tuple(sm_feats))
 
                 measure_idx += 1
@@ -736,7 +803,7 @@ def process_dataset(directory, db_path, run_id):
             
         if stepmania_rows:
             conn.executemany(
-                "INSERT INTO stepmania_features (run_id, file_path, difficulty, measure_idx, total_active, jumps, max_dist, avg_dist, returns, density, uniq_col, has_hold, has_mine) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "INSERT INTO stepmania_features (run_id, file_path, difficulty, measure_idx, total_active, jumps, max_dist, avg_dist, returns, density, uniq_col, has_hold, has_mine, hold_duration, symmetry_bias, crossover_count, incoming_holds, outgoing_holds) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 stepmania_rows
             )
         conn.commit()
@@ -758,9 +825,9 @@ def process_dataset(directory, db_path, run_id):
     conn.close()
     print(f"\\nDatabase updated: {db_path}")
     print("Data parsing complete!")
-    return all_upscaled_measures, all_raw_measures, all_sequence_measures, diff_stats, char_counts
+    return all_upscaled_measures, all_raw_measures, all_sequence_measures, all_measure_info, diff_stats, char_counts
 
-def run_topology_pipeline(measures_ohe, raw_measures, conn, run_id, output_dir, encoding='ohe'):
+def run_topology_pipeline(measures_ohe, raw_measures, measure_info, conn, run_id, output_dir, encoding='ohe'):
     """
     encoding choices:
       'ohe'      – One-Hot Encoding of canonical 192x4 matrix  (default / most detailed)
@@ -830,6 +897,45 @@ def run_topology_pipeline(measures_ohe, raw_measures, conn, run_id, output_dir, 
     conn.commit()
     print(f"Cluster counts saved to DB (table: cluster_counts, run_id={run_id})")
 
+    # Save measure cluster assignments -> DB
+    print("Saving measure-to-cluster mapping...")
+    assign_rows = []
+    for i in range(len(labels)):
+        fp, diff, midx = measure_info[i]
+        assign_rows.append((run_id, fp, diff, midx, int(labels[i]), now))
+    
+    conn.executemany(
+        "INSERT INTO measure_cluster_assignments (run_id, file_path, difficulty, measure_idx, cluster_id, saved_at) VALUES (?,?,?,?,?,?)",
+        assign_rows
+    )
+    conn.commit()
+    print(f"Measure mappings saved to DB (table: measure_cluster_assignments, run_id={run_id})")
+
+    # Save representative examples of each cluster to a text file
+    print("Exporting representative examples of clusters to markdown...")
+    examples_path = os.path.join(output_dir, f'cluster_examples_{encoding}.md')
+    try:
+        with open(examples_path, 'w') as f:
+            f.write(f"# Cluster Examples (Top 20 by size)\n\n")
+            top_clusters = cluster_series.head(20)
+            for cid, count in top_clusters.items():
+                f.write(f"## Cluster {cid} (Size: {count})\n")
+                f.write("```\n")
+                
+                # Find indices of measures that belong to this cluster
+                indices = np.where(labels == cid)[0]
+                # Pick up to 5 examples
+                sampled_indices = indices[:5]
+                
+                for i, idx in enumerate(sampled_indices):
+                    f.write(f"--- Example {i+1} ---\n")
+                    f.write("\n".join(raw_measures[idx]))
+                    f.write("\n\n")
+                f.write("```\n\n")
+        print(f"Cluster examples visually exported to {examples_path}")
+    except Exception as e:
+        print(f"Failed to export cluster examples: {e}")
+
     # Save Macro-Markov Chain (Cluster Transitions) → DB
     print("Calculating Macro-Markov Chain (Measure-level Cluster Transitions)...")
     cluster_trans = Counter()
@@ -881,7 +987,8 @@ def run_topology_pipeline(measures_ohe, raw_measures, conn, run_id, output_dir, 
         
         if encoding == 'features':
             col_names = ['active_steps', 'jumps', 'max_dist', 'avg_dist', 
-                         'returns', 'density', 'uniq_cols', 'has_holds', 'has_mines']
+                         'returns', 'density', 'uniq_cols', 'has_holds', 'has_mines',
+                         'hold_duration', 'symmetry_bias', 'crossovers', 'in_holds', 'out_holds']
         elif encoding == 'relative':
             col_names = ['-3', '-2', '-1', '0', '+1', '+2', '+3']
         elif encoding == 'rle':
@@ -994,6 +1101,79 @@ def run_sequential_pipeline(sequence_measures, conn, run_id, output_dir):
     except Exception as e:
         print(f"PrefixSpan mining failed: {e}")
 
+def generate_audio_cluster_correlations(conn, run_id, output_dir):
+    print("\n--- Generating Audio-Cluster Correlations ---")
+    query = """
+    SELECT 
+        c.cluster_id, 
+        a.rms_energy, 
+        a.onset_density, 
+        a.tempo_strength, 
+        a.spectral_centroid, 
+        a.vocal_density,
+        a.spectral_contrast,
+        a.spectral_flatness
+    FROM measure_cluster_assignments c
+    JOIN audio_features a 
+      ON c.run_id = a.run_id 
+     AND c.file_path = a.file_path 
+     AND c.difficulty = a.difficulty 
+     AND c.measure_idx = a.measure_idx
+    WHERE c.cluster_id != -1 AND c.run_id = ?
+    """
+    
+    try:
+        df = pd.read_sql(query, conn, params=(run_id,))
+    except Exception as e:
+        print(f"Failed to query correlations: {e}")
+        return
+        
+    if df.empty:
+        print("No correlation data found. Skipping audio-cluster visualizations.")
+        return
+        
+    print(f"Successfully joined {len(df):,} beatmap measures across both musical audio and physical patterns!")
+    
+    # 1. Filter to top 20 largest clusters
+    top_clusters = df['cluster_id'].value_counts().nlargest(20).index
+    df_top = df[df['cluster_id'].isin(top_clusters)]
+    
+    if df_top.empty:
+        return
+
+    # 2. Average audio features per cluster
+    cluster_means = df_top.groupby('cluster_id').mean()
+    
+    # Safely Standardize the features
+    scaler = StandardScaler()
+    scaled_features = scaler.fit_transform(cluster_means)
+    df_scaled = pd.DataFrame(scaled_features, index=cluster_means.index, columns=cluster_means.columns)
+    
+    print("Generating Audio Mood Heatmap...")
+    plt.figure(figsize=(14, 10))
+    sns.heatmap(df_scaled, cmap='coolwarm', center=0, annot=True, fmt=".2f")
+    plt.title(f"Audio Mood Profiles for Top 20 Stepmania Clusters (run: {run_id})")
+    plt.ylabel("HDBSCAN Cluster ID")
+    plt.xlabel("Audio Characteristic")
+    
+    heat_path = os.path.join(output_dir, 'audio_mood_heatmap.png')
+    plt.savefig(heat_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print("Generating Vocal Distribution Boxplots...")
+    plt.figure(figsize=(14, 6))
+    top_8_clusters = df['cluster_id'].value_counts().nlargest(8).index
+    df_8 = df[df['cluster_id'].isin(top_8_clusters)]
+    if not df_8.empty:
+        sns.boxplot(data=df_8, x='cluster_id', y='vocal_density', palette='plasma')
+        plt.title("Vocal Presence Spread Across Top 8 Physical Clusters")
+        plt.xlabel("HDBSCAN Cluster ID")
+        plt.ylabel("Vocal Density")
+        box_path = os.path.join(output_dir, 'vocal_density_boxplot.png')
+        plt.savefig(box_path, dpi=300, bbox_inches='tight')
+        plt.close()
+    print("Correlations successfully visualised!")
+
 def main():
     parser = argparse.ArgumentParser(description="Process beatmap datasets to discover patterns.")
     parser.add_argument('--target_dir', type=str, default='../../src/musicForBeatmap/',
@@ -1024,7 +1204,7 @@ def main():
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     print(f"\nRun ID: {run_id}  |  DB: {args.db_path}\n")
 
-    measures, raw_measures, seq_measures, diff_stats, chars = process_dataset(args.target_dir, args.db_path, run_id)
+    measures, raw_measures, seq_measures, measure_info, diff_stats, chars = process_dataset(args.target_dir, args.db_path, run_id)
 
     now = datetime.now().isoformat()
     if not measures:
@@ -1063,20 +1243,20 @@ def main():
     # ------------------------------------------------------------------ #
     # 2. Character distributions → character_distributions table
     # ------------------------------------------------------------------ #
-    standard_chars = {'0', '1', '2', '3', '4', 'M', 'L', 'F', 'K'}
+    standard_chars = {'0', '1', '2', '3', '4', 'M', 'L', 'F', 'K', 'H'}
     char_rows = [
-        (run_id, ch, cnt, "No" if ch in standard_chars else "Yes", now)
-        for ch, cnt in chars.items()
+        (run_id, ch, diff, cnt, "No" if ch in standard_chars else "Yes", now)
+        for (ch, diff), cnt in chars.items()
     ]
     conn.executemany(
         "INSERT INTO character_distributions "
-        "(run_id, character, count, is_new_pattern, saved_at) VALUES (?,?,?,?,?)",
+        "(run_id, character, difficulty, count, is_new_pattern, saved_at) VALUES (?,?,?,?,?,?)",
         char_rows
     )
     conn.commit()
     print(f"\nCharacter distributions saved to DB (table: character_distributions, run_id={run_id})")
     df_ch = pd.read_sql(
-        "SELECT character, count, is_new_pattern FROM character_distributions "
+        "SELECT character, difficulty, count, is_new_pattern FROM character_distributions "
         "WHERE run_id=? ORDER BY count DESC LIMIT 15",
         conn, params=(run_id,)
     )
@@ -1087,7 +1267,7 @@ def main():
     # ------------------------------------------------------------------ #
     if measures:
         try:
-            run_topology_pipeline(measures, raw_measures, conn, run_id, args.output_dir, args.encoding)
+            run_topology_pipeline(measures, raw_measures, measure_info, conn, run_id, args.output_dir, args.encoding)
         except Exception as e:
             print(f"Topology Pipeline failed: {e}")
 
@@ -1095,6 +1275,11 @@ def main():
             run_sequential_pipeline(seq_measures, conn, run_id, args.output_dir)
         except Exception as e:
             print(f"Sequential Pipeline failed: {e}")
+            
+        try:
+            generate_audio_cluster_correlations(conn, run_id, args.output_dir)
+        except Exception as e:
+            print(f"Audio-Cluster Correlation extraction failed: {e}")
 
     # ------------------------------------------------------------------ #
     # Optional CSV export  (--export_csv flag)
@@ -1105,6 +1290,7 @@ def main():
             ("difficulty_breakdown",    "difficulty_4col_breakdown.csv"),
             ("character_distributions", "character_distributions.csv"),
             ("cluster_counts",          "hdbscan_cluster_counts.csv"),
+            ("measure_cluster_assignments", "measure_cluster_assignments.csv"),
             ("cluster_transitions",     "macro_cluster_transitions.csv"),
             ("markov_transitions",      "markov_chain_transitions.csv"),
             ("prefixspan_patterns",     "prefixspan_frequent_patterns.csv"),
