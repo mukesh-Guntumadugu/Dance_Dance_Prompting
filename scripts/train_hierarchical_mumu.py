@@ -119,7 +119,22 @@ def extend_tokenizer_and_model(tokenizer, model, cluster_tokens):
                     new_output.weight.data[old_num_tokens:, :] = mean_out.expand(added_for_clusters, -1)
             new_output.weight.requires_grad = True
             model.llama.output = new_output
-            
+
+    # ── CRITICAL: Patch all cached vocab_size attributes ──────────────────
+    # MuMu-LLaMA's internal forward() does: logits.view(-1, self.vocab_size)
+    # If vocab_size is stale (32008), it will crash after we expanded to 34197.
+    # We force-update every possible location the old size may be cached.
+    for obj in [model, model.llama]:
+        for attr in ["vocab_size", "n_words", "params"]:
+            if hasattr(obj, attr):
+                val = getattr(obj, attr)
+                if isinstance(val, int) and val == old_num_tokens:
+                    setattr(obj, attr, after)
+                    print(f"  Patched {obj.__class__.__name__}.{attr}: {old_num_tokens} → {after}")
+                elif hasattr(val, "vocab_size") and val.vocab_size == old_num_tokens:
+                    val.vocab_size = after
+                    print(f"  Patched {obj.__class__.__name__}.{attr}.vocab_size: {old_num_tokens} → {after}")
+
     print(f"  Embedding matrix manually resized: ({old_num_tokens}, {embed_dim}) → ({after}, {embed_dim})")
     print(f"  New rows warm-started with mean embeddings.")
     print("── Done ─────────────────────────────────────────────────────────\n")
