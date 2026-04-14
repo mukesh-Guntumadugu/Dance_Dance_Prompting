@@ -273,11 +273,9 @@ def main():
     cluster_tokens = load_cluster_tokens(TOKENS_TXT)
     tokenizer, model = extend_tokenizer_and_model(tokenizer, model, cluster_tokens)
 
-    print(f"Transferring model to {torch.cuda.device_count()} GPUs (FP32 params + FP16 autocast)...")
-    # Model parameters stay in FP32 — GradScaler requires FP32 params to unscale gradients.
-    # The autocast block in the training loop still uses FP16 for fast computation.
-    # FP32 model = ~28GB VRAM, well within the A40's 45GB limit.
-    model = model.cuda()
+    print(f"Transferring model to {torch.cuda.device_count()} GPUs (float16)...")
+    # Checkpoint weights are stored in FP16 — model MUST be half() for dtype consistency.
+    model = model.cuda().half()
 
     # Enable native PyTorch DataParallel across all available Slurm GPUs
     n_gpus = torch.cuda.device_count()
@@ -308,12 +306,11 @@ def main():
     val_loader   = DataLoader(val_dataset,   batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 
     # ── STEP 3: Optimizer ────────────────────────────────────────────────────
-    # Only update the new cluster token embeddings + LoRA/trainable layers
     optimizer = torch.optim.AdamW(
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=LR, weight_decay=0.05
     )
-    # Pure FP32 training — no GradScaler, no autocast, no NaN, no unscale errors.
+    # FP16 model + plain backward — no GradScaler needed (checkpoint is FP16).
 
     # ── STEP 4: Training Loop ─────────────────────────────────────────────────
     loss_log = []
