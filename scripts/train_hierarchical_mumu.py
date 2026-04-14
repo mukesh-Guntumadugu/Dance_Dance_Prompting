@@ -240,9 +240,9 @@ def main():
     cluster_tokens = load_cluster_tokens(TOKENS_TXT)
     tokenizer, model = extend_tokenizer_and_model(tokenizer, model, cluster_tokens)
 
-    print(f"Transferring model to {torch.cuda.device_count()} GPUs (bfloat16)...")
-    # Cast entirely to bfloat16 to cut VRAM usage by 50%
-    model = model.cuda().bfloat16()
+    print(f"Transferring model to {torch.cuda.device_count()} GPUs (float16)...")
+    # Cast entirely to float16 to cut VRAM usage by 50% and perfectly satisfy cuDNN Convolution compatibility natively
+    model = model.cuda().half()
 
     # Enable native PyTorch DataParallel across all available Slurm GPUs
     n_gpus = torch.cuda.device_count()
@@ -300,7 +300,7 @@ def main():
             audio    = audio.cuda().contiguous()
 
             try:
-                with torch.cuda.amp.autocast(dtype=torch.bfloat16):
+                with torch.cuda.amp.autocast(dtype=torch.float16):
                     c_loss, m_loss = model(examples, labels, audios=audio, music_caption=None)
                     
                     # If multiple GPUs are used, average the scattered loss arrays mathematically
