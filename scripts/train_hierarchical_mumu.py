@@ -199,10 +199,19 @@ class HierarchicalDataset(Dataset):
         elif padding > 0:
             full_ids = torch.cat([full_ids, torch.zeros(padding, dtype=torch.int64)])
 
+        # ── PERMANENT FIX: Clamp all token IDs to valid vocab range ─────────
+        # Vocab size = len(tokenizer) = 34197, so valid IDs are 0 .. 34196.
+        # Any ID >= 34197 would crash CrossEntropyLoss with exactly "34197".
+        vocab_size = len(self.tokenizer)
+        full_ids = full_ids.clamp(min=0, max=vocab_size - 1)
+
         # ── Mask labels: only learn the cluster token sequence ──────────────
-        # Prompt tokens → label = 0 (ignored by CrossEntropyLoss with ignore_index=0)
+        # Use -100 (PyTorch standard ignore_index) for prompt tokens so they
+        # are never used in loss calculation. Avoids token-0 ambiguity.
         labels = full_ids.clone()
-        labels[:len(prompt_ids)] = 0
+        labels[:len(prompt_ids)] = -100  # mask prompt — do NOT learn these
+        # Also mask padding tokens
+        labels[full_ids == 0] = -100
 
         mask = full_ids.ne(0)
 
@@ -314,18 +323,18 @@ def main():
             labels   = labels.cuda().contiguous()
             audio    = audio.cuda().contiguous()
 
+            optimizer.zero_grad()
             try:
                 with torch.cuda.amp.autocast(dtype=torch.float16):
                     c_loss, m_loss = model(examples, labels, audios=audio, music_caption=None)
-                    
-                    # If multiple GPUs are used, average the scattered loss arrays mathematically
+
+                    # If multiple GPUs are used, average the scattered loss arrays
                     if torch.cuda.device_count() > 1:
                         c_loss = c_loss.mean()
                         m_loss = m_loss.mean()
 
                     loss = c_loss + m_loss
 
-                optimizer.zero_grad()
                 loss.backward()
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 optimizer.step()
@@ -334,13 +343,14 @@ def main():
                 num_batches += 1
                 pbar.set_postfix({"loss": f"{epoch_loss/num_batches:.4f}"})
 
-                # Extremely aggressive VRAM defragmentation
+                # Periodic VRAM defrag
                 del c_loss, m_loss, loss
                 if batch_idx > 0 and batch_idx % 50 == 0:
                     torch.cuda.empty_cache()
 
             except Exception as e:
-                print(f"\n  [SKIP] batch {batch_idx}: {e}")
+                import traceback
+                print(f"\n  [SKIP] batch {batch_idx}: {e}\n{traceback.format_exc()}\n")
                 continue
 
         avg_train_loss = epoch_loss / max(num_batches, 1)
@@ -354,11 +364,13 @@ def main():
                 labels   = labels.cuda()
                 audio    = audio.cuda()
                 try:
-                    with torch.cuda.amp.autocast():
+                    with torch.cuda.amp.autocast(dtype=torch.float16):
                         c_loss, m_loss = model(examples, labels, audios=audio, music_caption=None)
                         val_loss   += (c_loss + m_loss).item()
                         val_batches += 1
-                except:
+                except Exception as e:
+                    import traceback
+                    print(f"  [VAL SKIP]: {e}\n{traceback.format_exc()}")
                     continue
 
         avg_val_loss = val_loss / max(val_batches, 1)
