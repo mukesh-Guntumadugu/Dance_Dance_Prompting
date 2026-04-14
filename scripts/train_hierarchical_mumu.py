@@ -274,8 +274,10 @@ def main():
     tokenizer, model = extend_tokenizer_and_model(tokenizer, model, cluster_tokens)
 
     print(f"Transferring model to {torch.cuda.device_count()} GPUs (float16)...")
-    # Model + checkpoint both in FP16. output.float() in mumu_llama.py handles NaN in loss.
     model = model.cuda().half()
+    # MERT's HuBERT processor ALWAYS outputs float32 — keep MERT in float32 so it
+    # accepts its own processor output. LLaMA stays float16.
+    model.mert_model.float()
 
     # Enable native PyTorch DataParallel across all available Slurm GPUs
     n_gpus = torch.cuda.device_count()
