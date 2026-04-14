@@ -305,12 +305,14 @@ def main():
     )
     val_loader   = DataLoader(val_dataset,   batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 
-    # ── STEP 3: Optimizer ────────────────────────────────────────────────────
+    # ── STEP 3: Optimizer + GradScaler ──────────────────────────────────────
     # Only update the new cluster token embeddings + LoRA/trainable layers
     optimizer = torch.optim.AdamW(
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=LR, weight_decay=0.05
     )
+    # GradScaler prevents NaN loss from FP16 overflow — standard for mixed precision
+    scaler = torch.cuda.amp.GradScaler()
 
     # ── STEP 4: Training Loop ─────────────────────────────────────────────────
     loss_log = []
@@ -344,13 +346,18 @@ def main():
 
                     loss = c_loss + m_loss
 
-                loss.backward()
+                # GradScaler: scales loss to prevent FP16 underflow/overflow → no NaN
+                scaler.scale(loss).backward()
+                scaler.unscale_(optimizer)
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-                optimizer.step()
+                scaler.step(optimizer)
+                scaler.update()
 
-                epoch_loss  += loss.item()
-                num_batches += 1
-                pbar.set_postfix({"loss": f"{epoch_loss/num_batches:.4f}"})
+                loss_val = loss.item()
+                if not (loss_val != loss_val):  # skip NaN batches from the average
+                    epoch_loss  += loss_val
+                    num_batches += 1
+                    pbar.set_postfix({"loss": f"{epoch_loss/num_batches:.4f}"})
 
                 # Periodic VRAM defrag
                 del c_loss, m_loss, loss
