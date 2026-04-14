@@ -68,12 +68,6 @@ def load_cluster_tokens(tokens_txt_path):
 
 
 def extend_tokenizer_and_model(tokenizer, model, cluster_tokens):
-    """
-    Core of the Hierarchical Architecture:
-    1. Injects cluster tokens into the LLaMA tokenizer vocabulary.
-    2. Resizes the LLaMA embedding matrix so those new token IDs have learnable vectors.
-    3. Initialises the new embedding rows to the mean of existing embeddings (warm start).
-    """
     print("\n── Extending Tokenizer Vocabulary ──────────────────────────────")
     before = len(tokenizer)
     tokenizer.add_special_tokens({"additional_special_tokens": cluster_tokens})
@@ -81,23 +75,49 @@ def extend_tokenizer_and_model(tokenizer, model, cluster_tokens):
     added  = after - before
     print(f"  Tokenizer vocab: {before} → {after} (+{added} cluster tokens)")
 
-    # Resize the LLM embedding matrix to match the new vocabulary
-    embedding_layer = model.llama.model.embed_tokens
-    old_num_tokens, embed_dim = embedding_layer.weight.shape
+    # Find the embedding layer dynamically
+    if hasattr(model.llama, "model") and hasattr(model.llama.model, "embed_tokens"):
+        embedding_layer = model.llama.model.embed_tokens
+    elif hasattr(model.llama, "tok_embeddings"):
+        embedding_layer = model.llama.tok_embeddings
+    else:
+        raise AttributeError("Could not find the embedding layer in model.llama")
 
-    # Warm-start: new token embeddings initialised to the mean of existing ones
-    # reduces the number of gradient steps needed to stabilise
+    old_num_tokens, embed_dim = embedding_layer.weight.shape
     mean_embed = embedding_layer.weight.data.mean(dim=0, keepdim=True)
 
-    model.llama.resize_token_embeddings(after)
-
-    # Fill the newly added rows with the mean embedding
+    # Recreate the embedding layer entirely if the standard method doesn't exist
+    import torch.nn as nn
+    new_embeds = nn.Embedding(after, embed_dim)
     with torch.no_grad():
-        new_embedding_layer = model.llama.model.embed_tokens
-        new_embedding_layer.weight.data[old_num_tokens:] = mean_embed.expand(added, -1)
+        new_embeds.weight.data[:old_num_tokens] = embedding_layer.weight.data
+        new_embeds.weight.data[old_num_tokens:] = mean_embed.expand(added, -1)
+    
+    # Enable gradients on the new layer
+    new_embeds.weight.requires_grad = True
 
-    print(f"  Embedding matrix resized: ({old_num_tokens}, {embed_dim}) → ({after}, {embed_dim})")
-    print(f"  New rows warm-started with mean embedding.")
+    # Drop the new layer in place
+    if hasattr(model.llama, "model") and hasattr(model.llama.model, "embed_tokens"):
+        model.llama.model.embed_tokens = new_embeds
+    else:
+        model.llama.tok_embeddings = new_embeds
+
+    # Also resize the output head, if it exists (for Fairscale/Meta architecture)
+    if hasattr(model.llama, "output"):
+        output_layer = model.llama.output
+        if hasattr(output_layer, "weight"):
+            out_dim, in_dim = output_layer.weight.shape
+            new_output = nn.Linear(in_features=in_dim, out_features=after, bias=hasattr(output_layer, "bias") and getattr(output_layer, "bias") is not None)
+            with torch.no_grad():
+                if out_dim == old_num_tokens:
+                    new_output.weight.data[:old_num_tokens, :] = output_layer.weight.data
+                    mean_out = output_layer.weight.data.mean(dim=0, keepdim=True)
+                    new_output.weight.data[old_num_tokens:, :] = mean_out.expand(added, -1)
+            new_output.weight.requires_grad = True
+            model.llama.output = new_output
+            
+    print(f"  Embedding matrix manually resized: ({old_num_tokens}, {embed_dim}) → ({after}, {embed_dim})")
+    print(f"  New rows warm-started with mean embeddings.")
     print("── Done ─────────────────────────────────────────────────────────\n")
 
     return tokenizer, model

@@ -680,10 +680,9 @@ def process_dataset(directory, db_path, run_id):
     # Structure: { difficulty: { 'total_charts': int, 'files_with_4col': int, 'total_4col_measures': int } }
     diff_stats = {}
 
-    all_upscaled_measures = []
-    all_raw_measures      = []   # kept for relative/RLE/feature encoding
-    all_sequence_measures = []  # For PrefixSpan/Markov
-    all_measure_info      = []  # Links logic: (file_path, difficulty, measure_idx)
+    all_raw_measures      = []   # Kept for DB insertion sequence
+    all_sequence_measures = []   # For PrefixSpan/Markov
+    all_measure_info      = []   # Links logic: (file_path, difficulty, measure_idx)
 
     for count, fp in enumerate(files_to_process):
         print(f"  Processing [{count+1:>3}/{total}]: {os.path.basename(fp)}")
@@ -759,12 +758,6 @@ def process_dataset(directory, db_path, run_id):
                     for char in line:
                         char_counts[(char, diff)] += 1
 
-                # Upscale measure then canonicalize
-                upscaled  = upscale_measure(interpolated_lines, target_rows=192)
-                canonical = canonicalize_measure(upscaled)
-                # Flatten the canonical 192x4 matrix into a 1D list of single chars
-                flattened = [ch for row in canonical for ch in row]
-                all_upscaled_measures.append(flattened)
                 all_raw_measures.append(measure_lines)  # keep raw for alt encodings
                 all_measure_info.append((fp, diff, measure_idx))
 
@@ -807,8 +800,22 @@ def process_dataset(directory, db_path, run_id):
                 stepmania_rows
             )
         conn.commit()
-
-        # Log to database after each file is fully processed
+        
+        # Explicitly free memory footprint (Audio array & Whisper VRAM)
+        if 'y' in locals() and y is not None:
+            del y
+            del time_map
+            del vocal_words
+            
+        import gc
+        gc.collect()
+        
+        try:
+            import torch
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+        except ImportError:
+            pass
         file_diffs    = [c['difficulty'] for c in charts]
         file_measures = sum(
             len(clean_and_split_measures(c['notes_string'])) for c in charts
@@ -825,9 +832,9 @@ def process_dataset(directory, db_path, run_id):
     conn.close()
     print(f"\\nDatabase updated: {db_path}")
     print("Data parsing complete!")
-    return all_upscaled_measures, all_raw_measures, all_sequence_measures, all_measure_info, diff_stats, char_counts
+    return all_raw_measures, all_sequence_measures, all_measure_info, diff_stats, char_counts
 
-def run_topology_pipeline(measures_ohe, raw_measures, measure_info, conn, run_id, output_dir, encoding='ohe'):
+def run_topology_pipeline(raw_measures, measure_info, conn, run_id, output_dir, encoding='features'):
     """
     encoding choices:
       'ohe'      – One-Hot Encoding of canonical 192x4 matrix  (default / most detailed)
@@ -836,37 +843,42 @@ def run_topology_pipeline(measures_ohe, raw_measures, measure_info, conn, run_id
       'rle'      – Run-length compression stats (stretch-invariant)
     """
     print(f"\n--- Topology Pipeline  [encoding: {encoding}] ---")
-    if not measures_ohe:
+    if not measure_info:
         print("No valid measures to process.")
         return
 
-    print(f"Total measures to cluster: {len(measures_ohe)}")
+    print(f"Total measures to cluster: {len(measure_info)}")
 
     # ── Select and build the encoding matrix ─────────────────────────────
     if encoding == 'features':
-        print("Extracting 9-trait feature vectors (Feature Extraction)...")
-        encoded_data = np.array([extract_measure_features(m) for m in raw_measures], dtype=float)
-        print(f"Feature matrix shape: {encoded_data.shape}  (measures × 9 traits)")
-        print("  Traits: [active_steps, jumps, max_dist, avg_dist, returns_to_start,"
-              " density, unique_cols, has_holds, has_mines]")
+        print("Extracting 9-trait feature vectors directly from SQLite...")
+        query = """
+            SELECT 
+                total_active, jumps, max_dist, avg_dist, returns, density, 
+                uniq_col, has_hold, has_mine, hold_duration, symmetry_bias, 
+                crossover_count, incoming_holds, outgoing_holds
+            FROM stepmania_features
+            WHERE run_id = ?
+            ORDER BY id ASC
+        """
+        df_feats = pd.read_sql(query, conn, params=(run_id,))
+        encoded_data = df_feats.values
+        print(f"Feature matrix shape: {encoded_data.shape}  (measures × 14 traits)")
 
     elif encoding == 'relative':
         print("Building column-delta histograms (Relative Encoding)...")
         encoded_data = np.array([encode_measure_relative(m) for m in raw_measures], dtype=float)
         print(f"Relative matrix shape: {encoded_data.shape}  (measures × 7 delta bins)")
-        print("  Bins: delta -3, -2, -1, 0, +1, +2, +3  (normalised)")
 
     elif encoding == 'rle':
         print("Computing run-length compression stats (RLE Encoding)...")
         encoded_data = np.array([encode_measure_rle(m) for m in raw_measures], dtype=float)
         print(f"RLE matrix shape: {encoded_data.shape}  (measures × 6 timing stats)")
-        print("  Stats: [num_events, avg_wait, max_wait, min_wait, wait_std, density]")
 
-    else:  # 'ohe' — original pipeline
-        print("One-Hot Encoding canonical 192x4 matrices (OHE)...")
-        encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
-        encoded_data = encoder.fit_transform(measures_ohe)
-        print(f"OHE matrix shape: {encoded_data.shape}  (measures × categorical columns)")
+    else:
+        print("WARNING: OHE encoding is deprecated due to massive memory requirements. Failsafe to 'features'.")
+        # Run recursive fallback
+        return run_topology_pipeline(raw_measures, measure_info, conn, run_id, output_dir, encoding='features')
 
     print(f"Encoded Shape: {encoded_data.shape}")
     # ── PCA → HDBSCAN → UMAP (same for all encodings) ───────────────────
@@ -1204,10 +1216,10 @@ def main():
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     print(f"\nRun ID: {run_id}  |  DB: {args.db_path}\n")
 
-    measures, raw_measures, seq_measures, measure_info, diff_stats, chars = process_dataset(args.target_dir, args.db_path, run_id)
+    raw_measures, seq_measures, measure_info, diff_stats, chars = process_dataset(args.target_dir, args.db_path, run_id)
 
     now = datetime.now().isoformat()
-    if not measures:
+    if not measure_info:
         return
 
     # ------------------------------------------------------------------ #
@@ -1265,9 +1277,9 @@ def main():
     # ------------------------------------------------------------------ #
     # 3 & 4. ML Pipelines — topology + sequential (write directly to DB)
     # ------------------------------------------------------------------ #
-    if measures:
+    if measure_info:
         try:
-            run_topology_pipeline(measures, raw_measures, measure_info, conn, run_id, args.output_dir, args.encoding)
+            run_topology_pipeline(raw_measures, measure_info, conn, run_id, args.output_dir, args.encoding)
         except Exception as e:
             print(f"Topology Pipeline failed: {e}")
 
