@@ -67,6 +67,6 @@ ax.yaxis.grid(True, linestyle='--', alpha=0.7)
 ax.set_axisbelow(True)
 
 plt.tight_layout()
-output_path = '/Users/mukeshguntumadugu/.gemini/antigravity/brain/b122fa0f-01dc-4487-997a-68c11a183845/artifacts/onset_comparison.png'
+output_path = 'onset_comparison.png'
 plt.savefig(output_path, dpi=300)
 print(f"Chart successfully saved to {output_path}")
