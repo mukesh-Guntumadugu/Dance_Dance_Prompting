@@ -383,24 +383,10 @@ def main():
         loss_log.append({"epoch": epoch+1, "train_loss": avg_train_loss, "val_loss": avg_val_loss})
 
     # ── Save ONE final checkpoint after all epochs complete ───────────────────
-    # (No per-epoch saves — each checkpoint is ~14GB, 5 epochs = 70GB wasted!)
     ckpt_out = os.path.join(OUTPUT_DIR, "checkpoint_final.pth")
     torch.save(model.state_dict(), ckpt_out)
     tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "tokenizer"))
-    print(f"  💾 Final checkpoint saved: {ckpt_out}")
-
-    # ── Save loss log ─────────────────────────────────────────────────────────
-    log_path = os.path.join(OUTPUT_DIR, "training_log.csv")
-    with open(log_path, "w", newline="") as f:
-        writer = csv_mod.writer(f)
-        writer.writerow(["epoch", "train_loss", "val_loss"])
-        for entry in loss_log:
-            writer.writerow([entry["epoch"], f"{entry['train_loss']:.4f}", f"{entry['val_loss']:.4f}"])
-
-    print(f"\n✅ Hierarchical Director Training Complete!")
-    print(f"   Model saved to : {ckpt_out}")
-    print(f"   Tokenizer saved: {OUTPUT_DIR}/tokenizer")
-    print(f"   Loss log       : {log_path}")
+    print(f"\n✅ Training Complete! Model saved: {ckpt_out}")
 
 
 if __name__ == "__main__":
