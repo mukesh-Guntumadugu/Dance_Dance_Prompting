@@ -119,8 +119,13 @@ def save_onsets_csv(onset_ms: List[float], song_name: str, out_dir: str) -> str:
     """Save onsets to a CSV file and return the file path."""
     timestamp = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
     safe_name = song_name.replace(" ", "_").replace("/", "-")
+    
+    # Create the model-specific 10s subfolder
+    model_out_dir = os.path.join(out_dir, "MuMu_onsets_detection_10sec")
+    os.makedirs(model_out_dir, exist_ok=True)
+    
     filename = f"Mumu_onsets_{safe_name}_{timestamp}.csv"
-    filepath = os.path.join(out_dir, filename)
+    filepath = os.path.join(model_out_dir, filename)
 
     with open(filepath, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -180,7 +185,7 @@ def main():
             print(f"\n  WARNING: Could not load audio {audio_path}: {e}")
             continue
 
-        chunk_duration = 15.0
+        chunk_duration = 10.0
         num_chunks = int(duration_sec // chunk_duration) + (1 if duration_sec % chunk_duration > 0 else 0)
         
         all_onset_ms = []
