@@ -33,30 +33,32 @@ def plot_for_audio(file_path, output_dir):
     features = None
     with torch.no_grad():
         try:
-            # Load exact MuMu audio tensor
+            # Load the exact MuMu audio tensor.
+            # CRITICAL: MERT expects 24kHz audio as its absolute requirement.
             waveform, sample_rate = torchaudio.load(file_path)
             if sample_rate != 24000:
                 waveform = torchaudio.functional.resample(waveform, orig_freq=sample_rate, new_freq=24000)
-            audio_tensor = torch.mean(waveform, 0).unsqueeze(0).cuda()  # [1, seq]
             
-            # ATTEMPT 1: Penetrate MuMu_LLaMA's nested architecture to intercept MERT
-            if hasattr(model, 'encode_audio') or hasattr(model, 'encode_music'):
-                # Many custom wrappers store a direct encoder
-                pass
+            # MERT usually takes [Batch, Seq] shape and mono
+            audio_tensor = torch.mean(waveform, 0).unsqueeze(0).cuda()
             
-            if hasattr(model, 'llama') and hasattr(model.llama, 'model'):
-                # Digging deep: model.llama.model.audio_encoder might exist or something similar
-                pass
+            print("   -> Directly intercepting MERT `encode_audio` pipeline...")
+            # Run the audio through MERT, downsampling projections, and into the MuMu dense projection space
+            features = model.encode_audio(audio_tensor)
+            
+            if features is None:
+                raise ValueError("Model encode_audio returned None")
                 
-            # If we don't know the exact forward arguments to force hidden_states without breaking
-            # the custom MERT -> ViT -> MusicGen projection blocks, we'll gracefully fallback
-            print("   [!] MuMu wraps MERT, ViT, and MusicGen inside an extensively interlocked class.")
-            print("   [!] Safely skipping MuMu for now to prevent VRAM explosion (without custom codebase edits).")
-            print("   -> Fallback: Generating generic noise map to demonstrate.")
-            features = np.random.rand(100, 768)
+            # If it's a tuple (which some LLaMA adapters return as (features, attention_masks)), grab the tensor
+            if isinstance(features, tuple):
+                features = features[0]
+                
+            features = features.cpu().numpy()
             
         except Exception as e:
             print(f"   [!] MuMu Neural Extraction Failed: {e}")
+            import traceback
+            traceback.print_exc()
             return
             
     print(f"   -> Extracted latent tokens with dimensions: {features.shape}.")
