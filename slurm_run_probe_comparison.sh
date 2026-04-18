@@ -34,3 +34,11 @@ export LD_LIBRARY_PATH=/data/mg546924/conda_envs/deepresonance_env/lib/python3.1
 $PYTHON_DRIVER_DR -u src/probe_deepresonance.py --target_dir "$TARGET_DIR" --output_dir "$OUTPUT_DIR_DR"
 
 echo "=== ALL PROBING COMPLETE === $(date)"
+
+echo "--------------------------------------------------------"
+echo "PHASE 3: PROBING MUMU-LLAMA (MERT Backbone)"
+echo "--------------------------------------------------------"
+PYTHON_DRIVER_MUMU="/data/mg546924/conda_envs/qwenenv/bin/python"
+OUTPUT_DIR_MUMU="results_mumu_probe_fraxtil"
+
+$PYTHON_DRIVER_MUMU -u src/probe_mumu.py --target_dir "$TARGET_DIR" --output_dir "$OUTPUT_DIR_MUMU"
