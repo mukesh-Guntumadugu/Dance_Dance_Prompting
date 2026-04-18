@@ -11,44 +11,60 @@ import sys
 import os
 
 # Placeholder for MuMu-LLaMA model and processor
-_model = None
+from src.mumu_measure_interface import initialize_mumu_model
+import torch
+import torchaudio
+import traceback
+
+# State initialized by mumu_measure_interface
+_is_initialized = False
 
 def setup_mumu():
-    """
-    Initializes the MuMu-LLaMA model.
-    This function will be expanded once the user completes the weight download
-    on their HPC cluster.
-    """
-    global _model
-    print("Loading MuMu-LLaMA model... (Requires 13GB LLaMA-2 weights downloaded first)")
-    
-    # Check if the repository exists on the cluster
-    mumu_dir = os.path.join(os.path.dirname(__file__), "..", "MuMu-LLaMA")
-    if not os.path.exists(mumu_dir):
-        print(f"❌ MuMu-LLaMA repository not found at {mumu_dir}")
-        print("Please clone it and download the weights first.")
-        raise FileNotFoundError(f"MuMu-LLaMA not found at {mumu_dir}")
-        
-    print("✅ MuMu-LLaMA interface initialized. (Full model loading code pending weight download completion)")
-    _model = "Simulated_MuMu_Model"
+    """Initializes the MuMu-LLaMA model."""
+    global _is_initialized
+    if not _is_initialized:
+        print("Loading MuMu-LLaMA model (Actual integration)...")
+        initialize_mumu_model()
+        _is_initialized = True
+        print("✅ MuMu-LLaMA real interface initialized.")
 
 def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
-    """
-    Passes the audio file and prompt to the MuMu-LLaMA model.
-    """
-    global _model
-    if not _model:
+    """Passes the audio file and prompt to the MuMu-LLaMA model for strict generation."""
+    global _is_initialized
+    if not _is_initialized:
         setup_mumu()
         
     print(f"Generating with MuMu-LLaMA for: {os.path.basename(audio_path)}")
     
-    # TODO: Implement the actual MuMu-LLaMA inference call here.
-    # The exact function depends on how MuMu-LLaMA expects the audio and prompt.
-    # Currently returning a dummy response.
-    
-    max_new_tokens=8192,
-    do_sample=False,
-    temperature=0.01,
-    repetition_penalty=1.0
-    
-    return "[0, 500, 1000, 1500]"
+    try:
+        model, tokenizer = initialize_mumu_model()
+        import llama
+        
+        waveform, sr = torchaudio.load(audio_path)
+        if sr != 24000:
+            waveform = torchaudio.functional.resample(waveform, orig_freq=sr, new_freq=24000)
+            
+        audio_tensor = torch.mean(waveform, 0).unsqueeze(0).cuda()
+        
+        formatted_prompt = llama.utils.format_prompt(prompt)
+        
+        with torch.no_grad():
+            with torch.cuda.amp.autocast():
+                # Call standard text generation on MuMu 
+                # MuMu returns a list of string generations matching the batch size
+                results = model.generate(
+                    prompts=[formatted_prompt],
+                    audios=audio_tensor,
+                    max_gen_len=1024,
+                    temperature=0.1,
+                    top_p=0.9
+                )
+                
+        if isinstance(results, list) and len(results) > 0:
+            return str(results[0])
+        return str(results)
+        
+    except Exception as e:
+        print(f"❌ Error during actual MuMu inference: {e}")
+        traceback.print_exc()
+        return ""
