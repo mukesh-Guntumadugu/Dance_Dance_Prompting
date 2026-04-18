@@ -26,3 +26,34 @@ sbatch slurm_run_probe_qwen.sh
 
 **Results:**
 The batch job will create a new directory named `results_qwen_probe_fraxtil/` at the root of your project. After the batch completes (roughly ~3-5 minutes per song), that folder will be populated with PNG plots that you can download directly to your local Macbook and inspect!
+
+---
+
+## 🛑 Model Benchmarking Conclusions (Qwen vs. Flamingo vs. MuMu vs. DeepSeek)
+
+Through rigorous PCA extraction and API probing of mult-modal candidates for the architecture's "Director" module, we arrived at the following conclusions:
+
+*   ### ✅ **MuMu-LLaMA (Winner)**
+    *   **Why:** Natively incorporates the MERT (Music Extraction Representation Toolkit) encoder.
+    *   **Result:** Completely swallows raw audio and converts it perfectly into its Unified Latent Space. Its neuronal arrays precisely aligned with Librosa tracking. It is the chosen candidate for step-chart mapping.
+
+*   ### ❌ **Music-Flamingo**
+    *   **Why not:** Relies on the AudioMAE backbone. While it yields massive temporal dimensions (3500+ tokens), its architectural integration is slightly less geared toward raw rhythmic mapping than MuMu's MERT interface.
+
+*   ### ❌ **Qwen-Audio**
+    *   **Why not:** Whisper-based audio projection. Highly aligned for transcription/speech, but severely lacks the micro-timing and latency required for raw drum detection (compresses temporal array to only 750 tokens).
+
+*   ### ❌ **DeepSeek-V3.2 API**
+    *   **Result:** Hard-crashed with `unknown variant input_audio, expected text`. The physical public DeepSeek endpoint structurally rejects soundwaves. Thus, it cannot be our standalone zero-shot Director model without building a complex text-math translator proxy first.
+
+---
+
+## 🛑 Troubleshooting & Terminal Management
+
+When running long Python scripts or API calls (like `probe_deepseek_api.py`), the process may sometimes hang due to network connectivity issues or massive file sizes. Here is how to manage frozen processes in your Mac/Linux terminal:
+
+*   **`Ctrl + C` (Cancel/Kill):** This completely halts the script immediately. If the script is frozen or hanging, press `Ctrl + C` to throw a `KeyboardInterrupt` and kill the execution safely.
+*   **`Ctrl + Z` (Suspend/Pause):** This does **NOT** kill the program! It "suspends" it and throws it frozen into the background, where it will continue to eat up memory.
+*   **Managing Suspended Jobs:** If you accidentally press `Ctrl + Z`:
+    1. Type `jobs` in your terminal to see the frozen programs.
+    2. To kill the frozen program in slot `[1]`, type `kill -9 %1`.

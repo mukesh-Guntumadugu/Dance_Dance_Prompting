@@ -1,0 +1,5 @@
+Target: Goodbye (2012 Mix).ogg
+--------------------------------------------------
+API Error: Error code: 400 - {'error': {'message': 'Failed to deserialize the JSON body into the target type: messages[0]: unknown variant `input_audio`, expected `text` at line 1 column 427173', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+
+(Ensure your DEEPSEEK_API_KEY is valid and the V3.2 Multimodal backend endpoint structure accepts standard `input_audio` schema).
