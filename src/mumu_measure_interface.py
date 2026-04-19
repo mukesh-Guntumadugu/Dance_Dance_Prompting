@@ -44,6 +44,9 @@ def initialize_mumu_model():
     )
 
     print("Loading MuMu-LLaMA Base Architecture...", flush=True)
+    # Temporarily set to half-precision to prevent System RAM OOM on cluster
+    torch.set_default_dtype(torch.float16)
+    
     _mumu_model = MuMu_LLaMA(
         llama_ckpt_dir=os.path.join(LLAMA_DIR, "7B"),
         llama_tokenizer=LLAMA_DIR,
@@ -51,6 +54,7 @@ def initialize_mumu_model():
         knn_dir="/data/mg546924/llm_beatmap_generator/MuMu-LLaMA/ckpts",
         stage=3,
     )
+    torch.set_default_dtype(torch.float32)
 
     # First attempt to load your LoRA checkpoint if it exists, otherwise use base MuMu
     target_ckpt = MUMU_CKPT
@@ -68,6 +72,8 @@ def initialize_mumu_model():
         state_dict = ckpt
         
     _mumu_model.load_state_dict(state_dict, strict=False)
+    
+    # MuMu requires float32 for inference math stability, we move it safely now
     _mumu_model = _mumu_model.cuda().float()
     _mumu_model.eval()
     
