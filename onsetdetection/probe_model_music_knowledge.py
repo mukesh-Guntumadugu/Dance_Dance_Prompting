@@ -100,12 +100,35 @@ def ask_deepresonance(question: str) -> str:
         return f"[DeepResonance probe error: {e}]"
 
 
+# ── Music-Flamingo ────────────────────────────────────────────────────────────
+def ask_flamingo(question: str) -> str:
+    import tempfile, soundfile as sf
+    from src.music_flamingo_interface import setup_music_flamingo, generate_beatmap_with_flamingo
+
+    setup_music_flamingo()
+
+    # Flamingo takes an audio file path — write 1s of silence as a neutral clip
+    silent = np.zeros(24000, dtype=np.float32)
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+        sf.write(tmp.name, silent, 24000)
+        tmp_path = tmp.name
+
+    prompt = f"<Audio>\n{question}"
+    try:
+        result = generate_beatmap_with_flamingo(tmp_path, prompt)
+        return str(result)
+    finally:
+        import os as _os
+        _os.unlink(tmp_path)
+
+
 # ── Model registry ─────────────────────────────────────────────────────────────
 MODEL_FUNCS = {
     "mumu":          ("MuMu-LLaMA",       ask_mumu),
     "qwen":          ("Qwen2-Audio",       ask_qwen),
     "gemini":        ("Gemini 1.5 Flash",  ask_gemini),
     "deepresonance": ("DeepResonance",     ask_deepresonance),
+    "flamingo":      ("Music-Flamingo",    ask_flamingo),
 }
 
 

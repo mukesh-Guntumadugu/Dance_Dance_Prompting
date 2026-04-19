@@ -41,5 +41,15 @@ else
     conda run -n mumullama python3 -u onsetdetection/probe_model_music_knowledge.py --model deepresonance
 fi
 
+# ── Music-Flamingo ────────────────────────────────────────────────
+echo ""
+echo ">>> Probing Music-Flamingo..."
+FLAMINGO_ENV="flamingo"
+if conda env list | grep -q "$FLAMINGO_ENV"; then
+    conda run -n $FLAMINGO_ENV python3 -u onsetdetection/probe_model_music_knowledge.py --model flamingo
+else
+    conda run -n mumullama python3 -u onsetdetection/probe_model_music_knowledge.py --model flamingo
+fi
+
 echo ""
 echo "=== Probe Finished: $(date) ==="
