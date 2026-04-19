@@ -61,9 +61,8 @@ def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
                 top_p=0.9
             )
                 
-        if isinstance(results, list) and len(results) > 0:
-            return str(results[0])
-        return str(results)
+        raw_text = results[0] if isinstance(results, list) and len(results) > 0 else str(results)
+        return str(raw_text)
         
     except Exception as e:
         print(f"❌ Error during actual MuMu inference: {e}")
