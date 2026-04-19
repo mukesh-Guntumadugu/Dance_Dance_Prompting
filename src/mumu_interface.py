@@ -44,7 +44,7 @@ def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
         if sr != 24000:
             waveform = torchaudio.functional.resample(waveform, orig_freq=sr, new_freq=24000)
             
-        audio_tensor = torch.mean(waveform, 0).unsqueeze(0).cuda()
+        audio_tensor = torch.mean(waveform, 0).flatten().cuda()
         
         formatted_prompt = llama.utils.format_prompt(prompt)
         
