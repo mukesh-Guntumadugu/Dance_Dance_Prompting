@@ -3,6 +3,7 @@
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --time=06:00:00
 #SBATCH --cpus-per-task=16
+#SBATCH --nodelist=node002
 #SBATCH --output=mumu_log_%j.txt
 
 echo "=== Starting MuMu-LLaMA Onset Detection ==="
