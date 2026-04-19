@@ -22,14 +22,11 @@ export LD_LIBRARY_PATH=/data/mg546924/conda_envs/deepresonance_env/lib:$LD_LIBRA
 
 MUMU_PY=/home/mg546924/.conda/envs/mumullama/bin/python
 DEEPRES_PY=/data/mg546924/conda_envs/deepresonance_env/bin/python
+FLAMINGO_PY=/data/mg546924/music_flamingo_env/bin/python
 
 echo ""
 echo ">>> Probing MuMu-LLaMA..."
 $MUMU_PY -u onsetdetection/probe_model_music_knowledge.py --model mumu
-
-echo ""
-echo ">>> Probing Gemini (API — no GPU needed)..."
-$MUMU_PY -u onsetdetection/probe_model_music_knowledge.py --model gemini
 
 echo ""
 echo ">>> Probing Qwen2-Audio..."
@@ -41,7 +38,8 @@ $DEEPRES_PY -u onsetdetection/probe_model_music_knowledge.py --model deepresonan
 
 echo ""
 echo ">>> Probing Music-Flamingo..."
-$DEEPRES_PY -u onsetdetection/probe_model_music_knowledge.py --model flamingo
+export HF_HOME=/data/mg546924/llm_beatmap_generator/Music-Flamingo/checkpoints
+$FLAMINGO_PY -u onsetdetection/probe_model_music_knowledge.py --model flamingo
 
 echo ""
 echo "=== Probe Finished: $(date) ==="

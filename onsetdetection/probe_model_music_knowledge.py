@@ -68,17 +68,6 @@ def ask_qwen(question: str) -> str:
     return tok.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True)
 
 
-# ── Gemini ────────────────────────────────────────────────────────────────────
-def ask_gemini(question: str) -> str:
-    from dotenv import load_dotenv
-    load_dotenv()
-    import google.generativeai as genai
-
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    return model.generate_content(question).text
-
-
 # ── DeepResonance ─────────────────────────────────────────────────────────────
 def ask_deepresonance(question: str) -> str:
     """
@@ -124,11 +113,10 @@ def ask_flamingo(question: str) -> str:
 
 # ── Model registry ─────────────────────────────────────────────────────────────
 MODEL_FUNCS = {
-    "mumu":          ("MuMu-LLaMA",       ask_mumu),
-    "qwen":          ("Qwen2-Audio",       ask_qwen),
-    "gemini":        ("Gemini 1.5 Flash",  ask_gemini),
-    "deepresonance": ("DeepResonance",     ask_deepresonance),
-    "flamingo":      ("Music-Flamingo",    ask_flamingo),
+    "mumu":          ("MuMu-LLaMA",     ask_mumu),
+    "qwen":          ("Qwen2-Audio",     ask_qwen),
+    "deepresonance": ("DeepResonance",   ask_deepresonance),
+    "flamingo":      ("Music-Flamingo",  ask_flamingo),
 }
 
 
