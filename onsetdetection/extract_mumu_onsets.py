@@ -77,7 +77,7 @@ def parse_onsets_from_response(text: str, duration_sec: float) -> Optional[List[
         for val in found_matches:
             try:
                 ms = float(val) * 1000.0
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(round(ms, 2))
             except ValueError:
                 pass
@@ -101,7 +101,8 @@ def parse_onsets_from_response(text: str, duration_sec: float) -> Optional[List[
             print("  [Auto-correction: Converted MuMu seconds output to milliseconds]")
             raw_vals = [v * 1000 for v in raw_vals]
 
-        return sorted(raw_vals)
+        raw_vals = [v for v in raw_vals if v > 0.0]
+        return sorted(raw_vals) if raw_vals else None
     except Exception as parse_err:
         print(f"  WARNING: Parse error: {parse_err}")
         return None

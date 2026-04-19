@@ -20,6 +20,7 @@ import numpy as np
 
 ROOT = "/data/mg546924/llm_beatmap_generator"
 sys.path.insert(0, ROOT)
+sys.path.insert(0, os.path.join(ROOT, "src"))
 
 QUESTIONS = [
     "What is a musical onset? Give a one-sentence definition.",
@@ -31,7 +32,7 @@ SEP = "─" * 68
 
 # ── MuMu-LLaMA ────────────────────────────────────────────────────────────────
 def ask_mumu(question: str) -> str:
-    from src.mumu_measure_interface import initialize_mumu_model
+    from mumu_measure_interface import initialize_mumu_model
     import llama, torch
 
     model, _ = initialize_mumu_model()
@@ -75,16 +76,28 @@ def ask_deepresonance(question: str) -> str:
     what it "hears" in a 1-second silent clip and embed the question
     as a text prompt alongside it.
     """
-    import torch
+    import torch, tempfile, soundfile as sf, os, numpy as np
     try:
-        from src.deepresonance_interface import generate_with_deepresonance
-        # Pass the question as caption/prompt; use silent audio
-        result = generate_with_deepresonance(
-            audio_array=np.zeros(24000, dtype=np.float32),
-            sample_rate=24000,
-            prompt=question,
-        )
-        return str(result)
+        from deepresonance_measure_interface import initialize_deepresonance_model
+        model = initialize_deepresonance_model()
+        
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+            sf.write(tmp.name, np.zeros(24000, dtype=np.float32), 24000)
+            tmp_path = tmp.name
+        
+        inputs = {
+            "inputs": ["<Audio>"],
+            "instructions": [question],
+            "mm_names": [["audio"]],
+            "mm_paths": [[os.path.basename(tmp_path)]],
+            "mm_root_path": os.path.dirname(tmp_path),
+            "outputs": [""],
+        }
+        
+        resp = model.predict(inputs, max_tgt_len=256, top_p=0.9, temperature=0.2, stops_id=[[835]])
+        if isinstance(resp, list): resp = resp[0] if resp else ""
+        os.unlink(tmp_path)
+        return str(resp).strip()
     except Exception as e:
         return f"[DeepResonance probe error: {e}]"
 
@@ -92,7 +105,7 @@ def ask_deepresonance(question: str) -> str:
 # ── Music-Flamingo ────────────────────────────────────────────────────────────
 def ask_flamingo(question: str) -> str:
     import tempfile, soundfile as sf
-    from src.music_flamingo_interface import setup_music_flamingo, generate_beatmap_with_flamingo
+    from music_flamingo_interface import setup_music_flamingo, generate_beatmap_with_flamingo
 
     setup_music_flamingo()
 

@@ -68,7 +68,7 @@ def parse_flamingo_onsets(response: str, start_sec: float) -> list[int]:
         for val in found_matches:
             try:
                 ms = float(val) * 1000.0
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(int(round(ms + (start_sec * 1000))))
             except ValueError:
                 pass
@@ -82,7 +82,7 @@ def parse_flamingo_onsets(response: str, start_sec: float) -> list[int]:
             val_f = float(n)
             # Assume < 1000 is seconds to be safe
             ms = val_f * 1000.0 if val_f < 600.0 else val_f
-            if 0.0 <= ms <= 600_000:
+            if 0.0 < ms <= 600_000:
                 onsets.append(int(round(ms + (start_sec * 1000))))
         except ValueError:
             pass

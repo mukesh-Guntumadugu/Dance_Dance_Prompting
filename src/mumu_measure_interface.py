@@ -3,7 +3,7 @@ import sys
 import argparse
 import torch
 import torchaudio
-import torch.nn.functional as F
+from torch.nn import functional as F
 
 # Paths aligned with your cluster structure
 MUMU_ROOT = "/data/mg546924/llm_beatmap_generator/MuMu-LLaMA/MuMu-LLaMA"

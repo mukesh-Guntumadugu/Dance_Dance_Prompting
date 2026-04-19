@@ -44,8 +44,9 @@ HF_CACHE     = "/data/mg546924/.cache/huggingface"
 
 os.environ["HF_HOME"] = HF_CACHE
 sys.path.insert(0, PROJECT_ROOT)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 
-from src.onset_reward import onset_f1_reward
+from onset_reward import onset_f1_reward
 
 from datasets import load_dataset
 from transformers import (

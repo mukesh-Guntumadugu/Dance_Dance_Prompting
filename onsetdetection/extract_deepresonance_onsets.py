@@ -96,7 +96,7 @@ def parse_onsets_from_response(response_text: str) -> List[float]:
         for val in found_matches:
             try:
                 ms = float(val) * 1000.0  # Prompt requested seconds, we need ms
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(round(ms, 2))
             except ValueError:
                 pass
@@ -112,7 +112,7 @@ def parse_onsets_from_response(response_text: str) -> List[float]:
                 # Fallback natively assumed ms in the past. Assume numbers < 1000 are seconds.
                 val_f = float(val)
                 ms = val_f * 1000.0 if val_f < 600.0 else val_f
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(round(ms, 2))
             if onsets:
                 return sorted(set(onsets))
@@ -126,7 +126,7 @@ def parse_onsets_from_response(response_text: str) -> List[float]:
         try:
             val_f = float(n)
             ms = val_f * 1000.0 if val_f < 600.0 else val_f
-            if 0.0 <= ms <= 600_000:
+            if 0.0 < ms <= 600_000:
                 onsets.append(round(ms, 2))
         except ValueError:
             pass

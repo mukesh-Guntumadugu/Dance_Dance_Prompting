@@ -90,7 +90,7 @@ def parse_onsets_from_response(response_text: str, duration_sec: float) -> List[
         for val in found_matches:
             try:
                 ms = float(val) * 1000.0
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(round(ms, 2))
             except ValueError:
                 pass
@@ -105,7 +105,7 @@ def parse_onsets_from_response(response_text: str, duration_sec: float) -> List[
                 obj = json.loads(obj_str)
                 if 'time_ms' in obj:
                     ms = float(obj['time_ms'])
-                    if 0.0 <= ms <= 600_000:
+                    if 0.0 < ms <= 600_000:
                         onsets.append(round(ms, 2))
             except (json.JSONDecodeError, ValueError, TypeError):
                 pass
@@ -126,7 +126,7 @@ def parse_onsets_from_response(response_text: str, duration_sec: float) -> List[
             arr = json.loads(arr_str)
             for val in arr:
                 ms = float(val)
-                if 0.0 <= ms <= 600_000:
+                if 0.0 < ms <= 600_000:
                     onsets.append(round(ms, 2))
             if onsets:
                 onsets = sorted(set(onsets))
@@ -142,7 +142,7 @@ def parse_onsets_from_response(response_text: str, duration_sec: float) -> List[
         n = n.replace(',', '.')
         try:
             ms = float(n)
-            if 0.0 <= ms <= 600_000:
+            if 0.0 < ms <= 600_000:
                 onsets.append(round(ms, 2))
         except ValueError:
             pass
