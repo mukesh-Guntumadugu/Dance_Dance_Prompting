@@ -31,21 +31,46 @@ def find_audio_file(folder_path: str) -> str:
             return os.path.join(folder_path, f)
     return None
 
+def find_sm_file(folder_path: str) -> str:
+    for f in os.listdir(folder_path):
+        if f.lower().endswith(('.sm', '.ssc')) and not f.startswith("._"):
+            return os.path.join(folder_path, f)
+    return None
+
+def extract_human_bpm_from_sm(sm_path: str) -> str:
+    if not sm_path or not os.path.exists(sm_path):
+        return "N/A"
+    try:
+        import re
+        with open(sm_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        match = re.search(r'#BPMS:.*?=([\d\.]+)', content)
+        if match:
+            return str(round(float(match.group(1)), 2))
+    except Exception:
+        pass
+    return "N/A"
+
 # ── Math Ground Truth ─────────────────────────────────────────────────────────
 
 def run_librosa_batch(song_dirs: list, out_csv: str):
-    print(f"Running Librosa baseline across {len(song_dirs)} songs...")
-    results = [["Song_Name", "Librosa_Global_BPM", "Librosa_Min_Drift", "Librosa_Max_Drift"]]
+    print(f"Running Librosa & Human Ground Truth extraction across {len(song_dirs)} songs...")
+    results = [["Song_Name", "Human_Ground_Truth_BPM", "Librosa_Global_BPM", "Librosa_Min_Drift", "Librosa_Max_Drift"]]
     
     for idx, song_dir in enumerate(song_dirs):
         song_name = os.path.basename(song_dir)
         audio_path = find_audio_file(song_dir)
+        sm_path = find_sm_file(song_dir)
+        
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
         y, sr = librosa.load(audio_path, sr=None)
         
-        # Global
+        # Human
+        human_bpm = extract_human_bpm_from_sm(sm_path)
+        
+        # Global Math
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
         val = tempo[0] if isinstance(tempo, np.ndarray) else float(tempo)
         global_bpm = round(float(val), 2)
@@ -54,9 +79,9 @@ def run_librosa_batch(song_dirs: list, out_csv: str):
         dyn, _ = librosa.beat.beat_track(y=y, sr=sr, aggregate=None)
         min_t, max_t = float(np.min(dyn)), float(np.max(dyn)) if len(dyn)>0 else (0.0, 0.0)
         
-        results.append([song_name, global_bpm, round(min_t, 2), round(max_t, 2)])
+        results.append([song_name, human_bpm, global_bpm, round(min_t, 2), round(max_t, 2)])
         
-    with open(out_csv, "w", newline="") as f:
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
         csv.writer(f).writerows(results)
     print(f"Saved: {out_csv}")
 
@@ -118,7 +143,7 @@ def run_qwen_batch(song_dirs: list, out_csv: str):
         inputs = processor(text=text, audios=[y], sampling_rate=sr, return_tensors="pt").to(model.device)
         
         with torch.no_grad():
-            out = model.generate(**inputs, max_new_tokens=16, temperature=0.1, do_sample=False)
+            out = model.generate(**inputs, max_new_tokens=16, temperature=0.1, do_sample=False, use_cache=False)
         ans = processor.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
         
         results.append([song_name, ans])
@@ -213,6 +238,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_dir", required=True, help="Path to Fraxtil dataset dir")
     parser.add_argument("--model", choices=list(MODEL_ROUTES.keys()), required=True)
+    parser.add_argument("--timestamp", default="", help="Optional string timestamp to append to filenames")
     args = parser.parse_args()
     
     if not os.path.exists(args.batch_dir):
@@ -222,16 +248,28 @@ def main():
     # Convert --batch_dir to absolute immediately so model imports don't break relative paths when they chdir internally!
     abs_batch_dir = os.path.abspath(args.batch_dir)
 
-    song_dirs = sorted([
-        os.path.join(abs_batch_dir, d) for d in os.listdir(abs_batch_dir)
-        if os.path.isdir(os.path.join(abs_batch_dir, d)) and not d.startswith("_")
-    ])
+    print("Spidering dataset folders recursively...", flush=True)
+    
+    song_dirs = []
+    # Force recursive Spidering for jagged nested Beatmap Packs
+    for root_dir, list_dirs, list_files in os.walk(abs_batch_dir):
+        # Quickly skip macOS junk metadata
+        if os.path.basename(root_dir).startswith("_"):
+            continue
+            
+        # Is there at least one valid audio file explicitly in this sub-folder?
+        has_audio = any(f.lower().endswith(('.ogg', '.mp3', '.wav')) and not f.startswith("._") for f in list_files)
+        if has_audio:
+            song_dirs.append(root_dir)
+
+    song_dirs = sorted(list(set(song_dirs)))
 
     print("\n" + SEP)
     print(f"🎵  BATCH BPM VERIFICATION: {args.model.upper()}")
     print(SEP + "\n")
 
-    out_csv = os.path.abspath(os.path.join("onsetdetection", f"BPM_Estimates_{args.model.upper()}.csv"))
+    timestamp_suffix = f"_{args.timestamp}" if args.timestamp else ""
+    out_csv = os.path.abspath(os.path.join("onsetdetection", f"BPM_Estimates_{args.model.upper()}{timestamp_suffix}.csv"))
     exec_func = MODEL_ROUTES[args.model]
     exec_func(song_dirs, out_csv)
     
