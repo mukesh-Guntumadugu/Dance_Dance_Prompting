@@ -16,16 +16,16 @@ export BENCHMARK_PROJ=/data/mg546924/llm_beatmap_generator
 export LD_LIBRARY_PATH=/data/mg546924/conda_envs/deepresonance_env/lib/python3.10/site-packages/nvidia/cusparse/lib:/data/mg546924/conda_envs/deepresonance_env/lib:$LD_LIBRARY_PATH
 
 echo ""
-echo "▶️ [1/5] Extracting Mathematical Ground Truth (Librosa)"
-/data/mg546924/conda_envs/deepresonance_env/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model librosa
+# echo "▶️ [1/5] Extracting Mathematical Ground Truth (Librosa)"
+# /data/mg546924/conda_envs/deepresonance_env/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model librosa
 
 echo ""
-echo "▶️ [2/5] Benchmarking Qwen2-Audio"
-/data/mg546924/conda_envs/qwenenv/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model qwen
+# echo "▶️ [2/5] Benchmarking Qwen2-Audio"
+# /data/mg546924/conda_envs/qwenenv/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model qwen
 
 echo ""
-echo "▶️ [3/5] Benchmarking MuMu-LLaMA"
-/home/mg546924/.conda/envs/mumullama/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model mumu
+# echo "▶️ [3/5] Benchmarking MuMu-LLaMA"
+# /home/mg546924/.conda/envs/mumullama/bin/python onsetdetection/verify_model_bpm.py --batch_dir "$DATASET_DIR" --model mumu
 
 echo ""
 echo "▶️ [4/5] Benchmarking DeepResonance"

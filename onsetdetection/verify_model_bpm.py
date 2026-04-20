@@ -231,7 +231,7 @@ def main():
     print(f"🎵  BATCH BPM VERIFICATION: {args.model.upper()}")
     print(SEP + "\n")
 
-    out_csv = os.path.join("onsetdetection", f"BPM_Estimates_{args.model.upper()}.csv")
+    out_csv = os.path.abspath(os.path.join("onsetdetection", f"BPM_Estimates_{args.model.upper()}.csv"))
     exec_func = MODEL_ROUTES[args.model]
     exec_func(song_dirs, out_csv)
     
