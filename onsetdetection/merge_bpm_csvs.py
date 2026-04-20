@@ -9,12 +9,17 @@ import os
 import csv
 import argparse
 
+# Always resolve paths relative to the project root, not the calling shell CWD
+ROOT = "/data/mg546924/llm_beatmap_generator"
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--timestamp", default="", help="Optional timestamp to append to filenames")
     args = parser.parse_args()
 
-    base_dir = "onsetdetection"
+    # ⚠️  Use absolute path anchored to ROOT — never the shell's CWD
+    base_dir = os.path.join(ROOT, "onsetdetection")
+    print(f"Scanning for CSVs in: {base_dir}", flush=True)
     models = ["LIBROSA", "QWEN", "MUMU", "DEEPRESONANCE", "FLAMINGO"]
     
     song_data = {}

@@ -65,21 +65,26 @@ def run_librosa_batch(song_dirs: list, out_csv: str):
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
-        y, sr = librosa.load(audio_path, sr=None)
-        
-        # Human
-        human_bpm = extract_human_bpm_from_sm(sm_path)
-        
-        # Global Math
-        tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
-        val = tempo[0] if isinstance(tempo, np.ndarray) else float(tempo)
-        global_bpm = round(float(val), 2)
-        
-        # Drift bounds
-        dyn, _ = librosa.beat.beat_track(y=y, sr=sr, aggregate=None)
-        min_t, max_t = float(np.min(dyn)), float(np.max(dyn)) if len(dyn)>0 else (0.0, 0.0)
-        
-        results.append([song_name, human_bpm, global_bpm, round(min_t, 2), round(max_t, 2)])
+        try:
+            y, sr = librosa.load(audio_path, sr=None)
+            
+            # Human
+            human_bpm = extract_human_bpm_from_sm(sm_path)
+            
+            # Global Math
+            tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
+            val = tempo[0] if isinstance(tempo, np.ndarray) else float(tempo)
+            global_bpm = round(float(val), 2)
+            
+            # Drift bounds
+            dyn, _ = librosa.beat.beat_track(y=y, sr=sr, aggregate=None)
+            min_t, max_t = float(np.min(dyn)), float(np.max(dyn)) if len(dyn)>0 else (0.0, 0.0)
+            
+            results.append([song_name, human_bpm, global_bpm, round(min_t, 2), round(max_t, 2)])
+        except Exception as e:
+            print(f"  -> WARNING: Corrupt Audio ({e}). Skipping.")
+            human_bpm = extract_human_bpm_from_sm(sm_path)
+            results.append([song_name, human_bpm, "ERROR: Corrupt", "0.0", "0.0"])
         
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
         csv.writer(f).writerows(results)
@@ -102,14 +107,18 @@ def run_mumu_batch(song_dirs: list, out_csv: str):
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
-        y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
-        
-        with torch.no_grad():
-            with torch.amp.autocast('cuda' if torch.cuda.is_available() else 'cpu'):
-                out = model.generate(prompts=[formatted], audios=y, max_gen_len=16, temperature=0.1)
-        
-        ans = str(out[0]).strip() if isinstance(out, list) else str(out).strip()
-        results.append([song_name, ans])
+        try:
+            y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
+            
+            with torch.no_grad():
+                with torch.amp.autocast('cuda' if torch.cuda.is_available() else 'cpu'):
+                    out = model.generate(prompts=[formatted], audios=y, max_gen_len=16, temperature=0.1)
+            
+            ans = str(out[0]).strip() if isinstance(out, list) else str(out).strip()
+            results.append([song_name, ans])
+        except Exception as e:
+            print(f"  -> WARNING: Failed processing audio ({e}). Skipping.")
+            results.append([song_name, "ERROR: Corrupt Audio"])
         
     with open(out_csv, "w", newline="") as f:
         csv.writer(f).writerows(results)
@@ -133,20 +142,24 @@ def run_qwen_batch(song_dirs: list, out_csv: str):
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
-        y, sr = librosa.load(audio_path, sr=processor.feature_extractor.sampling_rate, duration=30.0)
-        
-        messages = [
-            {"role": "system", "content": "You are a concise musical assistant."},
-            {"role": "user", "content": [{"type": "audio", "audio_url": "dummy"}, {"type": "text", "text": PROMPT}]}
-        ]
-        text = processor.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
-        inputs = processor(text=text, audios=[y], sampling_rate=sr, return_tensors="pt").to(model.device)
-        
-        with torch.no_grad():
-            out = model.generate(**inputs, max_new_tokens=16, temperature=0.1, do_sample=False, use_cache=False)
-        ans = processor.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
-        
-        results.append([song_name, ans])
+        try:
+            y, sr = librosa.load(audio_path, sr=processor.feature_extractor.sampling_rate, duration=30.0)
+            
+            messages = [
+                {"role": "system", "content": "You are a concise musical assistant."},
+                {"role": "user", "content": [{"type": "audio", "audio_url": "dummy"}, {"type": "text", "text": PROMPT}]}
+            ]
+            text = processor.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
+            inputs = processor(text=text, audios=[y], sampling_rate=sr, return_tensors="pt").to(model.device)
+            
+            with torch.no_grad():
+                out = model.generate(**inputs, max_new_tokens=16, temperature=0.1, do_sample=False, use_cache=False)
+            ans = processor.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+            
+            results.append([song_name, ans])
+        except Exception as e:
+            print(f"  -> WARNING: Failed processing audio ({e}). Skipping.")
+            results.append([song_name, "ERROR: Corrupt Audio"])
         
     with open(out_csv, "w", newline="") as f:
         csv.writer(f).writerows(results)
@@ -165,29 +178,33 @@ def run_deepresonance_batch(song_dirs: list, out_csv: str):
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
-        y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
-        
-        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-            sf.write(tmp.name, y, sr)
-            tmp_path = tmp.name
-            
-        inputs = {
-            "inputs": ["<Audio>"],
-            "instructions": [PROMPT],
-            "mm_names": [["audio"]],
-            "mm_paths": [[os.path.basename(tmp_path)]],
-            "mm_root_path": os.path.dirname(tmp_path),
-            "outputs": [""],
-        }
-        
         try:
-            resp = model.predict(inputs, max_tgt_len=16, top_p=1.0, temperature=0.1, stops_id=[[835]])
-            ans = str(resp[0]).strip() if isinstance(resp, list) and resp else str(resp).strip()
-            results.append([song_name, ans])
+            y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
+            
+            with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+                sf.write(tmp.name, y, sr)
+                tmp_path = tmp.name
+                
+            inputs = {
+                "inputs": ["<Audio>"],
+                "instructions": [PROMPT],
+                "mm_names": [["audio"]],
+                "mm_paths": [[os.path.basename(tmp_path)]],
+                "mm_root_path": os.path.dirname(tmp_path),
+                "outputs": [""],
+            }
+            
+            try:
+                resp = model.predict(inputs, max_tgt_len=16, top_p=1.0, temperature=0.1, stops_id=[[835]])
+                ans = str(resp[0]).strip() if isinstance(resp, list) and resp else str(resp).strip()
+                results.append([song_name, ans])
+            except Exception as e:
+                results.append([song_name, f"ERROR: {e}"])
+            finally:
+                os.unlink(tmp_path)
         except Exception as e:
-            results.append([song_name, f"ERROR: {e}"])
-        finally:
-            os.unlink(tmp_path)
+            print(f"  -> WARNING: Failed processing audio ({e}). Skipping.")
+            results.append([song_name, "ERROR: Corrupt Audio"])
             
     with open(out_csv, "w", newline="") as f:
         csv.writer(f).writerows(results)
@@ -207,18 +224,22 @@ def run_flamingo_batch(song_dirs: list, out_csv: str):
         if not audio_path: continue
         
         print(f" [{idx+1}/{len(song_dirs)}] {song_name}")
-        y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
-        
-        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-            sf.write(tmp.name, y, sr)
-            tmp_path = tmp.name
-
-        fl_prompt = f"<Audio>\n{PROMPT}"
         try:
-            ans = generate_beatmap_with_flamingo(tmp_path, fl_prompt)
-            results.append([song_name, str(ans).strip()])
-        finally:
-            os.unlink(tmp_path)
+            y, sr = librosa.load(audio_path, sr=24000, duration=30.0)
+            
+            with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+                sf.write(tmp.name, y, sr)
+                tmp_path = tmp.name
+
+            fl_prompt = f"<Audio>\n{PROMPT}"
+            try:
+                ans = generate_beatmap_with_flamingo(tmp_path, fl_prompt)
+                results.append([song_name, str(ans).strip()])
+            finally:
+                os.unlink(tmp_path)
+        except Exception as e:
+            print(f"  -> WARNING: Failed processing audio ({e}). Skipping.")
+            results.append([song_name, "ERROR: Corrupt Audio"])
             
     with open(out_csv, "w", newline="") as f:
         csv.writer(f).writerows(results)
@@ -269,9 +290,22 @@ def main():
     print(SEP + "\n")
 
     timestamp_suffix = f"_{args.timestamp}" if args.timestamp else ""
-    out_csv = os.path.abspath(os.path.join("onsetdetection", f"BPM_Estimates_{args.model.upper()}{timestamp_suffix}.csv"))
+    # ⚠️  Anchor to ROOT so CWD changes inside model loaders don't break the path
+    out_csv = os.path.join(ROOT, "onsetdetection", f"BPM_Estimates_{args.model.upper()}{timestamp_suffix}.csv")
+    print(f"📁 Output CSV will be written to: {out_csv}", flush=True)
+
     exec_func = MODEL_ROUTES[args.model]
-    exec_func(song_dirs, out_csv)
+    try:
+        exec_func(song_dirs, out_csv)
+        if os.path.exists(out_csv):
+            print(f"✅ CSV confirmed on disk: {out_csv}", flush=True)
+        else:
+            print(f"❌ CSV NOT FOUND after run — model function may have crashed silently: {out_csv}", flush=True)
+    except Exception as e:
+        import traceback
+        print(f"\n❌ FATAL ERROR running model '{args.model}':", flush=True)
+        traceback.print_exc()
+        print("Skipping CSV write for this model.", flush=True)
     
 if __name__ == "__main__":
     main()
