@@ -219,9 +219,12 @@ def main():
         print(f"Dataset dir not found: {args.batch_dir}")
         return
 
+    # Convert --batch_dir to absolute immediately so model imports don't break relative paths when they chdir internally!
+    abs_batch_dir = os.path.abspath(args.batch_dir)
+
     song_dirs = sorted([
-        os.path.join(args.batch_dir, d) for d in os.listdir(args.batch_dir)
-        if os.path.isdir(os.path.join(args.batch_dir, d)) and not d.startswith("_")
+        os.path.join(abs_batch_dir, d) for d in os.listdir(abs_batch_dir)
+        if os.path.isdir(os.path.join(abs_batch_dir, d)) and not d.startswith("_")
     ])
 
     print("\n" + SEP)
