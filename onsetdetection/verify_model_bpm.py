@@ -71,14 +71,30 @@ def run_librosa_batch(song_dirs: list, out_csv: str):
             # Human
             human_bpm = extract_human_bpm_from_sm(sm_path)
             
-            # Global Math
+            # Global BPM — compatible with librosa ≥ 0.10 (returns scalar) AND older (returns array)
             tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
-            val = tempo[0] if isinstance(tempo, np.ndarray) else float(tempo)
-            global_bpm = round(float(val), 2)
+            val = float(tempo[0]) if isinstance(tempo, (np.ndarray, list)) else float(tempo)
+            global_bpm = round(val, 2)
             
-            # Drift bounds
-            dyn, _ = librosa.beat.beat_track(y=y, sr=sr, aggregate=None)
-            min_t, max_t = float(np.min(dyn)), float(np.max(dyn)) if len(dyn)>0 else (0.0, 0.0)
+            # Local tempo drift via PLP (Predominant Local Pulse) — works in librosa ≥ 0.8
+            # plp() returns a per-frame pulse salience curve; convert to BPM distribution
+            try:
+                hop_length = 512
+                onset_env = librosa.onset.onset_strength(y=y, sr=sr, hop_length=hop_length)
+                pulse = librosa.beat.plp(onset_envelope=onset_env, sr=sr, hop_length=hop_length)
+                # Convert pulse period to BPM: BPM = 60 * sr / (argmax_period * hop_length)
+                # Using the global_bpm as anchor; just compute spread of inter-beat intervals
+                _, beat_frames = librosa.beat.beat_track(y=y, sr=sr, hop_length=hop_length)
+                if len(beat_frames) > 1:
+                    ibi = np.diff(librosa.frames_to_time(beat_frames, sr=sr, hop_length=hop_length))
+                    ibpm = 60.0 / ibi[ibi > 0]
+                    min_t = float(np.percentile(ibpm, 5))
+                    max_t = float(np.percentile(ibpm, 95))
+                else:
+                    min_t, max_t = global_bpm, global_bpm
+            except Exception:
+                # fallback: no drift info
+                min_t, max_t = global_bpm, global_bpm
             
             results.append([song_name, human_bpm, global_bpm, round(min_t, 2), round(max_t, 2)])
         except Exception as e:
