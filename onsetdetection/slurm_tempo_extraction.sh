@@ -2,7 +2,7 @@
 #SBATCH --job-name=tempo_extraction
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:0
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=16G
 #SBATCH --time=04:00:00
 #SBATCH --output=logs/tempo_extraction_%j.out
