@@ -1,32 +1,86 @@
 import re
 from pathlib import Path
 
+# ── Variable BPM support ────────────────────────────────────────────────────────
+
+def parse_bpm_changes(bpms_str: str) -> list:
+    """
+    Parses raw #BPMS string into sorted list of (beat, bpm) tuples.
+    Handles single and multi-BPM songs.
+    e.g. '0.000=181.685,304.000=90.843,311.000=181.685'
+         → [(0.0, 181.685), (304.0, 90.843), (311.0, 181.685)]
+    """
+    changes = []
+    for entry in bpms_str.split(','):
+        entry = entry.strip()
+        if '=' not in entry:
+            continue
+        beat_s, bpm_s = entry.split('=', 1)
+        try:
+            changes.append((float(beat_s.strip()), float(bpm_s.strip())))
+        except ValueError:
+            continue
+    return sorted(changes, key=lambda x: x[0])
+
+
+def beat_to_time(beat: float, bpm_changes: list, offset: float) -> float:
+    """
+    Converts a beat number → real time (seconds), accounting for all BPM
+    changes. Works correctly for both constant-BPM and variable-BPM songs.
+
+    Args:
+        beat:        Absolute beat index from the start of the song.
+        bpm_changes: Sorted list of (beat, bpm) pairs from parse_bpm_changes().
+        offset:      #OFFSET value in seconds.
+
+    Returns:
+        Time in seconds corresponding to that beat.
+    """
+    if not bpm_changes:
+        return offset
+
+    time = offset
+    prev_beat, prev_bpm = bpm_changes[0]
+
+    for next_beat, next_bpm in bpm_changes[1:]:
+        if beat <= next_beat:
+            break
+        # Accumulate time for the completed segment
+        time += (next_beat - prev_beat) * (60.0 / prev_bpm)
+        prev_beat, prev_bpm = next_beat, next_bpm
+
+    # Add remaining beats in the current BPM segment
+    time += (beat - prev_beat) * (60.0 / prev_bpm)
+    return time
+
+
 def parse_ssc_file(ssc_path, target_difficulty="Easy", target_stepstype="dance-single"):
     """
     Parses SSC file to extract notes for a specific chart.
     Returns a list of (Time, Frame, NoteString).
+    Fully supports variable-BPM songs (multiple #BPMS entries).
     """
     with open(ssc_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # 1. Extract Global Tags
     offset_match = re.search(r"#OFFSET:([-0-9.]+);", content)
-    bpms_match = re.search(r"#BPMS:(.+?);", content)
+    bpms_match   = re.search(r"#BPMS:(.*?);", content, re.DOTALL)
     
     if not offset_match or not bpms_match:
         raise ValueError("Could not find OFFSET or BPMS")
         
     offset = float(offset_match.group(1))
     
-    # We assume constant BPM for now based on user file (0.000=180.000)
-    # A full parser would handle changes, but let's stick to the prompt's file.
-    bpms_str = bpms_match.group(1)
-    # simple parse: "0.000=180.000"
-    first_bpm = float(bpms_str.split('=')[1])
-    seconds_per_beat = 60.0 / first_bpm
-    
+    # ✅ Full variable-BPM parsing (replaces the old single-BPM assumption)
+    bpm_changes = parse_bpm_changes(bpms_match.group(1))
+    if not bpm_changes:
+        raise ValueError("Could not parse any BPM entries")
+
     print(f"Global Offset: {offset}")
-    print(f"BPM: {first_bpm}")
+    print(f"BPM zones    : {len(bpm_changes)}")
+    for beat, bpm in bpm_changes:
+        print(f"  beat {beat:>8.2f} → {bpm} BPM")
     
     # 2. Find the specific Chart
     # We split by #NOTEDATA:; to separate charts
@@ -79,9 +133,8 @@ def parse_ssc_file(ssc_path, target_difficulty="Easy", target_stepstype="dance-s
             beat_within_measure = (i / num_rows) * beats_per_measure
             total_beat = (measure_idx * beats_per_measure) + beat_within_measure
             
-            # Calculate Time
-            # Time = Offset + (TotalBeat * SecondsPerBeat)
-            time_sec = offset + (total_beat * seconds_per_beat)
+            # Calculate Time using variable-BPM-aware converter
+            time_sec = beat_to_time(total_beat, bpm_changes, offset)
             
             # Align to Frame
             frame_idx = int(round(time_sec * FRAME_RATE))
