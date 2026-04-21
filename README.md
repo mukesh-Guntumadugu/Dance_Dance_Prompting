@@ -57,7 +57,7 @@ Given a collection of songs from Fraxtil's Arrow Arrangements (20 tracks), autom
 ---
 
 ## ❌ Models Tried But Could Not Use
- ###  DeepSeek (DeepSeek-V3 ) (Nope not as audio as input need to find WIP )
+### ✗ DeepSeek (DeepSeek-V3 ) (Nope not as audio as input need to find WIP )
 - **Why not:** DeepSeek has an audio as input, so we are giving it a shot.
 - **Status:** trying WIP for music/audio tasks
 - **Note:** It looks like some blogs are saying interesting things, we are WIP
