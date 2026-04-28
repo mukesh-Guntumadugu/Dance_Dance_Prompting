@@ -4,7 +4,7 @@
 #SBATCH --error=logs/train_hierarchical_qwen_%j.log
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24
+#SBATCH --cpus-per-task=8
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:1
 
@@ -23,6 +23,7 @@ echo "=============================================="
 export PYTHONNOUSERSITE=1
 export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export OMP_NUM_THREADS=8
 
 # Verify the required inputs exist before starting
 echo ""
