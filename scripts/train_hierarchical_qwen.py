@@ -186,6 +186,10 @@ def main():
         device_map="auto"
     )
     
+    import gc
+    gc.collect()
+    torch.cuda.empty_cache()
+
     # RESIZE EMBEDDINGS BEFORE PEFT
     print("Resizing token embeddings...")
     model.resize_token_embeddings(after_len)
