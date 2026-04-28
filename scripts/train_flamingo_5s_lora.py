@@ -14,10 +14,8 @@ import csv as csv_mod
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 from transformers import (
-    AutoConfig,
-    AutoModel,
-    AutoProcessor,
-    AutoTokenizer,
+    AudioFlamingo3Processor,
+    AudioFlamingo3ForConditionalGeneration,
 )
 from peft import LoraConfig, get_peft_model
 from huggingface_hub import snapshot_download
@@ -52,28 +50,19 @@ def main():
         print(f"✅ Weights already at {LOCAL_MODEL_PATH}, skipping download.")
 
     # ── Step 2: Load tokenizer + model ──
+    # Use AudioFlamingo3 classes directly — AutoModel doesn't know this architecture
     print("Loading tokenizer...")
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(LOCAL_MODEL_PATH, trust_remote_code=True)
-    except Exception as e:
-        print(f"AutoTokenizer failed ({e}), falling back to AutoProcessor...")
-        tokenizer = AutoProcessor.from_pretrained(LOCAL_MODEL_PATH, trust_remote_code=True)
+    tokenizer = AudioFlamingo3Processor.from_pretrained(
+        LOCAL_MODEL_PATH, trust_remote_code=True
+    )
 
-    if not hasattr(tokenizer, 'pad_token') or tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-
-    # Load model directly in bfloat16 without 4-bit quantization 
-    # (custom architecture lacks PyTorch set_submodule needed by transformers quantization)
+    # Load model directly in bfloat16
     print("Loading Music-Flamingo in bfloat16...")
-    # Must explicitly load config with trust_remote_code first so the custom
-    # audioflamingo3 architecture gets registered before AutoModel attempts loading
-    config = AutoConfig.from_pretrained(LOCAL_MODEL_PATH, trust_remote_code=True)
-    model = AutoModel.from_pretrained(
+    model = AudioFlamingo3ForConditionalGeneration.from_pretrained(
         LOCAL_MODEL_PATH,
-        config=config,
-        device_map="auto",
-        torch_dtype=torch.bfloat16,
         trust_remote_code=True,
+        torch_dtype=torch.bfloat16,
+        device_map="auto"
     )
 
     model.gradient_checkpointing_enable()
