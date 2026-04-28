@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 import os
+import sys
+sys.modules['deepspeed'] = None
+
 import torch
 import librosa
 from datasets import load_dataset
