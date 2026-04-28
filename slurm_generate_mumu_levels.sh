@@ -50,7 +50,7 @@ echo "Generating Level for: Mecha-Tribe Assault"
 
 echo ""
 echo "=============================================="
-echo "✅ Level Generation Complete!"
+echo "[OK] Level Generation Complete!"
 echo "   End : $(date)"
 echo "   Output beatmaps are in 'outputs/' directory."
 echo "=============================================="
