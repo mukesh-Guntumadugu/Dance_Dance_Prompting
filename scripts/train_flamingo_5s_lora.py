@@ -13,10 +13,9 @@ import librosa
 import csv as csv_mod
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
-from transformers import (
-    AutoModelForCausalLM,
-    AutoProcessor,
-    AutoConfig,
+from transformers import (  # type: ignore
+    AudioFlamingo3ForConditionalGeneration,
+    AudioFlamingo3Processor,
 )
 from peft import LoraConfig, get_peft_model
 from huggingface_hub import snapshot_download
@@ -55,11 +54,11 @@ def main():
 
     # ── Step 2: Load processor + model from Hub ID (uses HF_HOME cache, no internet needed) ──
     print("Loading processor...")
-    tokenizer = AutoProcessor.from_pretrained(HF_MODEL_ID, trust_remote_code=True)
+    tokenizer = AudioFlamingo3Processor.from_pretrained(HF_MODEL_ID, trust_remote_code=True)
 
     # Load model in bfloat16
     print("Loading Music-Flamingo in bfloat16...")
-    model = AutoModelForCausalLM.from_pretrained(
+    model = AudioFlamingo3ForConditionalGeneration.from_pretrained(
         HF_MODEL_ID,
         trust_remote_code=True,
         torch_dtype=torch.bfloat16,
