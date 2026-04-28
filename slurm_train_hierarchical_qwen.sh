@@ -21,6 +21,7 @@ echo "  Start       : $(date)"
 echo "  Strategy    : Cluster-Token SFT (Qwen Director)"
 echo "=============================================="
 
+export PYTHONUNBUFFERED=1
 export PYTHONNOUSERSITE=1
 export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

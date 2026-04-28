@@ -17,9 +17,8 @@ from transformers import (
     AutoModel,
     AutoProcessor,
     AutoTokenizer,
-    BitsAndBytesConfig,
 )
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 from huggingface_hub import snapshot_download
 
 # ── Paths ──
@@ -73,7 +72,6 @@ def main():
     )
 
     model.gradient_checkpointing_enable()
-    model = prepare_model_for_kbit_training(model)
 
     print("Injecting LoRA adapters (r=16)...")
     peft_config = LoraConfig(
