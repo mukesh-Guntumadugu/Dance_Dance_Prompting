@@ -27,7 +27,7 @@ echo "=============================================="
 # Song 1: Bad Ketchup
 echo ""
 echo "Generating Level for: Bad Ketchup"
-/data/mg546924/conda_envs/qwenenv/bin/python scripts/generate_hierarchical_beatmap.py \
+/data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/Fraxtil's Arrow Arrangements/Bad Ketchup/Bad Ketchup.ogg" \
     --bpm 180.0 \
     --out "outputs/mumu_generated_Bad_Ketchup.ssc"
@@ -35,7 +35,7 @@ echo "Generating Level for: Bad Ketchup"
 # Song 2: Springtime
 echo ""
 echo "Generating Level for: Springtime"
-/data/mg546924/conda_envs/qwenenv/bin/python scripts/generate_hierarchical_beatmap.py \
+/data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/Springtime/Kommisar - Springtime.mp3" \
     --bpm 180.0 \
     --out "outputs/mumu_generated_Springtime.ssc"
@@ -43,7 +43,7 @@ echo "Generating Level for: Springtime"
 # Song 3: Mecha-Tribe Assault
 echo ""
 echo "Generating Level for: Mecha-Tribe Assault"
-/data/mg546924/conda_envs/qwenenv/bin/python scripts/generate_hierarchical_beatmap.py \
+/data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/MechaTribe Assault/Mecha-Tribe Assault.ogg" \
     --bpm 180.0 \
     --out "outputs/mumu_generated_MechaTribe.ssc"
