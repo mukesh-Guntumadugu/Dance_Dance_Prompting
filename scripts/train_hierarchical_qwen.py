@@ -170,18 +170,11 @@ def main():
                 
             return batch
 
-    # 3. Model Loading with QLoRA
-    print("Loading Base Model in 4-bit...")
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16
-    )
-    
+    # 3. Model Loading (Pure bfloat16, no 4-bit to prevent resize bugs)
+    print("Loading Base Model in bfloat16...")
     model = Qwen2AudioForConditionalGeneration.from_pretrained(
         MODEL_ID,
-        quantization_config=bnb_config,
+        torch_dtype=torch.bfloat16,
         device_map="auto"
     )
     
@@ -195,7 +188,6 @@ def main():
     
     # Enable gradient checkpointing
     model.gradient_checkpointing_enable()
-    model = prepare_model_for_kbit_training(model)
     
     # 4. LoRA Adapter Config
     print("Injecting LoRA adapters...")
