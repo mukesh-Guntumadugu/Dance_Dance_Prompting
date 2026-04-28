@@ -2,6 +2,9 @@
 import os
 import sys
 
+# Prevent accelerate from triggering DeepSpeed's buggy nvcc compiler check
+sys.modules['deepspeed'] = None
+
 import torch
 import librosa
 from datasets import load_dataset
