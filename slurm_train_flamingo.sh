@@ -19,6 +19,8 @@ echo "Start       : $(date)"
 echo "=============================================="
 
 export PYTHONNOUSERSITE=1
+export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
+export DS_SKIP_CUDA_CHECK=1
 
 /data/mg546924/conda_envs/deepresonance_env/bin/python3.10 scripts/train_flamingo_5s_lora.py
 

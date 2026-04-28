@@ -23,6 +23,8 @@ echo "=============================================="
 export PYTHONNOUSERSITE=1
 export PYTHONPATH="/data/mg546924/llm_beatmap_generator:$PYTHONPATH"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
+export DS_SKIP_CUDA_CHECK=1
 
 # Verify the required inputs exist before starting
 echo ""
