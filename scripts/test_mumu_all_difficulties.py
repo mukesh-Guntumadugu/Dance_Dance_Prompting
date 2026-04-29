@@ -159,7 +159,19 @@ def main():
         knn_dir="/data/mg546924/llm_beatmap_generator/MuMu-LLaMA/ckpts",
         stage=3,
     )
-    model.llama.resize_token_embeddings(len(tokenizer))
+    # MuMu uses a custom Transformer — resize embeddings manually
+    import torch.nn as nn
+    new_vocab = len(tokenizer)
+    old_emb = model.llama.tok_embeddings
+    old_size, dim = old_emb.weight.shape
+    if new_vocab != old_size:
+        new_emb = nn.Embedding(new_vocab, dim)
+        new_emb.weight.data[:old_size] = old_emb.weight.data
+        model.llama.tok_embeddings = new_emb
+        if hasattr(model.llama, 'output') and hasattr(model.llama.output, 'weight'):
+            new_out = nn.Linear(dim, new_vocab, bias=False)
+            new_out.weight.data[:old_size] = model.llama.output.weight.data
+            model.llama.output = new_out
 
     # Load latest checkpoint
     ckpts = sorted(glob.glob(os.path.join(MODELS_DIR, "checkpoint_epoch*.pth")))
