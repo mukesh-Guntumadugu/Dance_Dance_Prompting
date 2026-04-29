@@ -102,10 +102,7 @@ def main():
                 text=text,
                 audio=[y],
                 sampling_rate=processor.feature_extractor.sampling_rate,
-                return_tensors="pt",
-                truncation=True,
-                max_length=MAX_SEQ_LENGTH,
-                padding=False,
+                return_tensors="pt"
             )
             
             label = inputs["input_ids"].clone()
