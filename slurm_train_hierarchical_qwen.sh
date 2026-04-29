@@ -29,6 +29,12 @@ export OMP_NUM_THREADS=8
 export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
 export DS_SKIP_CUDA_CHECK=1
 
+# CRITICAL FIX for the 0/480 Hang:
+# PyTorch is seeing all GPUs on the node and trying to use DataParallel (which is why 
+# the log shows `parallel_apply.py`). But SLURM only gave us access to 1 GPU.
+# This causes an infinite deadlock on the first forward pass.
+export CUDA_VISIBLE_DEVICES=0
+
 # Verify the required inputs exist before starting
 echo ""
 echo "── Pre-flight checks ──"
