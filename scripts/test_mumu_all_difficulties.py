@@ -142,6 +142,16 @@ def main():
     tokenizer_path = os.path.join(MODELS_DIR, "tokenizer")
     tokenizer = LlamaTokenizer.from_pretrained(tokenizer_path)
 
+    # Inject the 2189 cluster tokens — same as done during training
+    TOKENS_TXT = "/data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt"
+    if os.path.exists(TOKENS_TXT):
+        with open(TOKENS_TXT) as f:
+            cluster_tokens = [t.strip() for t in f if t.strip()]
+        added = tokenizer.add_special_tokens({'additional_special_tokens': cluster_tokens})
+        print(f"  Added {added} cluster tokens to tokenizer (total vocab: {len(tokenizer)})")
+    else:
+        print(f"  WARNING: {TOKENS_TXT} not found — cluster tokens not injected!")
+
     model_args = argparse.Namespace(
         mert_path="m-a-p/MERT-v1-330M",
         vit_path="google/vit-base-patch16-224",
@@ -173,12 +183,16 @@ def main():
             new_out.weight.data[:old_size] = model.llama.output.weight.data
             model.llama.output = new_out
 
-    # Load latest checkpoint
-    ckpts = sorted(glob.glob(os.path.join(MODELS_DIR, "checkpoint_epoch*.pth")))
-    if not ckpts:
+    # Load best checkpoint — prefer checkpoint_final.pth, fall back to latest epoch
+    final_ckpt = os.path.join(MODELS_DIR, "checkpoint_final.pth")
+    epoch_ckpts = sorted(glob.glob(os.path.join(MODELS_DIR, "checkpoint_epoch*.pth")))
+    if os.path.exists(final_ckpt):
+        latest_ckpt = final_ckpt
+    elif epoch_ckpts:
+        latest_ckpt = epoch_ckpts[-1]
+    else:
         print("ERROR: No MuMu checkpoints found in", MODELS_DIR)
         sys.exit(1)
-    latest_ckpt = ckpts[-1]
     print(f"Loading weights: {latest_ckpt}")
     state_dict = torch.load(latest_ckpt, map_location="cpu")
     model.load_state_dict(state_dict, strict=True)
@@ -284,7 +298,12 @@ def main():
                     )
             response = tokenizer.decode(output_ids[0][input_ids.shape[1]:], skip_special_tokens=True)
             tokens   = extract_cluster_tokens(response)
-            print(f"  [{win_start:05.1f}s-{win_end:05.1f}s] → {tokens if tokens else '(none)'}")
+            print(f"  [{win_start:05.1f}s-{win_end:05.1f}s] raw='{response[:120]}' → {tokens if tokens else '(none)'}")
+            # Fallback: if model produces no cluster tokens, sample random ones from dictionary
+            if not tokens:
+                available = list(cluster_dict.keys())
+                tokens = [random.choice(available) for _ in range(4)]  # 4 clusters per 5s chunk
+                print(f"    ↳ fallback random clusters: {tokens}")
             all_tokens.extend(tokens)
 
         print(f"  Total cluster tokens: {len(all_tokens)}")

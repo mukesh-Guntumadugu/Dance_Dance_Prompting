@@ -251,9 +251,9 @@ def main():
                 top_p=0.9,
             )
         input_length = inputs["input_ids"].shape[1]
-        response = processor.tokenizer.decode(output_ids[0][input_length:], skip_special_tokens=True)
+        response = processor.tokenizer.decode(output_ids[0][input_length:], skip_special_tokens=False)
         tokens   = extract_cluster_tokens(response)
-        print(f"  [{win_start:05.1f}s-{win_end:05.1f}s] → {tokens if tokens else '(none)'}")
+        print(f"  [{win_start:05.1f}s-{win_end:05.1f}s] raw='{response[:100].strip()}' → {tokens if tokens else '(none)'}")
         all_tokens.extend(tokens)
 
     print(f"\n  Total cluster tokens predicted: {len(all_tokens)}\n")
