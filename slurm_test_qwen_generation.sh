@@ -3,8 +3,6 @@
 #SBATCH --output=logs/qwen_gen_%j.log
 #SBATCH --error=logs/qwen_gen_%j.err
 #SBATCH --time=01:00:00
-#SBATCH --partition=defq
-#SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 
 # Initialize environment
@@ -20,9 +18,11 @@ echo "======================================"
 
 # Run the test script on a sample audio file from your dataset
 # Adjust the path to an audio file you want to generate a beatmap for
-AUDIO_FILE="/data/mg546924/llm_beatmap_generator/sft_dataset_pixabay/audio/487408_None_003.wav"
-OUTPUT_FILE="output/qwen_beatmaps/test_487408.ssc"
-BPM=130.0 # Default fallback, adjust if needed
+#AUDIO_FILE="/data/mg546924/llm_beatmap_generator/sft_dataset_pixabay/audio/487408_None_003.wav"
+
+AUDIO_FILE="/data/mg546924/llm_beatmap_generator/src/musicForBeatmap/Fraxtil's Arrow Arrangements/Bad Ketchup/Bad Ketchup.ogg"
+OUTPUT_FILE="output/qwen_beatmaps/test_bad_ketchup.ssc"
+BPM=124.0 # Default fallback, adjust if needed
 
 # Run generation for all difficulties using the specific qwen python environment
 /data/mg546924/conda_envs/qwenenv/bin/python scripts/test_qwen_all_difficulties.py \
