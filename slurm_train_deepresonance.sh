@@ -19,6 +19,7 @@ echo "Start       : $(date)"
 echo "=============================================="
 
 export PYTHONNOUSERSITE=1
+export CUDA_VISIBLE_DEVICES=0
 export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
 export DS_SKIP_CUDA_CHECK=1
 

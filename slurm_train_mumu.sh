@@ -19,6 +19,7 @@ echo "Start       : $(date)"
 echo "=============================================="
 
 export PYTHONNOUSERSITE=1
+export CUDA_VISIBLE_DEVICES=0
 
 /data/mg546924/conda_envs/qwenenv/bin/python scripts/train_mumu_5s_lora.py
 
