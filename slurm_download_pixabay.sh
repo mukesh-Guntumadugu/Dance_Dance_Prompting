@@ -7,6 +7,8 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
 #SBATCH --partition=defq
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 
 # ============================================================
 # Download 100 Pixabay songs into pixabay_music/ on the cluster

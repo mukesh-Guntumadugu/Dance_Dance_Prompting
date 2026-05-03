@@ -8,6 +8,8 @@
 #SBATCH --exclusive
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:A6000:1
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 
 set -e
 cd /data/mg546924/llm_beatmap_generator

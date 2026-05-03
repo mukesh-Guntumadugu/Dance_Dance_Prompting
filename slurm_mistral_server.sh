@@ -1,7 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=mistral_beatmap
 #SBATCH --partition=defq            # Default GPU partition on Ohio HPC
-#SBATCH --gres=gpu:A6000:1          # 1x A6000 GPU (48GB VRAM — fits Mistral-7B fp16 ~14GB)
+#SBATCH --gres=gpu:A6000:1
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL          # 1x A6000 GPU (48GB VRAM — fits Mistral-7B fp16 ~14GB)
 #SBATCH --cpus-per-task=8
 #SBATCH --time=12:00:00             # 12 hours max
 #SBATCH --output=logs/mistral_beatmap_%j.out

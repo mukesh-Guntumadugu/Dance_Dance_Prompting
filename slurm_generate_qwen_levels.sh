@@ -6,6 +6,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --partition=defq
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 #SBATCH --gres=gpu:1
 
 set -e

@@ -1,6 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=deepres_test
 #SBATCH --partition=defq
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 #SBATCH --gres=gpu:1
 #SBATCH --time=00:10:00
 #SBATCH --output=logs/deepres_test_%j.out

@@ -7,6 +7,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:A6000:1
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 
 # ============================================================
 # Full pipeline: Download 100 Pixabay songs → Librosa onsets

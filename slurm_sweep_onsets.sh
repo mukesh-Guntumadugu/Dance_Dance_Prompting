@@ -1,6 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=qwen_onset_sweep
 #SBATCH --partition=defq
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --time=12:00:00
