@@ -109,9 +109,12 @@ def main():
             elif padding > 0:
                 input2_ids = torch.cat([input2_ids, torch.zeros(padding, dtype=torch.int64)])
 
-            # Labels: mask the prompt portion
+            # Labels: mask the prompt portion using standard -100 ignore index
             labels = input2_ids.clone()
-            labels[:len(input1_ids)] = 0
+            labels[:len(input1_ids)] = -100
+            
+            # Also mask any padding (0) with -100
+            labels[labels == 0] = -100
 
             # Attention mask
             mask = input2_ids.ne(0)
@@ -130,9 +133,20 @@ def main():
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 
+    # ── CRITICAL: Enable LoRA Gradients ──
+    print("Enabling gradients for LoRA parameters...")
+    for name, param in model.named_parameters():
+        if "lora" in name.lower() or "tok_embeddings" in name.lower():
+            param.requires_grad = True
+        else:
+            param.requires_grad = False
+
+    trainable_params = [p for p in model.parameters() if p.requires_grad]
+    print(f"Trainable parameters: {sum(p.numel() for p in trainable_params):,}")
+
     # ── Optimizer ──
     optimizer = torch.optim.AdamW(
-        filter(lambda p: p.requires_grad, model.parameters()),
+        trainable_params,
         lr=LR, weight_decay=0.05
     )
 

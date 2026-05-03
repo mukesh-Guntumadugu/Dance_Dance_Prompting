@@ -120,11 +120,12 @@ def main():
             input_ids = tokens["input_ids"].squeeze(0)
             attention_mask = tokens["attention_mask"].squeeze(0)
 
-            # Labels: mask prompt portion
+            # Mask prompt and padding from labels
             prompt_text = f"### Human: {prompt}\n### Assistant: "
             prompt_len = len(self.tokenizer(prompt_text).input_ids)
             labels = input_ids.clone()
             labels[:prompt_len] = -100
+            labels[attention_mask == 0] = -100
 
             return {
                 "input_ids": input_ids,
@@ -144,7 +145,14 @@ def main():
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=0)
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 
-    # ── Optimizer (only trainable params) ──
+    # ── CRITICAL: Enable Gradients ──
+    print("Enabling gradients for trainable parameters...")
+    for name, param in model.named_parameters():
+        if "lora" in name.lower() or "llama_model" in name.lower():
+            param.requires_grad = True
+        else:
+            param.requires_grad = False
+
     trainable_params = [p for p in model.parameters() if p.requires_grad]
     print(f"Trainable parameters: {sum(p.numel() for p in trainable_params):,}")
     optimizer = torch.optim.AdamW(trainable_params, lr=LR, weight_decay=0.05)
@@ -223,7 +231,12 @@ def main():
             torch.save(model.state_dict(), ckpt_path)
             print(f"  💾 Saved: {ckpt_path}")
 
-    pass
+    # ── Save loss CSV ──
+    with open(os.path.join(OUTPUT_DIR, "deepresonance_training_log.csv"), "w", newline="") as f:
+        writer = csv_mod.writer(f)
+        writer.writerow(["epoch", "train_loss", "val_loss"])
+        for entry in loss_log:
+            writer.writerow([entry["epoch"], f"{entry['train_loss']:.4f}", f"{entry['val_loss']:.4f}"])
 
     print(f"\n✅ DeepResonance Training Complete! Final model saved to {OUTPUT_DIR}")
 
