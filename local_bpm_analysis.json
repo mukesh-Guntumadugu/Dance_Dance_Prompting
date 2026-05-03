@@ -1,0 +1,5733 @@
+{
+  "\u00c7\u00cc\u00c7\u03a9\u00c7\u00b5\u00c7\u00c3\u00c7\u2265\u00c7\u00b5\u00c7\u2211\u00c7\u03c0\u00c7\u00aa.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c7\u00cc\u00c7\u03a9\u00c7\u00b5\u00c7\u00c3\u00c7\u2265\u00c7\u00b5\u00c7\u2211\u00c7\u03c0\u00c7\u00aa/\u00c7\u00cc\u00c7\u03a9\u00c7\u00b5\u00c7\u00c3\u00c7\u2265\u00c7\u00b5\u00c7\u2211\u00c7\u03c0\u00c7\u00aa.sm",
+    "total_changes": 7,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 60.0,
+        "bpm": 142.28
+      },
+      {
+        "start_beat": 60.0,
+        "end_beat": 108.0,
+        "bpm": 144.0
+      },
+      {
+        "start_beat": 108.0,
+        "end_beat": 116.5,
+        "bpm": 138.0
+      },
+      {
+        "start_beat": 116.5,
+        "end_beat": 151.5,
+        "bpm": 143.0
+      },
+      {
+        "start_beat": 151.5,
+        "end_beat": 191.0,
+        "bpm": 141.0
+      },
+      {
+        "start_beat": 191.0,
+        "end_beat": 191.5,
+        "bpm": 140.58
+      },
+      {
+        "start_beat": 191.5,
+        "end_beat": 192.0,
+        "bpm": 142.28
+      },
+      {
+        "start_beat": 192.0,
+        "end_beat": null,
+        "bpm": 145.0
+      }
+    ]
+  },
+  "\u00c9A\u00c9\u00e5\u00c9Z\u00c9C\u00c9A.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c9A\u00c9\u00e5\u00c9Z\u00c9C\u00c9A/\u00c9A\u00c9\u00e5\u00c9Z\u00c9C\u00c9A.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 16.0,
+        "bpm": 75.255
+      },
+      {
+        "start_beat": 16.0,
+        "end_beat": null,
+        "bpm": 150.51
+      }
+    ]
+  },
+  "\u00e8\u2260\u00e8\u00f3\u00c7\u00c3\u00e3\u00db\u00ee\u00ed\u00c9v\u00c9\u00e4\u00c9Y\u00c9\u00ec.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00e8\u2260\u00e8\u00f3\u00c7\u00c3\u00e3\u00db\u00ee\u00ed\u00c9v\u00c9\u00e4\u00c9Y\u00c9\u00ec/\u00e8\u2260\u00e8\u00f3\u00c7\u00c3\u00e3\u00db\u00ee\u00ed\u00c9v\u00c9\u00e4\u00c9Y\u00c9\u00ec.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 105.0,
+        "bpm": 160.0
+      },
+      {
+        "start_beat": 105.0,
+        "end_beat": 129.0,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 129.0,
+        "end_beat": 137.0,
+        "bpm": 160.0
+      },
+      {
+        "start_beat": 137.0,
+        "end_beat": 140.0,
+        "bpm": 80.0
+      },
+      {
+        "start_beat": 140.0,
+        "end_beat": null,
+        "bpm": 160.0
+      }
+    ]
+  },
+  "Toward the future.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Toward the future/Toward the future.sm",
+    "total_changes": 7,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 12.0,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": 22.0,
+        "bpm": 95.0
+      },
+      {
+        "start_beat": 22.0,
+        "end_beat": 22.5,
+        "bpm": 85.0
+      },
+      {
+        "start_beat": 22.5,
+        "end_beat": 23.0,
+        "bpm": 70.0
+      },
+      {
+        "start_beat": 23.0,
+        "end_beat": 23.5,
+        "bpm": 65.0
+      },
+      {
+        "start_beat": 23.5,
+        "end_beat": 23.75,
+        "bpm": 55.0
+      },
+      {
+        "start_beat": 23.75,
+        "end_beat": 24.0,
+        "bpm": 45.0
+      },
+      {
+        "start_beat": 24.0,
+        "end_beat": null,
+        "bpm": 155.0
+      }
+    ]
+  },
+  "Love for PAPA.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Love for PAPA/Love for PAPA.sm",
+    "total_changes": 3,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 40.0,
+        "bpm": 181.0
+      },
+      {
+        "start_beat": 40.0,
+        "end_beat": 108.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 108.0,
+        "end_beat": 124.0,
+        "bpm": 179.0
+      },
+      {
+        "start_beat": 124.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "Sweet Love.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Sweet Love/Sweet Love.sm",
+    "total_changes": 8,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 4.0,
+        "bpm": 119.0
+      },
+      {
+        "start_beat": 4.0,
+        "end_beat": 30.0,
+        "bpm": 98.0
+      },
+      {
+        "start_beat": 30.0,
+        "end_beat": 30.5,
+        "bpm": 108.0
+      },
+      {
+        "start_beat": 30.5,
+        "end_beat": 31.0,
+        "bpm": 113.0
+      },
+      {
+        "start_beat": 31.0,
+        "end_beat": 31.5,
+        "bpm": 114.0
+      },
+      {
+        "start_beat": 31.5,
+        "end_beat": 32.0,
+        "bpm": 115.0
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": 32.5,
+        "bpm": 116.0
+      },
+      {
+        "start_beat": 32.5,
+        "end_beat": 33.5,
+        "bpm": 118.0
+      },
+      {
+        "start_beat": 33.5,
+        "end_beat": null,
+        "bpm": 119.0
+      }
+    ]
+  },
+  "basic.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Link-age/basic.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 72.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 72.0,
+        "end_beat": null,
+        "bpm": 138.0
+      }
+    ]
+  },
+  "\u00c9x\u00c9C\u00c9r\u00c5[\u00c9\u00c5\u00c9C\u00c9r\u00c5[.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c9x\u00c9C\u00c9r\u00c5[\u00c9\u00c5\u00c9C\u00c9r\u00c5[/\u00c9x\u00c9C\u00c9r\u00c5[\u00c9\u00c5\u00c9C\u00c9r\u00c5[.sm",
+    "total_changes": 3,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 136.81
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": 52.0,
+        "bpm": 136.31
+      },
+      {
+        "start_beat": 52.0,
+        "end_beat": 115.0,
+        "bpm": 136.27
+      },
+      {
+        "start_beat": 115.0,
+        "end_beat": null,
+        "bpm": 136.99
+      }
+    ]
+  },
+  "\u00f3\u02c6\u00c7\u00b5\u00c7\u0192\u00e3R\u00e9m.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00f3\u02c6\u00c7\u00b5\u00c7\u0192\u00e3R\u00e9m/\u00f3\u02c6\u00c7\u00b5\u00c7\u0192\u00e3R\u00e9m.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 120.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 120.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "\u00c7\u201d\u00c7\u00cd\u00c7\u2020\u00c5\u00f4\u00c7\u00b1\u00c7\u00d2\u00c7\u2019\u00c7\u00cd\u00c7\u00a1\u00c7\u2260\u00c7\u2211.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c7\u201d\u00c7\u00cd\u00c7\u2020\u00c5\u00f4\u00c7\u00b1\u00c7\u00d2\u00c7\u2019\u00c7\u00cd\u00c7\u00a1\u00c7\u2260\u00c7\u2211/\u00c7\u201d\u00c7\u00cd\u00c7\u2020\u00c5\u00f4\u00c7\u00b1\u00c7\u00d2\u00c7\u2019\u00c7\u00cd\u00c7\u00a1\u00c7\u2260\u00c7\u2211.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 23.25,
+        "bpm": 190.0
+      },
+      {
+        "start_beat": 23.25,
+        "end_beat": 24.0,
+        "bpm": 55.0
+      },
+      {
+        "start_beat": 24.0,
+        "end_beat": null,
+        "bpm": 169.0
+      }
+    ]
+  },
+  "Melty Air.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Melty Air/Melty Air.sm",
+    "total_changes": 10,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 40.0,
+        "bpm": 113.24
+      },
+      {
+        "start_beat": 40.0,
+        "end_beat": 40.25,
+        "bpm": 107.58
+      },
+      {
+        "start_beat": 40.25,
+        "end_beat": 40.5,
+        "bpm": 82.74
+      },
+      {
+        "start_beat": 40.5,
+        "end_beat": 40.75,
+        "bpm": 74.9
+      },
+      {
+        "start_beat": 40.75,
+        "end_beat": 41.0,
+        "bpm": 65.9
+      },
+      {
+        "start_beat": 41.0,
+        "end_beat": 41.25,
+        "bpm": 59.26
+      },
+      {
+        "start_beat": 41.25,
+        "end_beat": 41.5,
+        "bpm": 48.22
+      },
+      {
+        "start_beat": 41.5,
+        "end_beat": 41.75,
+        "bpm": 45.4
+      },
+      {
+        "start_beat": 41.75,
+        "end_beat": 42.0,
+        "bpm": 40.98
+      },
+      {
+        "start_beat": 42.0,
+        "end_beat": 42.25,
+        "bpm": 31.8
+      },
+      {
+        "start_beat": 42.25,
+        "end_beat": null,
+        "bpm": 150.0
+      }
+    ]
+  },
+  "\u00c9~\u00c9T\u00c9R\u00c7\u00c3\u00ec\u02d9\u00e3L (\u00e5\u00a9\u00c7\u00f8\u00c7\u00b7\u00c9_\u00c9\u00c5!).sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c9~\u00c9T\u00c9R\u00c7\u00c3\u00ec\u02d9\u00e3L (\u00e5\u00a9\u00c7\u00f8\u00c7\u00b7\u00c9_\u00c9\u00c5!)/\u00c9~\u00c9T\u00c9R\u00c7\u00c3\u00ec\u02d9\u00e3L (\u00e5\u00a9\u00c7\u00f8\u00c7\u00b7\u00c9_\u00c9\u00c5!).sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 50.0,
+        "bpm": 95.0
+      },
+      {
+        "start_beat": 50.0,
+        "end_beat": 50.5,
+        "bpm": 150.0
+      },
+      {
+        "start_beat": 50.5,
+        "end_beat": null,
+        "bpm": 190.0
+      }
+    ]
+  },
+  "last stardust.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/last stardust/last stardust.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": null,
+        "bpm": 256.0
+      }
+    ]
+  },
+  "LOVE.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Love Me Love La Bride!!/LOVE.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 72.0,
+        "bpm": 199.988
+      },
+      {
+        "start_beat": 72.0,
+        "end_beat": 84.0,
+        "bpm": 99.988
+      },
+      {
+        "start_beat": 84.0,
+        "end_beat": 129.0,
+        "bpm": 199.988
+      },
+      {
+        "start_beat": 129.0,
+        "end_beat": 153.0,
+        "bpm": 99.988
+      },
+      {
+        "start_beat": 153.0,
+        "end_beat": null,
+        "bpm": 199.988
+      }
+    ]
+  },
+  "Princess Party.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Princess Party\u00c5`\u00ea\u00ac\u00e8t\u00e3\u00f7\u00e9~\u00f3\ufb02\u00c5`/Princess Party.sm",
+    "total_changes": 12,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 12.0,
+        "bpm": 125.0
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": 20.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 20.0,
+        "end_beat": 24.0,
+        "bpm": 122.0
+      },
+      {
+        "start_beat": 24.0,
+        "end_beat": 36.0,
+        "bpm": 129.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": 40.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 40.0,
+        "end_beat": 44.0,
+        "bpm": 135.0
+      },
+      {
+        "start_beat": 44.0,
+        "end_beat": 48.0,
+        "bpm": 139.0
+      },
+      {
+        "start_beat": 48.0,
+        "end_beat": 52.0,
+        "bpm": 145.0
+      },
+      {
+        "start_beat": 52.0,
+        "end_beat": 54.0,
+        "bpm": 155.0
+      },
+      {
+        "start_beat": 54.0,
+        "end_beat": 56.0,
+        "bpm": 160.0
+      },
+      {
+        "start_beat": 56.0,
+        "end_beat": 60.0,
+        "bpm": 163.62
+      },
+      {
+        "start_beat": 60.0,
+        "end_beat": 64.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 64.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "buntan.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00ef\u2202\u00edU/buntan.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 8.0,
+        "bpm": 52.499
+      },
+      {
+        "start_beat": 8.0,
+        "end_beat": 168.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 168.0,
+        "end_beat": 180.0,
+        "bpm": 52.499
+      },
+      {
+        "start_beat": 180.0,
+        "end_beat": 188.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 188.0,
+        "end_beat": null,
+        "bpm": 210.0
+      }
+    ]
+  },
+  "katatinaikioku.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/katatinaikioku/katatinaikioku.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 116.0,
+        "bpm": 160.0
+      },
+      {
+        "start_beat": 116.0,
+        "end_beat": 132.0,
+        "bpm": 80.0
+      },
+      {
+        "start_beat": 132.0,
+        "end_beat": null,
+        "bpm": 160.0
+      }
+    ]
+  },
+  "tazyuu.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00eb\u03a9\u00e8d\u00e3\u2026\u00ecW\u00e4J/tazyuu.sm",
+    "total_changes": 9,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 136.0,
+        "bpm": 168.0
+      },
+      {
+        "start_beat": 136.0,
+        "end_beat": 136.5,
+        "bpm": 151.0
+      },
+      {
+        "start_beat": 136.5,
+        "end_beat": 137.0,
+        "bpm": 135.0
+      },
+      {
+        "start_beat": 137.0,
+        "end_beat": 137.5,
+        "bpm": 117.0
+      },
+      {
+        "start_beat": 137.5,
+        "end_beat": 138.0,
+        "bpm": 103.0
+      },
+      {
+        "start_beat": 138.0,
+        "end_beat": 138.5,
+        "bpm": 92.0
+      },
+      {
+        "start_beat": 138.5,
+        "end_beat": 139.0,
+        "bpm": 81.0
+      },
+      {
+        "start_beat": 139.0,
+        "end_beat": 139.5,
+        "bpm": 71.0
+      },
+      {
+        "start_beat": 139.5,
+        "end_beat": 140.0,
+        "bpm": 40.0
+      },
+      {
+        "start_beat": 140.0,
+        "end_beat": null,
+        "bpm": 168.0
+      }
+    ]
+  },
+  "Gracias.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Gracias/Gracias.sm",
+    "total_changes": 7,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 16.5,
+        "bpm": 89.13
+      },
+      {
+        "start_beat": 16.5,
+        "end_beat": 333.5,
+        "bpm": 178.0
+      },
+      {
+        "start_beat": 333.5,
+        "end_beat": 334.0,
+        "bpm": 125.88
+      },
+      {
+        "start_beat": 334.0,
+        "end_beat": 334.5,
+        "bpm": 89.12
+      },
+      {
+        "start_beat": 334.5,
+        "end_beat": 335.0,
+        "bpm": 65.34
+      },
+      {
+        "start_beat": 335.0,
+        "end_beat": 335.5,
+        "bpm": 44.56
+      },
+      {
+        "start_beat": 335.5,
+        "end_beat": 336.0,
+        "bpm": 37.66
+      },
+      {
+        "start_beat": 336.0,
+        "end_beat": null,
+        "bpm": 178.32
+      }
+    ]
+  },
+  "iroha.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00f3\u02c6\u00e2\u00c3\u00e9\u00e6\u00ef\u00f3!\u00c7\u00a9\u00c7\u00c8\u00c7\u03a9\u00c9N\u00c9C\u00c5[\u00c9\u00ec\u00c7\u00a2\u00c7\u00ce\u00c7\u00d5/iroha.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": null,
+        "bpm": 168.0
+      }
+    ]
+  },
+  "Graceful Anomaly.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Graceful Anomaly/Graceful Anomaly.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 17.5,
+        "bpm": 82.0
+      },
+      {
+        "start_beat": 17.5,
+        "end_beat": null,
+        "bpm": 164.0
+      }
+    ]
+  },
+  "LOVELIVE LOST.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/LOVELIVE LOST/LOVELIVE LOST.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 80.0,
+        "bpm": 200.0
+      },
+      {
+        "start_beat": 80.0,
+        "end_beat": 92.0,
+        "bpm": 191.3
+      },
+      {
+        "start_beat": 92.0,
+        "end_beat": 96.0,
+        "bpm": 228.0
+      },
+      {
+        "start_beat": 96.0,
+        "end_beat": 104.0,
+        "bpm": 203.0
+      },
+      {
+        "start_beat": 104.0,
+        "end_beat": null,
+        "bpm": 200.0
+      }
+    ]
+  },
+  "\u00c7\u00ce\u00c5[\u00c7\u00c8\u00c5\u2030\u00c9I\u00c5[\u00c9\u00e3.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c7\u00ce\u00c5[\u00c7\u00c8\u00c5\u2030\u00c9I\u00c5[\u00c9\u00e3/\u00c7\u00ce\u00c5[\u00c7\u00c8\u00c5\u2030\u00c9I\u00c5[\u00c9\u00e3.sm",
+    "total_changes": 3,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 4.0,
+        "bpm": 148.0
+      },
+      {
+        "start_beat": 4.0,
+        "end_beat": 16.0,
+        "bpm": 72.0
+      },
+      {
+        "start_beat": 16.0,
+        "end_beat": 20.0,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 20.0,
+        "end_beat": null,
+        "bpm": 148.0
+      }
+    ]
+  },
+  "Reconquista.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Reconquista/Reconquista.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 22.5,
+        "bpm": 110.0
+      },
+      {
+        "start_beat": 22.5,
+        "end_beat": 28.0,
+        "bpm": 116.3
+      },
+      {
+        "start_beat": 28.0,
+        "end_beat": null,
+        "bpm": 124.98
+      }
+    ]
+  },
+  "Aliare Ex.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Aliare Ex/Aliare Ex.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 100.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": null,
+        "bpm": 134.0
+      }
+    ]
+  },
+  "\u00e2i\u00e2\u00ec\u00c7\u00bb\u00c7\u00c8\u201eJ\u00c7\u2206\u00ebz\u00c7\u00a2\u00c7\u00c3\u00c9L\u00c9Z\u00c9L.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00e2i\u00e2\u00ec\u00c7\u00bb\u00c7\u00c8\u201eJ\u00c7\u2206\u00ebz\u00c7\u00a2\u00c7\u00c3\u00c9L\u00c9Z\u00c9L/\u00e2i\u00e2\u00ec\u00c7\u00bb\u00c7\u00c8\u201eJ\u00c7\u2206\u00ebz\u00c7\u00a2\u00c7\u00c3\u00c9L\u00c9Z\u00c9L.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 45.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 45.0,
+        "end_beat": null,
+        "bpm": 145.0
+      }
+    ]
+  },
+  "Kanransya.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Kanransya/Kanransya.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 24.0,
+        "bpm": 80.0
+      },
+      {
+        "start_beat": 24.0,
+        "end_beat": 26.0,
+        "bpm": 190.0
+      },
+      {
+        "start_beat": 26.0,
+        "end_beat": null,
+        "bpm": 175.0
+      }
+    ]
+  },
+  "\u00ea_\u00ecI\u00ebn\u00eb\u00a2.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00ea_\u00ecI\u00ebn\u00eb\u00a2/\u00ea_\u00ecI\u00ebn\u00eb\u00a2.sm",
+    "total_changes": 3,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 28.0,
+        "bpm": 138.0
+      },
+      {
+        "start_beat": 28.0,
+        "end_beat": 32.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": 34.0,
+        "bpm": 115.0
+      },
+      {
+        "start_beat": 34.0,
+        "end_beat": null,
+        "bpm": 149.0
+      }
+    ]
+  },
+  "campanella1.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/campanella1/campanella1.sm",
+    "total_changes": 11,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 6.0,
+        "bpm": 95.0
+      },
+      {
+        "start_beat": 6.0,
+        "end_beat": 12.0,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": 16.0,
+        "bpm": 95.0
+      },
+      {
+        "start_beat": 16.0,
+        "end_beat": 60.0,
+        "bpm": 92.0
+      },
+      {
+        "start_beat": 60.0,
+        "end_beat": 72.0,
+        "bpm": 76.0
+      },
+      {
+        "start_beat": 72.0,
+        "end_beat": 80.0,
+        "bpm": 92.0
+      },
+      {
+        "start_beat": 80.0,
+        "end_beat": 84.0,
+        "bpm": 94.0
+      },
+      {
+        "start_beat": 84.0,
+        "end_beat": 93.0,
+        "bpm": 93.0
+      },
+      {
+        "start_beat": 93.0,
+        "end_beat": 95.0,
+        "bpm": 92.0
+      },
+      {
+        "start_beat": 95.0,
+        "end_beat": 103.0,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 103.0,
+        "end_beat": 111.0,
+        "bpm": 92.0
+      },
+      {
+        "start_beat": 111.0,
+        "end_beat": null,
+        "bpm": 93.0
+      }
+    ]
+  },
+  "full-consciousness green.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/full-consciousness green/full-consciousness green.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 184.0,
+        "bpm": 158.0
+      },
+      {
+        "start_beat": 184.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "Magical Marriage March.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Magical Marriage March/Magical Marriage March.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 308.0,
+        "bpm": 152.0
+      },
+      {
+        "start_beat": 308.0,
+        "end_beat": 309.0,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 309.0,
+        "end_beat": 310.0,
+        "bpm": 110.0
+      },
+      {
+        "start_beat": 310.0,
+        "end_beat": 311.0,
+        "bpm": 70.0
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": null,
+        "bpm": 55.0
+      }
+    ]
+  },
+  "himitsuresipi.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/himitsuresipi/himitsuresipi.sm",
+    "total_changes": 9,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 224.0,
+        "bpm": 137.0
+      },
+      {
+        "start_beat": 224.0,
+        "end_beat": 224.5,
+        "bpm": 126.0
+      },
+      {
+        "start_beat": 224.5,
+        "end_beat": 225.0,
+        "bpm": 116.0
+      },
+      {
+        "start_beat": 225.0,
+        "end_beat": 225.5,
+        "bpm": 106.0
+      },
+      {
+        "start_beat": 225.5,
+        "end_beat": 226.0,
+        "bpm": 91.001
+      },
+      {
+        "start_beat": 226.0,
+        "end_beat": 226.5,
+        "bpm": 81.001
+      },
+      {
+        "start_beat": 226.5,
+        "end_beat": 227.0,
+        "bpm": 71.001
+      },
+      {
+        "start_beat": 227.0,
+        "end_beat": 227.5,
+        "bpm": 66.001
+      },
+      {
+        "start_beat": 227.5,
+        "end_beat": 228.0,
+        "bpm": 61.001
+      },
+      {
+        "start_beat": 228.0,
+        "end_beat": null,
+        "bpm": 51.001
+      }
+    ]
+  },
+  "rapisurazuri.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/rapisurazuri/rapisurazuri.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 210.0,
+        "bpm": 155.0
+      },
+      {
+        "start_beat": 210.0,
+        "end_beat": null,
+        "bpm": 160.0
+      }
+    ]
+  },
+  "KANATA.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/KANATA/KANATA.sm",
+    "total_changes": 6,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 53.0,
+        "bpm": 185.0
+      },
+      {
+        "start_beat": 53.0,
+        "end_beat": 117.0,
+        "bpm": 185.06
+      },
+      {
+        "start_beat": 117.0,
+        "end_beat": 213.0,
+        "bpm": 185.0
+      },
+      {
+        "start_beat": 213.0,
+        "end_beat": 245.0,
+        "bpm": 184.9
+      },
+      {
+        "start_beat": 245.0,
+        "end_beat": 361.0,
+        "bpm": 185.0
+      },
+      {
+        "start_beat": 361.0,
+        "end_beat": 369.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 369.0,
+        "end_beat": null,
+        "bpm": 178.0
+      }
+    ]
+  },
+  "amberworld.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/amberworld/amberworld.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 16.0,
+        "bpm": 87.5
+      },
+      {
+        "start_beat": 16.0,
+        "end_beat": null,
+        "bpm": 175.0
+      }
+    ]
+  },
+  "kanpanera.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00e8j\u00ef\u00fc\u00c7\u00c3\u00c9J\u00c9\u00ec\u00c9p\u00c9l\u00c9\u00e2/kanpanera.sm",
+    "total_changes": 11,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 28.0,
+        "bpm": 99.5
+      },
+      {
+        "start_beat": 28.0,
+        "end_beat": 32.0,
+        "bpm": 101.0
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": 36.0,
+        "bpm": 102.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": 44.0,
+        "bpm": 101.3
+      },
+      {
+        "start_beat": 44.0,
+        "end_beat": 44.5,
+        "bpm": 100.0
+      },
+      {
+        "start_beat": 44.5,
+        "end_beat": 45.0,
+        "bpm": 60.0
+      },
+      {
+        "start_beat": 45.0,
+        "end_beat": 45.5,
+        "bpm": 38.0
+      },
+      {
+        "start_beat": 45.5,
+        "end_beat": 45.625,
+        "bpm": 60.0
+      },
+      {
+        "start_beat": 45.625,
+        "end_beat": 45.75,
+        "bpm": 85.0
+      },
+      {
+        "start_beat": 45.75,
+        "end_beat": 45.875,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 45.875,
+        "end_beat": 46.0,
+        "bpm": 127.7
+      },
+      {
+        "start_beat": 46.0,
+        "end_beat": null,
+        "bpm": 145.0
+      }
+    ]
+  },
+  "Coming\u00c5~Humming!!.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Coming\u00c5~Humming!!/Coming\u00c5~Humming!!.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 158.0,
+        "bpm": 159.7
+      },
+      {
+        "start_beat": 158.0,
+        "end_beat": 173.0,
+        "bpm": 157.0
+      },
+      {
+        "start_beat": 173.0,
+        "end_beat": null,
+        "bpm": 160.0
+      }
+    ]
+  },
+  "habatakekoigokoro.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/habatakekoigokoro/habatakekoigokoro.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 208.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 208.0,
+        "end_beat": 208.5,
+        "bpm": 135.0
+      },
+      {
+        "start_beat": 208.5,
+        "end_beat": null,
+        "bpm": 170.0
+      }
+    ]
+  },
+  "\u00c9c\u00c9N\u00c9\u00c7\u00c9m\u00c9c\u00c9L.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c9c\u00c9N\u00c9\u00c7\u00c9m\u00c9c\u00c9L/\u00c9c\u00c9N\u00c9\u00c7\u00c9m\u00c9c\u00c9L.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 32.0,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": null,
+        "bpm": 135.0
+      }
+    ]
+  },
+  "\u00ec\u00d2\u00eal\u00eaF.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00ec\u00d2\u00eal\u00eaF/\u00ec\u00d2\u00eal\u00eaF.sm",
+    "total_changes": 3,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 12.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": 53.5,
+        "bpm": 150.0
+      },
+      {
+        "start_beat": 53.5,
+        "end_beat": 54.0,
+        "bpm": 175.0
+      },
+      {
+        "start_beat": 54.0,
+        "end_beat": null,
+        "bpm": 170.0
+      }
+    ]
+  },
+  "\u00e2\u00ff\u00f3\u00d4.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00e2\u00ff\u00f3\u00d4Ex/\u00e2\u00ff\u00f3\u00d4.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 35.0,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 35.0,
+        "end_beat": 36.0,
+        "bpm": 150.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "Blue-Love Chime.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Blue-Love Chime/Blue-Love Chime.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 49.0,
+        "bpm": 125.0
+      },
+      {
+        "start_beat": 49.0,
+        "end_beat": 50.0,
+        "bpm": 135.0
+      },
+      {
+        "start_beat": 50.0,
+        "end_beat": null,
+        "bpm": 150.0
+      }
+    ]
+  },
+  "eroiko.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c9G\u00c9\u00e7\u00c9C\u00c9R/eroiko.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 296.0,
+        "bpm": 190.0
+      },
+      {
+        "start_beat": 296.0,
+        "end_beat": 297.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 297.0,
+        "end_beat": 298.0,
+        "bpm": 150.0
+      },
+      {
+        "start_beat": 298.0,
+        "end_beat": 299.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 299.0,
+        "end_beat": null,
+        "bpm": 115.0
+      }
+    ]
+  },
+  "\u00f1\u2264\u00e2\u2018\u00e2\u0152.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00f1\u2264\u00e2\u2018\u00e2\u0152/\u00f1\u2264\u00e2\u2018\u00e2\u0152.sm",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 16.0,
+        "bpm": 162.0
+      },
+      {
+        "start_beat": 16.0,
+        "end_beat": 28.0,
+        "bpm": 158.0
+      },
+      {
+        "start_beat": 28.0,
+        "end_beat": 40.0,
+        "bpm": 162.0
+      },
+      {
+        "start_beat": 40.0,
+        "end_beat": 45.0,
+        "bpm": 132.0
+      },
+      {
+        "start_beat": 45.0,
+        "end_beat": null,
+        "bpm": 162.0
+      }
+    ]
+  },
+  "\u00c7\u00d5\u00c7\u00a1\u00c7\u201c\u00c7\u00b0\u00c7\u00bb\u00c7\u00d2\u00c7\u00e6\u00c7\u00a9\u00c7\u00c1\u00c7\u00a2\u00c7\u00a2\u00c7\u2202\u00c7\u00b7\u00c7\u00d2.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00c7\u00d5\u00c7\u00a1\u00c7\u201c\u00c7\u00b0\u00c7\u00bb\u00c7\u00d2\u00c7\u00e6\u00c7\u00a9\u00c7\u00c1\u00c7\u00a2\u00c7\u00a2\u00c7\u2202\u00c7\u00b7\u00c7\u00d2/\u00c7\u00d5\u00c7\u00a1\u00c7\u201c\u00c7\u00b0\u00c7\u00bb\u00c7\u00d2\u00c7\u00e6\u00c7\u00a9\u00c7\u00c1\u00c7\u00a2\u00c7\u00a2\u00c7\u2202\u00c7\u00b7\u00c7\u00d2.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 12.0,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  },
+  "\u00e0\u00a7\u00c5B\u00e2\u2211\u00ecx\u00c5B.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00e0\u00a7\u00c5A\u00e2\u2211\u00ecx\u00c5B/\u00e0\u00a7\u00c5B\u00e2\u2211\u00ecx\u00c5B.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 108.5,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 108.5,
+        "end_beat": 119.5,
+        "bpm": 85.0
+      },
+      {
+        "start_beat": 119.5,
+        "end_beat": null,
+        "bpm": 170.0
+      }
+    ]
+  },
+  "ULTRA BUTTERFLY(\u00e7\u00a3\u00e7\u00d1\u00f3\u00d5).sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/ULTRA BUTTERFLY(\u00e7\u00a3\u00e7\u00d1\u00f3\u00d5)/ULTRA BUTTERFLY(\u00e7\u00a3\u00e7\u00d1\u00f3\u00d5).sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 132.0,
+        "bpm": 140.44
+      },
+      {
+        "start_beat": 132.0,
+        "end_beat": 134.0,
+        "bpm": 167.0
+      },
+      {
+        "start_beat": 134.0,
+        "end_beat": null,
+        "bpm": 175.24
+      }
+    ]
+  },
+  "KiLLERLADY.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/KiLLERLADY/KiLLERLADY.sm",
+    "total_changes": 6,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 128.938,
+        "bpm": 132.0
+      },
+      {
+        "start_beat": 128.938,
+        "end_beat": 129.0,
+        "bpm": 170.0
+      },
+      {
+        "start_beat": 129.0,
+        "end_beat": 192.938,
+        "bpm": 132.0
+      },
+      {
+        "start_beat": 192.938,
+        "end_beat": 193.0,
+        "bpm": 173.0
+      },
+      {
+        "start_beat": 193.0,
+        "end_beat": 220.938,
+        "bpm": 132.0
+      },
+      {
+        "start_beat": 220.938,
+        "end_beat": 221.0,
+        "bpm": 183.0
+      },
+      {
+        "start_beat": 221.0,
+        "end_beat": null,
+        "bpm": 132.0
+      }
+    ]
+  },
+  "\u00ea\u00c1\u00eeN\u00c7\u00c3\u201eJ.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/\u00ea\u00c1\u00eeN\u00c7\u00c3\u201eJ/\u00ea\u00c1\u00eeN\u00c7\u00c3\u201eJ.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 216.5,
+        "bpm": 134.0
+      },
+      {
+        "start_beat": 216.5,
+        "end_beat": 220.5,
+        "bpm": 135.0
+      },
+      {
+        "start_beat": 220.5,
+        "end_beat": null,
+        "bpm": 134.0
+      }
+    ]
+  },
+  "Aliare.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/remi/Aliare/Aliare.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 100.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": null,
+        "bpm": 134.0
+      }
+    ]
+  },
+  "Springtime_integrated.ssc": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Springtime/Springtime_integrated.ssc",
+    "total_changes": 26,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 44.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 44.0,
+        "end_beat": 47.0,
+        "bpm": 363.37
+      },
+      {
+        "start_beat": 47.0,
+        "end_beat": 48.0,
+        "bpm": 726.74
+      },
+      {
+        "start_beat": 48.0,
+        "end_beat": 300.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 300.0,
+        "end_beat": 304.0,
+        "bpm": 363.37
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": null,
+        "bpm": 181.685
+      }
+    ]
+  },
+  "Springtime.ssc": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Springtime/Springtime.ssc",
+    "total_changes": 26,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 44.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 44.0,
+        "end_beat": 47.0,
+        "bpm": 363.37
+      },
+      {
+        "start_beat": 47.0,
+        "end_beat": 48.0,
+        "bpm": 726.74
+      },
+      {
+        "start_beat": 48.0,
+        "end_beat": 300.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 300.0,
+        "end_beat": 304.0,
+        "bpm": 363.37
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 304.0,
+        "bpm": 90.843
+      },
+      {
+        "start_beat": 304.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 311.0,
+        "bpm": 181.685
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": null,
+        "bpm": 181.685
+      }
+    ]
+  },
+  "Love to Rise in the Summer Morning.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Love to Rise in the Summer Morning/Love to Rise in the Summer Morning.sm",
+    "total_changes": 6,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 32.0,
+        "bpm": 142.99
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": 38.0,
+        "bpm": 144.15
+      },
+      {
+        "start_beat": 38.0,
+        "end_beat": 235.5,
+        "bpm": 142.99
+      },
+      {
+        "start_beat": 235.5,
+        "end_beat": 236.0,
+        "bpm": 130.5
+      },
+      {
+        "start_beat": 236.0,
+        "end_beat": 268.0,
+        "bpm": 142.99
+      },
+      {
+        "start_beat": 268.0,
+        "end_beat": 274.0,
+        "bpm": 144.15
+      },
+      {
+        "start_beat": 274.0,
+        "end_beat": null,
+        "bpm": 142.99
+      }
+    ]
+  },
+  "Girls.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Girls/Girls.sm",
+    "total_changes": 1,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 258.0,
+        "bpm": 124.712
+      },
+      {
+        "start_beat": 258.0,
+        "end_beat": null,
+        "bpm": 31.178
+      }
+    ]
+  },
+  "Need Your Love -SF_Dubstep Mix-.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Need Your Love -SF_Dubstep Mix-/Need Your Love -SF_Dubstep Mix-.sm",
+    "total_changes": 252,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 36.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 36.0,
+        "end_beat": 39.0,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 39.0,
+        "end_beat": 44.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 44.0,
+        "end_beat": 44.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 44.375,
+        "end_beat": 44.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 44.5,
+        "end_beat": 44.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 44.875,
+        "end_beat": 45.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 45.0,
+        "end_beat": 45.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 45.375,
+        "end_beat": 45.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 45.5,
+        "end_beat": 45.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 45.875,
+        "end_beat": 46.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 46.0,
+        "end_beat": 46.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 46.375,
+        "end_beat": 46.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 46.5,
+        "end_beat": 46.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 46.875,
+        "end_beat": 47.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 47.0,
+        "end_beat": 47.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 47.375,
+        "end_beat": 47.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 47.5,
+        "end_beat": 47.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 47.875,
+        "end_beat": 48.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 48.0,
+        "end_beat": 48.25,
+        "bpm": 109.5
+      },
+      {
+        "start_beat": 48.25,
+        "end_beat": 49.0,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 49.0,
+        "end_beat": 52.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 52.0,
+        "end_beat": 52.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 52.375,
+        "end_beat": 52.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 52.5,
+        "end_beat": 52.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 52.875,
+        "end_beat": 53.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 53.0,
+        "end_beat": 53.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 53.375,
+        "end_beat": 53.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 53.5,
+        "end_beat": 53.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 53.875,
+        "end_beat": 54.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 54.0,
+        "end_beat": 54.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 54.375,
+        "end_beat": 54.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 54.5,
+        "end_beat": 54.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 54.875,
+        "end_beat": 55.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 55.0,
+        "end_beat": 55.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 55.375,
+        "end_beat": 55.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 55.5,
+        "end_beat": 55.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 55.875,
+        "end_beat": 56.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 56.0,
+        "end_beat": 60.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 60.0,
+        "end_beat": 60.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 60.375,
+        "end_beat": 60.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 60.5,
+        "end_beat": 60.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 60.875,
+        "end_beat": 61.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 61.0,
+        "end_beat": 61.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 61.375,
+        "end_beat": 61.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 61.5,
+        "end_beat": 61.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 61.875,
+        "end_beat": 62.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 62.0,
+        "end_beat": 62.333,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 62.333,
+        "end_beat": 63.0,
+        "bpm": 182.5
+      },
+      {
+        "start_beat": 63.0,
+        "end_beat": 63.333,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 63.333,
+        "end_beat": 64.0,
+        "bpm": 182.5
+      },
+      {
+        "start_beat": 64.0,
+        "end_beat": 68.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 68.0,
+        "end_beat": 68.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 68.375,
+        "end_beat": 68.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 68.5,
+        "end_beat": 68.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 68.875,
+        "end_beat": 69.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 69.0,
+        "end_beat": 69.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 69.375,
+        "end_beat": 69.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 69.5,
+        "end_beat": 69.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 69.875,
+        "end_beat": 70.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 70.0,
+        "end_beat": 72.0,
+        "bpm": 182.5
+      },
+      {
+        "start_beat": 72.0,
+        "end_beat": 77.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 77.0,
+        "end_beat": 77.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 77.375,
+        "end_beat": 77.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 77.5,
+        "end_beat": 77.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 77.875,
+        "end_beat": 78.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 78.0,
+        "end_beat": 78.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 78.188,
+        "end_beat": 78.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 78.25,
+        "end_beat": 78.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 78.438,
+        "end_beat": 78.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 78.5,
+        "end_beat": 78.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 78.688,
+        "end_beat": 78.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 78.75,
+        "end_beat": 78.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 78.938,
+        "end_beat": 79.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 79.0,
+        "end_beat": 79.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 79.188,
+        "end_beat": 79.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 79.25,
+        "end_beat": 79.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 79.438,
+        "end_beat": 79.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 79.5,
+        "end_beat": 79.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 79.688,
+        "end_beat": 79.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 79.75,
+        "end_beat": 79.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 79.938,
+        "end_beat": 80.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 80.0,
+        "end_beat": 80.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 80.5,
+        "end_beat": 80.75,
+        "bpm": 109.5
+      },
+      {
+        "start_beat": 80.75,
+        "end_beat": 81.5,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 81.5,
+        "end_beat": 84.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 84.0,
+        "end_beat": 84.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 84.375,
+        "end_beat": 84.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 84.5,
+        "end_beat": 84.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 84.875,
+        "end_beat": 85.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 85.0,
+        "end_beat": 85.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 85.375,
+        "end_beat": 85.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 85.5,
+        "end_beat": 85.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 85.875,
+        "end_beat": 86.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 86.0,
+        "end_beat": 86.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 86.188,
+        "end_beat": 86.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 86.25,
+        "end_beat": 86.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 86.438,
+        "end_beat": 86.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 86.5,
+        "end_beat": 86.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 86.688,
+        "end_beat": 86.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 86.75,
+        "end_beat": 86.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 86.938,
+        "end_beat": 87.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 87.0,
+        "end_beat": 87.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 87.188,
+        "end_beat": 87.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 87.25,
+        "end_beat": 87.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 87.438,
+        "end_beat": 87.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 87.5,
+        "end_beat": 87.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 87.688,
+        "end_beat": 87.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 87.75,
+        "end_beat": 87.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 87.938,
+        "end_beat": 88.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 88.0,
+        "end_beat": 92.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 92.0,
+        "end_beat": 92.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 92.375,
+        "end_beat": 92.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 92.5,
+        "end_beat": 92.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 92.875,
+        "end_beat": 93.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 93.0,
+        "end_beat": 93.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 93.375,
+        "end_beat": 93.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 93.5,
+        "end_beat": 93.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 93.875,
+        "end_beat": 94.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 94.0,
+        "end_beat": 96.0,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 96.0,
+        "end_beat": 105.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 105.0,
+        "end_beat": 105.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 105.375,
+        "end_beat": 105.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 105.5,
+        "end_beat": 105.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 105.875,
+        "end_beat": 106.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 106.0,
+        "end_beat": 106.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 106.375,
+        "end_beat": 106.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 106.5,
+        "end_beat": 106.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 106.875,
+        "end_beat": 107.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 107.0,
+        "end_beat": 107.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 107.375,
+        "end_beat": 107.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 107.5,
+        "end_beat": 107.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 107.875,
+        "end_beat": 108.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 108.0,
+        "end_beat": 113.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 113.0,
+        "end_beat": 113.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 113.375,
+        "end_beat": 113.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 113.5,
+        "end_beat": 113.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 113.875,
+        "end_beat": 114.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 114.0,
+        "end_beat": 114.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 114.375,
+        "end_beat": 114.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 114.5,
+        "end_beat": 114.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 114.875,
+        "end_beat": 115.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 115.0,
+        "end_beat": 115.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 115.375,
+        "end_beat": 115.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 115.5,
+        "end_beat": 115.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 115.875,
+        "end_beat": 116.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 116.0,
+        "end_beat": 121.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 121.0,
+        "end_beat": 121.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 121.375,
+        "end_beat": 121.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 121.5,
+        "end_beat": 121.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 121.875,
+        "end_beat": 122.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 122.0,
+        "end_beat": 122.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 122.375,
+        "end_beat": 122.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 122.5,
+        "end_beat": 122.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 122.875,
+        "end_beat": 123.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 123.0,
+        "end_beat": 123.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 123.375,
+        "end_beat": 123.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 123.5,
+        "end_beat": 123.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 123.875,
+        "end_beat": 124.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 124.0,
+        "end_beat": 129.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 129.0,
+        "end_beat": 129.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 129.375,
+        "end_beat": 129.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 129.5,
+        "end_beat": 129.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 129.875,
+        "end_beat": 130.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 130.0,
+        "end_beat": 130.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 130.375,
+        "end_beat": 130.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 130.5,
+        "end_beat": 130.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 130.875,
+        "end_beat": 131.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 131.0,
+        "end_beat": 131.375,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 131.375,
+        "end_beat": 131.5,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 131.5,
+        "end_beat": 131.875,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 131.875,
+        "end_beat": 132.0,
+        "bpm": 73.0
+      },
+      {
+        "start_beat": 132.0,
+        "end_beat": 152.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 152.5,
+        "end_beat": 152.625,
+        "bpm": 97.333
+      },
+      {
+        "start_beat": 152.625,
+        "end_beat": 152.75,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 152.75,
+        "end_beat": 153.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 153.5,
+        "end_beat": 153.625,
+        "bpm": 97.333
+      },
+      {
+        "start_beat": 153.625,
+        "end_beat": 153.75,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 153.75,
+        "end_beat": 154.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 154.5,
+        "end_beat": 154.625,
+        "bpm": 97.333
+      },
+      {
+        "start_beat": 154.625,
+        "end_beat": 154.75,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 154.75,
+        "end_beat": 155.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 155.5,
+        "end_beat": 155.625,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 155.625,
+        "end_beat": 155.75,
+        "bpm": 97.333
+      },
+      {
+        "start_beat": 155.75,
+        "end_beat": 156.25,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 156.25,
+        "end_beat": 156.75,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 156.75,
+        "end_beat": 157.25,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 157.25,
+        "end_beat": 157.75,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 157.75,
+        "end_beat": 158.25,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 158.25,
+        "end_beat": 158.75,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 158.75,
+        "end_beat": 192.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 192.0,
+        "end_beat": 194.0,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 194.0,
+        "end_beat": 200.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 200.0,
+        "end_beat": 202.0,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 202.0,
+        "end_beat": 208.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 208.0,
+        "end_beat": 210.0,
+        "bpm": 219.0
+      },
+      {
+        "start_beat": 210.0,
+        "end_beat": 222.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 222.0,
+        "end_beat": 224.0,
+        "bpm": 182.5
+      },
+      {
+        "start_beat": 224.0,
+        "end_beat": 278.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 278.5,
+        "end_beat": 278.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 278.688,
+        "end_beat": 278.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 278.75,
+        "end_beat": 278.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 278.938,
+        "end_beat": 279.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 279.0,
+        "end_beat": 279.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 279.188,
+        "end_beat": 279.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 279.25,
+        "end_beat": 279.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 279.438,
+        "end_beat": 279.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 279.5,
+        "end_beat": 286.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 286.5,
+        "end_beat": 286.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 286.688,
+        "end_beat": 286.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 286.75,
+        "end_beat": 286.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 286.938,
+        "end_beat": 287.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 287.0,
+        "end_beat": 287.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 287.188,
+        "end_beat": 287.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 287.25,
+        "end_beat": 287.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 287.438,
+        "end_beat": 287.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 287.5,
+        "end_beat": 290.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 290.0,
+        "end_beat": 290.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 290.188,
+        "end_beat": 290.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 290.25,
+        "end_beat": 290.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 290.438,
+        "end_beat": 290.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 290.5,
+        "end_beat": 290.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 290.688,
+        "end_beat": 290.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 290.75,
+        "end_beat": 290.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 290.938,
+        "end_beat": 291.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 291.0,
+        "end_beat": 294.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 294.5,
+        "end_beat": 294.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 294.688,
+        "end_beat": 294.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 294.75,
+        "end_beat": 294.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 294.938,
+        "end_beat": 295.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 295.0,
+        "end_beat": 295.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 295.188,
+        "end_beat": 295.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 295.25,
+        "end_beat": 295.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 295.438,
+        "end_beat": 295.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 295.5,
+        "end_beat": 302.5,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 302.5,
+        "end_beat": 302.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 302.688,
+        "end_beat": 302.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 302.75,
+        "end_beat": 302.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 302.938,
+        "end_beat": 303.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 303.0,
+        "end_beat": 303.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 303.188,
+        "end_beat": 303.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 303.25,
+        "end_beat": 303.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 303.438,
+        "end_beat": 303.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 303.5,
+        "end_beat": 306.0,
+        "bpm": 146.0
+      },
+      {
+        "start_beat": 306.0,
+        "end_beat": 306.188,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 306.188,
+        "end_beat": 306.25,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 306.25,
+        "end_beat": 306.438,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 306.438,
+        "end_beat": 306.5,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 306.5,
+        "end_beat": 306.688,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 306.688,
+        "end_beat": 306.75,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 306.75,
+        "end_beat": 306.938,
+        "bpm": 292.0
+      },
+      {
+        "start_beat": 306.938,
+        "end_beat": 307.0,
+        "bpm": 58.4
+      },
+      {
+        "start_beat": 307.0,
+        "end_beat": null,
+        "bpm": 146.0
+      }
+    ]
+  },
+  "Bitch Clap.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Bitch Clap/Bitch Clap.sm",
+    "total_changes": 5,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 319.0,
+        "bpm": 150.0
+      },
+      {
+        "start_beat": 319.0,
+        "end_beat": 319.25,
+        "bpm": 120.0
+      },
+      {
+        "start_beat": 319.25,
+        "end_beat": 319.5,
+        "bpm": 90.0
+      },
+      {
+        "start_beat": 319.5,
+        "end_beat": 319.75,
+        "bpm": 60.0
+      },
+      {
+        "start_beat": 319.75,
+        "end_beat": 319.875,
+        "bpm": 30.0
+      },
+      {
+        "start_beat": 319.875,
+        "end_beat": null,
+        "bpm": 20.0
+      }
+    ]
+  },
+  "Pain Game.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Pain Game/Pain Game.sm",
+    "total_changes": 264,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 92.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 92.0,
+        "end_beat": 93.667,
+        "bpm": 87.5
+      },
+      {
+        "start_beat": 93.667,
+        "end_beat": 97.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 97.0,
+        "end_beat": 97.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 97.5,
+        "end_beat": 98.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 98.0,
+        "end_beat": 98.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 98.5,
+        "end_beat": 99.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 99.0,
+        "end_beat": 100.667,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 100.667,
+        "end_beat": 102.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 102.333,
+        "end_beat": 103.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 103.0,
+        "end_beat": 105.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 105.0,
+        "end_beat": 105.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 105.167,
+        "end_beat": 105.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 105.333,
+        "end_beat": 105.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 105.5,
+        "end_beat": 105.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 105.667,
+        "end_beat": 105.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 105.833,
+        "end_beat": 106.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 106.0,
+        "end_beat": 106.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 106.167,
+        "end_beat": 106.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 106.333,
+        "end_beat": 106.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 106.5,
+        "end_beat": 106.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 106.667,
+        "end_beat": 106.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 106.833,
+        "end_beat": 107.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 107.0,
+        "end_beat": 107.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 107.333,
+        "end_beat": 107.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 107.5,
+        "end_beat": 107.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 107.667,
+        "end_beat": 107.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 107.833,
+        "end_beat": 108.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 108.0,
+        "end_beat": 108.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 108.333,
+        "end_beat": 108.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 108.5,
+        "end_beat": 108.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 108.667,
+        "end_beat": 108.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 108.833,
+        "end_beat": 109.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 109.0,
+        "end_beat": 109.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 109.333,
+        "end_beat": 110.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 110.0,
+        "end_beat": 110.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 110.333,
+        "end_beat": 111.333,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 111.333,
+        "end_beat": 111.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 111.667,
+        "end_beat": 112.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 112.0,
+        "end_beat": 112.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 112.333,
+        "end_beat": 112.667,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 112.667,
+        "end_beat": 113.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 113.0,
+        "end_beat": 113.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 113.333,
+        "end_beat": 113.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 113.5,
+        "end_beat": 113.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 113.667,
+        "end_beat": 113.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 113.833,
+        "end_beat": 114.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 114.0,
+        "end_beat": 114.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 114.333,
+        "end_beat": 115.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 115.0,
+        "end_beat": 118.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 118.0,
+        "end_beat": 119.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 119.0,
+        "end_beat": 126.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 126.0,
+        "end_beat": 127.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 127.0,
+        "end_beat": 128.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 128.0,
+        "end_beat": 129.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 129.0,
+        "end_beat": 129.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 129.5,
+        "end_beat": 130.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 130.0,
+        "end_beat": 130.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 130.5,
+        "end_beat": 131.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 131.167,
+        "end_beat": 131.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 131.333,
+        "end_beat": 131.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 131.5,
+        "end_beat": 131.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 131.667,
+        "end_beat": 131.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 131.833,
+        "end_beat": 132.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 132.0,
+        "end_beat": 132.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 132.167,
+        "end_beat": 132.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 132.333,
+        "end_beat": 132.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 132.5,
+        "end_beat": 132.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 132.667,
+        "end_beat": 132.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 132.833,
+        "end_beat": 133.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 133.0,
+        "end_beat": 133.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 133.333,
+        "end_beat": 133.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 133.5,
+        "end_beat": 133.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 133.667,
+        "end_beat": 133.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 133.833,
+        "end_beat": 134.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 134.0,
+        "end_beat": 134.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 134.333,
+        "end_beat": 134.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 134.5,
+        "end_beat": 134.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 134.667,
+        "end_beat": 134.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 134.833,
+        "end_beat": 135.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 135.0,
+        "end_beat": 136.0,
+        "bpm": 175.0
+      },
+      {
+        "start_beat": 136.0,
+        "end_beat": 137.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 137.0,
+        "end_beat": 138.0,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 138.0,
+        "end_beat": 139.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 139.0,
+        "end_beat": 139.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 139.333,
+        "end_beat": 139.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 139.5,
+        "end_beat": 139.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 139.667,
+        "end_beat": 139.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 139.833,
+        "end_beat": 140.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 140.0,
+        "end_beat": 140.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 140.333,
+        "end_beat": 140.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 140.5,
+        "end_beat": 140.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 140.667,
+        "end_beat": 140.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 140.833,
+        "end_beat": 141.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 141.0,
+        "end_beat": 141.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 141.333,
+        "end_beat": 142.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 142.0,
+        "end_beat": 142.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 142.333,
+        "end_beat": 143.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 143.0,
+        "end_beat": 143.667,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 143.667,
+        "end_beat": 143.917,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 143.917,
+        "end_beat": 144.0,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 144.0,
+        "end_beat": 144.667,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 144.667,
+        "end_beat": 144.917,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 144.917,
+        "end_beat": 145.0,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 145.0,
+        "end_beat": 146.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 146.0,
+        "end_beat": 146.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 146.167,
+        "end_beat": 146.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 146.333,
+        "end_beat": 146.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 146.5,
+        "end_beat": 146.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 146.667,
+        "end_beat": 146.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 146.833,
+        "end_beat": 147.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 147.0,
+        "end_beat": 147.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 147.5,
+        "end_beat": 148.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 148.0,
+        "end_beat": 148.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 148.5,
+        "end_beat": 149.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 149.0,
+        "end_beat": 149.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 149.333,
+        "end_beat": 149.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 149.5,
+        "end_beat": 149.667,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 149.667,
+        "end_beat": 149.833,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 149.833,
+        "end_beat": 150.0,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 150.0,
+        "end_beat": 150.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 150.167,
+        "end_beat": 150.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 150.333,
+        "end_beat": 150.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 150.5,
+        "end_beat": 150.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 150.667,
+        "end_beat": 150.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 150.833,
+        "end_beat": 151.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 151.0,
+        "end_beat": 159.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 159.5,
+        "end_beat": 160.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 160.0,
+        "end_beat": 160.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 160.5,
+        "end_beat": 161.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 161.0,
+        "end_beat": 161.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 161.5,
+        "end_beat": 162.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 162.0,
+        "end_beat": 162.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 162.5,
+        "end_beat": 163.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 163.25,
+        "end_beat": 163.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 163.5,
+        "end_beat": 164.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 164.0,
+        "end_beat": 164.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 164.5,
+        "end_beat": 164.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 164.75,
+        "end_beat": 165.25,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 165.25,
+        "end_beat": 165.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 165.75,
+        "end_beat": 166.25,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 166.25,
+        "end_beat": 166.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 166.75,
+        "end_beat": 168.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 168.0,
+        "end_beat": 168.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 168.5,
+        "end_beat": 169.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 169.0,
+        "end_beat": 169.063,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 169.063,
+        "end_beat": 169.25,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 169.25,
+        "end_beat": 169.313,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 169.313,
+        "end_beat": 169.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 169.5,
+        "end_beat": 169.563,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 169.563,
+        "end_beat": 169.75,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 169.75,
+        "end_beat": 169.813,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 169.813,
+        "end_beat": 170.0,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 170.0,
+        "end_beat": 170.125,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 170.125,
+        "end_beat": 170.25,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 170.25,
+        "end_beat": 170.375,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 170.375,
+        "end_beat": 170.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 170.5,
+        "end_beat": 170.625,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 170.625,
+        "end_beat": 170.75,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 170.75,
+        "end_beat": 170.875,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 170.875,
+        "end_beat": 171.0,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 171.0,
+        "end_beat": 171.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 171.5,
+        "end_beat": 172.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 172.0,
+        "end_beat": 172.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 172.5,
+        "end_beat": 173.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 173.0,
+        "end_beat": 173.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 173.333,
+        "end_beat": 174.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 174.0,
+        "end_beat": 174.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 174.333,
+        "end_beat": 175.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 175.0,
+        "end_beat": 177.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 177.0,
+        "end_beat": 177.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 177.167,
+        "end_beat": 177.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 177.333,
+        "end_beat": 177.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 177.5,
+        "end_beat": 177.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 177.667,
+        "end_beat": 177.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 177.833,
+        "end_beat": 178.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 178.0,
+        "end_beat": 178.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 178.167,
+        "end_beat": 178.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 178.333,
+        "end_beat": 178.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 178.5,
+        "end_beat": 178.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 178.667,
+        "end_beat": 178.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 178.833,
+        "end_beat": 179.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 179.0,
+        "end_beat": 183.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 183.0,
+        "end_beat": 191.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 191.5,
+        "end_beat": 192.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 192.0,
+        "end_beat": 192.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 192.5,
+        "end_beat": 193.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 193.0,
+        "end_beat": 193.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 193.5,
+        "end_beat": 194.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 194.0,
+        "end_beat": 194.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 194.5,
+        "end_beat": 195.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 195.25,
+        "end_beat": 195.5,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 195.5,
+        "end_beat": 196.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 196.0,
+        "end_beat": 196.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 196.5,
+        "end_beat": 196.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 196.75,
+        "end_beat": 197.25,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 197.25,
+        "end_beat": 197.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 197.75,
+        "end_beat": 198.25,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 198.25,
+        "end_beat": 198.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 198.75,
+        "end_beat": 200.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 200.0,
+        "end_beat": 200.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 200.5,
+        "end_beat": 201.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 201.0,
+        "end_beat": 201.063,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 201.063,
+        "end_beat": 201.25,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 201.25,
+        "end_beat": 201.313,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 201.313,
+        "end_beat": 201.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 201.5,
+        "end_beat": 201.563,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 201.563,
+        "end_beat": 201.75,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 201.75,
+        "end_beat": 201.813,
+        "bpm": 56.0
+      },
+      {
+        "start_beat": 201.813,
+        "end_beat": 202.0,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 202.0,
+        "end_beat": 202.125,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 202.125,
+        "end_beat": 202.25,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 202.25,
+        "end_beat": 202.375,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 202.375,
+        "end_beat": 202.5,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 202.5,
+        "end_beat": 202.625,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 202.625,
+        "end_beat": 202.75,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 202.75,
+        "end_beat": 202.875,
+        "bpm": 93.333
+      },
+      {
+        "start_beat": 202.875,
+        "end_beat": 203.0,
+        "bpm": 280.0
+      },
+      {
+        "start_beat": 203.0,
+        "end_beat": 203.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 203.5,
+        "end_beat": 204.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 204.0,
+        "end_beat": 204.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 204.5,
+        "end_beat": 205.0,
+        "bpm": 420.0
+      },
+      {
+        "start_beat": 205.0,
+        "end_beat": 205.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 205.333,
+        "end_beat": 206.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 206.0,
+        "end_beat": 206.333,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 206.333,
+        "end_beat": 207.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 207.0,
+        "end_beat": 209.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 209.0,
+        "end_beat": 209.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 209.167,
+        "end_beat": 209.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 209.333,
+        "end_beat": 209.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 209.5,
+        "end_beat": 209.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 209.667,
+        "end_beat": 209.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 209.833,
+        "end_beat": 210.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 210.0,
+        "end_beat": 210.167,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 210.167,
+        "end_beat": 210.333,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 210.333,
+        "end_beat": 210.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 210.5,
+        "end_beat": 210.667,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 210.667,
+        "end_beat": 210.833,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 210.833,
+        "end_beat": 211.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 211.0,
+        "end_beat": 215.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 215.0,
+        "end_beat": 222.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 222.0,
+        "end_beat": 222.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 222.5,
+        "end_beat": 223.0,
+        "bpm": 105.0
+      },
+      {
+        "start_beat": 223.0,
+        "end_beat": 235.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 235.0,
+        "end_beat": 235.375,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 235.375,
+        "end_beat": 235.5,
+        "bpm": 70.0
+      },
+      {
+        "start_beat": 235.5,
+        "end_beat": 236.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 236.0,
+        "end_beat": 236.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 236.25,
+        "end_beat": 236.75,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 236.75,
+        "end_beat": 237.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 237.0,
+        "end_beat": 238.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 238.0,
+        "end_beat": 238.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 238.25,
+        "end_beat": 238.75,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 238.75,
+        "end_beat": 239.0,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 239.0,
+        "end_beat": 257.5,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 257.5,
+        "end_beat": 257.75,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 257.75,
+        "end_beat": 258.25,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 258.25,
+        "end_beat": 258.5,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 258.5,
+        "end_beat": 266.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 266.0,
+        "end_beat": 266.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 266.25,
+        "end_beat": 267.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 267.0,
+        "end_beat": 267.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 267.25,
+        "end_beat": 268.0,
+        "bpm": 140.0
+      },
+      {
+        "start_beat": 268.0,
+        "end_beat": 268.25,
+        "bpm": 210.0
+      },
+      {
+        "start_beat": 268.25,
+        "end_beat": null,
+        "bpm": 140.0
+      }
+    ]
+  },
+  "The Seconds.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/The Seconds/The Seconds.sm",
+    "total_changes": 2,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 132.0,
+        "bpm": 128.0
+      },
+      {
+        "start_beat": 132.0,
+        "end_beat": 147.5,
+        "bpm": 64.0
+      },
+      {
+        "start_beat": 147.5,
+        "end_beat": null,
+        "bpm": 128.0
+      }
+    ]
+  },
+  "Star Gear.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Star Gear/Star Gear.sm",
+    "total_changes": 178,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 10.25,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 10.25,
+        "end_beat": 10.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 10.75,
+        "end_beat": 11.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 11.25,
+        "end_beat": 12.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 12.0,
+        "end_beat": 16.25,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 16.25,
+        "end_beat": 16.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 16.75,
+        "end_beat": 17.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 17.25,
+        "end_beat": 18.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 18.0,
+        "end_beat": 18.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 18.5,
+        "end_beat": 19.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 19.0,
+        "end_beat": 20.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 20.0,
+        "end_beat": 20.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 20.375,
+        "end_beat": 21.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 21.0,
+        "end_beat": 21.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 21.25,
+        "end_beat": 22.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 22.0,
+        "end_beat": 22.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 22.375,
+        "end_beat": 23.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 23.0,
+        "end_beat": 23.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 23.25,
+        "end_beat": 28.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 28.0,
+        "end_beat": 28.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 28.375,
+        "end_beat": 29.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 29.0,
+        "end_beat": 29.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 29.25,
+        "end_beat": 30.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 30.0,
+        "end_beat": 30.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 30.375,
+        "end_beat": 31.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 31.0,
+        "end_beat": 31.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 31.25,
+        "end_beat": 32.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 32.0,
+        "end_beat": 32.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 32.375,
+        "end_beat": 33.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 33.0,
+        "end_beat": 33.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 33.25,
+        "end_beat": 34.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 34.0,
+        "end_beat": 34.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 34.375,
+        "end_beat": 35.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 35.0,
+        "end_beat": 35.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 35.25,
+        "end_beat": 55.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 55.0,
+        "end_beat": 56.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 56.0,
+        "end_beat": 77.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 77.0,
+        "end_beat": 77.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 77.5,
+        "end_beat": 78.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 78.75,
+        "end_beat": 79.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 79.25,
+        "end_beat": 80.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 80.0,
+        "end_beat": 80.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 80.5,
+        "end_beat": 81.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 81.0,
+        "end_beat": 82.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 82.0,
+        "end_beat": 82.5,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 82.5,
+        "end_beat": 83.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 83.0,
+        "end_beat": 84.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 84.0,
+        "end_beat": 84.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 84.375,
+        "end_beat": 85.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 85.0,
+        "end_beat": 85.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 85.25,
+        "end_beat": 86.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 86.0,
+        "end_beat": 86.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 86.375,
+        "end_beat": 87.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 87.0,
+        "end_beat": 87.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 87.25,
+        "end_beat": 88.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 88.0,
+        "end_beat": 88.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 88.375,
+        "end_beat": 89.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 89.0,
+        "end_beat": 89.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 89.25,
+        "end_beat": 90.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 90.0,
+        "end_beat": 90.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 90.375,
+        "end_beat": 91.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 91.0,
+        "end_beat": 91.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 91.25,
+        "end_beat": 92.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 92.0,
+        "end_beat": 92.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 92.375,
+        "end_beat": 93.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 93.0,
+        "end_beat": 93.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 93.25,
+        "end_beat": 94.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 94.0,
+        "end_beat": 94.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 94.375,
+        "end_beat": 95.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 95.0,
+        "end_beat": 95.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 95.25,
+        "end_beat": 96.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 96.0,
+        "end_beat": 96.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 96.375,
+        "end_beat": 97.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 97.0,
+        "end_beat": 97.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 97.25,
+        "end_beat": 98.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 98.0,
+        "end_beat": 98.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 98.375,
+        "end_beat": 99.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 99.0,
+        "end_beat": 99.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 99.25,
+        "end_beat": 109.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 109.0,
+        "end_beat": 109.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 109.5,
+        "end_beat": 110.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 110.75,
+        "end_beat": 111.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 111.25,
+        "end_beat": 112.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 112.0,
+        "end_beat": 112.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 112.5,
+        "end_beat": 113.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 113.0,
+        "end_beat": 114.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 114.0,
+        "end_beat": 114.5,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 114.5,
+        "end_beat": 115.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 115.0,
+        "end_beat": 116.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 116.0,
+        "end_beat": 119.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 119.0,
+        "end_beat": 120.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 120.0,
+        "end_beat": 133.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 133.0,
+        "end_beat": 133.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 133.5,
+        "end_beat": 134.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 134.75,
+        "end_beat": 135.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 135.25,
+        "end_beat": 136.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 136.0,
+        "end_beat": 141.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 141.0,
+        "end_beat": 141.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 141.5,
+        "end_beat": 142.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 142.75,
+        "end_beat": 143.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 143.25,
+        "end_beat": 144.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 144.0,
+        "end_beat": 144.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 144.5,
+        "end_beat": 145.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 145.0,
+        "end_beat": 146.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 146.0,
+        "end_beat": 146.5,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 146.5,
+        "end_beat": 147.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 147.0,
+        "end_beat": 148.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 148.0,
+        "end_beat": 148.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 148.375,
+        "end_beat": 149.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 149.0,
+        "end_beat": 149.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 149.25,
+        "end_beat": 150.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 150.0,
+        "end_beat": 150.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 150.375,
+        "end_beat": 151.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 151.0,
+        "end_beat": 151.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 151.25,
+        "end_beat": 152.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 152.0,
+        "end_beat": 152.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 152.375,
+        "end_beat": 153.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 153.0,
+        "end_beat": 153.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 153.25,
+        "end_beat": 154.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 154.0,
+        "end_beat": 154.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 154.375,
+        "end_beat": 155.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 155.0,
+        "end_beat": 155.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 155.25,
+        "end_beat": 156.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 156.0,
+        "end_beat": 156.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 156.375,
+        "end_beat": 157.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 157.0,
+        "end_beat": 157.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 157.25,
+        "end_beat": 158.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 158.0,
+        "end_beat": 158.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 158.375,
+        "end_beat": 159.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 159.0,
+        "end_beat": 159.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 159.25,
+        "end_beat": 160.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 160.0,
+        "end_beat": 160.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 160.375,
+        "end_beat": 161.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 161.0,
+        "end_beat": 161.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 161.25,
+        "end_beat": 162.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 162.0,
+        "end_beat": 162.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 162.375,
+        "end_beat": 163.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 163.0,
+        "end_beat": 163.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 163.25,
+        "end_beat": 183.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 183.0,
+        "end_beat": 184.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 184.0,
+        "end_beat": 266.25,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 266.25,
+        "end_beat": 266.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 266.75,
+        "end_beat": 267.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 267.25,
+        "end_beat": 268.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 268.0,
+        "end_beat": 272.25,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 272.25,
+        "end_beat": 272.75,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 272.75,
+        "end_beat": 273.25,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 273.25,
+        "end_beat": 274.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 274.0,
+        "end_beat": 274.5,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 274.5,
+        "end_beat": 275.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 275.0,
+        "end_beat": 276.0,
+        "bpm": 146.25
+      },
+      {
+        "start_beat": 276.0,
+        "end_beat": 276.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 276.375,
+        "end_beat": 277.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 277.0,
+        "end_beat": 277.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 277.25,
+        "end_beat": 278.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 278.0,
+        "end_beat": 278.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 278.375,
+        "end_beat": 279.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 279.0,
+        "end_beat": 279.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 279.25,
+        "end_beat": 284.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 284.0,
+        "end_beat": 284.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 284.375,
+        "end_beat": 285.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 285.0,
+        "end_beat": 285.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 285.25,
+        "end_beat": 286.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 286.0,
+        "end_beat": 286.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 286.375,
+        "end_beat": 287.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 287.0,
+        "end_beat": 287.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 287.25,
+        "end_beat": 288.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 288.0,
+        "end_beat": 288.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 288.375,
+        "end_beat": 289.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 289.0,
+        "end_beat": 289.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 289.25,
+        "end_beat": 290.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 290.0,
+        "end_beat": 290.375,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 290.375,
+        "end_beat": 291.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 291.0,
+        "end_beat": 291.25,
+        "bpm": 97.5
+      },
+      {
+        "start_beat": 291.25,
+        "end_beat": 311.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 311.0,
+        "end_beat": 312.0,
+        "bpm": 162.5
+      },
+      {
+        "start_beat": 312.0,
+        "end_beat": 320.0,
+        "bpm": 130.0
+      },
+      {
+        "start_beat": 320.0,
+        "end_beat": 321.0,
+        "bpm": 195.0
+      },
+      {
+        "start_beat": 321.0,
+        "end_beat": null,
+        "bpm": 130.0
+      }
+    ]
+  },
+  "Human Error.sm": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/Fraxtil's Arrow Arrangements/Human Error/Human Error.sm",
+    "total_changes": 64,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 81.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 81.0,
+        "end_beat": 88.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 88.0,
+        "end_beat": 89.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 89.0,
+        "end_beat": 94.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 94.0,
+        "end_beat": 94.333,
+        "bpm": 354.0
+      },
+      {
+        "start_beat": 94.333,
+        "end_beat": 94.833,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 94.833,
+        "end_beat": 95.0,
+        "bpm": 88.5
+      },
+      {
+        "start_beat": 95.0,
+        "end_beat": 97.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 97.0,
+        "end_beat": 104.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 104.0,
+        "end_beat": 105.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 105.0,
+        "end_beat": 105.333,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 105.333,
+        "end_beat": 105.667,
+        "bpm": 227.287
+      },
+      {
+        "start_beat": 105.667,
+        "end_beat": 106.0,
+        "bpm": 240.98
+      },
+      {
+        "start_beat": 106.0,
+        "end_beat": 106.333,
+        "bpm": 256.429
+      },
+      {
+        "start_beat": 106.333,
+        "end_beat": 106.667,
+        "bpm": 273.994
+      },
+      {
+        "start_beat": 106.667,
+        "end_beat": 107.0,
+        "bpm": 294.142
+      },
+      {
+        "start_beat": 107.0,
+        "end_beat": 107.333,
+        "bpm": 317.489
+      },
+      {
+        "start_beat": 107.333,
+        "end_beat": 107.667,
+        "bpm": 344.861
+      },
+      {
+        "start_beat": 107.667,
+        "end_beat": 108.0,
+        "bpm": 377.398
+      },
+      {
+        "start_beat": 108.0,
+        "end_beat": 108.333,
+        "bpm": 416.716
+      },
+      {
+        "start_beat": 108.333,
+        "end_beat": 108.667,
+        "bpm": 465.177
+      },
+      {
+        "start_beat": 108.667,
+        "end_beat": 109.0,
+        "bpm": 526.394
+      },
+      {
+        "start_beat": 109.0,
+        "end_beat": 110.0,
+        "bpm": 606.164
+      },
+      {
+        "start_beat": 110.0,
+        "end_beat": 110.667,
+        "bpm": 708.0
+      },
+      {
+        "start_beat": 110.667,
+        "end_beat": 110.833,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 110.833,
+        "end_beat": 111.0,
+        "bpm": 44.25
+      },
+      {
+        "start_beat": 111.0,
+        "end_beat": 114.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 114.0,
+        "end_beat": 120.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 120.0,
+        "end_beat": 121.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 121.0,
+        "end_beat": 128.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 128.0,
+        "end_beat": 130.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 130.0,
+        "end_beat": 136.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 136.0,
+        "end_beat": 273.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 273.0,
+        "end_beat": 280.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 280.0,
+        "end_beat": 281.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 281.0,
+        "end_beat": 286.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 286.0,
+        "end_beat": 286.333,
+        "bpm": 354.0
+      },
+      {
+        "start_beat": 286.333,
+        "end_beat": 286.833,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 286.833,
+        "end_beat": 287.0,
+        "bpm": 88.5
+      },
+      {
+        "start_beat": 287.0,
+        "end_beat": 289.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 289.0,
+        "end_beat": 296.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 296.0,
+        "end_beat": 297.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 297.0,
+        "end_beat": 297.333,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 297.333,
+        "end_beat": 297.667,
+        "bpm": 227.287
+      },
+      {
+        "start_beat": 297.667,
+        "end_beat": 298.0,
+        "bpm": 240.98
+      },
+      {
+        "start_beat": 298.0,
+        "end_beat": 298.333,
+        "bpm": 256.429
+      },
+      {
+        "start_beat": 298.333,
+        "end_beat": 298.667,
+        "bpm": 273.994
+      },
+      {
+        "start_beat": 298.667,
+        "end_beat": 299.0,
+        "bpm": 294.142
+      },
+      {
+        "start_beat": 299.0,
+        "end_beat": 299.333,
+        "bpm": 317.489
+      },
+      {
+        "start_beat": 299.333,
+        "end_beat": 299.667,
+        "bpm": 344.861
+      },
+      {
+        "start_beat": 299.667,
+        "end_beat": 300.0,
+        "bpm": 377.398
+      },
+      {
+        "start_beat": 300.0,
+        "end_beat": 300.333,
+        "bpm": 416.716
+      },
+      {
+        "start_beat": 300.333,
+        "end_beat": 300.667,
+        "bpm": 465.177
+      },
+      {
+        "start_beat": 300.667,
+        "end_beat": 301.0,
+        "bpm": 526.394
+      },
+      {
+        "start_beat": 301.0,
+        "end_beat": 302.0,
+        "bpm": 606.164
+      },
+      {
+        "start_beat": 302.0,
+        "end_beat": 302.667,
+        "bpm": 708.0
+      },
+      {
+        "start_beat": 302.667,
+        "end_beat": 302.833,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 302.833,
+        "end_beat": 303.0,
+        "bpm": 44.25
+      },
+      {
+        "start_beat": 303.0,
+        "end_beat": 306.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 306.0,
+        "end_beat": 312.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 312.0,
+        "end_beat": 313.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 313.0,
+        "end_beat": 320.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 320.0,
+        "end_beat": 322.0,
+        "bpm": 177.0
+      },
+      {
+        "start_beat": 322.0,
+        "end_beat": 328.0,
+        "bpm": 215.067
+      },
+      {
+        "start_beat": 328.0,
+        "end_beat": null,
+        "bpm": 177.0
+      }
+    ]
+  },
+  "Mecha-Tribe Assault.ssc": {
+    "file": "/Users/mukeshguntumadugu/LLM_rock/llm_beatmap_generator/scripts/../src/musicForBeatmap/MechaTribe Assault/Mecha-Tribe Assault.ssc",
+    "total_changes": 4,
+    "sections": [
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": 0.0,
+        "bpm": 180.0
+      },
+      {
+        "start_beat": 0.0,
+        "end_beat": null,
+        "bpm": 180.0
+      }
+    ]
+  }
+}

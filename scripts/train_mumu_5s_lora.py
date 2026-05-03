@@ -103,18 +103,23 @@ def main():
             input2_ids = torch.tensor(self.tokenizer(input2).input_ids, dtype=torch.int64)
 
             # Pad or truncate
+            pad_id = self.tokenizer.pad_token_id if self.tokenizer.pad_token_id is not None else 0
             padding = self.max_words - input2_ids.shape[0]
             if padding < 0:
                 input2_ids = input2_ids[:self.max_words]
             elif padding > 0:
-                input2_ids = torch.cat([input2_ids, torch.zeros(padding, dtype=torch.int64)])
+                input2_ids = torch.cat([input2_ids, torch.full((padding,), pad_id, dtype=torch.int64)])
+
+            # Safety: Ensure all token IDs are within vocabulary range
+            vocab_size = len(self.tokenizer)
+            input2_ids[input2_ids >= vocab_size] = pad_id
 
             # Labels: mask the prompt portion using standard -100 ignore index
             labels = input2_ids.clone()
             labels[:len(input1_ids)] = -100
             
-            # Also mask any padding (0) with -100
-            labels[labels == 0] = -100
+            # Also mask any padding with -100
+            labels[labels == pad_id] = -100
 
             # Attention mask
             mask = input2_ids.ne(0)
@@ -184,7 +189,11 @@ def main():
                     print(f"  Step {batch_idx+1}: loss={avg:.4f}")
 
             except Exception as e:
-                print(f"  Skipping batch {batch_idx}: {e}")
+                print(f"  ❌ Error in batch {batch_idx}: {e}")
+                print("  Consider running with CUDA_LAUNCH_BLOCKING=1 to pinpoint the error.")
+                # If it's a CUDA error, we might need to stop as the context could be corrupted
+                if "CUDA error" in str(e):
+                    raise e
                 continue
 
         avg_train_loss = epoch_loss / max(num_batches, 1)
