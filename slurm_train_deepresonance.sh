@@ -22,6 +22,7 @@ export PYTHONNOUSERSITE=1
 export CUDA_VISIBLE_DEVICES=0
 export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
 export DS_SKIP_CUDA_CHECK=1
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 /data/mg546924/conda_envs/qwenenv/bin/python scripts/train_deepresonance_5s_lora.py
 

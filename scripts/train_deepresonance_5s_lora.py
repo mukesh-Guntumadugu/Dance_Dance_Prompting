@@ -190,6 +190,9 @@ def main():
                 epoch_loss += loss.item()
                 num_batches += 1
 
+                if (batch_idx + 1) % 500 == 0:
+                    torch.cuda.empty_cache()
+
                 if (batch_idx + 1) % 50 == 0:
                     avg = epoch_loss / num_batches
                     print(f"  Step {batch_idx+1}: loss={avg:.4f}")
