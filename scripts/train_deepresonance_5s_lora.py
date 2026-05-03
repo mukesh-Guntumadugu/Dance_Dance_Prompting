@@ -148,7 +148,7 @@ def main():
     # ── CRITICAL: Enable Gradients ──
     print("Enabling gradients for trainable parameters...")
     for name, param in model.named_parameters():
-        if "lora" in name.lower() or "llama_model" in name.lower():
+        if "lora" in name.lower() or "delta" in name.lower():
             param.requires_grad = True
         else:
             param.requires_grad = False
