@@ -85,7 +85,40 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
     )
     
     # Resize the embeddings to match our new extended tokenizer BEFORE loading weights!
-    model.llama.resize_token_embeddings(len(tokenizer))
+    import torch.nn as nn
+    after = len(tokenizer)
+    
+    if hasattr(model.llama, "model") and hasattr(model.llama.model, "embed_tokens"):
+        embedding_layer = model.llama.model.embed_tokens
+    else:
+        embedding_layer = model.llama.tok_embeddings
+        
+    old_num_tokens, embed_dim = embedding_layer.weight.shape
+    new_embeds = nn.Embedding(after, embed_dim)
+    
+    if hasattr(model.llama, "model") and hasattr(model.llama.model, "embed_tokens"):
+        model.llama.model.embed_tokens = new_embeds
+    else:
+        model.llama.tok_embeddings = new_embeds
+
+    if hasattr(model.llama, "output"):
+        output_layer = model.llama.output
+        if hasattr(output_layer, "weight"):
+            out_dim, in_dim = output_layer.weight.shape
+            new_output = nn.Linear(in_features=in_dim, out_features=after, bias=hasattr(output_layer, "bias") and getattr(output_layer, "bias") is not None)
+            model.llama.output = new_output
+
+    for obj in [model, model.llama]:
+        for attr in ["vocab_size", "n_words", "params"]:
+            if hasattr(obj, attr):
+                val = getattr(obj, attr)
+                if isinstance(val, int) and val == old_num_tokens:
+                    setattr(obj, attr, after)
+                elif hasattr(val, "vocab_size") and val.vocab_size == old_num_tokens:
+                    val.vocab_size = after
+
+    if hasattr(model, "model_args") and hasattr(model.model_args, "num_gen_audio_tokens"):
+        model.model_args.num_gen_audio_tokens = after - 32000
     
     # Find the latest checkpoint
     import glob
