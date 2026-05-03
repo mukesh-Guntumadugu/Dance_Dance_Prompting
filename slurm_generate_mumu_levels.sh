@@ -26,13 +26,16 @@ echo "  Node        : $SLURMD_NODENAME"
 echo "  Start       : $(date)"
 echo "=============================================="
 
+# Create a unique timestamp for this run so files are not overwritten
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
 # Song 1: Bad Ketchup
 echo ""
 echo "Generating Level for: Bad Ketchup"
 /data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/Fraxtil's Arrow Arrangements/Bad Ketchup/Bad Ketchup.ogg" \
     --bpm 180.0 \
-    --out "outputs/mumu_generated_Bad_Ketchup.ssc"
+    --out "outputs/mumu_generated_Bad_Ketchup_${TIMESTAMP}.ssc"
 
 # Song 2: Springtime
 echo ""
@@ -40,7 +43,7 @@ echo "Generating Level for: Springtime"
 /data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/Springtime/Kommisar - Springtime.mp3" \
     --bpm 180.0 \
-    --out "outputs/mumu_generated_Springtime.ssc"
+    --out "outputs/mumu_generated_Springtime_${TIMESTAMP}.ssc"
 
 # Song 3: Mecha-Tribe Assault
 echo ""
@@ -48,7 +51,7 @@ echo "Generating Level for: Mecha-Tribe Assault"
 /data/mg546924/conda_envs/qwenenv/bin/python -u scripts/generate_hierarchical_beatmap.py \
     --audio "src/musicForBeatmap/MechaTribe Assault/Mecha-Tribe Assault.ogg" \
     --bpm 180.0 \
-    --out "outputs/mumu_generated_MechaTribe.ssc"
+    --out "outputs/mumu_generated_MechaTribe_${TIMESTAMP}.ssc"
 
 echo ""
 echo "=============================================="
