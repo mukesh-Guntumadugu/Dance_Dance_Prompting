@@ -7,7 +7,7 @@
 #SBATCH --time=24:00:00
 
 cd /data/mg546924/llm_beatmap_generator/windowed_bpm_analysis
-source /data/mg546924/miniconda3/bin/activate deepresonance_env
+source /data/mg546924/miniconda3/bin/activate qwenenv
 
 echo "Running DeepResonance (C0: Stateless Chunk)"
 python compute_windowed_rmse.py --model DeepResonance --mode stateless_chunk
