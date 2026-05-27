@@ -2,7 +2,7 @@
 #SBATCH --job-name=deepres_win_bpm
 #SBATCH --output=deepres_win_bpm_%j.log
 #SBATCH --error=deepres_win_bpm_%j.err
-#SBATCH --partition=gpu
+#SBATCH --partition=defq
 #SBATCH --gres=gpu:a100:1
 #SBATCH --time=24:00:00
 #SBATCH --mem=32G

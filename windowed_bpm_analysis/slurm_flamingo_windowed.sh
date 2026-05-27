@@ -2,7 +2,7 @@
 #SBATCH --job-name=flamingo_win_bpm
 #SBATCH --output=flamingo_win_bpm_%j.log
 #SBATCH --error=flamingo_win_bpm_%j.err
-#SBATCH --partition=gpu
+#SBATCH --partition=defq
 #SBATCH --gres=gpu:a100:1
 #SBATCH --time=24:00:00
 #SBATCH --mem=32G
