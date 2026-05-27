@@ -3,9 +3,8 @@
 #SBATCH --output=flamingo_win_bpm_%j.log
 #SBATCH --error=flamingo_win_bpm_%j.err
 #SBATCH --partition=defq
-#SBATCH --gres=gpu:a100:1
+#SBATCH --gres=gpu:A6000:1
 #SBATCH --time=24:00:00
-#SBATCH --mem=32G
 
 cd /data/mg546924/llm_beatmap_generator/windowed_bpm_analysis
 source /data/mg546924/miniconda3/bin/activate flamingo_env
