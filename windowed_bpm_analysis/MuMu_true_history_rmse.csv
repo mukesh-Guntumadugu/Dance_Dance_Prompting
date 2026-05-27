@@ -1,3 +1,6 @@
 song_name,window_start,window_end,actual_bpm,pred_bpm
 Bad Ketchup,0.0,40.0,180.0,0.0
 Bad Ketchup,40.0,80.0,180.0,0.0
+Bad Ketchup,80.0,120.0,180.0,0.0
+Bad Ketchup,120.0,142.3774375,180.0,0.0
+Bitch Clap,0.0,40.0,150.0,0.0
