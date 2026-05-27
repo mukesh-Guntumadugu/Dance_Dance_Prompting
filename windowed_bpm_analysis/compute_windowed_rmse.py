@@ -147,12 +147,20 @@ def run_model_subprocess(model_name, audio_path, prompt_text):
         
     try:
         r = subprocess.run([config["bin"], tmp], capture_output=True, text=True, timeout=900, env=env)
+        if r.returncode != 0:
+            print(f"    [ERROR] Subprocess crashed with return code {r.returncode}!")
+            print(f"    [STDERR]: {r.stderr.strip()}")
+            
         out = r.stdout + r.stderr
         m_bpm = re.search(r'BPM_RESPONSE=(.*)', out)
         if m_bpm:
             try:
                 return float(m_bpm.group(1).strip())
             except: pass
+        else:
+            if r.returncode == 0:
+                print(f"    [WARNING] BPM_RESPONSE not found in output!")
+                print(f"    [STDOUT]: {r.stdout.strip()}")
         return None
     except Exception as e:
         print(f"Error querying {model_name}: {e}")
