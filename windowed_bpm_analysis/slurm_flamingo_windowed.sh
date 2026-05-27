@@ -3,7 +3,6 @@
 #SBATCH --output=flamingo_win_bpm_%j.log
 #SBATCH --error=flamingo_win_bpm_%j.err
 #SBATCH --partition=defq
-#SBATCH --exclusive
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --time=24:00:00
 
