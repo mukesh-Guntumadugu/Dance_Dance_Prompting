@@ -10,13 +10,13 @@ cd /data/mg546924/llm_beatmap_generator/windowed_bpm_analysis
 source /data/mg546924/miniconda3/bin/activate qwenenv
 
 echo "Running DeepResonance (C0: Stateless Chunk)"
-python compute_windowed_rmse.py --model DeepResonance --mode stateless_chunk
+python -u compute_windowed_rmse.py --model DeepResonance --mode stateless_chunk
 
 echo "Running DeepResonance (C1: True History)"
-python compute_windowed_rmse.py --model DeepResonance --mode true_history
+python -u compute_windowed_rmse.py --model DeepResonance --mode true_history
 
 echo "Running DeepResonance (C2: Fake History)"
-python compute_windowed_rmse.py --model DeepResonance --mode fake_history
+python -u compute_windowed_rmse.py --model DeepResonance --mode fake_history
 
 echo "Running DeepResonance (C3: Full Song)"
-python compute_windowed_rmse.py --model DeepResonance --mode full_song
+python -u compute_windowed_rmse.py --model DeepResonance --mode full_song
