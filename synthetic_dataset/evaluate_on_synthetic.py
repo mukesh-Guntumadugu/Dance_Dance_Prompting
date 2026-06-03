@@ -213,9 +213,9 @@ def main():
                 if seg_start >= duration:
                     break
                 
-                # Chop into 40s pieces
+                # Chop into 20s pieces
                 while seg_start < seg_end:
-                    chunk_end = min(seg_start + 40.0, seg_end)
+                    chunk_end = min(seg_start + 20.0, seg_end)
                     if chunk_end - seg_start >= 1.0: # Skip micro-chunks
                         chunk_boundaries.append((seg_start, chunk_end, seg["bpm"]))
                     seg_start = chunk_end
