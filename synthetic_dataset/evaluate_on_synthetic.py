@@ -153,8 +153,8 @@ def main():
     parser.add_argument("--ext", type=str, default="wav", choices=["wav", "ogg", "mp3"])
     args = parser.parse_args()
     
-    out_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_rmse.csv")
-    out_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_report.json")
+    out_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}_rmse.csv")
+    out_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}_report.json")
     
     songs = []
     if not os.path.exists(DATASET_DIR):

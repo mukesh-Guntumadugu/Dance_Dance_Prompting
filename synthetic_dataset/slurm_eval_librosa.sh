@@ -9,5 +9,11 @@
 cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
 source /data/mg546924/miniconda3/bin/activate qwenenv
 
-echo "Testing Librosa Baseline..."
+echo "Testing Librosa Baseline (WAV)..."
 python -u evaluate_on_synthetic.py --model Librosa --mode stateless_chunk --ext wav
+
+echo "Testing Librosa Baseline (MP3)..."
+python -u evaluate_on_synthetic.py --model Librosa --mode stateless_chunk --ext mp3
+
+echo "Testing Librosa Baseline (OGG)..."
+python -u evaluate_on_synthetic.py --model Librosa --mode stateless_chunk --ext ogg
