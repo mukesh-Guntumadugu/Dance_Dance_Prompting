@@ -38,7 +38,12 @@ def main():
         plt.plot(song_df['window_start'], song_df['pred_bpm'], 
                  label='Predicted BPM', color='red', linestyle='--', linewidth=2, marker='o')
     
-        plt.title(f"BPM Timeline Comparison for {current_song}\nModel: {os.path.basename(args.csv).split('_')[0]}")
+        base_name = os.path.basename(args.csv)
+        model_name = base_name.split('_')[0]
+        parts = base_name.split('_')
+        fmt = parts[-2] if len(parts) >= 4 and parts[-2] in ["wav", "mp3", "ogg"] else "wav"
+        
+        plt.title(f"BPM Timeline Comparison for {current_song}\nModel: {model_name} (Format: {fmt.upper()})")
         plt.xlabel("Time (seconds)")
         plt.ylabel("BPM")
         plt.xlim(0, 250) # Lock the X-axis to 250s max
@@ -46,8 +51,7 @@ def main():
         plt.legend()
         plt.tight_layout()
     
-        model_name = os.path.basename(args.csv).split('_')[0]
-        out_file = f"{model_name}_{current_song}_plot.png"
+        out_file = f"{model_name}_{fmt}_{current_song}_plot.png"
         plt.savefig(out_file, dpi=300)
         plt.close()
         print(f"Graph successfully saved as {out_file}!")

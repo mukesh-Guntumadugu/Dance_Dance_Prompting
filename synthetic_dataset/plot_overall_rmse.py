@@ -37,8 +37,13 @@ def generate_rmse_graph():
 
     for file in report_files:
         basename = os.path.basename(file)
-        model_name = basename.split("_stateless_chunk")[0]
-        data[model_name] = {c: [] for c in categories}
+        parts = basename.split('_')
+        base_model = parts[0]
+        fmt = parts[-2] if len(parts) >= 4 and parts[-2] in ["wav", "mp3", "ogg"] else "wav"
+        model_name = f"{base_model} ({fmt.upper()})"
+        
+        if model_name not in data:
+            data[model_name] = {c: [] for c in categories}
         
         with open(file, 'r') as f:
             report = json.load(f)
