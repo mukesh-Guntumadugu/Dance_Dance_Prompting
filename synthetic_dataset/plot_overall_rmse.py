@@ -63,25 +63,25 @@ def generate_rmse_graph():
             avg = sum(errors) / len(errors) if errors else 0
             avg_data[model].append(avg)
 
-    # Plot Grouped Bar Chart
+    # Plot Line Graph
     models = list(avg_data.keys())
     
     x = np.arange(len(categories))  # the label locations
-    width = 0.8 / len(models) if models else 0.8 # dynamic width
     
     fig, ax = plt.subplots(figsize=(12, 7))
     
-    multiplier = 0
     for model in models:
-        offset = width * multiplier
-        rects = ax.bar(x + offset, avg_data[model], width, label=model)
-        ax.bar_label(rects, padding=3, fmt='%.1f')
-        multiplier += 1
+        # Plot lines with markers
+        ax.plot(x, avg_data[model], marker='o', linewidth=2, label=model)
+        
+        # Add labels to the points
+        for i, val in enumerate(avg_data[model]):
+            ax.annotate(f'{val:.1f}', (x[i], val), textcoords="offset points", xytext=(0,10), ha='center')
 
     # Add text, title, and custom x-axis tick labels
     ax.set_ylabel('Average RMSE (Error in BPM)')
     ax.set_title('BPM Prediction Error Broken Down by Song Complexity')
-    ax.set_xticks(x + width * (len(models) - 1) / 2)
+    ax.set_xticks(x)
     ax.set_xticklabels(categories)
     ax.legend(loc='upper left', ncols=len(models))
     

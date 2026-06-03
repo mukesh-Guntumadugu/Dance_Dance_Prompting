@@ -16,35 +16,41 @@ def main():
         return
 
     df = pd.read_csv(args.csv)
-    song_df = df[df['song_name'] == args.song].copy()
-
-    if song_df.empty:
-        print(f"No data found for {args.song} in the CSV!")
-        return
-
-    # Sort by time
-    song_df = song_df.sort_values(by='window_start')
-
-    plt.figure(figsize=(12, 6))
+    song_names = df['song_name'].unique() if args.song == "all" else [args.song]
     
-    # Plot true BPM
-    plt.step(song_df['window_start'], song_df['actual_bpm'], where='post', 
-             label='Actual BPM (Ground Truth)', color='blue', linewidth=2)
+    for current_song in song_names:
+        song_df = df[df['song_name'] == current_song].copy()
     
-    # Plot predicted BPM
-    plt.step(song_df['window_start'], song_df['pred_bpm'], where='post', 
-             label='Predicted BPM', color='red', linestyle='--', linewidth=2, marker='o')
-
-    plt.title(f"BPM Timeline Comparison for {args.song}\nModel: {os.path.basename(args.csv).split('_')[0]}")
-    plt.xlabel("Time (seconds)")
-    plt.ylabel("BPM")
-    plt.grid(True, alpha=0.3)
-    plt.legend()
-    plt.tight_layout()
-
-    out_file = f"{args.song}_plot.png"
-    plt.savefig(out_file, dpi=300)
-    print(f"Graph successfully saved as {out_file}!")
+        if song_df.empty:
+            print(f"No data found for {current_song} in the CSV!")
+            continue
+    
+        # Sort by time
+        song_df = song_df.sort_values(by='window_start')
+    
+        plt.figure(figsize=(12, 6))
+        
+        # Plot true BPM
+        plt.plot(song_df['window_start'], song_df['actual_bpm'], 
+                 label='Actual BPM (Ground Truth)', color='blue', linewidth=2, marker='o')
+        
+        # Plot predicted BPM
+        plt.plot(song_df['window_start'], song_df['pred_bpm'], 
+                 label='Predicted BPM', color='red', linestyle='--', linewidth=2, marker='o')
+    
+        plt.title(f"BPM Timeline Comparison for {current_song}\nModel: {os.path.basename(args.csv).split('_')[0]}")
+        plt.xlabel("Time (seconds)")
+        plt.ylabel("BPM")
+        plt.xlim(0, 250) # Lock the X-axis to 250s max
+        plt.grid(True, alpha=0.3)
+        plt.legend()
+        plt.tight_layout()
+    
+        model_name = os.path.basename(args.csv).split('_')[0]
+        out_file = f"{model_name}_{current_song}_plot.png"
+        plt.savefig(out_file, dpi=300)
+        plt.close()
+        print(f"Graph successfully saved as {out_file}!")
 
 if __name__ == "__main__":
     main()
