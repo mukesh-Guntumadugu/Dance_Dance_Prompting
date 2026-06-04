@@ -30,13 +30,19 @@ def main():
     
         plt.figure(figsize=(12, 6))
         
-        # Plot true BPM
-        plt.plot(song_df['window_start'], song_df['actual_bpm'], 
-                 label='Actual BPM (Ground Truth)', color='blue', linewidth=2, marker='o')
-        
-        # Plot predicted BPM
-        plt.plot(song_df['window_start'], song_df['pred_bpm'], 
-                 label='Predicted BPM', color='red', linestyle='--', linewidth=2, marker='o')
+        # Plot horizontal lines without connecting them vertically
+        for i in range(len(song_df)):
+            row = song_df.iloc[i]
+            start = row['window_start']
+            # Assume 20 seconds for the window length if it's the last one
+            end = song_df.iloc[i+1]['window_start'] if i + 1 < len(song_df) else start + 20.0
+            
+            plt.plot([start, end], [row['actual_bpm'], row['actual_bpm']], color='blue', linewidth=2)
+            plt.plot([start, end], [row['pred_bpm'], row['pred_bpm']], color='red', linestyle='--', linewidth=2)
+            
+        # Add proxy artists for the legend
+        plt.plot([], [], color='blue', linewidth=2, label='Actual BPM (Ground Truth)')
+        plt.plot([], [], color='red', linestyle='--', linewidth=2, label='Predicted BPM')
     
         base_name = os.path.basename(args.csv)
         model_name = base_name.split('_')[0]

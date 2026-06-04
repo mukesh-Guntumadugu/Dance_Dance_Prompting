@@ -1,88 +1,83 @@
 #!/usr/bin/env python3
 import os
-import glob
-import json
+import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
+import argparse
 
-def get_category(song_name):
-    try:
-        num = int(song_name.split('_')[1])
-    except:
-        return "Unknown"
-        
-    if 1 <= num <= 10: return "Constant BPM"
-    elif 11 <= num <= 20: return "60s Shifts"
-    elif 21 <= num <= 30: return "40s Shifts"
-    elif 31 <= num <= 40: return "50s Shifts"
-    elif 41 <= num <= 50: return "Random Shifts"
-    return "Unknown"
+def main():
+    parser = argparse.ArgumentParser(description="Plot format comparison for a specific model")
+    parser.add_argument("--model", type=str, required=True, help="Model name (e.g., Librosa)")
+    args = parser.parse_args()
 
-def plot_format_comparisons():
-    report_files = glob.glob("*_*_*_report.json")
-    if not report_files:
-        print("No report JSON files found. Run the SLURM jobs first!")
+    formats = ["wav", "mp3", "ogg"]
+    dfs = {}
+    
+    # Load all 3 CSV files for the model
+    for fmt in formats:
+        csv_file = f"{args.model}_stateless_chunk_{fmt}_rmse.csv"
+        if os.path.exists(csv_file):
+            dfs[fmt] = pd.read_csv(csv_file)
+        else:
+            print(f"Warning: {csv_file} not found!")
+
+    if not dfs:
+        print("No CSV files found for this model.")
         return
 
-    # data[category][model][format] = list of errors
-    categories = ["Constant BPM", "60s Shifts", "40s Shifts", "50s Shifts", "Random Shifts"]
-    data = {c: {} for c in categories}
-    formats = ["wav", "mp3", "ogg"]
+    # Create output directory
+    out_dir = f"{args.model}_format_comparisons"
+    os.makedirs(out_dir, exist_ok=True)
 
-    for file in report_files:
-        basename = os.path.basename(file)
-        # Expected: Model_stateless_chunk_ext_report.json
-        parts = basename.split('_stateless_chunk_')
-        if len(parts) != 2: continue
-        model_name = parts[0]
-        ext = parts[1].replace("_report.json", "")
-        
-        with open(file, 'r') as f:
-            report = json.load(f)
-            
-        for song_name, error in report.items():
-            if song_name == "OVERALL" or error is None: continue
-            cat = get_category(song_name)
-            if cat not in data: continue
-            
-            if model_name not in data[cat]:
-                data[cat][model_name] = {f: [] for f in formats}
-            
-            if ext in data[cat][model_name]:
-                data[cat][model_name][ext].append(error)
+    # Assume the 'wav' format has the list of songs
+    if "wav" in dfs:
+        song_names = dfs["wav"]['song_name'].unique()
+    else:
+        song_names = list(dfs.values())[0]['song_name'].unique()
 
-    # Generate 5 separate graphs (one for each category)
-    for cat in categories:
-        cat_data = data[cat]
-        if not cat_data: continue
+    for song in song_names:
+        plt.figure(figsize=(12, 6))
         
-        models = list(cat_data.keys())
-        x = np.arange(len(models))
-        width = 0.25
+        # Plot True BPM (from any format, they all have the same true BPM)
+        first_df = list(dfs.values())[0]
+        song_df = first_df[first_df['song_name'] == song].sort_values(by='window_start')
         
-        fig, ax = plt.subplots(figsize=(10, 6))
-        
-        for i, fmt in enumerate(formats):
-            avg_errors = []
-            for model in models:
-                errors = cat_data[model].get(fmt, [])
-                avg = sum(errors)/len(errors) if errors else 0
-                avg_errors.append(avg)
-                
-            offset = width * i
-            rects = ax.bar(x + offset, avg_errors, width, label=fmt.upper())
-            ax.bar_label(rects, padding=3, fmt='%.1f')
+        # Draw True BPM horizontal lines
+        for i in range(len(song_df)):
+            row = song_df.iloc[i]
+            start = row['window_start']
+            end = song_df.iloc[i+1]['window_start'] if i + 1 < len(song_df) else start + 20.0
+            plt.plot([start, end], [row['actual_bpm'], row['actual_bpm']], color='black', linewidth=4, alpha=0.5)
+        plt.plot([], [], color='black', linewidth=4, alpha=0.5, label='Actual BPM (Ground Truth)')
 
-        ax.set_ylabel('Average RMSE (BPM Error)')
-        ax.set_title(f'Format Comparison: {cat}')
-        ax.set_xticks(x + width)
-        ax.set_xticklabels(models)
-        ax.legend()
+        # Plot predictions for each format
+        colors = {'wav': 'blue', 'mp3': 'green', 'ogg': 'red'}
+        styles = {'wav': '-', 'mp3': '--', 'ogg': ':'}
         
-        out_name = f"format_comparison_{cat.replace(' ', '_')}.png"
+        for fmt, df in dfs.items():
+            fmt_song_df = df[df['song_name'] == song].sort_values(by='window_start')
+            
+            for i in range(len(fmt_song_df)):
+                row = fmt_song_df.iloc[i]
+                start = row['window_start']
+                end = fmt_song_df.iloc[i+1]['window_start'] if i + 1 < len(fmt_song_df) else start + 20.0
+                plt.plot([start, end], [row['pred_bpm'], row['pred_bpm']], color=colors[fmt], linestyle=styles[fmt], linewidth=2)
+            
+            # Proxy artist for legend
+            plt.plot([], [], color=colors[fmt], linestyle=styles[fmt], linewidth=2, label=f'{args.model} ({fmt.upper()})')
+
+        plt.title(f"Audio Format Comparison for {song}\nModel: {args.model}")
+        plt.xlabel("Time (seconds)")
+        plt.ylabel("BPM")
+        plt.xlim(0, 250)
+        plt.grid(True, alpha=0.3)
+        plt.legend()
         plt.tight_layout()
-        plt.savefig(out_name, dpi=300)
-        print(f"Generated {out_name}")
+
+        out_file = os.path.join(out_dir, f"{args.model}_format_comp_{song}.png")
+        plt.savefig(out_file, dpi=300)
+        plt.close()
+
+    print(f"Successfully generated {len(song_names)} format comparison graphs in '{out_dir}/'!")
 
 if __name__ == "__main__":
-    plot_format_comparisons()
+    main()
