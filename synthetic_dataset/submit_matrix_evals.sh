@@ -1,9 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=matrix_eval
-#SBATCH --output=logs/matrix_eval_%A_%a.log
-#SBATCH --error=logs/matrix_eval_%A_%a.err
-#SBATCH --array=60-240
-#SBATCH --time=12:00:00
+#SBATCH --output=logs/matrix_eval_%j.log
+#SBATCH --error=logs/matrix_eval_%j.err
+#SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
@@ -17,11 +16,7 @@ if [ -z "$MODEL" ]; then
     exit 1
 fi
 
-BASE_BPM=$SLURM_ARRAY_TASK_ID
-
 mkdir -p logs
-
-echo "Evaluating Model: $MODEL on Base BPM: $BASE_BPM"
 
 export HF_HOME=/data/mg546924/hf_cache
 export TORCH_HOME=/data/mg546924/hf_cache
@@ -44,7 +39,6 @@ case "$MODEL" in
         conda activate /data/mg546924/conda_envs/deepresonance_env
         ;;
     "Librosa")
-        # Librosa works in almost any env, use base or qwenenv
         conda activate /data/mg546924/conda_envs/qwenenv
         ;;
     *)
@@ -53,7 +47,21 @@ case "$MODEL" in
         ;;
 esac
 
-# Execute without unbuffered stdout to let Python output normally
-python -u synthetic_dataset/evaluate_matrix.py --model $MODEL --base_bpm $BASE_BPM --matrix_dir matrix_dataset
+echo "Starting sequential evaluation loop for Model: $MODEL"
 
-echo "Evaluation finished for $MODEL on Base BPM $BASE_BPM"
+for BASE_BPM in {60..240}; do
+    OUT_CSV="matrix_dataset/${MODEL}_base_bpm_${BASE_BPM}_rmse.csv"
+    
+    # Check if this CSV already exists and has size > 0 to avoid re-running
+    if [ -s "$OUT_CSV" ]; then
+        echo "Skipping Base BPM $BASE_BPM for $MODEL (already generated)"
+        continue
+    fi
+    
+    echo "Evaluating Model: $MODEL on Base BPM: $BASE_BPM"
+    python -u synthetic_dataset/evaluate_matrix.py --model $MODEL --base_bpm $BASE_BPM --matrix_dir matrix_dataset
+    echo "Completed Base BPM $BASE_BPM for $MODEL"
+    echo "---------------------------------------------------"
+done
+
+echo "Evaluation fully finished for $MODEL"
