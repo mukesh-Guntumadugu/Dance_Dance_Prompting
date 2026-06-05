@@ -2,7 +2,7 @@
 #SBATCH --job-name=matrix_eval
 #SBATCH --output=logs/matrix_eval_%j.log
 #SBATCH --error=logs/matrix_eval_%j.err
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
@@ -33,7 +33,7 @@ case "$MODEL" in
         conda activate /data/mg546924/music_flamingo_env
         ;;
     "MuMu")
-        conda activate /data/mg546924/miniconda3/envs/mumullama
+        conda activate /home/mg546924/.conda/envs/mumullama
         ;;
     "DeepResonance")
         conda activate /data/mg546924/conda_envs/deepresonance_env
