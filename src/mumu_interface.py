@@ -62,8 +62,16 @@ def generate_beatmap_with_mumu(audio_path: str, prompt: str) -> str:
             )
                 
         raw_text = results[0] if isinstance(results, list) and len(results) > 0 else str(results)
-        return str(raw_text)
         
+        del waveform
+        del audio_np
+        del results
+        import gc
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            
+        return str(raw_text)
     except Exception as e:
         print(f"❌ Error during actual MuMu inference: {e}")
         traceback.print_exc()

@@ -23,17 +23,18 @@ for MODEL in "${MODELS[@]}"; do
 #!/bin/bash
 #SBATCH --job-name=$JOB_NAME
 #SBATCH --output=${MODEL}_sweep_${EXT}_%j.log
+#SBATCH --error=${MODEL}_sweep_${EXT}_%j.err
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gpus-per-node=1
+#SBATCH --gres=gpu:1
 #SBATCH --partition=defq
 
 cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
-source /data/mg546924/miniconda3/bin/activate qwenenv
+source /data/mg546924/miniconda3/bin/activate $ENV_NAME
 
 echo "Running $MODEL on sweep dataset ($EXT format)..."
-python evaluate_sweep.py --model $MODEL --mode $MODE --ext $EXT
+python -u evaluate_sweep.py --model $MODEL --mode $MODE --ext $EXT
 EOF
 
         sbatch tmp_submit.slurm

@@ -187,16 +187,19 @@ def main():
         for num, song_name, audio_path, json_path in songs:
             print(f"\nProcessing {song_name}...")
             
-            # Read exact segments from V2 JSON
-            segments = get_ground_truth_segments(json_path)
+            y, sr = None, 16000
             
-            try:
-                y, sr = librosa.load(audio_path, sr=16000)
-            except Exception as e:
-                print(f"Failed to load audio {audio_path}: {e}")
-                continue
-                
-            duration = librosa.get_duration(y=y, sr=sr)
+            with open(json_path, 'r') as f:
+                gt_data = json.load(f)
+            duration = gt_data.get("duration", 180.0)
+            segments = gt_data.get("segments", [])
+            
+            if args.mode != "full_song" or args.model == "Librosa":
+                try:
+                    y, sr = librosa.load(audio_path, sr=16000)
+                except Exception as e:
+                    print(f"Failed to load audio {audio_path}: {e}")
+                    continue
             
             # Dynamic chunking logic: split at tempo changes exactly, max 40s per chunk
             chunk_boundaries = []
@@ -224,6 +227,7 @@ def main():
                 print(f"  Window {win_start:.1f}s to {win_end:.1f}s | Target: {actual_bpm:.1f}")
                 
                 if args.mode in ["stateless_chunk", "true_history", "fake_history"]:
+                    assert y is not None
                     y_chunk = y[int(win_start * sr):int(win_end * sr)]
                     with tempfile.NamedTemporaryFile(suffix=f".{args.ext}", delete=False) as tmp_audio:
                         sf.write(tmp_audio.name, y_chunk, sr)

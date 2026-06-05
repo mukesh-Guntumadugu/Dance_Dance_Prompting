@@ -73,7 +73,16 @@ def main():
     # Each pair is 20s of Base, 20s of Target = 40s per pair.
     # 181 * 40 = 7240 seconds.
     segment_duration = 20.0
+    os.makedirs(args.output_dir, exist_ok=True)
+    
+    song_name = f"base_bpm_{args.base_bpm}"
+    json_path = os.path.join(args.output_dir, f"{song_name}_groundtruth.json")
+    if os.path.exists(json_path):
+        print(f"Skipping {song_name}, already generated!")
+        return
+
     targets = list(range(60, 241))
+    
     total_duration = len(targets) * (segment_duration * 2)
     total_samples = int(total_duration * sr)
     
@@ -122,6 +131,9 @@ def main():
     wav_path = os.path.join(args.output_dir, f"{song_name}.wav")
     print(f"Saving {wav_path}...")
     sf.write(wav_path, audio, sr)
+    
+    # Free the 1.2GB audio array before JSON serialization to prevent OOM
+    del audio
 
     ground_truth = {
         "song_name": song_name,

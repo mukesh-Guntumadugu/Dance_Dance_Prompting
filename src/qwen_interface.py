@@ -3,6 +3,14 @@ import os
 import torch
 import librosa
 import soundfile as sf
+
+# Monkey patch for transformers compatibility with PyTorch 2.1
+if not hasattr(torch.utils._pytree, 'register_pytree_node'):
+    try:
+        torch.utils._pytree.register_pytree_node = torch.utils._pytree._register_pytree_node
+    except AttributeError:
+        pass
+
 from transformers import Qwen2AudioForConditionalGeneration, AutoProcessor
 from io import BytesIO
 
@@ -136,6 +144,14 @@ def generate_beatmap_with_qwen(audio_path: str, prompt: str) -> str:
     # Decode
     generated_ids = generated_ids[:, inputs.input_ids.size(1):]
     response_text = _processor.batch_decode(generated_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
+    
+    del inputs
+    del generated_ids
+    del y
+    import gc
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
     
     return response_text
 
