@@ -29,8 +29,8 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=defq
 
-cd /data/mg546924/llm_beatmap_generator
-source /data/mg546924/miniconda3/bin/activate $ENV_NAME
+cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
+source /data/mg546924/miniconda3/bin/activate qwenenv
 
 echo "Running $MODEL on sweep dataset ($EXT format)..."
 python evaluate_sweep.py --model $MODEL --mode $MODE --ext $EXT
