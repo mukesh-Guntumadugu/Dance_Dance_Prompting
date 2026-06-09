@@ -151,10 +151,12 @@ def main():
                         help="C0: stateless_chunk, C1: true_history, C2: fake_history, C3: full_song")
     # For synthetic dataset, we allow specifying extension, defaulting to wav
     parser.add_argument("--ext", type=str, default="wav", choices=["wav", "ogg", "mp3"])
+    parser.add_argument("--run_idx", type=str, default="", help="Optional run index to append to output files")
     args = parser.parse_args()
     
-    out_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}_rmse.csv")
-    out_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}_report.json")
+    run_suffix = f"_run{args.run_idx}" if args.run_idx else ""
+    out_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}{run_suffix}_rmse.csv")
+    out_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"{args.model}_{args.mode}_{args.ext}{run_suffix}_report.json")
     
     songs = []
     if not os.path.exists(DATASET_DIR):
