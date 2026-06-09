@@ -35,7 +35,7 @@ print("BPM_RESPONSE=" + str(nums[0] if nums else "0.0"))
 '''
     },
     "MuMu": {
-        "bin": "/data/mg546924/conda_envs/qwenenv/bin/python",
+        "bin": "/home/mg546924/.conda/envs/mumullama/bin/python",
         "code": r'''
 import os, sys, re
 AUDIO = os.environ["AUDIO_PATH"]
@@ -50,7 +50,7 @@ print("BPM_RESPONSE=" + str(nums[0] if nums else "0.0"))
 '''
     },
     "Flamingo": {
-        "bin": "/data/mg546924/conda_envs/flamingo_env/bin/python",
+        "bin": "/data/mg546924/music_flamingo_env/bin/python",
         "code": r'''
 import os, sys, re
 AUDIO = os.environ["AUDIO_PATH"]
