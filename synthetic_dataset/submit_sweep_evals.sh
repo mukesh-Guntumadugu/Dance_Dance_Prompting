@@ -1,7 +1,7 @@
 #!/bin/bash
 # Submit SLURM jobs for evaluating models on the sweep dataset
 
-MODELS=("Qwen" "Flamingo" "MuMu")
+MODELS=("Qwen" "Flamingo" "MuMu" "DeepResonance" "Librosa")
 FORMATS=("wav" "mp3" "ogg")
 MODE="full_song"
 
@@ -12,10 +12,19 @@ for MODEL in "${MODELS[@]}"; do
         
         if [ "$MODEL" == "Flamingo" ]; then
             ENV_NAME="flamingo_env"
+            TARGET_NODE="node008"
         elif [ "$MODEL" == "DeepResonance" ]; then
             ENV_NAME="deepresonance_env"
+            TARGET_NODE="node009"
+        elif [ "$MODEL" == "MuMu" ]; then
+            ENV_NAME="qwenenv"
+            TARGET_NODE="node007"
+        elif [ "$MODEL" == "Qwen" ]; then
+            ENV_NAME="qwenenv"
+            TARGET_NODE="node004"
         else
             ENV_NAME="qwenenv"
+            TARGET_NODE="node001"
         fi
         
         # Create a temporary slurm script
@@ -26,6 +35,7 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --error=${MODEL}_sweep_${EXT}_%j.err
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
+#SBATCH --nodelist=$TARGET_NODE
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
 #SBATCH --partition=defq
