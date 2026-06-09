@@ -31,8 +31,7 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:1
-#SBATCH --mem=32G
+#SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
 
 cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
