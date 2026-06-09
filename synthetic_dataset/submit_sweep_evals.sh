@@ -29,8 +29,6 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --output=${MODEL}_sweep_${EXT}_%j.log
 #SBATCH --error=${MODEL}_sweep_${EXT}_%j.err
 #SBATCH --time=48:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
 
