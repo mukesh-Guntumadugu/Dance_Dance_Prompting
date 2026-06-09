@@ -13,7 +13,6 @@ for FORMAT in "${FORMATS[@]}"; do
 #SBATCH --output=Librosa_stability_${FORMAT}_%j.log
 #SBATCH --error=Librosa_stability_${FORMAT}_%j.err
 #SBATCH --time=12:00:00
-#SBATCH --nodelist=node001
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
 
