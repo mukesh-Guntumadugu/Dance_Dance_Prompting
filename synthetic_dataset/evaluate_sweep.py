@@ -182,11 +182,24 @@ def main():
     
     results = []
     
-    with open(out_csv, "w", newline="") as csv_f:
+    processed_songs = set()
+    mode_open = "w"
+    if os.path.exists(out_csv):
+        mode_open = "a"
+        with open(out_csv, "r") as f:
+            for line in f.readlines()[1:]:
+                processed_songs.add(line.split(",")[0])
+    
+    with open(out_csv, mode_open, newline="") as csv_f:
         writer = csv.writer(csv_f)
-        writer.writerow(["song_name", "window_start", "window_end", "actual_bpm", "pred_bpm"])
+        if mode_open == "w":
+            writer.writerow(["song_name", "window_start", "window_end", "actual_bpm", "pred_bpm"])
         
         for num, song_name, audio_path, json_path in songs:
+            if song_name in processed_songs:
+                print(f"Skipping {song_name}, already processed.")
+                continue
+                
             print(f"\nProcessing {song_name}...")
             
             y, sr = None, 16000
