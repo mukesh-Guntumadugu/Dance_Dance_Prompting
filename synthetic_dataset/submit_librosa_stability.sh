@@ -14,11 +14,8 @@ for FORMAT in "${FORMATS[@]}"; do
 #SBATCH --error=Librosa_stability_${FORMAT}_%j.err
 #SBATCH --time=12:00:00
 #SBATCH --nodelist=node001
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
-
-# Activate the default environment for Librosa
-source /data/mg546924/conda_envs/qwenenv/bin/activate
 
 # Navigate to the dataset directory
 cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
