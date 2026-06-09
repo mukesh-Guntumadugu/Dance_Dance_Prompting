@@ -12,14 +12,19 @@ for MODEL in "${MODELS[@]}"; do
         
         if [ "$MODEL" == "Flamingo" ]; then
             ENV_NAME="/data/mg546924/music_flamingo_env"
+            TARGET_NODE="node004"
         elif [ "$MODEL" == "DeepResonance" ]; then
             ENV_NAME="/data/mg546924/conda_envs/deepresonance_env"
+            TARGET_NODE="node002"
         elif [ "$MODEL" == "MuMu" ]; then
             ENV_NAME="/home/mg546924/.conda/envs/mumullama"
+            TARGET_NODE="node005"
         elif [ "$MODEL" == "Qwen" ]; then
             ENV_NAME="/data/mg546924/conda_envs/qwenenv"
+            TARGET_NODE="node006"
         else
             ENV_NAME="/data/mg546924/conda_envs/qwenenv"
+            TARGET_NODE="node001"
         fi
         
         # Create a temporary slurm script
@@ -29,6 +34,7 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --output=${MODEL}_sweep_${EXT}_%j.log
 #SBATCH --error=${MODEL}_sweep_${EXT}_%j.err
 #SBATCH --time=48:00:00
+#SBATCH --nodelist=$TARGET_NODE
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
 
