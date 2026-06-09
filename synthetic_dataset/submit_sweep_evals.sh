@@ -11,19 +11,19 @@ for MODEL in "${MODELS[@]}"; do
         JOB_NAME="swp_${MODEL:0:3}_${EXT}"
         
         if [ "$MODEL" == "Flamingo" ]; then
-            ENV_NAME="flamingo_env"
+            ENV_NAME="/data/mg546924/music_flamingo_env"
             TARGET_NODE="node008"
         elif [ "$MODEL" == "DeepResonance" ]; then
-            ENV_NAME="deepresonance_env"
+            ENV_NAME="/data/mg546924/conda_envs/deepresonance_env"
             TARGET_NODE="node009"
         elif [ "$MODEL" == "MuMu" ]; then
-            ENV_NAME="qwenenv"
+            ENV_NAME="/home/mg546924/.conda/envs/mumullama"
             TARGET_NODE="node007"
         elif [ "$MODEL" == "Qwen" ]; then
-            ENV_NAME="qwenenv"
+            ENV_NAME="/data/mg546924/conda_envs/qwenenv"
             TARGET_NODE="node004"
         else
-            ENV_NAME="qwenenv"
+            ENV_NAME="/data/mg546924/conda_envs/qwenenv"
             TARGET_NODE="node001"
         fi
         
