@@ -27,7 +27,7 @@ echo "Running Librosa stability test for format: ${FORMAT}..."
 
 for RUN_IDX in {1..${ITERATIONS}}; do
     echo "Starting Iteration \$RUN_IDX..."
-    python evaluate_sweep.py --model Librosa --mode full_song --ext ${FORMAT} --run_idx \$RUN_IDX
+    /data/mg546924/conda_envs/qwenenv/bin/python evaluate_sweep.py --model Librosa --mode full_song --ext ${FORMAT} --run_idx \$RUN_IDX
     echo "Finished Iteration \$RUN_IDX."
 done
 
