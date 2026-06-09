@@ -2,7 +2,7 @@
 # Submit SLURM jobs for evaluating models on the sweep dataset
 
 MODELS=("Qwen" "Flamingo" "MuMu" "DeepResonance" "Librosa")
-FORMATS=("mp3")
+FORMATS=("wav")
 MODE="full_song"
 
 for MODEL in "${MODELS[@]}"; do
