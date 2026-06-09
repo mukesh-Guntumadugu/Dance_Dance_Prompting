@@ -180,8 +180,8 @@ def main():
     
     results = []
     
-    with open(out_csv, "w", newline="") as f:
-        writer = csv.writer(f)
+    with open(out_csv, "w", newline="") as csv_f:
+        writer = csv.writer(csv_f)
         writer.writerow(["song_name", "window_start", "window_end", "actual_bpm", "pred_bpm"])
         
         for num, song_name, audio_path, json_path in songs:
@@ -189,8 +189,8 @@ def main():
             
             y, sr = None, 16000
             
-            with open(json_path, 'r') as f:
-                gt_data = json.load(f)
+            with open(json_path, 'r') as json_f:
+                gt_data = json.load(json_f)
             duration = gt_data.get("duration", 180.0)
             segments = gt_data.get("segments", [])
             
@@ -261,7 +261,7 @@ def main():
                 
                 row = [song_name, win_start, win_end, actual_bpm, pred_bpm_val]
                 writer.writerow(row)
-                f.flush()
+                csv_f.flush()
                 
                 song_data["windows"].append({
                     "start": win_start, "end": win_end, 
