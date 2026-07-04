@@ -5,7 +5,6 @@
 #SBATCH --time=02:00:00
 #SBATCH --partition=defq
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=4G
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=mg546924@ohio.edu
 
