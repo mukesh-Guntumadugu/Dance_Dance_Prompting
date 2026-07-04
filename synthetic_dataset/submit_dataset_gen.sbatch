@@ -3,7 +3,7 @@
 #SBATCH --output=generate_perfect_bpm_%j.out
 #SBATCH --error=generate_perfect_bpm_%j.err
 #SBATCH --time=02:00:00
-#SBATCH --partition=compute
+#SBATCH --partition=defq
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --mail-type=END,FAIL
