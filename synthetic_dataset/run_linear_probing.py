@@ -5,6 +5,7 @@ import librosa
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 from scipy.stats import pearsonr
 from transformers import WhisperFeatureExtractor, WhisperModel
 from tqdm import tqdm
@@ -25,6 +26,8 @@ def main():
     
     bpms = []
     embeddings = []
+    
+    total_start_time = time.time()
     
     # Process 60 to 240 BPM
     print("Extracting Whisper embeddings for each file...")
@@ -105,6 +108,20 @@ def main():
     plt.tight_layout()
     plt.savefig(OUTPUT_PLOT)
     print(f"Saved plot of top dimensions to {OUTPUT_PLOT}")
+    
+    total_time = time.time() - total_start_time
+    avg_time_per_file = total_time / len(bpms)
+    
+    timing_report = (
+        f"--- TIMING REPORT ---\n"
+        f"Total Processing Time: {total_time:.2f} seconds\n"
+        f"Total Files Processed: {len(bpms)}\n"
+        f"Average Time per File: {avg_time_per_file:.4f} seconds\n"
+    )
+    
+    print(f"\n{timing_report}")
+    with open("linear_probing_timing.txt", "w") as f:
+        f.write(timing_report)
 
 if __name__ == "__main__":
     main()
