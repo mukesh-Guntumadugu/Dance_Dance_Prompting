@@ -73,45 +73,58 @@ def main():
         test_corr, _ = pearsonr(X_test_full[:, dim], y_test)
         print(f"Dimension {dim:4d} | Stable Correlation: {train_corr:.4f} | Randomized Correlation: {test_corr:.4f}")
         
-    # 3. Train a Linear Predictor using ONLY the top 3 dimensions
-    print("\n--- PHASE 3: BPM PREDICTION ---")
+    # 3. Train a Linear Predictor using ALL dimensions
+    print("\n--- PHASE 3A: BPM PREDICTION (ALL 1024 DIMENSIONS) ---")
+    X_train_full_bias = np.c_[X_train_full, np.ones(X_train_full.shape[0])]
+    X_test_full_bias = np.c_[X_test_full, np.ones(X_test_full.shape[0])]
+    
+    weights_all, _, _, _ = np.linalg.lstsq(X_train_full_bias, y_train, rcond=None)
+    y_pred_all = X_test_full_bias @ weights_all
+    mae_all = np.mean(np.abs(y_test - y_pred_all))
+    print(f"Model trained successfully on ALL {X_train_full.shape[1]} dimensions!")
+    print(f"=> MEAN ABSOLUTE ERROR (All Dims): {mae_all:.2f} BPM")
+    
+    # 4. Train a Linear Predictor using ONLY the top 3 dimensions
+    print("\n--- PHASE 3B: BPM PREDICTION (ONLY TOP 3 DIMENSIONS) ---")
     X_train_subset = X_train_full[:, TARGET_DIMS]
     X_test_subset = X_test_full[:, TARGET_DIMS]
     
-    # Using numpy least squares to avoid requiring scikit-learn dependency
-    # Add a column of ones to X for the intercept (y = mx + b)
     X_train_bias = np.c_[X_train_subset, np.ones(X_train_subset.shape[0])]
     X_test_bias = np.c_[X_test_subset, np.ones(X_test_subset.shape[0])]
     
-    # Calculate weights: w = (X^T X)^-1 X^T y
-    weights, residuals, rank, s = np.linalg.lstsq(X_train_bias, y_train, rcond=None)
+    weights_top3, _, _, _ = np.linalg.lstsq(X_train_bias, y_train, rcond=None)
+    y_pred_top3 = X_test_bias @ weights_top3
+    mae_top3 = np.mean(np.abs(y_test - y_pred_top3))
     
-    # Predict on the randomized test set!
-    y_pred = X_test_bias @ weights
+    print(f"Model trained successfully on {len(TARGET_DIMS)} dimensions!")
+    print(f"Formula Weights: {weights_top3[:-1]}")
+    print(f"Formula Intercept: {weights_top3[-1]:.2f}")
+    print(f"=> MEAN ABSOLUTE ERROR (Top 3 Dims): {mae_top3:.2f} BPM")
     
-    # Calculate metrics
-    mae = np.mean(np.abs(y_test - y_pred))
-    print(f"\nModel trained successfully on {len(TARGET_DIMS)} dimensions!")
-    print(f"Formula Weights: {weights[:-1]}")
-    print(f"Formula Intercept: {weights[-1]:.2f}")
-    print(f"\n=> MEAN ABSOLUTE ERROR on Randomized Dataset: {mae:.2f} BPM")
+    # 5. Plot the results side-by-side
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
     
-    # 4. Plot the results
-    plt.figure(figsize=(10, 8))
+    # Plot 1: All Dimensions
+    ax1.scatter(y_test, y_pred_all, alpha=0.7, color='green', label='Predictions')
+    ax1.plot([60, 240], [60, 240], color='red', linestyle='--', linewidth=2, label='Perfect Prediction')
+    ax1.set_title(f"All 1024 Dimensions\nMAE: {mae_all:.2f} BPM")
+    ax1.set_xlabel("True BPM (Randomized Instruments)")
+    ax1.set_ylabel("Predicted BPM")
+    ax1.legend()
+    ax1.grid(True)
     
-    plt.scatter(y_test, y_pred, alpha=0.7, color='blue', label='Predictions (Randomized Instruments)')
+    # Plot 2: Top 3 Dimensions
+    ax2.scatter(y_test, y_pred_top3, alpha=0.7, color='blue', label='Predictions')
+    ax2.plot([60, 240], [60, 240], color='red', linestyle='--', linewidth=2, label='Perfect Prediction')
+    ax2.set_title(f"Top 3 Dimensions {TARGET_DIMS}\nMAE: {mae_top3:.2f} BPM")
+    ax2.set_xlabel("True BPM (Randomized Instruments)")
+    ax2.set_ylabel("Predicted BPM")
+    ax2.legend()
+    ax2.grid(True)
     
-    # Perfect prediction line
-    plt.plot([60, 240], [60, 240], color='red', linestyle='--', linewidth=2, label='Perfect Prediction (y=x)')
-    
-    plt.title(f"Predicting BPM with Whisper Dimensions {TARGET_DIMS}\nMAE: {mae:.2f} BPM")
-    plt.xlabel("True BPM (from 60 to 240)")
-    plt.ylabel("Predicted BPM")
-    plt.legend()
-    plt.grid(True)
     plt.tight_layout()
     plt.savefig(OUTPUT_PLOT)
-    print(f"\nSaved prediction plot to {OUTPUT_PLOT}")
+    print(f"\nSaved prediction plots to {OUTPUT_PLOT}")
     
     print(f"Total time elapsed: {time.time() - start_time:.2f} seconds")
 
