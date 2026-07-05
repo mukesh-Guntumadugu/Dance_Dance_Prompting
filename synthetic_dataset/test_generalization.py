@@ -19,7 +19,7 @@ def extract_embeddings(dataset_dir, model, feature_extractor, device):
         if "linear_probing" in dataset_dir:
             wav_path = os.path.join(dataset_dir, f"linear_probing_{bpm}_bpm_stable.wav")
         else:
-            wav_path = os.path.join(dataset_dir, f"bpm_{bpm}.wav")
+            wav_path = os.path.join(dataset_dir, f"bpm_{bpm}", f"bpm_{bpm}.wav")
             
         if not os.path.exists(wav_path):
             continue
