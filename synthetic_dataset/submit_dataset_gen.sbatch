@@ -10,6 +10,8 @@
 
 cd $SLURM_SUBMIT_DIR
 
+source /data/mg546924/miniconda3/bin/activate /home/mg546924/.conda/envs/mumullama
+
 DATASET_DIR="linear_probing_dataset"
 README_FILE="$DATASET_DIR/README.md"
 
