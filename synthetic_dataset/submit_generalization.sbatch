@@ -4,7 +4,6 @@
 #SBATCH --error=generalization_test_%j.err
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:A6000:1
-#SBATCH --nodelist=node007
 #SBATCH --partition=defq
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=mg546924@ohio.edu
