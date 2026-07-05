@@ -3,7 +3,8 @@ import os
 import argparse
 import random
 import numpy as np
-import soundfile as sf
+import wave
+import struct
 
 def generate_kick_drum(sr, base_high=150, base_low=50, duration=0.2):
     t = np.linspace(0, duration, int(sr * duration), endpoint=False)
@@ -78,7 +79,14 @@ def main():
 
     os.makedirs(args.output_dir, exist_ok=True)
     wav_path = os.path.join(args.output_dir, f"{song_name}.wav")
-    sf.write(wav_path, audio, sr)
+    
+    # Save using built-in wave module to remove soundfile dependency
+    with wave.open(wav_path, 'w') as f:
+        f.setnchannels(1)
+        f.setsampwidth(2) # 16-bit audio
+        f.setframerate(sr)
+        audio_int16 = np.int16(audio * 32767)
+        f.writeframes(audio_int16.tobytes())
     
     # Save the file path to README.md
     readme_path = os.path.join(args.output_dir, "README.md")
