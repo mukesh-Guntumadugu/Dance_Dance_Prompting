@@ -8,6 +8,7 @@
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:1
 #SBATCH --mem=64G
+#SBATCH --exclude=node002
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL
 
