@@ -4,11 +4,10 @@
 #SBATCH --error=logs/train_hierarchical_qwen_%j.log
 #SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=24
+#SBATCH --cpus-per-task=8
 #SBATCH --partition=defq
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL
-#SBATCH --exclusive
 #SBATCH --gres=gpu:1
 
 set -e
@@ -41,13 +40,6 @@ export CUDA_VISIBLE_DEVICES=0
 echo ""
 echo "── Pre-flight checks ──"
 
-if [ ! -f "hierarchical_sft_dataset/hierarchical_train.jsonl" ]; then
-    echo "[ERROR] ERROR: hierarchical_train.jsonl not found!"
-    echo "   Run: python scripts/prepare_hierarchical_sft.py"
-    exit 1
-fi
-echo "  [OK] hierarchical_train.jsonl found"
-
 if [ ! -f "scripts/cluster_to_patterns_tokens.txt" ]; then
     echo "[ERROR] ERROR: cluster_to_patterns_tokens.txt not found!"
     echo "   Run: python scripts/build_sub_decoder_dict.py"
@@ -55,9 +47,7 @@ if [ ! -f "scripts/cluster_to_patterns_tokens.txt" ]; then
 fi
 echo "  [OK] cluster_to_patterns_tokens.txt found"
 
-WINDOW_COUNT=$(wc -l < hierarchical_sft_dataset/hierarchical_train.jsonl)
 TOKEN_COUNT=$(wc -l < scripts/cluster_to_patterns_tokens.txt)
-echo "   Training windows : $WINDOW_COUNT"
 echo "   Cluster tokens   : $TOKEN_COUNT"
 echo ""
 

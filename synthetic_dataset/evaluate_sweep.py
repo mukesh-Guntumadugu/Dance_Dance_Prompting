@@ -76,6 +76,16 @@ CKPT = PROJ + "/DeepResonance/ckpt"
 sys.path.insert(0, PROJ + "/DeepResonance/code")
 os.chdir(PROJ + "/DeepResonance/code")
 from inference_deepresonance import DeepResonancePredict
+
+if AUDIO.endswith('.mp3'):
+    import librosa
+    import soundfile as sf
+    import tempfile
+    temp_wav = os.path.join(tempfile.gettempdir(), f"temp_dr_{os.path.basename(AUDIO)}.wav")
+    y, sr = librosa.load(AUDIO, sr=16000)
+    sf.write(temp_wav, y, sr)
+    AUDIO = temp_wav
+
 args = {
     "stage": 2, "mode": "test", "dataset": "musiccaps", "project_path": PROJ + "/DeepResonance/code",
     "llm_path": CKPT + "/pretrained_ckpt/vicuna_ckpt/7b_v0", "imagebind_path": CKPT + "/pretrained_ckpt/imagebind_ckpt/huge",

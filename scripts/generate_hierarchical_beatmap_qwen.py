@@ -35,7 +35,7 @@ LORA_DIR    = "/data/mg546924/models/qwen2-audio-hierarchical-director"
 
 # Hyperparameters
 SAMPLE_RATE = 16000 # Qwen default for audio processor
-CHUNK_SEC   = 5.0
+MEASURES_PER_CHUNK = 4 # Number of measures to process per window
 
 def load_actor_dictionary(dict_path):
     print(f"Loading Actor Sub-Decoder dictionary from {dict_path}...")
@@ -110,6 +110,11 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
     duration = librosa.get_duration(y=y, sr=sr)
     print(f"Total Duration: {duration:.2f}s")
     
+    # Dynamic Chunk Size Calculation
+    beats_per_chunk = MEASURES_PER_CHUNK * 4  # 4/4 time
+    CHUNK_SEC = beats_per_chunk * (60.0 / bpm)
+    print(f"Dynamic Chunk Size: {CHUNK_SEC:.2f} seconds ({MEASURES_PER_CHUNK} measures at {bpm} BPM)")
+    
     all_cluster_tokens = []
     
     # 4. Sliding Window Inference
@@ -131,7 +136,7 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
         # Director Prompt
         prompt = (
             "You are a rhythm game beatmap pattern generator. "
-            f"Listen to this {round(actual_len, 1)}s audio segment. "
+            f"Listen to this audio segment which corresponds exactly to {MEASURES_PER_CHUNK} measure(s) in 4/4 time. "
             f"The difficulty is {difficulty}. "
             "Predict the ordered sequence of rhythmic pattern cluster tokens "
             "that best matches the audio's energy, density, and rhythm."

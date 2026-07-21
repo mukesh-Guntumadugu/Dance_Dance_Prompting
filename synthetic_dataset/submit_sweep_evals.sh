@@ -2,7 +2,7 @@
 # Submit SLURM jobs for evaluating models on the sweep dataset
 
 MODELS=("Qwen" "Flamingo" "MuMu" "DeepResonance" "Librosa")
-FORMATS=("wav")
+FORMATS=("mp3" "ogg")
 MODE="full_song"
 
 for MODEL in "${MODELS[@]}"; do
@@ -37,6 +37,8 @@ for MODEL in "${MODELS[@]}"; do
 #SBATCH --nodelist=$TARGET_NODE
 #SBATCH --gres=gpu:A6000:1
 #SBATCH --partition=defq
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=mg546924@ohio.edu
 
 cd /data/mg546924/llm_beatmap_generator/synthetic_dataset
 source /data/mg546924/miniconda3/bin/activate $ENV_NAME

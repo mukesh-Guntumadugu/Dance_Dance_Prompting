@@ -134,6 +134,18 @@ def get_deepresonance_16_step_probabilities(audio_path, prompt, candidates,
     if _model is None:
         initialize_deepresonance_model()
 
+    # --- HOTFIX FOR DEEPRESONANCE TORCHAUDIO MP3 CRASH ---
+    if audio_path.endswith('.mp3'):
+        temp_wav_path = "/tmp/deepresonance_hotfix_temp.wav"
+        try:
+            import librosa
+            import soundfile as sf
+            y, sr = librosa.load(audio_path, sr=16000)
+            sf.write(temp_wav_path, y, sr)
+            audio_path = temp_wav_path
+        except Exception as e:
+            print(f"  ⚠️ Failed to convert MP3 to WAV for DeepResonance: {e}")
+
     # Build a single-pass scoring prompt that asks the model to rank the step
     cand_scores = []
     for cand in candidates:

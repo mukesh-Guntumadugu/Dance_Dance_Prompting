@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --job-name=train_hierarchical_flamingo
+#SBATCH --output=logs/train_hierarchical_flamingo_%j.log
+#SBATCH --error=logs/train_hierarchical_flamingo_%j.log
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --partition=defq
+#SBATCH --gres=gpu:1
+#SBATCH --mail-user=mg546924@ohio.edu
+#SBATCH --mail-type=END,FAIL
+
+set -e
+cd /data/mg546924/llm_beatmap_generator
+
+echo "=============================================="
+echo "Training Music-Flamingo Hierarchical Director"
+echo "Job ID      : $SLURM_JOB_ID"
+echo "Start       : $(date)"
+echo "=============================================="
+
+export PYTHONNOUSERSITE=1
+export CUDA_VISIBLE_DEVICES=0
+export CUDA_HOME=$(dirname $(dirname $(which nvcc 2>/dev/null || echo /usr/local/cuda/bin/nvcc)))
+export DS_SKIP_CUDA_CHECK=1
+export HF_HOME="/data/mg546924/llm_beatmap_generator/Music-Flamingo/checkpoints"
+
+if [ ! -f "scripts/cluster_to_patterns_tokens.txt" ]; then
+    echo "[ERROR] ERROR: cluster_to_patterns_tokens.txt not found!"
+    exit 1
+fi
+
+/data/mg546924/conda_envs/flamingo_env/bin/python3.10 scripts/train_hierarchical_flamingo.py
+
+echo "✅ Music-Flamingo Hierarchical Training Complete: $(date)"

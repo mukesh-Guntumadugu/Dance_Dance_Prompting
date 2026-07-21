@@ -8,7 +8,7 @@ from torch.nn import functional as F
 # Paths aligned with your cluster structure
 MUMU_ROOT = "/data/mg546924/llm_beatmap_generator/MuMu-LLaMA/MuMu-LLaMA"
 LLAMA_DIR = "/data/mg546924/llm_beatmap_generator/MuMu-LLaMA/ckpts/LLaMA"
-MUMU_CKPT = "/data/mg546924/models/mumu-llama-lora-onsets/checkpoint_epoch5.pth" # Fallback to a fine-tuned if exists, or base if missing
+MUMU_CKPT = "/data/mg546924/models/M2UGen-MusicGen-small/checkpoint.pth" # Fallback to a fine-tuned if exists, or base if missing
 
 # Add MuMu to system path so `llama.mumu_llama` works
 sys.path.insert(0, MUMU_ROOT)
@@ -71,6 +71,13 @@ def initialize_mumu_model():
     else:
         state_dict = ckpt
         
+    # --- HOTFIX: Resize prefix_query.weight to fix the 20 vs 18 crash ---
+    if 'prefix_query.weight' in state_dict:
+        pq_shape = state_dict['prefix_query.weight'].shape
+        if pq_shape[0] > 18:
+            print(f"  ⚠️ HOTFIX: Truncating prefix_query.weight from {pq_shape[0]} down to 18 to fit the codebase architecture.")
+            state_dict['prefix_query.weight'] = state_dict['prefix_query.weight'][:18, :]
+
     _mumu_model.load_state_dict(state_dict, strict=False)
     
     # MuMu requires float32 for inference math stability, we move it safely now

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import numpy as np
 
 # Prevent accelerate from triggering DeepSpeed's buggy nvcc compiler check
 sys.modules['deepspeed'] = None
@@ -21,12 +22,13 @@ from typing import Dict, List, Any
 
 # CONFIGURATION
 MODEL_ID = "/data/mg546924/models/Qwen2-Audio-7B-Instruct" 
-DATASET_PATH = "/data/mg546924/llm_beatmap_generator/hierarchical_sft_dataset/hierarchical_train.jsonl"
+DB_PATH = "/data/mg546924/llm_beatmap_generator/pattern_finding_approach/processed_files.db"
 TOKENS_TXT = "/data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt"
 OUTPUT_DIR = "/data/mg546924/models/qwen2-audio-hierarchical-director"
 BLOCK_SIZE = 512
-MAX_AUDIO_DURATION_SEC = 5   # Load only 5 seconds of audio
+MEASURES_PER_CHUNK = 4       # Feed 4 measures at a time
 MAX_SEQ_LENGTH = 512         # Max text token length
+
 
 def load_cluster_tokens(tokens_txt_path):
     if not os.path.exists(tokens_txt_path):
@@ -47,114 +49,155 @@ def main():
     after_len = len(processor.tokenizer)
     print(f"Tokenizer vocab size: {before_len} -> {after_len} (+{after_len - before_len})")
 
-    # 2. Load Dataset
-    print(f"Loading dataset from {DATASET_PATH}")
-    full_dataset = load_dataset('json', data_files={'train': DATASET_PATH})['train']
-    
-    # Split 5% of data for validation
-    dataset = full_dataset.train_test_split(test_size=0.05, seed=42)
-    print(f"Train dataset size: {len(dataset['train'])} | Validation dataset size: {len(dataset['test'])}")
-    
-    # 3. Preprocess function
-    def preprocess_function(examples):
-        input_ids = []
-        attention_mask = []
-        labels = []
-        audio_features = []
-        feature_attention_mask = []
+    # 2. Dynamic Dataset Loading
+    print(f"Connecting to DB: {DB_PATH}")
+    import sqlite3
+    import torchaudio
+
+    def find_audio_file(file_path):
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        abs_ssc = os.path.join(repo_root, file_path)
+        song_dir = os.path.dirname(abs_ssc)
+        song_stem = os.path.splitext(os.path.basename(abs_ssc))[0]
         
-        for audio_url, text_prompt, text_response in zip(examples['audio_path'], examples['text_prompt'], examples['text_response']):
+        # HPC Path translation if necessary
+        if "/Users/mukeshguntumadugu/" in song_dir:
+            song_dir = song_dir.replace("/Users/mukeshguntumadugu/", "/data/mg546924/")
+
+        for ext in ['.ogg', '.mp3', '.wav']:
+            candidate = os.path.join(song_dir, song_stem + ext)
+            if os.path.exists(candidate):
+                return candidate
+        return None
+
+    class DynamicHierarchicalDataset(torch.utils.data.Dataset):
+        def __init__(self, db_path, processor, measures_per_chunk=4):
+            self.processor = processor
+            self.measures_per_chunk = measures_per_chunk
+            self.samples = []
             
-            # HPC path fix
-            if "/Users/mukeshguntumadugu/" in audio_url:
-                audio_url = audio_url.replace("/Users/mukeshguntumadugu/", "/data/mg546924/")
+            print(f"Building memory index from {db_path}...")
+            conn = sqlite3.connect(db_path, timeout=30)
+            cursor = conn.cursor()
             
-            # We skip chunks if audio doesn't exist
-            if not os.path.exists(audio_url):
-                # Fallback to local audio for local testing
-                if "local_audio_path" in examples and os.path.exists(examples["local_audio_path"]):
-                    audio_url = examples["local_audio_path"]
-                else:
-                    continue # Skip
+            cursor.execute("""
+                SELECT DISTINCT af.file_path, af.difficulty
+                FROM audio_features af
+                JOIN measure_cluster_assignments mca
+                  ON af.file_path = mca.file_path AND af.difficulty = mca.difficulty AND af.run_id = mca.run_id
+            """)
+            songs = cursor.fetchall()
+            
+            for file_path, difficulty in songs:
+                audio_path = find_audio_file(file_path)
+                if not audio_path:
+                    continue
                     
-            try:
-                sr_target = processor.feature_extractor.sampling_rate
-                # KEY FIX: cap audio duration to prevent enormous mel spectrograms
-                # that cause the first forward pass to hang for hours
-                y, sr = librosa.load(
-                    audio_url,
-                    sr=sr_target,
-                    duration=MAX_AUDIO_DURATION_SEC
-                )
-                if len(y) == 0:
-                    continue  # Skip silent/empty files
-            except Exception:
-                continue # Skip on load error
+                cursor.execute("""
+                    SELECT af.start_time, af.end_time, mca.cluster_id
+                    FROM audio_features af
+                    JOIN measure_cluster_assignments mca
+                      ON af.file_path = mca.file_path AND af.difficulty = mca.difficulty AND af.measure_idx = mca.measure_idx AND af.run_id = mca.run_id
+                    WHERE af.file_path = ? AND af.difficulty = ? AND mca.cluster_id != -1
+                    ORDER BY af.measure_idx ASC
+                """, (file_path, difficulty))
+                measures = cursor.fetchall()
+                
+                for i in range(0, len(measures), self.measures_per_chunk):
+                    chunk_measures = measures[i:i+self.measures_per_chunk]
+                    if len(chunk_measures) < self.measures_per_chunk:
+                        continue # Skip partial chunks
+                    
+                    win_start = chunk_measures[0][0]
+                    win_end = chunk_measures[-1][1]
+                    clusters = [m[2] for m in chunk_measures]
+                    
+                    self.samples.append({
+                        "audio_path": audio_path,
+                        "difficulty": difficulty,
+                        "win_start": win_start,
+                        "win_end": win_end,
+                        "clusters": clusters
+                    })
             
-            # Format conversational template manually to avoid regex bug
-            text = (
-                "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n"
-                f"<|im_start|>user\nAudio 1: <|audio_bos|><|AUDIO|><|audio_eos|>\n{text_prompt}<|im_end|>\n"
-                f"<|im_start|>assistant\n{text_response}<|im_end|>\n"
+            conn.close()
+            print(f"Built index of {len(self.samples)} dynamic {measures_per_chunk}-measure chunks.")
+
+        def __len__(self):
+            return len(self.samples)
+            
+        def __getitem__(self, idx):
+            sample = self.samples[idx]
+            
+            # Efficiently load only the exact chunk we need!
+            # Since torchaudio loads everything if we don't know the sr, we use librosa stream 
+            # OR we just use librosa to load exactly the duration we want with offset.
+            # Librosa offset is much safer for compressed audio (.mp3, .ogg) than torchaudio frame_offset.
+            try:
+                sr_target = self.processor.feature_extractor.sampling_rate
+                duration = sample["win_end"] - sample["win_start"]
+                y, sr = librosa.load(
+                    sample["audio_path"],
+                    sr=sr_target,
+                    offset=sample["win_start"],
+                    duration=duration
+                )
+            except Exception:
+                # Return empty dummy arrays if load fails so collate doesn't crash, will be skipped
+                y = np.zeros(1)
+                
+            cluster_tokens = " ".join(f"<|cluster_{c}|>" for c in sample["clusters"])
+            
+            prompt = (
+                "You are a rhythm game beatmap pattern generator. "
+                f"Listen to this audio segment which corresponds exactly to {self.measures_per_chunk} measure(s) in 4/4 time. "
+                f"The difficulty is {sample['difficulty']}. "
+                "Predict the ordered sequence of rhythmic pattern cluster tokens "
+                "that best matches the audio's energy, density, and rhythm."
             )
             
-            inputs = processor(
+            text = (
+                "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n"
+                f"<|im_start|>user\nAudio 1: <|audio_bos|><|AUDIO|><|audio_eos|>\n{prompt}<|im_end|>\n"
+                f"<|im_start|>assistant\n{cluster_tokens}<|im_end|>\n"
+            )
+            
+            inputs = self.processor(
                 text=text,
                 audio=[y],
-                sampling_rate=processor.feature_extractor.sampling_rate,
+                sampling_rate=self.processor.feature_extractor.sampling_rate,
                 return_tensors="pt"
             )
             
             label = inputs["input_ids"].clone()
-            
-            # Mask out the user prompt so we only train on the cluster tokens
-            # Find the start of the assistant response
             try:
-                assistant_str = "<|im_start|>assistant\n"
-                assistant_ids = processor.tokenizer.encode(assistant_str, add_special_tokens=False)
-                # Simple approximation: mask the first N tokens before the actual response
-                # But to be safe, we can just let it train on the whole sequence or mask correctly.
-                # A common hack: just set user prompt labels to -100
-                input_id_list = inputs["input_ids"][0].tolist()
-                response_ids = processor.tokenizer.encode(text_response + "<|im_end|>\n", add_special_tokens=False)
+                response_ids = self.processor.tokenizer.encode(cluster_tokens + "<|im_end|>\n", add_special_tokens=False)
                 resp_len = len(response_ids)
-                
-                label[0, :-resp_len] = -100 # Mask everything before the response
+                label[0, :-resp_len] = -100
             except Exception:
-                pass # If it fails, train on full sequence (still works, just less ideal)
-            
-            input_ids.append(inputs["input_ids"][0])
-            attention_mask.append(inputs["attention_mask"][0])
-            labels.append(label[0])
+                pass
+                
+            result = {
+                "input_ids": inputs["input_ids"][0],
+                "attention_mask": inputs["attention_mask"][0],
+                "labels": label[0],
+            }
             
             if "audio_features" in inputs:
-                 audio_features.append(inputs["audio_features"][0])
+                result["audio_features"] = inputs["audio_features"][0]
             elif "input_features" in inputs:
-                 audio_features.append(inputs["input_features"][0])
-                 
+                result["input_features"] = inputs["input_features"][0]
+                
             if "feature_attention_mask" in inputs:
-                 feature_attention_mask.append(inputs["feature_attention_mask"][0])
+                result["feature_attention_mask"] = inputs["feature_attention_mask"][0]
+                
+            return result
 
-        result = {
-            "input_ids": input_ids,
-            "attention_mask": attention_mask,
-            "labels": labels,
-            "audio_features" if len(audio_features) > 0 and "audio_features" in inputs else "input_features": audio_features
-        }
-        if len(feature_attention_mask) > 0:
-            result["feature_attention_mask"] = feature_attention_mask
-            
-        return result
-
-    print("Pre-processing dataset...")
-    tokenized_dataset = dataset.map(
-        preprocess_function,
-        batched=True,
-        batch_size=1,
-        num_proc=1,           # Keep at 1: processor object can't be pickled across workers
-        load_from_cache_file=False,  # Always reprocess — avoids stale cache bugs
-        remove_columns=dataset["train"].column_names,
-    )
+    full_dataset = DynamicHierarchicalDataset(DB_PATH, processor, MEASURES_PER_CHUNK)
+    val_size = int(len(full_dataset) * 0.05)
+    train_size = len(full_dataset) - val_size
+    train_dataset, val_dataset = torch.utils.data.random_split(full_dataset, [train_size, val_size])
+    print(f"Train dataset size: {train_size} | Validation dataset size: {val_size}")
 
     @dataclass
     class MultimodalDataCollator:
@@ -236,9 +279,7 @@ def main():
         logging_steps=1,           # Log every step so we can see per-step timing
         logging_strategy="steps",
         eval_strategy="epoch",
-        save_strategy="steps",
-        save_steps=50,             # Save checkpoint every 50 steps
-        save_total_limit=2,        # Keep only last 2 checkpoints
+        save_strategy="no",
         logging_dir=os.path.join(OUTPUT_DIR, "logs"),
         learning_rate=2e-4,
         weight_decay=0.001,
@@ -255,8 +296,8 @@ def main():
     # 6. Trainer
     trainer = Trainer(
         model=model,
-        train_dataset=tokenized_dataset["train"],
-        eval_dataset=tokenized_dataset["test"],
+        train_dataset=train_dataset,
+        eval_dataset=val_dataset,
         args=training_args,
         data_collator=MultimodalDataCollator(processor),
     )
