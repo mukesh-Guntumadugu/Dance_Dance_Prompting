@@ -7,6 +7,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:1
+#SBATCH --mem=64G
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL
 
