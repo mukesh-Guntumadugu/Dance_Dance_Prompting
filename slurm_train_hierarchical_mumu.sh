@@ -2,13 +2,15 @@
 #SBATCH --job-name=train_hierarchical_director
 #SBATCH --output=logs/train_hierarchical_%j.log
 #SBATCH --error=logs/train_hierarchical_%j.log
-#SBATCH --time=24:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --partition=defq
+#SBATCH --mem=0
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL
 #SBATCH --gres=gpu:1
+#SBATCH --exclude=node003
 
 set -e
 mkdir -p /data/mg546924/llm_beatmap_generator/logs

@@ -1,0 +1,93 @@
+Job 49517 started on node002 at Sun Sep 27 10:37:19 PDT 2026
+Warning: The cache directory for DeepSpeed Triton autotune, /home/mg546924/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Loading DeepResonance model...
+[!] load base configuration: config/base.yaml
+[!] load configuration from config/stage_2.yaml
+{'lora_r': 32, 'lora_alpha': 32, 'lora_dropout': 0.1, 'freeze_lm': False, 'freeze_input_proj': False, 'freeze_output_proj': False, 'prompt': ''}
+args max_length 512
+Initializing visual encoder from ../ckpt/pretrained_ckpt/imagebind_ckpt/huge ...
+Visual encoder initialized.
+Initializing language decoder from ../ckpt/pretrained_ckpt/vicuna_ckpt/7b_v0 ...
+Instruct tuning the LLaMa ...
+trainable params: 33,554,432 || all params: 6,771,970,048 || trainable%: 0.4955
+Language decoder initialized.
+Initializing tokenizer from ../ckpt/pretrained_ckpt/vicuna_ckpt/7b_v0 ...
+Tokenizer initialized.
+[!] LLM initialized.
+Adding tokens from /data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt...
+Loading fine-tuned checkpoint...
+Loading audio...
+
+Evaluating Difficulty: Easy
+Found 7 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[01.3s-08.0s] | 591 592 592 592                | 592 592 592 592                | False
+[12.0s-28.0s] | 1967 1967 637 1967             | 1967 1967 1967 1967            | False
+[30.7s-46.7s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[52.0s-72.0s] | 637 1967 1112 1112             | 1967 891 891 891               | False
+[78.7s-104.0s] | 1967 1967 75 75                | 1967 1967 1967 1967            | False
+[104.0s-109.3s] | 75 75 75 75                    | 75 75 75 75                    | True
+[109.3s-121.3s] | 75 1967 1967 1967              | 1967 1967 1967 1967            | False
+
+Final Exact Chunk Matches for Easy: 2/7
+
+
+Evaluating Difficulty: Medium
+Found 9 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[01.3s-08.0s] | 591 592 592 592                | 592 592 592 592                | False
+[10.7s-25.3s] | 1967 1967 1967 637             | 1967 1967 1967 1967            | False
+[26.7s-46.7s] | 1967 508 1967 1967             | 508 508 1967 508               | False
+[46.7s-52.0s] | 508 1967 1967 1967             | 508 508 508 1967               | False
+[52.0s-65.3s] | 508 1388 891 1899              | 1967 1967 1967 1967            | False
+[66.7s-72.0s] | 1179 1179 1967 1967            | 1967 1967 1967 1967            | False
+[77.3s-94.7s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[96.0s-105.3s] | 1967 75 75 75                  | 1967 1967 1967 1967            | False
+[105.3s-120.0s] | 75 75 75 1967                  | 1899 1899 1899 1899            | False
+
+Final Exact Chunk Matches for Medium: 1/9
+
+
+Evaluating Difficulty: Hard
+Found 11 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[01.3s-08.0s] | 591 592 592 592                | 592 592 592 592                | False
+[09.3s-24.0s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[26.7s-37.3s] | 1967 508 1967 1967             | 508 892 1967 892               | False
+[41.3s-50.7s] | 508 1967 1388 1967             | 1967 1967 1967 1967            | False
+[52.0s-60.0s] | 1967 1967 1967 161             | 508 508 1967 508               | False
+[65.3s-81.3s] | 1899 1967 508 1967             | 79 1967 79 79                  | False
+[81.3s-86.7s] | 1967 1967 1967 1967            | 1967 508 1967 1967             | False
+[90.7s-96.0s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[101.3s-106.7s] | 75 75 75 75                    | 75 75 75 75                    | True
+[106.7s-116.0s] | 75 75 1967 1967                | 75 75 75 75                    | False
+[116.0s-124.0s] | 508 1967 508 508               | 1967 1967 1967 1967            | False
+
+Final Exact Chunk Matches for Hard: 3/11
+
+
+Evaluating Difficulty: Challenge
+Found 14 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[01.3s-08.0s] | 591 592 592 592                | 592 592 592 592                | False
+[09.3s-17.3s] | 508 1967 1967 1967             | 1967 1967 1967 1967            | False
+[17.3s-25.3s] | 1967 1967 508 508              | 1967 1967 1967 1967            | False
+[25.3s-30.7s] | 508 1967 508 892               | 1967 892 892 892               | False
+[30.7s-42.7s] | 1967 1967 1967 508             | 1967 1967 1967 1967            | False
+[45.3s-50.7s] | 1967 508 1967 1967             | 1967 1967 1967 1967            | False
+[50.7s-60.0s] | 1967 1967 1967 161             | 1967 1967 1967 1967            | False
+[68.0s-80.0s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[80.0s-85.3s] | 1967 1967 508 1967             | 1967 1967 1967 1967            | False
+[85.3s-93.3s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+[93.3s-105.3s] | 1967 75 75 75                  | 1967 1967 1967 1967            | False
+[105.3s-114.7s] | 75 75 75 1967                  | 75 75 75 75                    | False
+[114.7s-120.0s] | 508 1967 1967 1967             | 1967 1967 1967 1967            | False
+[120.0s-128.0s] | 1967 1967 1967 1967            | 1967 1967 1967 1967            | True
+
+Final Exact Chunk Matches for Challenge: 3/14
+
+Job 49517 done at Sun Sep 27 10:38:11 PDT 2026

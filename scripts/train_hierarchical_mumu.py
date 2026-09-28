@@ -391,7 +391,26 @@ def main():
     print(f"  Cluster tokens in vocab: {len(cluster_tokens)}")
     print(f"{'='*60}\n")
 
-    for epoch in range(NUM_EPOCHS):
+    start_epoch = 0
+    latest_ckpt_epoch = -1
+    latest_ckpt_path = None
+    if os.path.exists(OUTPUT_DIR):
+        for f in os.listdir(OUTPUT_DIR):
+            if f.startswith("checkpoint_epoch") and f.endswith(".pth"):
+                try:
+                    e = int(f.replace("checkpoint_epoch", "").replace(".pth", ""))
+                    if e > latest_ckpt_epoch:
+                        latest_ckpt_epoch = e
+                        latest_ckpt_path = os.path.join(OUTPUT_DIR, f)
+                except ValueError:
+                    pass
+                    
+    if latest_ckpt_path:
+        print(f"Resuming from {latest_ckpt_path} (epoch {latest_ckpt_epoch})...")
+        model.load_state_dict(torch.load(latest_ckpt_path, map_location="cpu"))
+        start_epoch = latest_ckpt_epoch
+
+    for epoch in range(start_epoch, NUM_EPOCHS):
         model.train()
         epoch_loss, num_batches = 0.0, 0
 
@@ -451,11 +470,21 @@ def main():
         print(f"\n📊 Epoch {epoch+1}/{NUM_EPOCHS} — Train: {avg_train_loss:.4f} | Val: {avg_val_loss:.4f}\n")
         loss_log.append({"epoch": epoch+1, "train_loss": avg_train_loss, "val_loss": avg_val_loss})
 
-    # ── Save ONE final checkpoint after all epochs complete ───────────────────
-    ckpt_out = os.path.join(OUTPUT_DIR, "checkpoint_final.pth")
-    torch.save(model.state_dict(), ckpt_out)
+        log_csv_path = os.path.join(OUTPUT_DIR, "training_metrics.csv")
+        with open(log_csv_path, "w", newline="") as f:
+            writer = csv_mod.writer(f)
+            writer.writerow(["epoch", "train_loss", "val_loss"])
+            for entry in loss_log:
+                writer.writerow([entry["epoch"], f"{entry['train_loss']:.4f}", f"{entry['val_loss']:.4f}"])
+
+        # ONLY store the weights of the targeted epoch
+        if epoch + 1 == NUM_EPOCHS:
+            ckpt_path = os.path.join(OUTPUT_DIR, f"checkpoint_epoch{epoch+1}.pth")
+            torch.save(model.state_dict(), ckpt_path)
+            print(f"  Saved final checkpoint: {ckpt_path}")
+
     tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "tokenizer"))
-    print(f"\n✅ Training Complete! Model saved: {ckpt_out}")
+    print(f"\n✅ Training Complete!")
 
 
 if __name__ == "__main__":

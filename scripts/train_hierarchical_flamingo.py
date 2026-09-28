@@ -33,7 +33,7 @@ DB_PATH = "/data/mg546924/llm_beatmap_generator/pattern_finding_approach/process
 TOKENS_TXT = "/data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt"
 OUTPUT_DIR = "/data/mg546924/models/music-flamingo-hierarchical-director"
 
-NUM_EPOCHS = 5
+NUM_EPOCHS = 8
 LR = 2e-4
 BATCH_SIZE = 1
 GRAD_ACCUM = 8
@@ -173,6 +173,7 @@ def main():
     print("Injecting LoRA adapters (r=16)...")
     peft_config = LoraConfig(
         r=16, lora_alpha=32, target_modules=["q_proj", "v_proj", "k_proj", "o_proj"], bias="none", task_type="CAUSAL_LM",
+        modules_to_save=["embed_tokens", "lm_head"]
     )
     model = get_peft_model(model, peft_config)
     
@@ -210,7 +211,28 @@ def main():
     optimizer = torch.optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()), lr=LR)
 
     print(f"\nStarting Music-Flamingo Hierarchical Training\n")
-    for epoch in range(NUM_EPOCHS):
+    loss_log = []
+
+    start_epoch = 0
+    latest_ckpt_epoch = -1
+    latest_ckpt_path = None
+    if os.path.exists(OUTPUT_DIR):
+        for f in os.listdir(OUTPUT_DIR):
+            if f.startswith("checkpoint_epoch") and f.endswith(".pth"):
+                try:
+                    e = int(f.replace("checkpoint_epoch", "").replace(".pth", ""))
+                    if e > latest_ckpt_epoch:
+                        latest_ckpt_epoch = e
+                        latest_ckpt_path = os.path.join(OUTPUT_DIR, f)
+                except ValueError:
+                    pass
+                    
+    if latest_ckpt_path:
+        print(f"Resuming from {latest_ckpt_path} (epoch {latest_ckpt_epoch})...")
+        model.load_state_dict(torch.load(latest_ckpt_path, map_location="cpu"))
+        start_epoch = latest_ckpt_epoch
+
+    for epoch in range(start_epoch, NUM_EPOCHS):
         model.train()
         epoch_loss = 0.0
         
@@ -258,9 +280,24 @@ def main():
                     print(f"Error in validation batch: {e}")
                     continue
                     
-        print(f"Epoch {epoch+1} | Train: {epoch_loss/len(train_loader):.4f} | Val: {val_loss/len(val_loader):.4f}")
+        avg_train_loss = epoch_loss/max(len(train_loader), 1)
+        avg_val_loss = val_loss/max(len(val_loader), 1)
+        print(f"Epoch {epoch+1} | Train: {avg_train_loss:.4f} | Val: {avg_val_loss:.4f}")
+        loss_log.append({"epoch": epoch+1, "train_loss": avg_train_loss, "val_loss": avg_val_loss})
 
-    model.save_pretrained(OUTPUT_DIR)
+        log_csv_path = os.path.join(OUTPUT_DIR, "training_metrics.csv")
+        with open(log_csv_path, "w", newline="") as f:
+            writer = csv_mod.writer(f)
+            writer.writerow(["epoch", "train_loss", "val_loss"])
+            for entry in loss_log:
+                writer.writerow([entry["epoch"], f"{entry['train_loss']:.4f}", f"{entry['val_loss']:.4f}"])
+
+        # ONLY store the weights of the targeted epoch
+        if epoch + 1 == NUM_EPOCHS:
+            ckpt_path = os.path.join(OUTPUT_DIR, f"checkpoint_epoch{epoch+1}.pth")
+            torch.save(model.state_dict(), ckpt_path)
+            print(f"  Saved final checkpoint: {ckpt_path}")
+
     processor.save_pretrained(OUTPUT_DIR)
     print("Complete!")
 

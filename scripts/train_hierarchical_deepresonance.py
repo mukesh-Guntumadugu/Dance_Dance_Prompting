@@ -29,7 +29,7 @@ DB_PATH = "/data/mg546924/llm_beatmap_generator/pattern_finding_approach/process
 TOKENS_TXT = "/data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt"
 OUTPUT_DIR = "/data/mg546924/models/deepresonance-hierarchical-director"
 
-NUM_EPOCHS = 5
+NUM_EPOCHS = 30
 LR = 1e-4
 BATCH_SIZE = 1
 MAX_LENGTH = 512

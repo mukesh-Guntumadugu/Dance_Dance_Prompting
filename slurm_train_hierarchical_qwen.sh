@@ -1,10 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=train_hierarchical_qwen
+# Recreated per user request to test submission
+#SBATCH --job-name=qwen_hi
 #SBATCH --output=logs/train_hierarchical_qwen_%j.log
 #SBATCH --error=logs/train_hierarchical_qwen_%j.log
-#SBATCH --time=24:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=4
 #SBATCH --partition=defq
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL

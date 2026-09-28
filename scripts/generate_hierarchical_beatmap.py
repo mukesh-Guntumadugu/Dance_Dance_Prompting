@@ -182,8 +182,7 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
                 output_ids = model.generate(
                     input_ids,
                     audios=audio_t,
-                    max_new_tokens=20,
-                    do_sample=True,    # A bit of temperature for creative variety
+                    max_gen_len=20,
                     temperature=0.7,
                     top_p=0.9
                 )

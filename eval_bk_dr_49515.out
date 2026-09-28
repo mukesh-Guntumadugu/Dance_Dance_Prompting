@@ -1,0 +1,112 @@
+Job 49515 started on node002 at Sun Sep 27 10:29:56 PDT 2026
+Warning: The cache directory for DeepSpeed Triton autotune, /home/mg546924/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Loading DeepResonance model...
+[!] load base configuration: config/base.yaml
+[!] load configuration from config/stage_2.yaml
+{'lora_r': 32, 'lora_alpha': 32, 'lora_dropout': 0.1, 'freeze_lm': False, 'freeze_input_proj': False, 'freeze_output_proj': False, 'prompt': ''}
+args max_length 512
+Initializing visual encoder from ../ckpt/pretrained_ckpt/imagebind_ckpt/huge ...
+Visual encoder initialized.
+Initializing language decoder from ../ckpt/pretrained_ckpt/vicuna_ckpt/7b_v0 ...
+Instruct tuning the LLaMa ...
+trainable params: 33,554,432 || all params: 6,771,970,048 || trainable%: 0.4955
+Language decoder initialized.
+Initializing tokenizer from ../ckpt/pretrained_ckpt/vicuna_ckpt/7b_v0 ...
+Tokenizer initialized.
+[!] LLM initialized.
+Adding tokens from /data/mg546924/llm_beatmap_generator/scripts/cluster_to_patterns_tokens.txt...
+Loading fine-tuned checkpoint...
+Loading audio...
+
+Evaluating Difficulty: Easy
+Found 371 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+
+Final Exact Chunk Matches for Easy: 0/15
+
+
+Evaluating Difficulty: Medium
+Found 377 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+
+Final Exact Chunk Matches for Medium: 0/15
+
+
+Evaluating Difficulty: Hard
+Found 358 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+
+Final Exact Chunk Matches for Hard: 0/15
+
+
+Evaluating Difficulty: Challenge
+Found 464 chunks.
+Chunk Time      | Actual Clusters                | Predicted Clusters             | Exact?
+----------------------------------------------------------------------------------------------------
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[00.0s-02.7s] | 591 591 591 591                |                                | False
+[00.0s-01.3s] | 591 591 591 591                |                                | False
+[00.0s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-02.7s] | 591 591 591 591                | 2559 2559 2559 2559 2559       | False
+[01.3s-04.0s] | 591 591 591 591                |                                | False
+[01.3s-05.3s] | 591 591 591 591                |                                | False
+
+Final Exact Chunk Matches for Challenge: 0/15
+
+Job 49515 done at Sun Sep 27 10:31:15 PDT 2026

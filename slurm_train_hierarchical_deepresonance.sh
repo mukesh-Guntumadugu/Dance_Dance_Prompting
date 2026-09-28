@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH --job-name=train_hierarchical_deepresonance
+# Recreated per user request to test submission
+#SBATCH --job-name=deep_hi
 #SBATCH --output=logs/train_hierarchical_deepres_%j.log
 #SBATCH --error=logs/train_hierarchical_deepres_%j.log
-#SBATCH --time=72:00:00
+#SBATCH --time=6-00:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=4
 #SBATCH --partition=defq
 #SBATCH --gres=gpu:1
-#SBATCH --mem=64G
-#SBATCH --exclude=node002
+#SBATCH --nodelist=node002
 #SBATCH --mail-user=mg546924@ohio.edu
 #SBATCH --mail-type=END,FAIL
 

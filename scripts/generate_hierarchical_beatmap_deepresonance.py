@@ -88,18 +88,13 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
     print("Loading DeepResonance model...")
     model = DeepResonanceModel(**args)
     
-    # Load tokenizer
-    vicuna_path = os.path.join(CKPT_DIR, 'pretrained_ckpt', 'vicuna-7b-v1.1')
-    tokenizer = LlamaTokenizer.from_pretrained(vicuna_path)
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-        
     with open(TOKENS_TXT, "r") as f:
         cluster_tokens = [line.strip() for line in f if line.strip()]
-    tokenizer.add_special_tokens({"additional_special_tokens": cluster_tokens})
+    model.llama_tokenizer.add_special_tokens({"additional_special_tokens": cluster_tokens})
     
     print("Resizing token embeddings...")
-    model.llama_model.resize_token_embeddings(len(tokenizer))
+    model.llama_model.resize_token_embeddings(len(model.llama_tokenizer))
+    tokenizer = model.llama_tokenizer
     
     # Load the trained Director Checkpoint
     ckpts = glob.glob(os.path.join(MODELS_DIR, "checkpoint_*.pt"))
@@ -109,6 +104,8 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
         latest_ckpt = sorted(ckpts)[-1]
         print(f"Loading weights from {latest_ckpt}...")
         state_dict = torch.load(latest_ckpt, map_location='cpu')
+        if "input_embeddings.weight" in state_dict:
+            del state_dict["input_embeddings.weight"]
         model.load_state_dict(state_dict, strict=False)
         
     model = model.cuda().bfloat16().eval()
@@ -160,7 +157,8 @@ def generate_beatmap(audio_path, out_ssc_path, bpm, difficulty="Challenge"):
                     input_ids=input_ids,
                     max_new_tokens=20,
                     do_sample=True,
-                    temperature=0.7
+                    temperature=0.7,
+                    use_cache=False
                 )
                 
         response = tokenizer.decode(outputs[0][input_ids.shape[1]:], skip_special_tokens=True)
@@ -218,4 +216,5 @@ if __name__ == "__main__":
     parser.add_argument("--difficulty", default="Challenge")
     parser.add_argument("--out", default="output.ssc")
     args = parser.parse_args()
+    generate_beatmap(args.audio, args.out, args.bpm, args.difficulty)
     generate_beatmap(args.audio, args.out, args.bpm, args.difficulty)
