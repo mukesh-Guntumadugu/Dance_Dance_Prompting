@@ -247,10 +247,10 @@ def main():
     print("Resizing token embeddings on CPU...")
     model.resize_token_embeddings(after_len, mean_resizing=False)
     
-    print("Moving model to GPU...")
-    model = model.to("cuda")
-    
-    # Enable gradient checkpointing
+    print("Letting Trainer move model to correct DDP GPU...")
+    # model = model.to("cuda") # REMOVED: Breaks DDP by forcing all processes to GPU 0!
+    # Enable gradient checkpointing and input gradients (REQUIRED for PEFT + DDP)
+    model.enable_input_require_grads()
     model.gradient_checkpointing_enable()
     
     # 4. LoRA Adapter Config
@@ -290,7 +290,9 @@ def main():
         warmup_ratio=0.03,
         group_by_length=False,     # Disable: was hiding bad samples by grouping by length
         lr_scheduler_type="cosine",
-        report_to="none"
+        report_to="none",
+        ddp_find_unused_parameters=False,
+        ddp_backend="gloo"
     )
     
     # 6. Trainer
