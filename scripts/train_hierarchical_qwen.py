@@ -77,7 +77,12 @@ def main():
             self.samples = []
             
             print(f"Building memory index from {db_path}...")
-            conn = sqlite3.connect(db_path, timeout=30)
+            import os
+            import shutil
+            local_rank = os.environ.get("LOCAL_RANK", "0")
+            local_db = f"/tmp/processed_files_{local_rank}.db"
+            shutil.copy2(db_path, local_db)
+            conn = sqlite3.connect(local_db)
             cursor = conn.cursor()
             
             cursor.execute("""
@@ -112,13 +117,14 @@ def main():
                     win_end = chunk_measures[-1][1]
                     clusters = [m[2] for m in chunk_measures]
                     
-                    self.samples.append({
-                        "audio_path": audio_path,
-                        "difficulty": difficulty,
-                        "win_start": win_start,
-                        "win_end": win_end,
-                        "clusters": clusters
-                    })
+                    if len(clusters) > 0:
+                        self.samples.append({
+                            "audio_path": audio_path,
+                            "difficulty": difficulty,
+                            "win_start": win_start,
+                            "win_end": win_end,
+                            "clusters": clusters
+                        })
             
             conn.close()
             print(f"Built index of {len(self.samples)} dynamic {measures_per_chunk}-measure chunks.")
@@ -223,9 +229,9 @@ def main():
             # slow for large audio feature arrays (e.g. [128, 500] takes seconds per sample).
             import numpy as np
             if "audio_features" in features[0]:
-                batch["audio_features"] = torch.stack([torch.from_numpy(np.array(f["audio_features"], dtype=np.float16)) for f in features])
+                batch["audio_features"] = torch.stack([torch.tensor(f["audio_features"], dtype=torch.bfloat16) for f in features])
             elif "input_features" in features[0]:
-                batch["input_features"] = torch.stack([torch.from_numpy(np.array(f["input_features"], dtype=np.float16)) for f in features])
+                batch["input_features"] = torch.stack([torch.tensor(f["input_features"], dtype=torch.bfloat16) for f in features])
                 
             if "feature_attention_mask" in features[0]:
                 batch["feature_attention_mask"] = torch.stack([torch.from_numpy(np.array(f["feature_attention_mask"], dtype=np.int64)) for f in features])
@@ -281,7 +287,7 @@ def main():
         eval_strategy="epoch",
         save_strategy="no",
         logging_dir=os.path.join(OUTPUT_DIR, "logs"),
-        learning_rate=2e-4,
+        learning_rate=2e-5,
         weight_decay=0.001,
         fp16=False,
         bf16=True,
@@ -291,8 +297,9 @@ def main():
         group_by_length=False,     # Disable: was hiding bad samples by grouping by length
         lr_scheduler_type="cosine",
         report_to="none",
-        ddp_find_unused_parameters=False,
-        ddp_backend="gloo"
+        gradient_checkpointing=False,
+        gradient_checkpointing_kwargs={'use_reentrant': False},
+        ddp_find_unused_parameters=False
     )
     
     # 6. Trainer

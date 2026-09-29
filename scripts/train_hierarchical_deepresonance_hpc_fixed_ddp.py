@@ -82,7 +82,11 @@ class DynamicHierarchicalDataset(Dataset):
         self.samples = []
 
         print(f"Building memory index from {db_path}...")
-        conn   = sqlite3.connect(db_path, timeout=30)
+        import shutil
+        local_rank = os.environ.get("LOCAL_RANK", "0")
+        local_db = f"/tmp/deepres_processed_files_{local_rank}.db"
+        shutil.copy2(db_path, local_db)
+        conn   = sqlite3.connect(local_db)
         cursor = conn.cursor()
 
         cursor.execute(
@@ -194,7 +198,7 @@ def custom_collate_fn(batch):
 
 
 def init_distributed():
-    dist.init_process_group(backend="gloo")
+    dist.init_process_group(backend="nccl")
     local_rank = int(os.environ["LOCAL_RANK"])
     torch.cuda.set_device(local_rank)
     return local_rank
@@ -246,7 +250,7 @@ def run_epoch(model, loader, optimizer, scheduler, scaler,
         }
 
         try:
-            with torch.autocast(device_type="cuda", dtype=torch.float16):
+            with torch.autocast(device_type="cuda", dtype=torch.float32):
                 loss, gen_acc, _ = model(inputs_dict)
             
             if torch.isnan(loss) or torch.isinf(loss):
