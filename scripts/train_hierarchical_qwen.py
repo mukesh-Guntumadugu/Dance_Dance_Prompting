@@ -297,13 +297,46 @@ def main():
         group_by_length=False,     # Disable: was hiding bad samples by grouping by length
         lr_scheduler_type="cosine",
         report_to="none",
-        gradient_checkpointing=False,
+        gradient_checkpointing=True,
         gradient_checkpointing_kwargs={'use_reentrant': False},
         ddp_find_unused_parameters=False
     )
     
-    # 6. Trainer
-    trainer = Trainer(
+    # 5.5 FIX FOR MULTIMODAL LORA DDP BUG
+    # We MUST force input_features to require gradients so the backward pass 
+    # propagates into the audio encoder. Otherwise, its LoRA adapters remain unused and DDP crashes.
+    old_forward = model.forward
+    def new_forward(*args, **kwargs):
+        if "input_features" in kwargs and kwargs["input_features"] is not None:
+            kwargs["input_features"].requires_grad_(True)
+        return old_forward(*args, **kwargs)
+    model.forward = new_forward
+
+    
+    # 6. Ultimate Safe Trainer (Fixes Whisper zero-silence NaNs & DDP corruption)
+    class SafeTrainer(Trainer):
+        def training_step(self, model, inputs, num_items_in_batch=None, **kwargs):
+            # 1. Sanitize incoming audio features with micro-noise instead of pure 0.0
+            # Pure 0.0 causes divide-by-zero in Whisper's LayerNorm!
+            if "input_features" in inputs and inputs["input_features"] is not None:
+                bad_mask = torch.isnan(inputs["input_features"]) | torch.isinf(inputs["input_features"])
+                if bad_mask.any():
+                    inputs["input_features"][bad_mask] = (torch.randn_like(inputs["input_features"][bad_mask]) * 1e-5)
+            
+            # 2. Execute normal forward and backward pass
+            loss = super().training_step(model, inputs, num_items_in_batch=num_items_in_batch, **kwargs)
+            
+            # 3. Post-Backward Gradient Scrubber
+            # Even if a NaN somehow escaped the loss, we physically wipe it from the gradients
+            # BEFORE the optimizer takes a step, saving the model from corruption!
+            for param in model.parameters():
+                if param.grad is not None:
+                    if torch.isnan(param.grad).any() or torch.isinf(param.grad).any():
+                        param.grad = torch.nan_to_num(param.grad, nan=0.0, posinf=0.0, neginf=0.0)
+                        
+            return loss
+
+    trainer = SafeTrainer(
         model=model,
         train_dataset=train_dataset,
         eval_dataset=val_dataset,

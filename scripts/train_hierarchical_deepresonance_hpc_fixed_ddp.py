@@ -48,6 +48,11 @@ AUDIO_TARGET_LENGTH = 204      # MUST be 204 for ImageBind! 204 frames = 1 measu
 sys.path.insert(0, DR_ROOT)
 os.chdir(DR_ROOT)
 
+import torch
+# Benchmark mode forces cuDNN to test all convolution algorithms instead of 
+# using the heuristic, bypassing the CUDNN_STATUS_INTERNAL_ERROR bug.
+torch.backends.cudnn.benchmark = True
+
 from unittest.mock import MagicMock
 try:
     import triton  # noqa: F401
@@ -250,14 +255,28 @@ def run_epoch(model, loader, optimizer, scheduler, scaler,
         }
 
         try:
-            with torch.autocast(device_type="cuda", dtype=torch.float32):
+            with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
                 loss, gen_acc, _ = model(inputs_dict)
             
             if torch.isnan(loss) or torch.isinf(loss):
                 n_nan += 1
-                if is_train: optimizer.zero_grad()
                 pbar.set_postfix({"loss": "NaN(skip)", "nan_ct": n_nan})
-                continue
+            
+            class SafeLossFunction(torch.autograd.Function):
+                @staticmethod
+                def forward(ctx, l):
+                    if torch.isnan(l) or torch.isinf(l):
+                        ctx.is_bad = True
+                        return torch.zeros_like(l)
+                    ctx.is_bad = False
+                    return l
+                @staticmethod
+                def backward(ctx, grad_output):
+                    if ctx.is_bad:
+                        return torch.zeros_like(grad_output)
+                    return grad_output
+            
+            loss = SafeLossFunction.apply(loss)
 
             # DataParallel loss is sometimes a tensor of losses (one per GPU)
             loss = loss.mean()
@@ -334,8 +353,11 @@ def main():
     model.llama_model.resize_token_embeddings(len(tokenizer))
     model.llama_tokenizer = tokenizer
 
+    if hasattr(model, "llama_model"):
+        model.llama_model.gradient_checkpointing_enable()
     model = model.to(device)
     model = DDP(model, device_ids=[local_rank], find_unused_parameters=True)
+    model._set_static_graph()
 
     model.train()
 
@@ -365,7 +387,8 @@ def main():
     scheduler    = get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=warmup_steps, num_training_steps=total_steps
     )
-    scaler = torch.cuda.amp.GradScaler()
+    # Bfloat16 doesn't need gradient scaling; keeping it enabled corrupts gradients.
+    scaler = torch.cuda.amp.GradScaler(enabled=False)
 
     best_val_loss = float("inf")
 

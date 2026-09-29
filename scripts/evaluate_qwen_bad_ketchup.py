@@ -25,8 +25,8 @@ def get_actual_clusters(db_path, song_like, diff, measures_per_chunk=4):
     c.execute("""
         SELECT af.start_time, af.end_time, mca.cluster_id
         FROM audio_features af
-        JOIN measure_cluster_assignments mca ON af.file_path=mca.file_path AND af.difficulty=mca.difficulty AND af.measure_idx=mca.measure_idx AND af.run_id=mca.run_id AND af.chop_length=mca.chop_length
-        WHERE af.file_path=? AND af.difficulty=? AND mca.cluster_id != -1 AND af.chop_length=1
+        JOIN measure_cluster_assignments mca ON af.file_path=mca.file_path AND af.difficulty=mca.difficulty AND af.measure_idx=mca.measure_idx
+        WHERE af.file_path=? AND af.difficulty=? AND mca.cluster_id != -1
         ORDER BY af.measure_idx ASC
     """, (file_path, diff))
     measures = c.fetchall()
